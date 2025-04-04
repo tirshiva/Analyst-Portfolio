@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope, FaPhone } from 'react-icons/fa';
 import { socialLinks } from '../data/projects';
 import { useRef, useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
@@ -179,6 +179,19 @@ const Contact = () => {
             className="space-y-8"
           >
             <div className="grid grid-cols-1 gap-6">
+              <a
+                href={`tel:+917052327079`}
+                className="group flex items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
+              >
+                <div className="p-3 bg-green-50 rounded-lg group-hover:bg-green-100 transition-colors">
+                  <FaPhone className="w-6 h-6 text-green-600" />
+                </div>
+                <div className="ml-4">
+                  <h3 className="text-lg font-medium text-gray-900">Phone</h3>
+                  <p className="text-gray-500">+91 7052327079</p>
+                </div>
+              </a>
+
               <a
                 href={socialLinks.linkedin}
                 target="_blank"
