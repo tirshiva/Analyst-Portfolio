@@ -31,7 +31,7 @@ export const projects = [
   {
     id: 3,
     title: "Spotify Music Analysis Using SQL",
-    description: "Analyzed Spotify data with SQL, uncovering trends in popularity, genres, and song features",
+    description: "Analyzed Spotify data with SQL, uncovering trends in popularity, genres, and song features.",
     techStack: ["My SQL", "Data Modeling"],
     githubLink: "https://github.com/Shivanshu2407/Spotify-Music-Analysis-Using-SQL/blob/main/Music_Store_Query.sql",
     demoLink: null,
@@ -40,7 +40,7 @@ export const projects = [
   {
     id: 4,
     title: "Text Sentiment Analysis Using Python",
-    description: "Analyzed text data using Python to uncover insights about sentiment, emotions on Youtube comments",
+    description: "Analyzed text data using Python to uncover insights about sentiment, emotions on Youtube comments.",
     techStack: ["TextBlob", "WorldCloud", "emoji", "plotly", "matplotlib"],
     githubLink: "https://github.com/Shivanshu2407/Text-Sentiment-Analysis",
     demoLink: null,
