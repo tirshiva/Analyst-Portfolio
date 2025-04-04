@@ -13,7 +13,7 @@ export const projects = [
   {
     id: 1,
     title: "ML-Powered Property Price Predictor",
-    description: "Machine Learning-powered real estate tool that predicts property prices using location data and house specifications. Built with Python and Scikit-learn, this model provides accurate price estimates based on various property features.",
+    description: "Machine Learning real estate tool predicting prices using Python, Scikit-learn.",
     techStack: ["Python", "Scikit-learn", "Flask", "Machine Learning"],
     githubLink: "https://github.com/Shivanshu2407/House-Prediction-Regression-Model",
     demoLink: "https://house-prediction-regression-model.onrender.com/",
@@ -22,7 +22,7 @@ export const projects = [
   {
     id: 2,
     title: "Business Insights 360",
-    description: "Built comprehensive Business Insights dashboard in Power BI, optimizing data and automation to boost efficiency and uncover key financial metrics. Features interactive visualizations and real-time analytics.",
+    description: "Developed Power BI dashboard with interactive visuals, real-time analytics, and automated financial insights.",
     techStack: ["Power BI", "DAX", "Data Analysis", "Business Intelligence"],
     githubLink: "https://github.com/Shivanshu2407/Business_Insight_360",
     demoLink: "https://app.powerbi.com/view?r=eyJrIjoiM2I4YTM3NDMtMGEzZi00NjQ4LTliOGEtM2JjZWMzNmQ0N2FjIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9",
@@ -31,7 +31,7 @@ export const projects = [
   {
     id: 3,
     title: "Spotify Music Analysis Using SQL",
-    description: "Analyzed Spotify music data using SQL to uncover insights about song popularity, artist popularity, and genre trends. Created visualizations to explore relationships between song features and listener preferences.",
+    description: "Analyzed Spotify data with SQL, uncovering trends in popularity, genres, and song features",
     techStack: ["My SQL", "Data Modeling"],
     githubLink: "https://github.com/Shivanshu2407/Spotify-Music-Analysis-Using-SQL/blob/main/Music_Store_Query.sql",
     demoLink: null,
