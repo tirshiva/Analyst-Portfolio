@@ -81,7 +81,7 @@ const Hero = () => {
           >
             <div>
               <div className="">
-                <img src="https://wallpapers.com/images/hd/data-analysis-business-presentation-7wf1rt12ml64agel.jpg" alt="Profile" className="w-full h-full object-cover rounded-2xl" />
+                <img src="https://s44885.pcdn.co/wp-content/uploads/2019/09/Fotolia_257957753_Subscription_Monthly_M.jpg" alt="Profile" className="w-full h-full object-cover rounded-2xl" />
               </div>
             </div>
             
