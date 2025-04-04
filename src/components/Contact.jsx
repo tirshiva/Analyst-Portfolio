@@ -25,6 +25,11 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitStatus({ type: '', message: '' });
 
+    // Set the hidden field values
+    const form = formRef.current;
+    form.from_name.value = form.user_name.value;
+    form.reply_to.value = form.user_email.value;
+
     // Log detailed form data and configuration
     const formData = new FormData(formRef.current);
     console.log('------- Form Submission Details -------');
@@ -109,6 +114,7 @@ const Contact = () => {
                   className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors"
                   placeholder="Your name"
                 />
+                <input type="hidden" name="from_name" id="from_name" />
               </div>
               <div>
                 <label htmlFor="user_email" className="block text-sm font-medium text-gray-700 mb-1">
@@ -122,6 +128,7 @@ const Contact = () => {
                   className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors"
                   placeholder="your.email@example.com"
                 />
+                <input type="hidden" name="reply_to" id="reply_to" />
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
