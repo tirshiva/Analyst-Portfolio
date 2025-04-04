@@ -50,8 +50,8 @@ export const projects = [
 
 // Social media and contact links
 export const socialLinks = {
-  linkedin: "https://linkedin.com/in/your-profile", // Update with your LinkedIn profile
+  linkedin: "https://www.linkedin.com/in/shivanshu2407/", // Update with your LinkedIn profile
   github: "https://github.com/Shivanshu2407",
-  email: "your.email@example.com", // Update with your email
-  twitter: "https://twitter.com/your-profile"
+  email: "st955218@gmail.com", // Update with your email
+  twitter: "https://x.com/shivanshut24"
 }; 
