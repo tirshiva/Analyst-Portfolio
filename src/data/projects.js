@@ -35,7 +35,7 @@ export const projects = [
     techStack: ["My SQL", "Data Modeling"],
     githubLink: "https://github.com/Shivanshu2407/Spotify-Music-Analysis-Using-SQL/blob/main/Music_Store_Query.sql",
     demoLink: null,
-    image: "https://images.unsplash.com/photo-1623018035813-9cfb5b502e04?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHNwb3RpZnl8ZW58MHx8MHx8fDA%3D" // Temporary placeholder
+    image: "https://wallpapers.com/images/hd/spotify-background-6dqfrop4arcronbn.jpg" // Temporary placeholder
   },
   {
     id: 4,
@@ -44,7 +44,7 @@ export const projects = [
     techStack: ["TextBlob", "WorldCloud", "emoji", "plotly", "matplotlib"],
     githubLink: "https://github.com/Shivanshu2407/Text-Sentiment-Analysis",
     demoLink: null,
-    image: "https://images.unsplash.com/photo-1594321120041-00d204971461?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzR8fHlvdXR1YmUlMjBjb21tZW50cyUyMHNlbnRpbWVudHxlbnwwfHwwfHx8MA%3D%3D" // Temporary placeholder
+    image: "https://cdn.prod.website-files.com/60df2a66dbf65be7b8bc5f54/673df1ee947622109ddd9b60_Laptop%20with%20YouTube%20video%20displayed%20and%20comments%20all%20around..webp" // Temporary placeholder
   }
 ];
 
