@@ -25,19 +25,20 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitStatus({ type: '', message: '' });
 
-    // Set the hidden field values
     const form = formRef.current;
-    form.from_name.value = form.user_name.value;
-    form.reply_to.value = form.user_email.value;
+    const templateParams = {
+      from_name: form.user_name.value,
+      to_name: "Sivanshu",
+      from_email: form.user_email.value,
+      reply_to: form.user_email.value,
+      user_name: form.user_name.value,
+      user_email: form.user_email.value,
+      message: form.message.value
+    };
 
     // Log detailed form data and configuration
-    const formData = new FormData(formRef.current);
     console.log('------- Form Submission Details -------');
-    console.log('1. Form Data:', {
-      name: formData.get('user_name'),
-      email: formData.get('user_email'),
-      message: formData.get('message')
-    });
+    console.log('1. Template Params:', templateParams);
     
     console.log('2. EmailJS Config:', {
       serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -47,10 +48,10 @@ const Contact = () => {
 
     try {
       console.log('3. Attempting to send email...');
-      const result = await emailjs.sendForm(
+      const result = await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        formRef.current,
+        templateParams,
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
@@ -114,7 +115,6 @@ const Contact = () => {
                   className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors"
                   placeholder="Your name"
                 />
-                <input type="hidden" name="from_name" id="from_name" />
               </div>
               <div>
                 <label htmlFor="user_email" className="block text-sm font-medium text-gray-700 mb-1">
@@ -128,7 +128,6 @@ const Contact = () => {
                   className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors"
                   placeholder="your.email@example.com"
                 />
-                <input type="hidden" name="reply_to" id="reply_to" />
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
