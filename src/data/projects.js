@@ -32,7 +32,7 @@ export const projects = [
     id: 3,
     title: "Spotify Music Analysis Using SQL",
     description: "Analyzed Spotify data with SQL, uncovering trends in popularity, genres, and song features.",
-    techStack: ["My SQL", "Data Modeling"],
+    techStack: ["My SQL", "Data Modeling",'Data Cleaning','Data Normalization'],
     githubLink: "https://github.com/Shivanshu2407/Spotify-Music-Analysis-Using-SQL/blob/main/Music_Store_Query.sql",
     demoLink: null,
     image: "https://wallpapers.com/images/hd/spotify-background-6dqfrop4arcronbn.jpg" // Temporary placeholder
