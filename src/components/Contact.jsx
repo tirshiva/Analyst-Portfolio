@@ -42,20 +42,11 @@ const Contact = () => {
 
     try {
       console.log('3. Attempting to send email...');
-      
-      // Add from_email to the form data
-      const templateParams = {
-        user_name: formData.get('user_name'),
-        user_email: formData.get('user_email'),
-        message: formData.get('message'),
-        from_email: formData.get('user_email'),
-        reply_to: formData.get('user_email')
-      };
-      
-      const result = await emailjs.send(
+      const result = await emailjs.sendForm(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        templateParams
+        formRef.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
       console.log('4. EmailJS Response:', result);
