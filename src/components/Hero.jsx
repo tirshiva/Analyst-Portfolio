@@ -79,13 +79,9 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="relative"
           >
-            <div >
-              {/* Replace the div below with an actual image when available */}
+            <div>
               <div className="">
-                <img src="https://images.unsplash.com/photo-1594377157609-5c996118ac7f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNyZWF0aXZlfGVufDB8fDB8fHww" alt="Profile" className="w-full h-full object-cover rounded-2xl" />
-                <svg className="w-32 h-32 opacity-80" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                </svg>
+                <img src="https://png.pngtree.com/background/20230617/original/pngtree-web-banner-3d-rendered-ui-for-seo-data-analytics-and-future-picture-image_3704909.jpg" alt="Profile" className="w-full h-full object-cover rounded-2xl" />
               </div>
             </div>
             

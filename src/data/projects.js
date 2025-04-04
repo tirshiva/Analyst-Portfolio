@@ -16,8 +16,8 @@ export const projects = [
     description: "Machine Learning-powered real estate tool that predicts property prices using location data and house specifications. Built with Python and Scikit-learn, this model provides accurate price estimates based on various property features.",
     techStack: ["Python", "Scikit-learn", "Flask", "Machine Learning"],
     githubLink: "https://github.com/Shivanshu2407/House-Prediction-Regression-Model",
-    demoLink: null,
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1073&q=80" // Temporary placeholder
+    demoLink: "https://house-prediction-regression-model.onrender.com/",
+    image: "https://images.pexels.com/photos/1546168/pexels-photo-1546168.jpeg?cs=srgb&dl=pexels-davidmcbee-1546168.jpg&fm=jpg" // Temporary placeholder
   },
   {
     id: 2,
