@@ -76,7 +76,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section id="contact" className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -85,10 +85,10 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
-            Get In <span className="text-gradient">Touch</span>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl mb-4 transition-colors duration-300">
+            Get In <span className="text-gradient dark:text-blue-400">Touch</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto transition-colors duration-300">
             Feel free to reach out for collaborations or just a friendly hello!
           </p>
         </motion.div>
@@ -100,11 +100,11 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-lg p-8"
+            className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg dark:shadow-gray-900/50 p-8 transition-colors duration-300"
           >
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="user_name" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="user_name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 transition-colors duration-300">
                   Name
                 </label>
                 <input
@@ -112,12 +112,12 @@ const Contact = () => {
                   id="user_name"
                   name="user_name"
                   required
-                  className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors"
+                  className="w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 dark:focus:border-blue-400 focus:ring-blue-500 dark:focus:ring-blue-400 transition-colors duration-300"
                   placeholder="Your name"
                 />
               </div>
               <div>
-                <label htmlFor="user_email" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="user_email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 transition-colors duration-300">
                   Email
                 </label>
                 <input
@@ -125,12 +125,12 @@ const Contact = () => {
                   id="user_email"
                   name="user_email"
                   required
-                  className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors"
+                  className="w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 dark:focus:border-blue-400 focus:ring-blue-500 dark:focus:ring-blue-400 transition-colors duration-300"
                   placeholder="your.email@example.com"
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 transition-colors duration-300">
                   Message
                 </label>
                 <textarea
@@ -138,7 +138,7 @@ const Contact = () => {
                   name="message"
                   required
                   rows={4}
-                  className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors"
+                  className="w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 dark:focus:border-blue-400 focus:ring-blue-500 dark:focus:ring-blue-400 transition-colors duration-300"
                   placeholder="Your message..."
                 />
               </div>
@@ -148,9 +148,9 @@ const Contact = () => {
                 <div
                   className={`p-4 rounded-lg ${
                     submitStatus.type === 'success'
-                      ? 'bg-green-50 text-green-800'
-                      : 'bg-red-50 text-red-800'
-                  }`}
+                      ? 'bg-green-50 dark:bg-green-900/30 text-green-800 dark:text-green-300'
+                      : 'bg-red-50 dark:bg-red-900/30 text-red-800 dark:text-red-300'
+                  } transition-colors duration-300`}
                 >
                   {submitStatus.message}
                 </div>
@@ -161,7 +161,7 @@ const Contact = () => {
                 whileTap={{ scale: 0.98 }}
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200 ${
+                className={`w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-500 dark:to-blue-600 hover:from-blue-700 hover:to-blue-800 dark:hover:from-blue-600 dark:hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200 ${
                   isSubmitting ? 'opacity-75 cursor-not-allowed' : ''
                 }`}
               >
@@ -181,14 +181,14 @@ const Contact = () => {
             <div className="grid grid-cols-1 gap-6">
               <a
                 href={`tel:+917052327079`}
-                className="group flex items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
+                className="group flex items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md dark:shadow-gray-900/50 hover:shadow-lg transition-all duration-200"
               >
-                <div className="p-3 bg-green-50 rounded-lg group-hover:bg-green-100 transition-colors">
-                  <FaPhone className="w-6 h-6 text-green-600" />
+                <div className="p-3 bg-green-50 dark:bg-green-900/30 rounded-lg group-hover:bg-green-100 dark:group-hover:bg-green-900/50 transition-colors">
+                  <FaPhone className="w-6 h-6 text-green-600 dark:text-green-400" />
                 </div>
                 <div className="ml-4">
-                  <h3 className="text-lg font-medium text-gray-900">Phone</h3>
-                  <p className="text-gray-500">+91 7052327079</p>
+                  <h3 className="text-lg font-medium text-gray-900 dark:text-white transition-colors duration-300">Phone</h3>
+                  <p className="text-gray-500 dark:text-gray-400 transition-colors duration-300">+91 7052327079</p>
                 </div>
               </a>
 
@@ -196,14 +196,14 @@ const Contact = () => {
                 href={socialLinks.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
+                className="group flex items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md dark:shadow-gray-900/50 hover:shadow-lg transition-all duration-200"
               >
-                <div className="p-3 bg-blue-50 rounded-lg group-hover:bg-blue-100 transition-colors">
-                  <FaLinkedin className="w-6 h-6 text-blue-600" />
+                <div className="p-3 bg-blue-50 dark:bg-blue-900/30 rounded-lg group-hover:bg-blue-100 dark:group-hover:bg-blue-900/50 transition-colors">
+                  <FaLinkedin className="w-6 h-6 text-blue-600 dark:text-blue-400" />
                 </div>
                 <div className="ml-4">
-                  <h3 className="text-lg font-medium text-gray-900">LinkedIn</h3>
-                  <p className="text-gray-500">Connect with me professionally</p>
+                  <h3 className="text-lg font-medium text-gray-900 dark:text-white transition-colors duration-300">LinkedIn</h3>
+                  <p className="text-gray-500 dark:text-gray-400 transition-colors duration-300">Connect with me professionally</p>
                 </div>
               </a>
 
@@ -211,27 +211,27 @@ const Contact = () => {
                 href={socialLinks.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
+                className="group flex items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md dark:shadow-gray-900/50 hover:shadow-lg transition-all duration-200"
               >
-                <div className="p-3 bg-gray-50 rounded-lg group-hover:bg-gray-100 transition-colors">
-                  <FaGithub className="w-6 h-6 text-gray-900" />
+                <div className="p-3 bg-gray-50 dark:bg-gray-700 rounded-lg group-hover:bg-gray-100 dark:group-hover:bg-gray-600 transition-colors">
+                  <FaGithub className="w-6 h-6 text-gray-900 dark:text-white" />
                 </div>
                 <div className="ml-4">
-                  <h3 className="text-lg font-medium text-gray-900">GitHub</h3>
-                  <p className="text-gray-500">Check out my projects</p>
+                  <h3 className="text-lg font-medium text-gray-900 dark:text-white transition-colors duration-300">GitHub</h3>
+                  <p className="text-gray-500 dark:text-gray-400 transition-colors duration-300">Check out my projects</p>
                 </div>
               </a>
 
               <a
                 href={`mailto:${socialLinks.email}`}
-                className="group flex items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
+                className="group flex items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md dark:shadow-gray-900/50 hover:shadow-lg transition-all duration-200"
               >
-                <div className="p-3 bg-red-50 rounded-lg group-hover:bg-red-100 transition-colors">
-                  <FaEnvelope className="w-6 h-6 text-red-600" />
+                <div className="p-3 bg-red-50 dark:bg-red-900/30 rounded-lg group-hover:bg-red-100 dark:group-hover:bg-red-900/50 transition-colors">
+                  <FaEnvelope className="w-6 h-6 text-red-600 dark:text-red-400" />
                 </div>
                 <div className="ml-4">
-                  <h3 className="text-lg font-medium text-gray-900">Email</h3>
-                  <p className="text-gray-500">Send me an email directly</p>
+                  <h3 className="text-lg font-medium text-gray-900 dark:text-white transition-colors duration-300">Email</h3>
+                  <p className="text-gray-500 dark:text-gray-400 transition-colors duration-300">Send me an email directly</p>
                 </div>
               </a>
             </div>

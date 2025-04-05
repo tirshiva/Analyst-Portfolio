@@ -4,7 +4,7 @@ import { projects } from '../data/projects';
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section id="projects" className="py-20 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -13,10 +13,10 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
-            Featured <span className="text-gradient">Projects</span>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl mb-4 transition-colors duration-300">
+            Featured <span className="text-gradient dark:text-blue-400">Projects</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto transition-colors duration-300">
             Here are some of my key projects that showcase my skills in data analysis,
             machine learning, and business intelligence.
           </p>
