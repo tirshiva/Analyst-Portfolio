@@ -22,7 +22,7 @@ const Hero = () => {
                 transition={{ delay: 0.2, duration: 0.5 }}
               >
                 Hi, I'm{' '}
-                <span className="text-gradient dark:text-blue-400">Sivanshu Tiwari</span>
+                <span className="text-gradient dark:text-blue-400">Shivanshu Tiwari</span>
               </motion.h1>
               <motion.h2 
                 className="text-2xl sm:text-3xl text-gray-600 dark:text-gray-300 transition-colors duration-300"
