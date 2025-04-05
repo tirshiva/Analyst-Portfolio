@@ -75,7 +75,7 @@ const Navbar = () => {
                 transition={{ delay: 0.2 }}
                 className="text-xl font-bold text-gray-900 dark:text-white"
               >
-                ST
+              
               </motion.span>
             </Link>
           </motion.div>
