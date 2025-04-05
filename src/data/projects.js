@@ -53,5 +53,4 @@ export const socialLinks = {
   linkedin: "https://www.linkedin.com/in/shivanshu2407/", // Update with your LinkedIn profile
   github: "https://github.com/Shivanshu2407",
   email: "st955218@gmail.com", // Update with your email
-  twitter: "https://x.com/shivanshut24"
 }; 
