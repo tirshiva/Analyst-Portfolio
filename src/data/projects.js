@@ -26,7 +26,7 @@ export const projects = [
     techStack: ["Classification", "Python", "FASTAPI", "Machine Learning"],
     githubLink: "https://github.com/Shivanshu2407/Loan-Approval-Prediction",
     demoLink: "https://loan-approval-prediction-project.streamlit.app/",
-    image: "https://images.unsplash.com/photo-1729077555348-4ab768b4a90e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fFJ1cGVlc3xlbnwwfHwwfHx8MA%3D%3D" // Temporary placeholder
+    image: "https://www.livemint.com/lm-img/img/2024/11/20/600x338/investor_1726811993233_1732095824885.jpg" // Temporary placeholder
   },
   {
     id: 3,
