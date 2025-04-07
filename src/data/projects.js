@@ -21,6 +21,15 @@ export const projects = [
   },
   {
     id: 2,
+    title: "Loan Approval Prediction Model",
+    description: "This web application provides an interface for predicting loan approval using machine learning.",
+    techStack: ["Classification", "Python", "FASTAPI", "Machine Learning"],
+    githubLink: "https://github.com/Shivanshu2407/Loan-Approval-Prediction",
+    demoLink: "https://loan-approval-prediction-project.streamlit.app/",
+    image: "https://images.unsplash.com/photo-1729077555348-4ab768b4a90e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fFJ1cGVlc3xlbnwwfHwwfHx8MA%3D%3D" // Temporary placeholder
+  },
+  {
+    id: 3,
     title: "Business Insights 360",
     description: "Developed Power BI dashboard with interactive visuals, real-time analytics, and automated financial insights.",
     techStack: ["Power BI", "DAX", "Data Analysis", "Business Intelligence"],
@@ -29,7 +38,7 @@ export const projects = [
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" // Temporary placeholder
   },
   {
-    id: 3,
+    id: 4,
     title: "Spotify Music Analysis Using SQL",
     description: "Analyzed Spotify data with SQL, uncovering trends in popularity, genres, and song features.",
     techStack: ["My SQL", "Data Modeling",'Data Cleaning','Data Normalization'],
@@ -38,7 +47,7 @@ export const projects = [
     image: "https://wallpapers.com/images/hd/spotify-background-6dqfrop4arcronbn.jpg" // Temporary placeholder
   },
   {
-    id: 4,
+    id: 5,
     title: "Text Sentiment Analysis Using Python",
     description: "Analyzed text data using Python to uncover insights about sentiment, emotions on Youtube comments.",
     techStack: ["TextBlob", "WorldCloud", "emoji", "plotly", "matplotlib"],
