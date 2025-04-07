@@ -14,7 +14,7 @@ export const projects = [
     id: 1,
     title: "ML-Powered Property Price Predictor",
     description: "Machine Learning real estate tool predicting prices using Python, Scikit-learn.",
-    techStack: ["Python", "Scikit-learn", "Flask", "Machine Learning"],
+    techStack: ["Python", "Scikit-learn", "Flask", "Linear Regression"],
     githubLink: "https://github.com/Shivanshu2407/House-Prediction-Regression-Model",
     demoLink: "https://house-prediction-regression-model.onrender.com/",
     image: "https://images.pexels.com/photos/1797393/pexels-photo-1797393.jpeg?auto=compress&cs=tinysrgb&w=600" // Temporary placeholder
