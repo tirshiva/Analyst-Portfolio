@@ -22,7 +22,7 @@ const skills = [
   {
     category: "Visualization",
     items: [
-      { name: "Tableau", level: 90 },
+      { name: "QuickSight", level: 70 },
       { name: "Power BI", level: 85 },
       { name: "Matplotlib", level: 80 },
       { name: "Seaborn", level: 85 }
