@@ -22,7 +22,7 @@ const experiences = [
     title: "Fashion Consultant",
     company: "Lenskart",
     location: "Gurgaon, IND",
-    period: "Prior to Sep 2022",
+    period: "Jan 2022 to Sep 2022",
     description: "Provided personalized styling advice and product recommendations to customers while maintaining high sales performance.",
     skills: ["Fashion Consulting", "Product Knowledge", "Customer Experience", "Sales"]
   }
