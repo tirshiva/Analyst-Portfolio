@@ -64,7 +64,7 @@ const Navbar = () => {
               <motion.img
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                // src="/profile.png"
+                src="/logo.avif"
                 alt="Profile"
                 className="h-10 w-10 rounded-full object-cover object-top mr-2 border-2 border-gray-200 dark:border-gray-700"
                 style={{ objectPosition: '50% 15%' }}
