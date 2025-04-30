@@ -17,7 +17,7 @@ export const projects = [
     techStack: ["Python", "Scikit-learn", "Flask", "Linear Regression"],
     githubLink: "https://github.com/Shivanshu2407/House-Prediction-Regression-Model",
     demoLink: "https://house-prediction-regression-model.onrender.com/",
-    image: "https://images.pexels.com/photos/1797393/pexels-photo-1797393.jpeg?auto=compress&cs=tinysrgb&w=600" // Temporary placeholder
+    image: "House Price.png" // Temporary placeholder
   },
   {
     id: 2,
