@@ -21,15 +21,6 @@ export const projects = [
   },
   {
     id: 2,
-    title: "Loan Approval Prediction Model",
-    description: "This web application provides an interface for predicting loan approval using machine learning.",
-    techStack: ["Classification", "Python", "FASTAPI", "Machine Learning"],
-    githubLink: "https://github.com/Shivanshu2407/Loan-Approval-Prediction",
-    demoLink: "https://loan-approval-prediction-project.streamlit.app/",
-    image: "https://www.livemint.com/lm-img/img/2024/11/20/600x338/investor_1726811993233_1732095824885.jpg" // Temporary placeholder
-  },
-  {
-    id: 3,
     title: "Business Insights 360",
     description: "Developed Power BI dashboard with interactive visuals, real-time analytics, and automated financial insights.",
     techStack: ["Power BI", "DAX", "Power Query", "Business Intelligence"],
@@ -46,15 +37,6 @@ export const projects = [
     demoLink: null,
     image: "https://wallpapers.com/images/hd/spotify-background-6dqfrop4arcronbn.jpg" // Temporary placeholder
   },
-  {
-    id: 5,
-    title: "Text Sentiment Analysis Using Python",
-    description: "Analyzed text data using Python to uncover insights about sentiment, emotions on Youtube comments.",
-    techStack: ["TextBlob", "WorldCloud", "emoji", "plotly", "matplotlib"],
-    githubLink: "https://github.com/Shivanshu2407/Text-Sentiment-Analysis",
-    demoLink: null,
-    image: "https://cdn.prod.website-files.com/60df2a66dbf65be7b8bc5f54/673df1ee947622109ddd9b60_Laptop%20with%20YouTube%20video%20displayed%20and%20comments%20all%20around..webp" // Temporary placeholder
-  }
 ];
 
 // Social media and contact links
