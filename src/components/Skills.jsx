@@ -4,10 +4,10 @@ const skills = [
   {
     category: "Data Analysis",
     items: [
-      { name: "Python", level: 90 },
+      { name: "Python", level: 80 },
       { name: "SQL", level: 85 },
-      { name: "Power Point", level: 80 },
-      { name: "Excel", level: 95 }
+      { name: "Power BI", level: 85 },
+      { name: "Excel", level: 85 }
     ]
   },
   {
@@ -22,10 +22,10 @@ const skills = [
   {
     category: "Visualization",
     items: [
-      { name: "QuickSight", level: 70 },
       { name: "Power BI", level: 85 },
-      { name: "Matplotlib", level: 80 },
-      { name: "Seaborn", level: 85 }
+      { name: "Streanlit", level: 70 },
+      { name: "Matplotlib", level: 75 },
+      { name: "Seaborn", level: 70 }
     ]
   }
 ];

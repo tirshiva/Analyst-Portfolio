@@ -9,22 +9,6 @@ const experiences = [
     period: "March 2024 – Present",
     description: "Supporting Amazon sellers with account management, problem resolution, and ensuring smooth marketplace operations.",
     skills: ["Seller Support", "Account Management", "Problem Resolution", "Data Analysis"]
-  },
-  {
-    title: "Senior Sales Representative",
-    company: "Concentrix",
-    location: "Gurgaon, IND",
-    period: "Sep 2022 – Feb 2024",
-    description: "Led sales initiatives and provided exceptional customer service while consistently meeting and exceeding targets.",
-    skills: ["Sales", "Customer Relations", "Team Leadership", "Target Achievement"]
-  },
-  {
-    title: "Fashion Consultant",
-    company: "Lenskart",
-    location: "Gurgaon, IND",
-    period: "Jan 2022 to Sep 2022",
-    description: "Provided personalized styling advice and product recommendations to customers while maintaining high sales performance.",
-    skills: ["Fashion Consulting", "Product Knowledge", "Customer Experience", "Sales"]
   }
 ];
 
