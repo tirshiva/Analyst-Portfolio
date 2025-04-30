@@ -35,7 +35,7 @@ export const projects = [
     techStack: ["Power BI", "DAX", "Data Analysis", "Business Intelligence"],
     githubLink: "https://github.com/Shivanshu2407/Business_Insight_360",
     demoLink: "https://app.powerbi.com/view?r=eyJrIjoiM2I4YTM3NDMtMGEzZi00NjQ4LTliOGEtM2JjZWMzNmQ0N2FjIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" // Temporary placeholder
+    image: "public\Untitled design.png" // Temporary placeholder
   },
   {
     id: 4,
