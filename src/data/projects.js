@@ -35,7 +35,7 @@ export const projects = [
     techStack: ["Power BI", "DAX", "Power Query", "Business Intelligence"],
     githubLink: "https://github.com/Shivanshu2407/Business_Insight_360",
     demoLink: "https://app.powerbi.com/view?r=eyJrIjoiM2I4YTM3NDMtMGEzZi00NjQ4LTliOGEtM2JjZWMzNmQ0N2FjIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9",
-    image: "public/Untitled design.png" // Temporary placeholder
+    image: "Untitled design.png" // Temporary placeholder
   },
   {
     id: 4,
