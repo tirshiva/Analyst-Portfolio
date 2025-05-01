@@ -126,7 +126,7 @@ const Skills = () => {
   );
 
   // Calculate total pages
-  const skillsPerPage = 5;
+  const skillsPerPage = 6;
   const totalPages = Math.ceil(allSkills.length / skillsPerPage);
 
   // Get current page skills
