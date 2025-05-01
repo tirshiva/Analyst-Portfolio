@@ -1,94 +1,79 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-scroll';
-import { FaArrowRight } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Text Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="space-y-8"
-          >
-            <div className="space-y-4">
-              <motion.h1 
-                className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white transition-colors duration-300"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.5 }}
-              >
-                Hi, I'm{' '}
-                <span className="text-gradient dark:text-blue-400">Shivanshu Tiwari</span>
-              </motion.h1>
-              <motion.h2 
-                className="text-2xl sm:text-3xl text-gray-600 dark:text-gray-300 transition-colors duration-300"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.5 }}
-              >
-                Data Analyst | Storyteller with Data
-              </motion.h2>
-            </div>
-            
-            <motion.p 
-              className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl transition-colors duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.5 }}
-            >
-              I transform complex data into clear, actionable insights that drive business decisions.
-              With expertise in Python, SQL, and visualization tools, I help organizations unlock
-              the power of their data.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
-              className="flex flex-wrap gap-4"
-            >
-              <Link
-                to="projects"
-                smooth={true}
-                duration={500}
-                className="group inline-flex items-center gap-2 bg-blue-600 dark:bg-blue-500 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors cursor-pointer"
-              >
-                View My Work
-                <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-              </Link>
-              
-              <Link
-                to="contact"
-                smooth={true}
-                duration={500}
-                className="inline-flex items-center gap-2 bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 border-2 border-blue-600 dark:border-blue-400 px-8 py-3 rounded-lg font-medium hover:bg-blue-50 dark:hover:bg-gray-700 transition-colors cursor-pointer"
-              >
-                Contact Me
-              </Link>
-            </motion.div>
-          </motion.div>
-
-          {/* Profile Image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
+    <section id="home" className="min-h-[80vh] flex items-center justify-center bg-gradient-to-b from-white to-gray-50">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center"
+        >
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="relative"
+            className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6"
           >
-            <div>
-              <div className="">
-                <img src="https://s44885.pcdn.co/wp-content/uploads/2019/09/Fotolia_257957753_Subscription_Monthly_M.jpg" alt="Profile" className="w-full h-full object-cover rounded-2xl shadow-lg dark:shadow-blue-500/20" />
-              </div>
-            </div>
-            
-            {/* Decorative Elements */}
-            <div className="absolute -z-10 inset-0 bg-gradient-to-tr from-blue-200 to-cyan-200 dark:from-blue-900 dark:to-cyan-900 transform rotate-6 rounded-2xl transition-colors duration-300"></div>
+            <span className="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+              Hi, I'm Shivanshu
+            </span>
+            <br />
+            <span className="text-3xl sm:text-4xl md:text-5xl text-gray-700">
+              Data Scientist & ML Engineer
+            </span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto"
+          >
+            I specialize in turning complex data into meaningful stories. With expertise in machine learning and data analytics, 
+            I help businesses make data-driven decisions and build intelligent solutions.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="flex justify-center space-x-6"
+          >
+            <a
+              href="https://github.com/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-blue-600 transition-colors duration-300"
+            >
+              <FaGithub className="w-8 h-8" />
+            </a>
+            <a
+              href="https://linkedin.com/in/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-blue-600 transition-colors duration-300"
+            >
+              <FaLinkedin className="w-8 h-8" />
+            </a>
           </motion.div>
-        </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            className="mt-12"
+          >
+            <a
+              href="#contact"
+              className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+            >
+              Let's Connect
+            </a>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

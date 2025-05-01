@@ -7,13 +7,13 @@ import Contact from './components/Contact';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
-      <div className="dark:bg-gradient-to-b dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+    <div className="min-h-screen bg-white">
+      <div className="bg-gradient-to-b from-white to-gray-50">
         <Navbar />
-        <main className="dark:text-gray-100">
+        <main className="text-gray-900">
           <Hero />
-          <Skills />
           <Projects />
+          <Skills />
           <Experience />
           <Contact />
         </main>
