@@ -30,12 +30,12 @@ export const projects = [
   },
   {
     id: 4,
-    title: "Spotify Music Analysis Using SQL",
-    description: "Analyzed Spotify data with SQL, uncovering trends in popularity, genres, and song features.",
-    techStack: ["My SQL", "Data Modeling",'Data Cleaning','Data Normalization'],
-    githubLink: "https://github.com/Shivanshu2407/Spotify-Music-Analysis-Using-SQL/blob/main/Music_Store_Query.sql",
-    demoLink: null,
-    image: "https://wallpapers.com/images/hd/spotify-background-6dqfrop4arcronbn.jpg" // Temporary placeholder
+    title: "Loan Defaulter Analysis",
+    description: "This project provides a visual analysis of loan distribution trends segmented by marital status and credit score categories to uncover patterns.",
+    techStack: ["SQL Server", "Data Refresh",'Standard Mode Gateway'],
+    githubLink: "https://github.com/Shivanshu2407/Loan-Defaulter",
+    demoLink: "https://app.powerbi.com/groups/faeab291-ba41-429b-8ff1-383f3bc15a5d/reports/b7a373b7-3778-40cb-b004-026da435170a/96192ef40d6118d17a03?experience=power-bi",
+    image: "Loan Default.png" // Temporary placeholder
   },
 ];
 
