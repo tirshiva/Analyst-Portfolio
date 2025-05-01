@@ -22,7 +22,7 @@ export const projects = [
   {
     id: 2,
     title: "Business Insights 360",
-    description: "Power Bi dashboard for depatments like finance, sales, marketing and supply chain.",
+    description: "Power BI dashboard providing actionable insights across Finance, Sales, Marketing, and Supply Chain departments.",
     techStack: ["Power BI", "DAX", "Power Query", "Business Intelligence"],
     githubLink: "https://github.com/Shivanshu2407/Business_Insight_360",
     demoLink: "https://app.powerbi.com/view?r=eyJrIjoiM2I4YTM3NDMtMGEzZi00NjQ4LTliOGEtM2JjZWMzNmQ0N2FjIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9",
