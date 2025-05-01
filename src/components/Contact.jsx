@@ -69,7 +69,7 @@ const Contact = () => {
             </div>
           </a>
 
-          <a
+          {/* <a
             href={socialLinks.github}
             target="_blank"
             rel="noopener noreferrer"
@@ -82,7 +82,7 @@ const Contact = () => {
               <h3 className="text-sm font-medium text-gray-900">GitHub</h3>
               <p className="text-sm text-gray-500">View my projects</p>
             </div>
-          </a>
+          </a> */}
         </motion.div>
       </div>
     </section>
