@@ -116,6 +116,21 @@ const SkillCard = ({ skill, category }) => {
 const Skills = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [skillsPerPage, setSkillsPerPage] = useState(5);
+
+  // Responsive skills per page
+  useEffect(() => {
+    function updateSkillsPerPage() {
+      const width = window.innerWidth;
+      if (width < 640) setSkillsPerPage(1); // mobile
+      else if (width < 900) setSkillsPerPage(2); // small tablets
+      else if (width < 1200) setSkillsPerPage(3); // tablets
+      else setSkillsPerPage(5); // desktop
+    }
+    updateSkillsPerPage();
+    window.addEventListener('resize', updateSkillsPerPage);
+    return () => window.removeEventListener('resize', updateSkillsPerPage);
+  }, []);
 
   // Flatten all skills into a single array
   const allSkills = skills.flatMap(category => 
@@ -126,7 +141,6 @@ const Skills = () => {
   );
 
   // Calculate total pages
-  const skillsPerPage = 3;
   const totalPages = Math.ceil(allSkills.length / skillsPerPage);
 
   // Get current page skills
@@ -138,7 +152,7 @@ const Skills = () => {
   // Reset to first page when component mounts
   useEffect(() => {
     setCurrentPage(0);
-  }, []);
+  }, [skillsPerPage]);
 
   useEffect(() => {
     let interval;
@@ -185,7 +199,7 @@ const Skills = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6"
+              className={`grid grid-cols-1 ${skillsPerPage === 2 ? 'sm:grid-cols-2' : ''} ${skillsPerPage === 3 ? 'md:grid-cols-3' : ''} ${skillsPerPage === 5 ? 'xl:grid-cols-5 lg:grid-cols-3' : ''} gap-6`}
             >
               {currentSkills.map((skill, index) => (
                 <SkillCard
