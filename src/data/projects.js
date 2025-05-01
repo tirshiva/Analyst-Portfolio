@@ -26,7 +26,7 @@ export const projects = [
     techStack: ["Power BI", "DAX", "Power Query", "Business Intelligence"],
     githubLink: "https://github.com/Shivanshu2407/Business_Insight_360",
     demoLink: "https://app.powerbi.com/view?r=eyJrIjoiM2I4YTM3NDMtMGEzZi00NjQ4LTliOGEtM2JjZWMzNmQ0N2FjIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9",
-    image: "report.png" // Temporary placeholder
+    image: "BI 360.png" // Temporary placeholder
   },
   {
     id: 4,
@@ -34,7 +34,7 @@ export const projects = [
     description: "This project provides a visual analysis of loan distribution trends segmented by marital status and credit score categories to uncover patterns.",
     techStack: ["SQL Server", "Data Refresh",'Standard Mode Gateway'],
     githubLink: "https://github.com/Shivanshu2407/Loan-Defaulter",
-    demoLink: "https://app.powerbi.com/groups/faeab291-ba41-429b-8ff1-383f3bc15a5d/reports/b7a373b7-3778-40cb-b004-026da435170a/96192ef40d6118d17a03?experience=power-bi",
+    demoLink: "https://app.powerbi.com/view?r=eyJrIjoiOGY4ODU1YjktZGQwMy00YTAwLTk4ZDUtMDRjNTk0MjA2MDVlIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9&pageName=96192ef40d6118d17a03",
     image: "Loan Default.png" // Temporary placeholder
   },
 ];
