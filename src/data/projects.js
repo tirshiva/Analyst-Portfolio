@@ -31,7 +31,7 @@ export const projects = [
   {
     id: 4,
     title: "Customer Churn Prediction",
-    description: "A data-driven project to analyze customer churn, identify key influencing factors, and build a machine learning model for accurate churn prediction.",
+    description: "Build a machine learning model for accurate churn prediction for a Telecommunication Company.",
     techStack: ["Python","Random Forest Classifier","Hyperparameter tuning","Cross Validation"],
     githubLink: "https://github.com/Shivanshu2407/Customer-Churn-Analysis/tree/main",
     demoLink: "https://shivanshu2407-customer-churn-analysis-srcapp-b4z2jc.streamlit.app/",
