@@ -30,12 +30,12 @@ export const projects = [
   },
   {
     id: 4,
-    title: "Loan Defaulter Analysis",
-    description: "This project provides a visual analysis of loan distribution trends segmented by marital status and credit score categories to uncover patterns.",
-    techStack: ["SQL Server", "Data Refresh",'Standard Mode Gateway'],
-    githubLink: "https://github.com/Shivanshu2407/Loan-Defaulter",
-    demoLink: "https://app.powerbi.com/view?r=eyJrIjoiOGY4ODU1YjktZGQwMy00YTAwLTk4ZDUtMDRjNTk0MjA2MDVlIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9&pageName=96192ef40d6118d17a03",
-    image: "Loan Default.png" // Temporary placeholder
+    title: "Customer Churn Prediction",
+    description: "A data-driven project to analyze customer churn, identify key influencing factors, and build a machine learning model for accurate churn prediction.",
+    techStack: ["Python","Random Forest Classifier","Hyperparameter tuning","Cross Validation"],
+    githubLink: "https://github.com/Shivanshu2407/Customer-Churn-Analysis/tree/main",
+    demoLink: "https://shivanshu2407-customer-churn-analysis-srcapp-b4z2jc.streamlit.app/",
+    image: "Churn.png" // Temporary placeholder
   },
 ];
 
