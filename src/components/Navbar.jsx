@@ -8,8 +8,8 @@ const Navbar = () => {
 
   const navItems = [
     { title: 'Home', to: 'home' },
-    { title: 'Skills', to: 'skills' },
     { title: 'Projects', to: 'projects' },
+    { title: 'Skills', to: 'skills' },
     { title: 'Experience', to: 'experience' },
     { title: 'Contact', to: 'contact' },
   ];
