@@ -22,7 +22,7 @@ export const projects = [
   {
     id: 2,
     title: "Business Insights 360",
-    description: "Developed Power BI dashboard with interactive visuals, real-time analytics, and automated financial insights.",
+    description: "Dashboard to give answers to the questions of stakeholder in aspects like finance, sales, marketing and supply chain.",
     techStack: ["Power BI", "DAX", "Power Query", "Business Intelligence"],
     githubLink: "https://github.com/Shivanshu2407/Business_Insight_360",
     demoLink: "https://app.powerbi.com/view?r=eyJrIjoiM2I4YTM3NDMtMGEzZi00NjQ4LTliOGEtM2JjZWMzNmQ0N2FjIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9",
@@ -31,7 +31,7 @@ export const projects = [
   {
     id: 4,
     title: "Customer Churn Prediction",
-    description: "Machine learning model for churn prediction in the telecommunications industry..",
+    description: "Machine learning model for churn prediction in the telecommunications industry.",
     techStack: ["Python","Random Forest Classifier","Hyperparameter tuning","Cross Validation"],
     githubLink: "https://github.com/Shivanshu2407/Customer-Churn-Analysis/tree/main",
     demoLink: "https://shivanshu2407-customer-churn-analysis-srcapp-b4z2jc.streamlit.app/",
