@@ -7,20 +7,20 @@ const skills = [
     category: "Data Analysis",
     color: "blue",
     items: [
-      { name: "Python", level: 80, description: "Advanced data manipulation and analysis using pandas, numpy, and other scientific computing libraries" },
+      { name: "Excel", level: 85, description: "Advanced data analysis, pivot tables, and financial modeling" },
       { name: "SQL", level: 85, description: "Complex queries, database design, and optimization for efficient data retrieval" },
       { name: "Power BI", level: 85, description: "Interactive dashboards and business intelligence solutions" },
-      { name: "Excel", level: 85, description: "Advanced data analysis, pivot tables, and financial modeling" }
+      { name: "Python", level: 80, description: "Advanced data manipulation and analysis using pandas, numpy, and other scientific computing libraries" }
     ]
   },
   {
     category: "Machine Learning",
     color: "purple",
     items: [
-      { name: "Scikit-learn", level: 85, description: "Building and deploying machine learning models for classification and regression" },
-      { name: "TensorFlow", level: 70, description: "Deep learning model development and neural network implementation" },
       { name: "Statistical Analysis", level: 80, description: "Hypothesis testing, A/B testing, and statistical modeling" },
-      { name: "Feature Engineering", level: 85, description: "Data preprocessing, feature selection, and dimensionality reduction" }
+      { name: "Feature Engineering", level: 85, description: "Data preprocessing, feature selection, and dimensionality reduction" },
+      { name: "Scikit-learn", level: 85, description: "Building and deploying machine learning models for classification and regression" },
+      { name: "TensorFlow", level: 70, description: "Deep learning model development and neural network implementation" }
     ]
   },
   {
@@ -28,9 +28,9 @@ const skills = [
     color: "emerald",
     items: [
       // { name: "Power BI", level: 85, description: "Interactive dashboards and data visualization" },
-      { name: "Streamlit", level: 70, description: "Web applications for data science projects" },
       { name: "Matplotlib", level: 75, description: "Custom data visualization and plotting" },
-      { name: "Seaborn", level: 70, description: "Statistical data visualization and analysis" }
+      { name: "Seaborn", level: 70, description: "Statistical data visualization and analysis" },
+      { name: "Streamlit", level: 70, description: "Web applications for data science projects" }
     ]
   }
 ];
