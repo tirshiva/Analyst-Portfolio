@@ -8,8 +8,8 @@ const Navbar = () => {
 
   const navItems = [
     { title: 'Home', to: 'home' },
-    { title: 'Projects', to: 'projects' },
     { title: 'Skills', to: 'skills' },
+    { title: 'Projects', to: 'projects' },
     { title: 'Experience', to: 'experience' },
     { title: 'Contact', to: 'contact' },
   ];
@@ -19,7 +19,8 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 100, damping: 20 }}
-      className="fixed w-full bg-white shadow-md z-50"
+      className="sticky top-0 w-full bg-white shadow-md z-50 font-sans backdrop-blur bg-opacity-90"
+      style={{ WebkitBackdropFilter: 'blur(8px)' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -40,7 +41,7 @@ const Navbar = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
-                className="text-xl font-bold text-gray-900"
+                className="text-xl font-bold text-gray-900 tracking-tight font-sans"
               >
                 Portfolio
               </motion.span>
@@ -61,9 +62,10 @@ const Navbar = () => {
                     to={item.to}
                     smooth={true}
                     duration={500}
-                    className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 cursor-pointer transition-all duration-200 hover:scale-105"
+                    className="relative px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-700 transition-colors duration-200 cursor-pointer font-sans group"
                   >
                     {item.title}
+                    <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full" />
                   </Link>
                 </motion.div>
               ))}
@@ -76,7 +78,7 @@ const Navbar = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none transition-all duration-200"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-700 hover:bg-gray-100 focus:outline-none transition-all duration-200"
             >
               <motion.div
                 initial={false}
@@ -112,10 +114,11 @@ const Navbar = () => {
                     to={item.to}
                     smooth={true}
                     duration={500}
-                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 cursor-pointer transition-all duration-200 hover:scale-105"
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-700 hover:bg-gray-100 cursor-pointer transition-all duration-200 font-sans group"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.title}
+                    <span className="block h-0.5 w-0 bg-blue-600 transition-all duration-300 group-hover:w-full" />
                   </Link>
                 </motion.div>
               ))}
