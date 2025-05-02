@@ -77,16 +77,28 @@ const Hero = () => {
                   <FaLinkedin className="w-5 h-5 text-blue-600" />
                 </motion.a>
               </div>
-              <motion.a
-                href="#contact"
-                whileHover={{ scale: 1.06, boxShadow: "0 0 16px 2px #6366f1" }}
-                whileTap={{ scale: 0.97 }}
-                className="mt-2 sm:mt-0 px-7 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl shadow font-medium text-base hover:shadow-lg focus:outline-none transition-all duration-300 ring-1 ring-blue-100"
-                style={{ boxShadow: '0 2px 8px 0 rgba(99,102,241,0.08)' }}
-                aria-label="Let's Connect"
-              >
-                Let's Connect
-              </motion.a>
+              <div className="flex gap-3 mt-2 sm:mt-0">
+                <motion.a
+                  href="#contact"
+                  whileHover={{ scale: 1.06, boxShadow: "0 0 16px 2px #6366f1" }}
+                  whileTap={{ scale: 0.97 }}
+                  className="px-7 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl shadow font-medium text-base hover:shadow-lg focus:outline-none transition-all duration-300 ring-1 ring-blue-100"
+                  style={{ boxShadow: '0 2px 8px 0 rgba(99,102,241,0.08)' }}
+                  aria-label="Let's Connect"
+                >
+                  Let's Connect
+                </motion.a>
+                <motion.a
+                  href="/Shivanshu_Tiwari_CV.pdf"
+                  download
+                  whileHover={{ scale: 1.06, boxShadow: "0 0 16px 2px #6366f1" }}
+                  whileTap={{ scale: 0.97 }}
+                  className="px-7 py-2.5 bg-white text-blue-700 border border-blue-600 rounded-xl shadow font-medium text-base hover:bg-blue-50 hover:text-blue-800 hover:border-blue-700 focus:outline-none transition-all duration-300"
+                  aria-label="Download Resume"
+                >
+                  Download Resume
+                </motion.a>
+              </div>
             </div>
           </motion.div>
         </div>
