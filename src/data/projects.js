@@ -29,7 +29,7 @@ export const projects = [
     image: "02.png" // Temporary placeholder
   },
   {
-    id: 4,
+    id: 3,
     title: "Customer Churn Prediction",
     description: "Machine learning model for churn prediction in the telecommunications industry.",
     techStack: ["Python","Random Forest Classifier","Hyperparameter tuning","Cross Validation"],
@@ -37,6 +37,15 @@ export const projects = [
     demoLink: "https://shivanshu2407-customer-churn-analysis-srcapp-b4z2jc.streamlit.app/",
     image: "Churn.png" // Temporary placeholder
   },
+  {
+    id: 4,
+    title: "Employee Retention Analytics",
+    description: "Predicting employee attrition using machine learning to improve workforce retention.",
+    techStack: ["Human Resource Analytics","Classification","Neural Network","Deep Learning"],
+    githubLink: "https://github.com/Shivanshu2407/Employe-Attrition-Project/tree/main",
+    // demoLink: "https://shivanshu2407-customer-churn-analysis-srcapp-b4z2jc.streamlit.app/",
+    image: "Emp Attr.png" // Temporary placeholder
+  }
 ];
 
 // Social media and contact links
