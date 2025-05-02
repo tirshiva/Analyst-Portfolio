@@ -17,7 +17,7 @@ export const projects = [
     techStack: ["Python", "Scikit-learn", "Flask", "Linear Regression"],
     githubLink: "https://github.com/Shivanshu2407/House-Prediction-Regression-Model",
     demoLink: "https://house-prediction-regression-model.onrender.com/",
-    image: "P2.png" // Temporary placeholder
+    image: "01.png" // Temporary placeholder
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ export const projects = [
     techStack: ["Power BI", "DAX", "Power Query", "Business Intelligence"],
     githubLink: "https://github.com/Shivanshu2407/Business_Insight_360",
     demoLink: "https://app.powerbi.com/view?r=eyJrIjoiM2I4YTM3NDMtMGEzZi00NjQ4LTliOGEtM2JjZWMzNmQ0N2FjIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9",
-    image: "BI3.png" // Temporary placeholder
+    image: "02.png" // Temporary placeholder
   },
   {
     id: 4,
