@@ -1,101 +1,95 @@
 import { motion } from 'framer-motion';
+import Typewriter from 'typewriter-effect';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { socialLinks } from '../data/projects';
+import NeuralBackground from './NeuralBackground';
 
 const Hero = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const buttonVariants = {
-    hover: {
-      scale: 1.05,
-      boxShadow: "0 0 20px rgba(0, 0, 0, 0.1)",
-      transition: {
-        duration: 0.3,
-        yoyo: Infinity,
-        repeat: 1
-      }
-    },
-    tap: { scale: 0.95 }
-  };
-
   return (
-    <section className="min-h-[calc(100vh-4rem)] sm:min-h-[calc(100vh-5rem)] flex items-center">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* Neural Network Background */}
+      <NeuralBackground />
+      
+      {/* Content */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className="text-center"
         >
-          {/* Text Content */}
-          <motion.div variants={itemVariants} className="space-y-6">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 leading-tight">
-              Hi, I'm <span className="text-blue-600">Shivanshu</span>
-              <br />
-              <span className="text-3xl sm:text-4xl md:text-5xl">Data Scientist</span>
+          {/* Greeting */}
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mb-6"
+          >
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#ccd6f6] mb-4">
+              Hi, I'm <span className="text-[#64ffda]">Shivanshu</span>
             </h1>
-            <p className="text-lg sm:text-xl text-slate-600 max-w-2xl">
-              Transforming data into actionable insights through machine learning and analytics.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <motion.a
-                href={socialLinks.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                variants={buttonVariants}
-                whileHover="hover"
-                whileTap="tap"
-                className="flex items-center justify-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-xl shadow-soft hover:shadow-lg transition-all duration-300"
-              >
-                <FaGithub className="w-5 h-5" />
-                <span>GitHub</span>
-              </motion.a>
-              <motion.a
-                href={socialLinks.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                variants={buttonVariants}
-                whileHover="hover"
-                whileTap="tap"
-                className="flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-xl shadow-soft hover:shadow-lg transition-all duration-300"
-              >
-                <FaLinkedin className="w-5 h-5" />
-                <span>LinkedIn</span>
-              </motion.a>
+          </motion.div>
+
+          {/* Role Title */}
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="mb-8"
+          >
+            <div className="text-2xl sm:text-3xl md:text-4xl font-bold">
+              <Typewriter
+                options={{
+                  strings: [
+                    'Data Analyst',
+                    'Data Scientist',
+                    'Machine Learning Engineer'
+                  ],
+                  autoStart: true,
+                  loop: true,
+                  deleteSpeed: 50,
+                  delay: 50,
+                  wrapperClassName: 'text-[#c792ea] font-mono tracking-wide'
+                }}
+              />
             </div>
           </motion.div>
 
-          {/* Image/Illustration */}
+          {/* Description */}
           <motion.div
-            variants={itemVariants}
-            className="relative hidden lg:block"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="mb-12"
           >
-            <div className="relative w-full aspect-square">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl transform rotate-3" />
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-2xl transform -rotate-3" />
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-700 to-cyan-700 rounded-2xl" />
-            </div>
+            <p className="text-[#8892b0] text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
+              I transform complex data into actionable insights, helping businesses make data-driven decisions.
+              Specializing in SQL, Python, and data visualization.
+            </p>
+          </motion.div>
+
+          {/* Social Links */}
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            className="flex justify-center gap-6"
+          >
+            <a
+              href="https://github.com/Shivanshu2407"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group p-4 bg-[#64ffda]/10 text-[#64ffda] rounded-lg hover:bg-[#64ffda]/20 transition-all duration-300 transform hover:scale-110"
+            >
+              <FaGithub className="w-6 h-6" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/shivanshu2407/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group p-4 bg-[#64ffda]/10 text-[#64ffda] rounded-lg hover:bg-[#64ffda]/20 transition-all duration-300 transform hover:scale-110"
+            >
+              <FaLinkedin className="w-6 h-6" />
+            </a>
           </motion.div>
         </motion.div>
       </div>

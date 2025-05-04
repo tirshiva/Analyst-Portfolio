@@ -4,21 +4,15 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'class',
   theme: {
     extend: {
       colors: {
         primary: {
-          50: '#E8F1F9',
-          100: '#D1E3F4',
-          200: '#A3C7E9',
-          300: '#75ABDE',
-          400: '#478FD3',
-          500: '#007ACC',  // Royal Blue
-          600: '#1B263B',  // Navy
-          700: '#151D2E',
-          800: '#0F1521',
-          900: '#0A0E14',
+          dark: '#0a192f',
+          light: '#112240',
+          accent: '#64ffda',
+          text: '#ccd6f6',
+          textLight: '#8892b0'
         },
         accent: {
           50: '#FFFFFF',   // White
@@ -46,7 +40,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        mono: ['Fira Code', 'monospace']
       },
       boxShadow: {
         'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.1), 0 10px 20px -2px rgba(0, 0, 0, 0.07)',
@@ -72,7 +67,5 @@ export default {
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-  ],
+  plugins: [],
 } 

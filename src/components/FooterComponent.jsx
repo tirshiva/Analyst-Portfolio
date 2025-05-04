@@ -41,9 +41,8 @@ const FooterComponent = () => {
   };
 
   return (
-    <footer className="relative bg-gradient-to-b from-white to-slate-50 py-12 sm:py-16">
-      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5 bg-center" />
-      <div className="absolute inset-0 bg-gradient-radial from-transparent to-white/80" />
+    <footer className="relative bg-[#0a192f] py-12 sm:py-16">
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0a192f] to-[#112240]" />
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -55,8 +54,8 @@ const FooterComponent = () => {
         >
           {/* Contact Section */}
           <motion.div variants={itemVariants} className="space-y-4">
-            <h3 className="text-lg sm:text-xl font-semibold text-slate-900">Get in Touch</h3>
-            <p className="text-slate-600 max-w-md">
+            <h3 className="text-lg sm:text-xl font-semibold text-[#ccd6f6]">Get in Touch</h3>
+            <p className="text-[#8892b0] max-w-md">
               Have a project in mind or want to discuss potential opportunities? I'd love to hear from you.
             </p>
             <div className="flex items-center gap-4">
@@ -65,7 +64,7 @@ const FooterComponent = () => {
                 variants={buttonVariants}
                 whileHover="hover"
                 whileTap="tap"
-                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-xl shadow-soft hover:shadow-lg transition-all duration-300"
+                className="flex items-center gap-2 px-4 py-2 bg-[#64ffda] text-[#0a192f] rounded-md font-mono text-sm hover:bg-[#64ffda]/90 transition-all duration-300"
               >
                 <FaEnvelope className="w-4 h-4" />
                 <span>Email Me</span>
@@ -75,8 +74,8 @@ const FooterComponent = () => {
 
           {/* Connect Section */}
           <motion.div variants={itemVariants} className="space-y-4">
-            <h3 className="text-lg sm:text-xl font-semibold text-slate-900">Connect</h3>
-            <p className="text-slate-600">
+            <h3 className="text-lg sm:text-xl font-semibold text-[#ccd6f6]">Connect</h3>
+            <p className="text-[#8892b0]">
               Follow me on social media to stay updated with my latest projects and insights.
             </p>
             <div className="flex gap-4">
@@ -87,10 +86,10 @@ const FooterComponent = () => {
                 variants={buttonVariants}
                 whileHover="hover"
                 whileTap="tap"
-                className="p-3 rounded-full border border-slate-200 hover:border-blue-600 transition-all duration-200 bg-white shadow-soft hover:bg-blue-50"
+                className="p-3 rounded-md border border-[#64ffda]/20 hover:border-[#64ffda] transition-all duration-200 bg-[#112240]/50 hover:bg-[#64ffda]/10"
                 aria-label="GitHub"
               >
-                <FaGithub className="w-5 h-5 text-slate-900" />
+                <FaGithub className="w-5 h-5 text-[#64ffda]" />
               </motion.a>
               <motion.a
                 href={socialLinks.linkedin}
@@ -99,10 +98,10 @@ const FooterComponent = () => {
                 variants={buttonVariants}
                 whileHover="hover"
                 whileTap="tap"
-                className="p-3 rounded-full border border-slate-200 hover:border-blue-600 transition-all duration-200 bg-white shadow-soft hover:bg-blue-50"
+                className="p-3 rounded-md border border-[#64ffda]/20 hover:border-[#64ffda] transition-all duration-200 bg-[#112240]/50 hover:bg-[#64ffda]/10"
                 aria-label="LinkedIn"
               >
-                <FaLinkedin className="w-5 h-5 text-blue-600" />
+                <FaLinkedin className="w-5 h-5 text-[#64ffda]" />
               </motion.a>
             </div>
           </motion.div>
@@ -111,9 +110,9 @@ const FooterComponent = () => {
         {/* Copyright */}
         <motion.div
           variants={itemVariants}
-          className="mt-12 pt-8 border-t border-slate-200 text-center"
+          className="mt-12 pt-8 border-t border-[#64ffda]/10 text-center"
         >
-          <p className="text-slate-600">
+          <p className="text-[#8892b0]">
             © {new Date().getFullYear()} Shivanshu Tiwari. All rights reserved.
           </p>
         </motion.div>

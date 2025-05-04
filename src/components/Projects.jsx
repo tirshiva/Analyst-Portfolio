@@ -1,16 +1,15 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { projects } from '../data/projects';
-import { FaTimes, FaGithub, FaExternalLinkAlt, FaExpand } from 'react-icons/fa';
+import { FaTimes, FaGithub, FaExternalLinkAlt, FaCode } from 'react-icons/fa';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
-  const [isImageExpanded, setIsImageExpanded] = useState(false);
 
   const buttonVariants = {
     hover: {
       scale: 1.05,
-      boxShadow: "0 0 20px rgba(0, 0, 0, 0.2)",
+      boxShadow: "0 0 20px rgba(100, 255, 218, 0.2)",
       transition: {
         duration: 0.3,
         yoyo: Infinity,
@@ -20,238 +19,219 @@ const Projects = () => {
     tap: { scale: 0.95 }
   };
 
-  const cardVariants = {
-    hover: {
-      y: -5,
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
       transition: {
-        duration: 0.3,
+        staggerChildren: 0.2,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
         ease: "easeOut"
       }
     }
   };
 
-  const modalVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: { opacity: 1, scale: 1 },
-    exit: { opacity: 0, scale: 0.8 }
-  };
-
-  const imageVariants = {
-    initial: { scale: 1 },
-    expanded: { scale: 1.1 }
-  };
+  if (!projects || !Array.isArray(projects)) {
+    return (
+      <div className="w-full min-h-[calc(100vh-4rem)] flex items-center justify-center">
+        <div className="text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#ccd6f6] mb-4">
+            Projects
+          </h2>
+          <p className="text-[#8892b0]">Loading projects...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <section id="projects" className="py-20">
+    <div className="w-full min-h-[calc(100vh-4rem)] py-20 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="space-y-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4">
-            Featured Projects
-          </h2>
-          <p className="text-lg text-neutral-800 max-w-2xl mx-auto">
-            Here are some of my recent projects that showcase my skills and expertise.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              variants={cardVariants}
-              whileHover="hover"
-              onClick={() => setSelectedProject(project)}
-              className="group bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-lg transition-all duration-300 cursor-pointer"
+          {/* Section Header */}
+          <motion.div variants={itemVariants} className="text-center">
+            <motion.h2
+              className="text-4xl font-bold text-[#ccd6f6] mb-4 drop-shadow-lg"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1.1, opacity: 1 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
             >
-              {/* Project Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-neutral-900 mb-2 group-hover:text-primary-500 transition-colors duration-300">
-                  {project.title}
-                </h3>
-                <p className="text-neutral-800 mb-4 line-clamp-3">
-                  {project.description}
-                </p>
-                
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.techStack.map((tech, techIndex) => (
-                    <motion.span
-                      key={techIndex}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3, delay: techIndex * 0.05 }}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-neutral-50 to-neutral-100 text-neutral-800 rounded-lg text-sm font-medium border border-neutral-200/50 hover:border-primary-200 hover:from-primary-50 hover:to-primary-100 hover:text-primary-600 transition-all duration-300 shadow-sm"
+              Featured <span className="text-[#64ffda]">Projects</span>
+            </motion.h2>
+            <motion.p
+              className="text-[#8892b0] text-lg max-w-2xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+            >
+              A collection of my recent work in data analysis, machine learning, and business intelligence
+            </motion.p>
+          </motion.div>
+
+          {/* Projects Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {projects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                variants={itemVariants}
+                className="group bg-[#112240]/50 backdrop-blur-sm rounded-xl overflow-hidden border border-[#64ffda]/10 hover:border-[#64ffda]/20 transition-all duration-300 hover:shadow-xl hover:shadow-[#64ffda]/5"
+                onClick={() => setSelectedProject(project)}
+              >
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-xl font-bold text-[#ccd6f6] group-hover:text-[#64ffda] transition-colors duration-300">
+                      {project.title}
+                    </h3>
+                    <div className="flex gap-2">
+                      {project.githubLink && (
+                        <motion.a
+                          href={project.githubLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          variants={buttonVariants}
+                          whileHover="hover"
+                          whileTap="tap"
+                          className="p-2 bg-[#64ffda]/10 text-[#64ffda] rounded-lg hover:bg-[#64ffda]/20 transition-all duration-300"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <FaGithub className="w-4 h-4" />
+                        </motion.a>
+                      )}
+                      {project.demoLink && (
+                        <motion.a
+                          href={project.demoLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          variants={buttonVariants}
+                          whileHover="hover"
+                          whileTap="tap"
+                          className="p-2 bg-[#64ffda]/10 text-[#64ffda] rounded-lg hover:bg-[#64ffda]/20 transition-all duration-300"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <FaExternalLinkAlt className="w-4 h-4" />
+                        </motion.a>
+                      )}
+                    </div>
+                  </div>
+                  <p className="text-[#8892b0] mb-6 line-clamp-3">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.techStack && project.techStack.map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className="px-3 py-1 text-sm text-[#64ffda] bg-[#64ffda]/10 rounded-full hover:bg-[#64ffda]/20 transition-all duration-300"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex gap-3 mt-4">
+                    <motion.button
+                      variants={buttonVariants}
+                      whileHover="hover"
+                      whileTap="tap"
+                      className="flex items-center gap-1.5 px-4 py-2 bg-[#64ffda]/10 text-[#64ffda] rounded-lg text-sm font-medium hover:bg-[#64ffda]/20 transition-all duration-300"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary-500 animate-pulse" />
+                      <FaCode className="w-4 h-4" />
+                      <span>View Details</span>
+                    </motion.button>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Project Modal */}
+      <AnimatePresence>
+        {selectedProject && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            onClick={() => setSelectedProject(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="bg-[#112240] rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-6">
+                  <h3 className="text-2xl font-bold text-[#ccd6f6]">{selectedProject.title}</h3>
+                  <button
+                    onClick={() => setSelectedProject(null)}
+                    className="p-2 text-[#8892b0] hover:text-[#64ffda] transition-colors duration-300"
+                  >
+                    <FaTimes className="w-5 h-5" />
+                  </button>
+                </div>
+                <p className="text-[#8892b0] mb-6">{selectedProject.description}</p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {selectedProject.techStack.map((tech, techIndex) => (
+                    <span
+                      key={techIndex}
+                      className="px-3 py-1 text-sm text-[#64ffda] bg-[#64ffda]/10 rounded-full"
+                    >
                       {tech}
-                    </motion.span>
+                    </span>
                   ))}
                 </div>
-
-                {/* Action Buttons */}
                 <div className="flex gap-3">
-                  {project.githubLink && (
+                  {selectedProject.githubLink && (
                     <motion.a
-                      href={project.githubLink}
+                      href={selectedProject.githubLink}
                       target="_blank"
                       rel="noopener noreferrer"
                       variants={buttonVariants}
                       whileHover="hover"
                       whileTap="tap"
-                      onClick={(e) => e.stopPropagation()}
-                      className="flex-1 px-4 py-2 bg-neutral-900 text-white rounded-xl text-center shadow-soft font-medium hover:shadow-lg focus:outline-none transition-all duration-300"
+                      className="flex items-center gap-2 px-4 py-2 bg-[#64ffda]/10 text-[#64ffda] rounded-lg text-sm font-medium hover:bg-[#64ffda]/20 transition-all duration-300"
                     >
-                      View Code
+                      <FaGithub className="w-4 h-4" />
+                      <span>View Code</span>
                     </motion.a>
                   )}
-                  {project.demoLink && (
+                  {selectedProject.demoLink && (
                     <motion.a
-                      href={project.demoLink}
+                      href={selectedProject.demoLink}
                       target="_blank"
                       rel="noopener noreferrer"
                       variants={buttonVariants}
                       whileHover="hover"
                       whileTap="tap"
-                      onClick={(e) => e.stopPropagation()}
-                      className="flex-1 px-4 py-2 bg-white text-neutral-900 border border-neutral-900 rounded-xl text-center shadow-soft font-medium hover:bg-neutral-50 hover:text-neutral-900 hover:border-neutral-900 focus:outline-none transition-all duration-300"
+                      className="flex items-center gap-2 px-4 py-2 bg-[#64ffda]/10 text-[#64ffda] rounded-lg text-sm font-medium hover:bg-[#64ffda]/20 transition-all duration-300"
                     >
-                      Live Demo
+                      <FaExternalLinkAlt className="w-4 h-4" />
+                      <span>Live Demo</span>
                     </motion.a>
                   )}
                 </div>
               </div>
             </motion.div>
-          ))}
-        </div>
-
-        {/* Project Modal */}
-        <AnimatePresence>
-          {selectedProject && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-              onClick={() => setSelectedProject(null)}
-            >
-              <motion.div
-                variants={modalVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-                transition={{ duration: 0.3 }}
-                className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
-                onClick={(e) => e.stopPropagation()}
-              >
-                {/* Modal Header */}
-                <div className="relative group">
-                  <motion.div
-                    variants={imageVariants}
-                    initial="initial"
-                    animate={isImageExpanded ? "expanded" : "initial"}
-                    transition={{ duration: 0.3 }}
-                    className="relative h-80 overflow-hidden"
-                  >
-                    <img
-                      src={selectedProject.image}
-                      alt={selectedProject.title}
-                      className="w-full h-full object-cover rounded-t-2xl"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </motion.div>
-                  
-                  {/* Image Controls */}
-                  <div className="absolute top-4 right-4 flex gap-2">
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setIsImageExpanded(!isImageExpanded);
-                      }}
-                      className="p-2 bg-white/80 rounded-full hover:bg-white transition-colors duration-300"
-                    >
-                      <FaExpand className="w-5 h-5 text-neutral-900" />
-                    </button>
-                    <button
-                      onClick={() => setSelectedProject(null)}
-                      className="p-2 bg-white/80 rounded-full hover:bg-white transition-colors duration-300"
-                    >
-                      <FaTimes className="w-5 h-5 text-neutral-900" />
-                    </button>
-                  </div>
-                </div>
-
-                {/* Modal Content */}
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold text-neutral-900 mb-2">
-                    {selectedProject.title}
-                  </h3>
-                  <p className="text-neutral-800 mb-6">
-                    {selectedProject.description}
-                  </p>
-
-                  {/* Tech Stack */}
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {selectedProject.techStack.map((tech, techIndex) => (
-                      <motion.span
-                        key={techIndex}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.3, delay: techIndex * 0.05 }}
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-neutral-50 to-neutral-100 text-neutral-800 rounded-lg text-sm font-medium border border-neutral-200/50 hover:border-primary-200 hover:from-primary-50 hover:to-primary-100 hover:text-primary-600 transition-all duration-300 shadow-sm"
-                      >
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary-500 animate-pulse" />
-                        {tech}
-                      </motion.span>
-                    ))}
-                  </div>
-
-                  {/* Action Buttons */}
-                  <div className="flex gap-3">
-                    {selectedProject.githubLink && (
-                      <motion.a
-                        href={selectedProject.githubLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        variants={buttonVariants}
-                        whileHover="hover"
-                        whileTap="tap"
-                        className="flex items-center gap-2 px-4 py-2 bg-neutral-900 text-white rounded-xl shadow-soft font-medium hover:shadow-lg focus:outline-none transition-all duration-300"
-                      >
-                        <FaGithub className="w-5 h-5" />
-                        View Code
-                      </motion.a>
-                    )}
-                    {selectedProject.demoLink && (
-                      <motion.a
-                        href={selectedProject.demoLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        variants={buttonVariants}
-                        whileHover="hover"
-                        whileTap="tap"
-                        className="flex items-center gap-2 px-4 py-2 bg-white text-neutral-900 border border-neutral-900 rounded-xl shadow-soft font-medium hover:bg-neutral-50 hover:text-neutral-900 hover:border-neutral-900 focus:outline-none transition-all duration-300"
-                      >
-                        <FaExternalLinkAlt className="w-5 h-5" />
-                        Live Demo
-                      </motion.a>
-                    )}
-                  </div>
-                </div>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    </section>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 };
 
