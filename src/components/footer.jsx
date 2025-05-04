@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { socialLinks } from '../data/projects';
 
-const Footer = () => {
+export const Footer = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
