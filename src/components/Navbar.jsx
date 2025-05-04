@@ -1,131 +1,163 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
-import { HiMenu, HiX } from 'react-icons/hi';
-import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navItems = [
-    { title: 'Home', to: 'home' },
-    { title: 'Skills', to: 'skills' },
-    { title: 'Projects', to: 'projects' },
-    { title: 'Experience', to: 'experience' },
-    { title: 'Contact', to: 'contact' },
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinks = [
+    { name: 'Home', to: 'home' },
+    { name: 'About', to: 'about' },
+    { name: 'Projects', to: 'projects' },
+    { name: 'Contact', to: 'contact' },
   ];
+
+  const buttonVariants = {
+    hover: {
+      scale: 1.05,
+      boxShadow: "0 0 20px rgba(0, 0, 0, 0.2)",
+      transition: {
+        duration: 0.3,
+        yoyo: Infinity,
+        repeat: 1
+      }
+    },
+    tap: { scale: 0.95 }
+  };
 
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ type: "spring", stiffness: 100, damping: 20 }}
-      className="sticky top-0 w-full bg-white shadow-md z-50 font-sans backdrop-blur bg-opacity-90"
-      style={{ WebkitBackdropFilter: 'blur(8px)' }}
+      transition={{ duration: 0.5 }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-white/80 backdrop-blur-md shadow-soft' : 'bg-transparent'
+      }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo/Name */}
+          {/* Logo */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex-shrink-0 flex items-center"
+            className="flex-shrink-0"
           >
             <Link
               to="home"
               smooth={true}
               duration={500}
-              className="flex items-center cursor-pointer"
+              className="text-2xl font-bold text-neutral-900 cursor-pointer"
             >
-              <motion.span
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
-                className="text-xl font-bold text-gray-900 tracking-tight font-sans"
-              >
-                Portfolio
-              </motion.span>
+              Portfolio
             </Link>
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center">
-            <div className="flex items-baseline space-x-4">
-              {navItems.map((item, index) => (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
+          <div className="hidden md:block">
+            <div className="flex items-center space-x-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  smooth={true}
+                  duration={500}
+                  className="text-neutral-800 hover:text-primary-500 transition-colors duration-200 cursor-pointer"
                 >
-                  <Link
-                    to={item.to}
-                    smooth={true}
-                    duration={500}
-                    className="relative px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-700 transition-colors duration-200 cursor-pointer font-sans group"
-                  >
-                    {item.title}
-                    <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full" />
-                  </Link>
-                </motion.div>
+                  {link.name}
+                </Link>
               ))}
+              <motion.a
+                href="/Shivanshu_Tiwari_CV.pdf"
+                download
+                variants={buttonVariants}
+                whileHover="hover"
+                whileTap="tap"
+                className="px-4 py-2 bg-neutral-900 text-white rounded-xl shadow-soft font-medium hover:shadow-lg focus:outline-none transition-all duration-300"
+              >
+                Download CV
+              </motion.a>
             </div>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-700 hover:bg-gray-100 focus:outline-none transition-all duration-200"
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 rounded-xl focus:outline-none"
             >
-              <motion.div
-                initial={false}
-                animate={{ rotate: isOpen ? 180 : 0 }}
-                transition={{ type: "spring", stiffness: 200, damping: 10 }}
+              <svg
+                className="h-6 w-6 text-neutral-900"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
-                {isOpen ? <HiX className="h-6 w-6" /> : <HiMenu className="h-6 w-6" />}
-              </motion.div>
-            </motion.button>
+                {isMenuOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                )}
+              </svg>
+            </button>
           </div>
         </div>
-      </div>
 
-      {/* Mobile Navigation */}
-      <AnimatePresence>
-        {isOpen && (
+        {/* Mobile Menu */}
+        {isMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden overflow-hidden"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden"
           >
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white">
-              {navItems.map((item, index) => (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  smooth={true}
+                  duration={500}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block px-3 py-2 text-neutral-800 hover:text-primary-500 transition-colors duration-200 cursor-pointer"
                 >
-                  <Link
-                    to={item.to}
-                    smooth={true}
-                    duration={500}
-                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-700 hover:bg-gray-100 cursor-pointer transition-all duration-200 font-sans group"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.title}
-                    <span className="block h-0.5 w-0 bg-blue-600 transition-all duration-300 group-hover:w-full" />
-                  </Link>
-                </motion.div>
+                  {link.name}
+                </Link>
               ))}
+              <motion.a
+                href="/Shivanshu_Tiwari_CV.pdf"
+                download
+                variants={buttonVariants}
+                whileHover="hover"
+                whileTap="tap"
+                className="block px-3 py-2 bg-neutral-900 text-white rounded-xl shadow-soft font-medium hover:shadow-lg focus:outline-none transition-all duration-300"
+              >
+                Download CV
+              </motion.a>
             </div>
           </motion.div>
         )}
-      </AnimatePresence>
+      </div>
     </motion.nav>
   );
 };

@@ -1,89 +1,88 @@
 import { motion } from 'framer-motion';
-import { FaLinkedin, FaGithub, FaEnvelope, FaPhone } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { socialLinks } from '../data/projects';
 
 const Contact = () => {
+  const buttonVariants = {
+    hover: {
+      scale: 1.05,
+      boxShadow: "0 0 20px rgba(0, 0, 0, 0.2)",
+      transition: {
+        duration: 0.3,
+        yoyo: Infinity,
+        repeat: 1
+      }
+    },
+    tap: { scale: 0.95 }
+  };
+
   return (
-    <section id="contact" className="py-12 bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mb-8"
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
-            Get In <span className="text-gradient">Touch</span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4">
+            Get In Touch
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Let's connect and discuss how we can work together.
+          <p className="text-lg text-neutral-800 max-w-2xl mx-auto">
+            Have a project in mind or want to discuss potential opportunities? Feel free to reach out!
           </p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-6"
-        >
-          <a
-            href={`mailto:${socialLinks.email}`}
-            className="flex items-center gap-3 px-6 py-3 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
+        <div className="max-w-2xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="bg-white rounded-2xl p-8 shadow-soft"
           >
-            <div className="p-2 bg-blue-50 rounded-lg">
-              <FaEnvelope className="w-5 h-5 text-blue-600" />
+            <h3 className="text-xl font-semibold text-neutral-900 mb-6">
+              Contact Information
+            </h3>
+            <div className="space-y-4">
+              <motion.a
+                href={`mailto:${socialLinks.email}`}
+                variants={buttonVariants}
+                whileHover="hover"
+                whileTap="tap"
+                className="flex items-center space-x-3 p-3 rounded-xl border border-neutral-200 hover:border-neutral-900 transition-all duration-200"
+              >
+                <FaEnvelope className="w-5 h-5 text-primary-500" />
+                <span className="text-neutral-800">{socialLinks.email}</span>
+              </motion.a>
+              <motion.a
+                href={socialLinks.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                variants={buttonVariants}
+                whileHover="hover"
+                whileTap="tap"
+                className="flex items-center space-x-3 p-3 rounded-xl border border-neutral-200 hover:border-neutral-900 transition-all duration-200"
+              >
+                <FaGithub className="w-5 h-5 text-neutral-900" />
+                <span className="text-neutral-800">GitHub</span>
+              </motion.a>
+              <motion.a
+                href={socialLinks.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                variants={buttonVariants}
+                whileHover="hover"
+                whileTap="tap"
+                className="flex items-center space-x-3 p-3 rounded-xl border border-neutral-200 hover:border-neutral-900 transition-all duration-200"
+              >
+                <FaLinkedin className="w-5 h-5 text-primary-500" />
+                <span className="text-neutral-800">LinkedIn</span>
+              </motion.a>
             </div>
-            <div>
-              <h3 className="text-sm font-medium text-gray-900">Email</h3>
-              <p className="text-sm text-gray-500">{socialLinks.email}</p>
-            </div>
-          </a>
-
-          <a
-            href={`tel:+917052327079`}
-            className="flex items-center gap-3 px-6 py-3 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
-          >
-            <div className="p-2 bg-blue-50 rounded-lg">
-              <FaPhone className="w-5 h-5 text-blue-600" />
-            </div>
-            <div>
-              <h3 className="text-sm font-medium text-gray-900">Phone</h3>
-              <p className="text-sm text-gray-500">+91 7052327079</p>
-            </div>
-          </a>
-
-          <a
-            href={socialLinks.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 px-6 py-3 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
-          >
-            <div className="p-2 bg-blue-50 rounded-lg">
-              <FaLinkedin className="w-5 h-5 text-blue-600" />
-            </div>
-            <div>
-              <h3 className="text-sm font-medium text-gray-900">LinkedIn</h3>
-              <p className="text-sm text-gray-500">Connect professionally</p>
-            </div>
-          </a>
-
-          {/* <a
-            href={socialLinks.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 px-6 py-3 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
-          >
-            <div className="p-2 bg-blue-50 rounded-lg">
-              <FaGithub className="w-5 h-5 text-blue-600" />
-            </div>
-            <div>
-              <h3 className="text-sm font-medium text-gray-900">GitHub</h3>
-              <p className="text-sm text-gray-500">View my projects</p>
-            </div>
-          </a> */}
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

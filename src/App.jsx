@@ -1,31 +1,41 @@
-import React, { lazy, Suspense } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import About from './components/About';
+import Projects from './components/Projects';
+import Footer from './components/Footer';
 
-const Navbar = lazy(() => import('./components/Navbar'));
-const Hero = lazy(() => import('./components/Hero'));
-const Skills = lazy(() => import('./components/Skills'));
-const Experience = lazy(() => import('./components/Experience'));
-const Projects = lazy(() => import('./components/Projects'));
-const Contact = lazy(() => import('./components/Contact'));
-const Footer = lazy(() => import('./components/Footer'));
-
-function App() {
+const App = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <div className="min-h-screen bg-white">
-        <div className="bg-gradient-to-b from-white to-gray-50">
+    <Router>
+      <div className="min-h-screen bg-gradient-to-b from-neutral-50 to-white font-sans antialiased">
+        {/* Background Elements */}
+        <div className="fixed inset-0 -z-10">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary-50/20 via-white to-white" />
+          <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
+          <div className="absolute inset-0 bg-gradient-radial from-transparent to-white/80" />
+        </div>
+
+        {/* Main Content */}
+        <div className="relative z-10">
           <Navbar />
-          <main className="text-gray-900">
-            <Hero />
-            <Projects />
-            <Skills />
-            <Experience />
-            <Contact />
+          <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Hero />
+              <About />
+              <Projects />
+            </motion.div>
           </main>
           <Footer />
         </div>
       </div>
-    </Suspense>
+    </Router>
   );
-}
+};
 
 export default App;

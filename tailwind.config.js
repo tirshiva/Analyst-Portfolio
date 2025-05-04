@@ -9,17 +9,51 @@ export default {
     extend: {
       colors: {
         primary: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
+          50: '#E8F1F9',
+          100: '#D1E3F4',
+          200: '#A3C7E9',
+          300: '#75ABDE',
+          400: '#478FD3',
+          500: '#007ACC',  // Royal Blue
+          600: '#1B263B',  // Navy
+          700: '#151D2E',
+          800: '#0F1521',
+          900: '#0A0E14',
         },
+        accent: {
+          50: '#FFFFFF',   // White
+          100: '#F4F4F4',  // Light Gray
+          200: '#E5E5E5',
+          300: '#D4D4D4',
+          400: '#A3A3A3',
+          500: '#737373',
+          600: '#525252',
+          700: '#404040',
+          800: '#333333',  // Dark Gray
+          900: '#000000',  // Black
+        },
+        neutral: {
+          50: '#FFFFFF',   // White
+          100: '#F4F4F4',  // Light Gray
+          200: '#E5E5E5',
+          300: '#D4D4D4',
+          400: '#A3A3A3',
+          500: '#737373',
+          600: '#525252',
+          700: '#404040',
+          800: '#333333',  // Dark Gray
+          900: '#000000',  // Black
+        },
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+      },
+      boxShadow: {
+        'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.1), 0 10px 20px -2px rgba(0, 0, 0, 0.07)',
+        'card': '0 0 20px rgba(0, 0, 0, 0.08)',
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

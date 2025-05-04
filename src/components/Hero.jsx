@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaArrowDown } from 'react-icons/fa';
 import { socialLinks } from '../data/projects';
 
 const roles = ["Data Scientist", "ML Engineer", "Data Analyst"];
@@ -8,100 +8,180 @@ const roles = ["Data Scientist", "ML Engineer", "Data Analyst"];
 const TypingRole = () => {
   const [index, setIndex] = useState(0);
   const [displayed, setDisplayed] = useState(roles[0]);
+  const [isTyping, setIsTyping] = useState(true);
+  const [currentText, setCurrentText] = useState('');
+
   useEffect(() => {
     const timeout = setTimeout(() => {
       setDisplayed(roles[index]);
-    }, 100);
+      setIsTyping(true);
+      setCurrentText('');
+    }, 2000);
+
     return () => clearTimeout(timeout);
   }, [index]);
+
   useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % roles.length);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, []);
+    if (isTyping && currentText.length < displayed.length) {
+      const timeout = setTimeout(() => {
+        setCurrentText(displayed.slice(0, currentText.length + 1));
+      }, 100);
+      return () => clearTimeout(timeout);
+    } else if (isTyping && currentText.length === displayed.length) {
+      const timeout = setTimeout(() => {
+        setIsTyping(false);
+      }, 1000);
+      return () => clearTimeout(timeout);
+    } else if (!isTyping) {
+      const timeout = setTimeout(() => {
+        setIndex((prev) => (prev + 1) % roles.length);
+      }, 1000);
+      return () => clearTimeout(timeout);
+    }
+  }, [currentText, displayed, isTyping]);
+
   return (
-    <span className="text-blue-700 font-semibold transition-all duration-300">{displayed}</span>
+    <motion.span 
+      className="text-primary-500 font-semibold"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      {currentText}
+      <span className="animate-pulse">|</span>
+    </motion.span>
   );
 };
 
 const Hero = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const buttonVariants = {
+    hover: {
+      scale: 1.05,
+      boxShadow: "0 0 20px rgba(0, 0, 0, 0.2)",
+      transition: {
+        duration: 0.3,
+        yoyo: Infinity,
+        repeat: 1
+      }
+    },
+    tap: { scale: 0.95 }
+  };
+
   return (
-    <section className="relative flex items-center justify-center min-h-[60vh] py-8 sm:py-12 bg-gradient-to-b from-gray-50 to-white overflow-hidden font-sans">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-white to-purple-50/50 pointer-events-none" />
-      <div className="relative w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
-            className="space-y-6"
-          >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight">
+    <section className="relative flex items-center justify-center min-h-[90vh] py-12 sm:py-20 overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-blue-50" />
+      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
+      <div className="absolute inset-0 bg-gradient-radial from-transparent to-white/80" />
+      
+      {/* Decorative Elements */}
+      <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob" />
+      <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-slate-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000" />
+      <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-cyan-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000" />
+
+      <div className="relative w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="text-center"
+        >
+          <motion.div variants={itemVariants} className="space-y-4 sm:space-y-6">
+            <motion.h1 
+              variants={itemVariants}
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight"
+            >
               Hi, I'm{' '}
-              <span className="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+              <motion.span 
+                className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
                 Shivanshu
-              </span>
-            </h1>
-            <div className="flex flex-col items-center gap-2">
-              <span className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-800 flex items-center gap-2">
+              </motion.span>
+            </motion.h1>
+            <motion.div 
+              variants={itemVariants}
+              className="flex flex-col items-center gap-2"
+            >
+              <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-900 flex items-center gap-2">
                 <TypingRole />
               </span>
-            </div>
-            <p className="text-base sm:text-lg text-gray-500 font-light max-w-xl mx-auto">
-              I transform complex data into meaningful stories and help businesses make data-driven decisions.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+            </motion.div>
+            <motion.p 
+              variants={itemVariants}
+              className="text-base sm:text-lg md:text-xl text-slate-700 max-w-2xl mx-auto px-4"
+            >
+              I transform complex data into meaningful insights and help businesses make data-driven decisions.
+            </motion.p>
+            <motion.div 
+              variants={itemVariants}
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2"
+            >
               <div className="flex gap-3">
                 <motion.a
                   href={socialLinks.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.08 }}
-                  whileTap={{ scale: 0.96 }}
-                  className="p-2 rounded-full border border-gray-200 hover:border-blue-400 transition-all duration-200 bg-white shadow hover:bg-blue-50 focus:outline-none"
+                  variants={buttonVariants}
+                  whileHover="hover"
+                  whileTap="tap"
+                  className="p-2 rounded-full border border-slate-200 hover:border-blue-600 transition-all duration-200 bg-white shadow-soft hover:bg-blue-50"
                   aria-label="GitHub"
                 >
-                  <FaGithub className="w-5 h-5 text-gray-800" />
+                  <FaGithub className="w-5 h-5 sm:w-6 sm:h-6 text-slate-900" />
                 </motion.a>
                 <motion.a
                   href={socialLinks.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.08 }}
-                  whileTap={{ scale: 0.96 }}
-                  className="p-2 rounded-full border border-gray-200 hover:border-blue-400 transition-all duration-200 bg-white shadow hover:bg-blue-50 focus:outline-none"
+                  variants={buttonVariants}
+                  whileHover="hover"
+                  whileTap="tap"
+                  className="p-2 rounded-full border border-slate-200 hover:border-blue-600 transition-all duration-200 bg-white shadow-soft hover:bg-blue-50"
                   aria-label="LinkedIn"
                 >
-                  <FaLinkedin className="w-5 h-5 text-blue-600" />
+                  <FaLinkedin className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
                 </motion.a>
               </div>
-              <div className="flex gap-3 mt-2 sm:mt-0">
+              <div className="flex gap-3">
                 <motion.a
                   href="#contact"
-                  whileHover={{ scale: 1.06, boxShadow: "0 0 16px 2px #6366f1" }}
-                  whileTap={{ scale: 0.97 }}
-                  className="px-7 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl shadow font-medium text-base hover:shadow-lg focus:outline-none transition-all duration-300 ring-1 ring-blue-100"
-                  style={{ boxShadow: '0 2px 8px 0 rgba(99,102,241,0.08)' }}
-                  aria-label="Let's Connect"
+                  variants={buttonVariants}
+                  whileHover="hover"
+                  whileTap="tap"
+                  className="px-4 sm:px-6 py-2 sm:py-2.5 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-xl shadow-soft font-medium hover:shadow-lg focus:outline-none transition-all duration-300 text-sm sm:text-base"
                 >
                   Let's Connect
                 </motion.a>
-                <motion.a
-                  href="/Shivanshu_Tiwari_CV.pdf"
-                  download
-                  whileHover={{ scale: 1.06, boxShadow: "0 0 16px 2px #6366f1" }}
-                  whileTap={{ scale: 0.97 }}
-                  className="px-7 py-2.5 bg-white text-blue-700 border border-blue-600 rounded-xl shadow font-medium text-base hover:bg-blue-50 hover:text-blue-800 hover:border-blue-700 focus:outline-none transition-all duration-300"
-                  aria-label="Download Resume"
-                >
-                  Download Resume
-                </motion.a>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
