@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
-import Footer from './components/Footer';
+import Footer from './components/Footer.jsx';
 
 const App = () => {
   return (
@@ -13,7 +13,7 @@ const App = () => {
         {/* Background Elements */}
         <div className="fixed inset-0 -z-10">
           <div className="absolute inset-0 bg-gradient-to-br from-primary-50/20 via-white to-white" />
-          <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
+          <div className="absolute inset-0 bg-[url('./assets/grid.svg')] opacity-10 bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
           <div className="absolute inset-0 bg-gradient-radial from-transparent to-white/80" />
         </div>
 
