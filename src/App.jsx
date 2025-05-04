@@ -20,18 +20,27 @@ const App = () => {
         {/* Main Content */}
         <div className="relative z-10">
           <Navbar />
-          <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
+              className="space-y-16 sm:space-y-24"
             >
-              <Hero />
-              <About />
-              <Projects />
+              <section id="home">
+                <Hero />
+              </section>
+              <section id="about">
+                <About />
+              </section>
+              <section id="projects">
+                <Projects />
+              </section>
             </motion.div>
           </main>
-          <FooterComponent />
+          <section id="contact">
+            <FooterComponent />
+          </section>
         </div>
       </div>
     </Router>
