@@ -43,7 +43,7 @@ const Footer = () => {
 
   return (
     <footer className="relative bg-gradient-to-b from-white to-slate-50 py-12 sm:py-16">
-      <div className="absolute inset-0 bg-[url('../assets/grid.svg')] opacity-5 bg-center" />
+      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5 bg-center" />
       <div className="absolute inset-0 bg-gradient-radial from-transparent to-white/80" />
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

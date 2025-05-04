@@ -8,6 +8,7 @@ export default defineConfig({
     port: 3000,
     open: true
   },
+  assetsInclude: ['**/*.svg'],
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
@@ -16,7 +17,10 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: undefined
-      }
+      },
+      input: {
+        main: './index.html',
+      },
     }
   },
   base: '/'
