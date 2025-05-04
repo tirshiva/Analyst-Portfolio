@@ -17,7 +17,7 @@ export const projects = [
     techStack: ["Python", "Scikit-learn", "Flask", "Linear Regression"],
     githubLink: "https://github.com/Shivanshu2407/House-Prediction-Regression-Model",
     demoLink: "https://house-prediction-regression-model.onrender.com/",
-    image: "01.png" // Temporary placeholder
+    image: "public/images/01.png" // Temporary placeholder
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ export const projects = [
     techStack: ["Power BI", "DAX", "Power Query", "Business Intelligence"],
     githubLink: "https://github.com/Shivanshu2407/Business_Insight_360",
     demoLink: "https://app.powerbi.com/view?r=eyJrIjoiM2I4YTM3NDMtMGEzZi00NjQ4LTliOGEtM2JjZWMzNmQ0N2FjIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9",
-    image: "02.png" // Temporary placeholder
+    image: "public/images/02.png" // Temporary placeholder
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ export const projects = [
     techStack: ["Python","Random Forest Classifier","Hyperparameter tuning","Cross Validation"],
     githubLink: "https://github.com/Shivanshu2407/Customer-Churn-Analysis/tree/main",
     demoLink: "https://shivanshu2407-customer-churn-analysis-srcapp-b4z2jc.streamlit.app/",
-    image: "Churn.png" // Temporary placeholder
+    image: "public/images/Churn.png" // Temporary placeholder
   },
   {
     id: 4,
@@ -44,7 +44,7 @@ export const projects = [
     techStack: ["Human Resource Analytics","Classification","Neural Network","Deep Learning"],
     githubLink: "https://github.com/Shivanshu2407/Employe-Attrition-Project/tree/main",
     // demoLink: "https://shivanshu2407-customer-churn-analysis-srcapp-b4z2jc.streamlit.app/",
-    image: "Emp Attr.png" // Temporary placeholder
+    image: "public/images/Emp Attr.png" // Temporary placeholder
   }
 ];
 
