@@ -1,10 +1,9 @@
-// filepath: src/components/Footer.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { socialLinks } from '../data/projects';
 
-const Footer = () => {
+const FooterComponent = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -123,4 +122,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default FooterComponent; 
