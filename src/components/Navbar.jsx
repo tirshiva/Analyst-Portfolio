@@ -36,7 +36,7 @@ const Navbar = ({ currentSection, setCurrentSection }) => {
   const menuVariants = {
     closed: {
       opacity: 0,
-      x: "100%",
+      y: "-100%",
       transition: {
         duration: 0.3,
         ease: "easeInOut"
@@ -44,7 +44,7 @@ const Navbar = ({ currentSection, setCurrentSection }) => {
     },
     open: {
       opacity: 1,
-      x: 0,
+      y: 0,
       transition: {
         duration: 0.3,
         ease: "easeInOut"
@@ -53,10 +53,10 @@ const Navbar = ({ currentSection, setCurrentSection }) => {
   };
 
   const linkVariants = {
-    closed: { opacity: 0, x: 20 },
+    closed: { opacity: 0, y: -20 },
     open: (i) => ({
       opacity: 1,
-      x: 0,
+      y: 0,
       transition: {
         delay: i * 0.1,
         duration: 0.3
@@ -155,7 +155,11 @@ const Navbar = ({ currentSection, setCurrentSection }) => {
                   initial="closed"
                   animate="open"
                   exit="closed"
-                  className="text-2xl text-[#ccd6f6] hover:text-[#64ffda] transition-colors duration-300"
+                  className={`text-2xl font-medium transition-colors duration-300 ${
+                    currentSection === link.href
+                      ? 'text-[#64ffda] scale-110'
+                      : 'text-[#ccd6f6] hover:text-[#64ffda]'
+                  }`}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -165,11 +169,11 @@ const Navbar = ({ currentSection, setCurrentSection }) => {
               {/* Mobile Resume Button */}
               <motion.button
                 onClick={handleResumeDownload}
-                className="flex items-center gap-2 w-full px-3 py-2 text-sm font-medium text-[#8892b0] hover:text-[#64ffda] transition-colors duration-200 border-t border-[#64ffda]/10"
+                className="flex items-center gap-2 px-6 py-3 text-lg font-medium text-[#64ffda] border-2 border-[#64ffda] rounded-md hover:bg-[#64ffda]/10 transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <FaDownload className="w-4 h-4" />
+                <FaDownload className="w-5 h-5" />
                 <span>Download Resume</span>
               </motion.button>
             </div>
