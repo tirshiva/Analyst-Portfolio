@@ -1,19 +1,31 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes, FaDownload } from 'react-icons/fa';
+import { useSwipeable } from 'react-swipeable';
 
 const Navbar = ({ currentSection, setCurrentSection }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [showResumeButton, setShowResumeButton] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
 
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Initial check
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   const handleResumeDownload = () => {
@@ -32,6 +44,30 @@ const Navbar = ({ currentSection, setCurrentSection }) => {
     { name: 'Experience', href: 'experience' },
     { name: 'Contact', href: 'contact' }
   ];
+
+  const handleSwipe = (direction) => {
+    if (!isMobile) return;
+
+    const currentIndex = navLinks.findIndex(link => link.href === currentSection);
+    let newIndex;
+
+    if (direction === 'left' && currentIndex < navLinks.length - 1) {
+      newIndex = currentIndex + 1;
+    } else if (direction === 'right' && currentIndex > 0) {
+      newIndex = currentIndex - 1;
+    } else {
+      return;
+    }
+
+    setCurrentSection(navLinks[newIndex].href);
+  };
+
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => handleSwipe('left'),
+    onSwipedRight: () => handleSwipe('right'),
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: false
+  });
 
   const menuVariants = {
     closed: {
@@ -141,6 +177,7 @@ const Navbar = ({ currentSection, setCurrentSection }) => {
             exit="closed"
             variants={menuVariants}
             className="md:hidden fixed inset-0 bg-[#0a192f]/95 backdrop-blur-sm"
+            {...swipeHandlers}
           >
             <div className="flex flex-col items-center justify-center h-full space-y-8">
               {navLinks.map((link, i) => (
