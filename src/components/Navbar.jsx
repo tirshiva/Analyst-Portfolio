@@ -207,25 +207,27 @@ const Navbar = ({ currentSection, setCurrentSection }) => {
                     {link.name}
                   </motion.button>
                 ))}
-              </div>
 
-              {/* Mobile Resume Button */}
-              <motion.div
-                className="mt-auto mb-8"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-              >
-                <motion.button
-                  onClick={handleResumeDownload}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3 text-lg font-medium text-[#64ffda] border-2 border-[#64ffda] rounded-md hover:bg-[#64ffda]/10 transition-all duration-300"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                {/* Mobile Resume Button - Updated styling */}
+                <motion.div
+                  custom={navLinks.length}
+                  variants={linkVariants}
+                  initial="closed"
+                  animate="open"
+                  exit="closed"
+                  className="pt-4 border-t border-[#64ffda]/10"
                 >
-                  <FaDownload className="w-5 h-5" />
-                  <span>Download Resume</span>
-                </motion.button>
-              </motion.div>
+                  <motion.button
+                    onClick={handleResumeDownload}
+                    className="w-full text-left text-lg font-medium text-[#ccd6f6] hover:text-[#64ffda] transition-colors duration-300 flex items-center gap-3"
+                    whileHover={{ x: 10 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <FaDownload className="w-5 h-5" />
+                    <span>Download Resume</span>
+                  </motion.button>
+                </motion.div>
+              </div>
             </div>
           </motion.div>
         )}
