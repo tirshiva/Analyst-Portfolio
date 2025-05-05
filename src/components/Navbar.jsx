@@ -66,13 +66,16 @@ const Navbar = ({ currentSection, setCurrentSection }) => {
     onSwipedLeft: () => handleSwipe('left'),
     onSwipedRight: () => handleSwipe('right'),
     preventDefaultTouchmoveEvent: true,
-    trackMouse: false
+    trackMouse: false,
+    delta: 10, // min distance required for swipe
+    swipeDuration: 500, // max time for swipe motion
+    touchEventOptions: { passive: false }
   });
 
   const menuVariants = {
     closed: {
       opacity: 0,
-      y: "-100%",
+      x: "-100%",
       transition: {
         duration: 0.3,
         ease: "easeInOut"
@@ -80,7 +83,7 @@ const Navbar = ({ currentSection, setCurrentSection }) => {
     },
     open: {
       opacity: 1,
-      y: 0,
+      x: 0,
       transition: {
         duration: 0.3,
         ease: "easeInOut"
@@ -89,10 +92,10 @@ const Navbar = ({ currentSection, setCurrentSection }) => {
   };
 
   const linkVariants = {
-    closed: { opacity: 0, y: -20 },
+    closed: { opacity: 0, x: -20 },
     open: (i) => ({
       opacity: 1,
-      y: 0,
+      x: 0,
       transition: {
         delay: i * 0.1,
         duration: 0.3
@@ -176,43 +179,53 @@ const Navbar = ({ currentSection, setCurrentSection }) => {
             animate="open"
             exit="closed"
             variants={menuVariants}
-            className="md:hidden fixed inset-0 bg-[#0a192f]/95 backdrop-blur-sm"
+            className="md:hidden fixed inset-y-0 left-0 w-64 bg-[#0a192f]/95 backdrop-blur-sm shadow-xl"
             {...swipeHandlers}
           >
-            <div className="flex flex-col items-center justify-center h-full space-y-8">
-              {navLinks.map((link, i) => (
-                <motion.button
-                  key={link.name}
-                  onClick={() => {
-                    setCurrentSection(link.href);
-                    setIsOpen(false);
-                  }}
-                  custom={i}
-                  variants={linkVariants}
-                  initial="closed"
-                  animate="open"
-                  exit="closed"
-                  className={`text-2xl font-medium transition-colors duration-300 ${
-                    currentSection === link.href
-                      ? 'text-[#64ffda] scale-110'
-                      : 'text-[#ccd6f6] hover:text-[#64ffda]'
-                  }`}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  {link.name}
-                </motion.button>
-              ))}
+            <div className="flex flex-col h-full pt-20 px-6">
+              <div className="space-y-6">
+                {navLinks.map((link, i) => (
+                  <motion.button
+                    key={link.name}
+                    onClick={() => {
+                      setCurrentSection(link.href);
+                      setIsOpen(false);
+                    }}
+                    custom={i}
+                    variants={linkVariants}
+                    initial="closed"
+                    animate="open"
+                    exit="closed"
+                    className={`w-full text-left text-lg font-medium transition-colors duration-300 ${
+                      currentSection === link.href
+                        ? 'text-[#64ffda] pl-4 border-l-2 border-[#64ffda]'
+                        : 'text-[#ccd6f6] hover:text-[#64ffda] hover:pl-4 hover:border-l-2 hover:border-[#64ffda]/50'
+                    }`}
+                    whileHover={{ x: 10 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {link.name}
+                  </motion.button>
+                ))}
+              </div>
+
               {/* Mobile Resume Button */}
-              <motion.button
-                onClick={handleResumeDownload}
-                className="flex items-center gap-2 px-6 py-3 text-lg font-medium text-[#64ffda] border-2 border-[#64ffda] rounded-md hover:bg-[#64ffda]/10 transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <motion.div
+                className="mt-auto mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
               >
-                <FaDownload className="w-5 h-5" />
-                <span>Download Resume</span>
-              </motion.button>
+                <motion.button
+                  onClick={handleResumeDownload}
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3 text-lg font-medium text-[#64ffda] border-2 border-[#64ffda] rounded-md hover:bg-[#64ffda]/10 transition-all duration-300"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <FaDownload className="w-5 h-5" />
+                  <span>Download Resume</span>
+                </motion.button>
+              </motion.div>
             </div>
           </motion.div>
         )}
