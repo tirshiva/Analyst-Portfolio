@@ -25,21 +25,21 @@ const skills = [
 ];
 
 const About = () => (
-  <section id="about" className="bg-apple-white text-apple-black py-20">
+  <section id="about" className="bg-apple-white text-apple-black py-12 sm:py-20">
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
-        className="text-center mb-16"
+        className="text-center mb-8 sm:mb-16"
       >
-        <h2 className="text-4xl sm:text-5xl font-bold mb-6">About <span className="text-apple-blue">Me</span></h2>
-        <p className="text-apple-gray text-xl max-w-3xl mx-auto">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">About <span className="text-apple-blue">Me</span></h2>
+        <p className="text-apple-gray text-base sm:text-xl max-w-3xl mx-auto px-4">
           Data Scientist skilled in machine learning, analytics, and programming, with hands-on experience from real-world projects.
         </p>
       </motion.div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
         {skills.map((skill, idx) => (
           <motion.div
             key={idx}
@@ -47,12 +47,12 @@ const About = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: idx * 0.1 }}
-            className="bg-white rounded-xl shadow p-6 flex items-start gap-4"
+            className="bg-white rounded-xl shadow p-4 sm:p-6 flex items-start gap-4"
           >
-            <div>{skill.icon}</div>
+            <div className="mt-1">{skill.icon}</div>
             <div>
-              <h3 className="text-xl font-semibold mb-2">{skill.title}</h3>
-              <p className="text-apple-gray">{skill.description}</p>
+              <h3 className="text-lg sm:text-xl font-semibold mb-2">{skill.title}</h3>
+              <p className="text-apple-gray text-sm sm:text-base">{skill.description}</p>
             </div>
           </motion.div>
         ))}
