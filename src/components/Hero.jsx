@@ -1,9 +1,18 @@
 import { motion } from 'framer-motion';
 import Typewriter from 'typewriter-effect';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaDownload } from 'react-icons/fa';
 import DynamicHeroBackground from './DynamicHeroBackground';
 
 const Hero = () => {
+  const handleResumeDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/Shivanshu_Tiwari_CV.pdf';
+    link.download = 'Shivanshu_Tiwari_CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-y-auto bg-apple-white text-apple-black">
       {/* Dynamic, professional background */}
@@ -90,6 +99,21 @@ const Hero = () => {
             >
               <FaLinkedin className="w-6 h-6" />
             </a>
+          </motion.div>
+
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 1.0 }}
+            className="flex justify-center gap-6 mt-8"
+          >
+            <button
+              onClick={handleResumeDownload}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-apple-blue text-white font-semibold text-lg shadow hover:bg-apple-black transition-all duration-300"
+            >
+              <FaDownload className="w-5 h-5" />
+              Download Resume
+            </button>
           </motion.div>
         </motion.div>
       </div>
