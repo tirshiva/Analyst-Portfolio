@@ -5,13 +5,11 @@ import { FaBars, FaTimes, FaDownload } from 'react-icons/fa';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [showNav, setShowNav] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
-      setShowNav(window.scrollY > 80);
       
       // Update active section based on scroll position
       const sections = ['home', 'projects', 'about', 'experience', 'contact'];
@@ -54,8 +52,6 @@ const Navbar = () => {
     }
     setIsOpen(false);
   };
-
-  if (!showNav) return null;
 
   return (
     <nav 

@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import Typewriter from 'typewriter-effect';
 import { FaGithub, FaLinkedin, FaDownload } from 'react-icons/fa';
 import DynamicHeroBackground from './DynamicHeroBackground';
+import NeuralBackground from './NeuralBackground';
 
 const Hero = () => {
   const handleResumeDownload = () => {
@@ -14,117 +15,57 @@ const Hero = () => {
   };
 
   return (
-    <section 
-      id="home" 
-      className="min-h-screen flex items-center justify-center relative overflow-y-auto bg-apple-white text-apple-black"
-      role="banner"
-      aria-label="Hero section"
-    >
-      {/* Dynamic, professional background */}
-      <DynamicHeroBackground />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <NeuralBackground />
       
-      {/* Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
+      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center space-y-8"
+          className="max-w-4xl mx-auto"
         >
-          {/* Greeting */}
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-4xl sm:text-5xl md:text-6xl font-bold text-apple-black mb-6"
           >
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-apple-black mb-4">
-              Hi, I'm <span className="text-apple-blue hover-scale inline-block">Shivanshu</span>
-            </h1>
-          </motion.div>
-
-          {/* Role Title */}
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            Hi, I'm <span className="text-apple-blue">Shivanshu Tiwari</span>
+          </motion.h1>
+          
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-xl sm:text-2xl text-apple-gray mb-8"
           >
-            <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-apple-gray">
-              <Typewriter
-                options={{
-                  strings: [
-                    'Data Analyst',
-                    'Data Scientist',
-                    'Machine Learning Engineer'
-                  ],
-                  autoStart: true,
-                  loop: true,
-                  deleteSpeed: 50,
-                  delay: 50,
-                  wrapperClassName: 'font-mono tracking-wide'
-                }}
-              />
-            </div>
-          </motion.div>
-
-          {/* Description */}
+            A passionate Full Stack Developer crafting digital experiences
+          </motion.p>
+          
           <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-          >
-            <p className="text-apple-gray text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
-              I transform complex data into actionable insights, helping businesses make data-driven decisions.
-              Specializing in SQL, Python, and data visualization.
-            </p>
-          </motion.div>
-
-          {/* Social Links */}
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
-            className="flex justify-center gap-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <motion.a
-              href="https://github.com/Shivanshu2407"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group p-4 bg-apple-blue/10 text-apple-blue rounded-lg hover:bg-apple-blue/20 transition-all duration-300 transform hover:scale-110 focus-ring"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              aria-label="Visit GitHub profile"
-            >
-              <FaGithub className="w-6 h-6" />
-            </motion.a>
-            <motion.a
-              href="https://www.linkedin.com/in/shivanshu2407/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group p-4 bg-apple-blue/10 text-apple-blue rounded-lg hover:bg-apple-blue/20 transition-all duration-300 transform hover:scale-110 focus-ring"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              aria-label="Visit LinkedIn profile"
-            >
-              <FaLinkedin className="w-6 h-6" />
-            </motion.a>
-          </motion.div>
-
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 1.0 }}
-            className="flex justify-center gap-6 mt-8"
-          >
-            <motion.button
-              onClick={handleResumeDownload}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-apple-blue text-white font-semibold text-lg shadow hover:bg-apple-black transition-all duration-300 focus-ring hover-lift"
+              href="#projects"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              aria-label="Download resume"
+              className="px-8 py-3 bg-apple-blue text-white rounded-full text-lg font-medium shadow hover:bg-apple-black transition-all duration-300 focus-ring hover-lift"
             >
-              <FaDownload className="w-5 h-5" />
-              Download Resume
-            </motion.button>
+              View My Work
+            </motion.a>
+            
+            <motion.a
+              href="#contact"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-3 bg-white text-apple-blue rounded-full text-lg font-medium shadow hover:bg-apple-lightgray transition-all duration-300 focus-ring hover-lift"
+            >
+              Get in Touch
+            </motion.a>
           </motion.div>
         </motion.div>
       </div>

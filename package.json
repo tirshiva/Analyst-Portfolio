@@ -17,6 +17,7 @@
     "react-router-dom": "^6.18.0",
     "react-swipeable": "^7.0.2",
     "react-type-animation": "^3.2.0",
+    "three": "^0.176.0",
     "typewriter-effect": "^2.22.0"
   },
   "devDependencies": {
