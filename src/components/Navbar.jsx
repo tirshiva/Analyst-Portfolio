@@ -130,11 +130,11 @@ const Navbar = () => {
               stiffness: 300,
               damping: 30
             }}
-            className="md:hidden fixed inset-0 bg-white/95 backdrop-blur-md z-50 flex flex-col"
+            className="md:hidden fixed inset-0 bg-white z-50 flex flex-col shadow-2xl"
             role="dialog"
             aria-modal="true"
           >
-            <div className="flex items-center justify-between h-16 px-6 border-b border-apple-lightgray">
+            <div className="flex items-center justify-between h-16 px-6 border-b border-apple-lightgray bg-white">
               <span className="text-apple-black font-bold text-xl">Menu</span>
               <motion.button
                 onClick={() => setIsOpen(false)}
@@ -146,17 +146,17 @@ const Navbar = () => {
                 <FaTimes size={24} />
               </motion.button>
             </div>
-            <div className="flex-1 flex flex-col justify-center items-center space-y-8">
+            <div className="flex-1 flex flex-col justify-center items-center space-y-8 bg-white p-6">
               {navLinks.map((link) => (
                 <motion.button
                   key={link.name}
                   onClick={() => handleNavClick(link.href)}
-                  className={`text-lg font-medium transition-colors duration-200 focus-ring
+                  className={`text-lg font-medium transition-colors duration-200 focus-ring w-full py-3 px-4 rounded-lg
                     ${activeSection === link.href 
-                      ? 'text-apple-blue' 
-                      : 'text-apple-black hover:text-apple-blue'}`}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                      ? 'bg-apple-blue text-white' 
+                      : 'text-apple-black hover:bg-apple-lightgray'}`}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                   aria-current={activeSection === link.href ? 'page' : undefined}
                 >
                   {link.name}
@@ -164,9 +164,9 @@ const Navbar = () => {
               ))}
               <motion.button
                 onClick={handleResumeDownload}
-                className="mt-8 px-6 py-3 rounded-full text-lg font-medium bg-apple-blue text-white hover:bg-apple-black transition-all duration-300 focus-ring hover-lift"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                className="mt-8 w-full px-6 py-3 rounded-lg text-lg font-medium bg-apple-blue text-white hover:bg-apple-black transition-all duration-300 focus-ring hover-lift"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 aria-label="Download resume"
               >
                 <FaDownload className="w-5 h-5 inline mr-2" />
