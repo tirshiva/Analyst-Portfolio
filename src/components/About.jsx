@@ -36,7 +36,7 @@ const About = () => (
       >
         <h2 className="text-4xl sm:text-5xl font-bold mb-6">About <span className="text-apple-blue">Me</span></h2>
         <p className="text-apple-gray text-xl max-w-3xl mx-auto">
-          I'm a passionate Data Scientist with expertise in machine learning and data analysis. My journey in data science began with a strong foundation in programming and statistics, which I've built upon through various projects and real-world applications.
+          Data Scientist skilled in machine learning, analytics, and programming, with hands-on experience from real-world projects.
         </p>
       </motion.div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
