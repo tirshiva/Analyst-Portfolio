@@ -179,54 +179,70 @@ const Navbar = ({ currentSection, setCurrentSection }) => {
             animate="open"
             exit="closed"
             variants={menuVariants}
-            className="md:hidden fixed inset-y-0 left-0 w-64 bg-[#0a192f]/95 backdrop-blur-sm shadow-xl"
+            className="md:hidden fixed inset-0 bg-[#0a192f]/95 backdrop-blur-sm"
             {...swipeHandlers}
           >
-            <div className="flex flex-col h-full pt-20 px-6">
-              <div className="space-y-6">
-                {navLinks.map((link, i) => (
-                  <motion.button
-                    key={link.name}
-                    onClick={() => {
-                      setCurrentSection(link.href);
-                      setIsOpen(false);
-                    }}
-                    custom={i}
+            {/* Fixed Header */}
+            <div className="h-16 flex items-center justify-between px-6 border-b border-[#64ffda]/10">
+              <span className="text-[#64ffda] font-bold text-xl">Menu</span>
+              <motion.button
+                onClick={() => setIsOpen(false)}
+                className="p-2 text-[#ccd6f6] hover:text-[#64ffda] transition-colors duration-300"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <FaTimes size={24} />
+              </motion.button>
+            </div>
+
+            {/* Scrollable Content */}
+            <div className="h-[calc(100vh-4rem)] overflow-y-auto">
+              <div className="px-6 py-8">
+                <div className="space-y-6">
+                  {navLinks.map((link, i) => (
+                    <motion.button
+                      key={link.name}
+                      onClick={() => {
+                        setCurrentSection(link.href);
+                        setIsOpen(false);
+                      }}
+                      custom={i}
+                      variants={linkVariants}
+                      initial="closed"
+                      animate="open"
+                      exit="closed"
+                      className={`w-full text-left text-lg font-medium transition-colors duration-300 ${
+                        currentSection === link.href
+                          ? 'text-[#64ffda] pl-4 border-l-2 border-[#64ffda]'
+                          : 'text-[#ccd6f6] hover:text-[#64ffda] hover:pl-4 hover:border-l-2 hover:border-[#64ffda]/50'
+                      }`}
+                      whileHover={{ x: 10 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      {link.name}
+                    </motion.button>
+                  ))}
+
+                  {/* Mobile Resume Button */}
+                  <motion.div
+                    custom={navLinks.length}
                     variants={linkVariants}
                     initial="closed"
                     animate="open"
                     exit="closed"
-                    className={`w-full text-left text-lg font-medium transition-colors duration-300 ${
-                      currentSection === link.href
-                        ? 'text-[#64ffda] pl-4 border-l-2 border-[#64ffda]'
-                        : 'text-[#ccd6f6] hover:text-[#64ffda] hover:pl-4 hover:border-l-2 hover:border-[#64ffda]/50'
-                    }`}
-                    whileHover={{ x: 10 }}
-                    whileTap={{ scale: 0.95 }}
+                    className="pt-4 border-t border-[#64ffda]/10"
                   >
-                    {link.name}
-                  </motion.button>
-                ))}
-
-                {/* Mobile Resume Button - Updated styling */}
-                <motion.div
-                  custom={navLinks.length}
-                  variants={linkVariants}
-                  initial="closed"
-                  animate="open"
-                  exit="closed"
-                  className="pt-4 border-t border-[#64ffda]/10"
-                >
-                  <motion.button
-                    onClick={handleResumeDownload}
-                    className="w-full text-left text-lg font-medium text-[#ccd6f6] hover:text-[#64ffda] transition-colors duration-300 flex items-center gap-3"
-                    whileHover={{ x: 10 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <FaDownload className="w-5 h-5" />
-                    <span>Download Resume</span>
-                  </motion.button>
-                </motion.div>
+                    <motion.button
+                      onClick={handleResumeDownload}
+                      className="w-full text-left text-lg font-medium text-[#ccd6f6] hover:text-[#64ffda] transition-colors duration-300 flex items-center gap-3"
+                      whileHover={{ x: 10 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <FaDownload className="w-5 h-5" />
+                      <span>Download Resume</span>
+                    </motion.button>
+                  </motion.div>
+                </div>
               </div>
             </div>
           </motion.div>
