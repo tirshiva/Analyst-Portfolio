@@ -5,12 +5,12 @@ import NeuralBackground from './NeuralBackground';
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-y-auto">
       {/* Neural Network Background */}
       <NeuralBackground />
       
       {/* Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

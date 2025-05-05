@@ -56,7 +56,7 @@ const Projects = () => {
   }
 
   return (
-    <div className="w-full min-h-[calc(100vh-4rem)] py-20 overflow-x-hidden">
+    <div className="w-full min-h-[calc(100vh-4rem)] py-20 overflow-y-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
@@ -85,74 +85,9 @@ const Projects = () => {
           </motion.div>
 
           {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                variants={itemVariants}
-                className="group bg-[#112240]/50 backdrop-blur-sm rounded-xl overflow-hidden border border-[#64ffda]/10 hover:border-[#64ffda]/20 transition-all duration-300 hover:shadow-xl hover:shadow-[#64ffda]/5"
-                onClick={() => setSelectedProject(project)}
-              >
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-xl font-bold text-[#ccd6f6] group-hover:text-[#64ffda] transition-colors duration-300">
-                      {project.title}
-                    </h3>
-                    <div className="flex gap-2">
-                      {project.githubLink && (
-                        <motion.a
-                          href={project.githubLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          variants={buttonVariants}
-                          whileHover="hover"
-                          whileTap="tap"
-                          className="p-2 bg-[#64ffda]/10 text-[#64ffda] rounded-lg hover:bg-[#64ffda]/20 transition-all duration-300"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          <FaGithub className="w-4 h-4" />
-                        </motion.a>
-                      )}
-                      {project.demoLink && (
-                        <motion.a
-                          href={project.demoLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          variants={buttonVariants}
-                          whileHover="hover"
-                          whileTap="tap"
-                          className="p-2 bg-[#64ffda]/10 text-[#64ffda] rounded-lg hover:bg-[#64ffda]/20 transition-all duration-300"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          <FaExternalLinkAlt className="w-4 h-4" />
-                        </motion.a>
-                      )}
-                    </div>
-                  </div>
-                  <p className="text-[#8892b0] mb-6 line-clamp-3">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.techStack && project.techStack.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="px-3 py-1 text-sm text-[#64ffda] bg-[#64ffda]/10 rounded-full hover:bg-[#64ffda]/20 transition-all duration-300"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex gap-3 mt-4">
-                    <motion.button
-                      variants={buttonVariants}
-                      whileHover="hover"
-                      whileTap="tap"
-                      className="flex items-center gap-1.5 px-4 py-2 bg-[#64ffda]/10 text-[#64ffda] rounded-lg text-sm font-medium hover:bg-[#64ffda]/20 transition-all duration-300"
-                    >
-                      <FaCode className="w-4 h-4" />
-                      <span>View Details</span>
-                    </motion.button>
-                  </div>
-                </div>
-              </motion.div>
+              <ProjectCard key={index} project={project} />
             ))}
           </div>
         </motion.div>

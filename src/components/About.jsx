@@ -49,7 +49,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 relative bg-[#0a192f]">
+    <section id="about" className="py-20 relative bg-[#0a192f] overflow-y-auto">
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a192f] to-[#112240]" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">

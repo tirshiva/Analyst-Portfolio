@@ -53,7 +53,7 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-16 relative bg-[#0a192f]">
+    <section id="experience" className="py-16 relative bg-[#0a192f] overflow-y-auto">
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a192f] to-[#112240]" />
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -75,47 +75,38 @@ const Experience = () => {
           </motion.div>
 
           {/* Experience Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="space-y-8">
             {experiences.map((exp, index) => (
               <motion.div
                 key={index}
                 variants={itemVariants}
                 className="bg-[#112240]/50 backdrop-blur-sm rounded-lg p-6 border border-[#64ffda]/10 hover:border-[#64ffda]/20 transition-all duration-300"
               >
-                <div className="flex flex-col gap-4">
-                  {/* Company and Role */}
-                  <div className="flex items-center gap-2">
-                    <FaBriefcase className="w-4 h-4 text-[#64ffda]" />
-                    <h3 className="text-xl font-bold text-[#ccd6f6]">{exp.company}</h3>
+                <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                  <div className="flex items-center gap-3 mb-4 md:mb-0">
+                    <FaBriefcase className="w-5 h-5 text-[#64ffda]" />
+                    <h3 className="text-xl font-bold text-[#ccd6f6]">{exp.role}</h3>
                   </div>
-                  
-                  {/* Role */}
-                  <div>
-                    <span className="text-[#64ffda] font-medium">{exp.role}</span>
+                  <div className="flex flex-wrap gap-4 text-sm text-[#8892b0]">
+                    <div className="flex items-center gap-2">
+                      <FaCalendarAlt className="w-4 h-4" />
+                      <span>{exp.period}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <FaMapMarkerAlt className="w-4 h-4" />
+                      <span>{exp.location}</span>
+                    </div>
                   </div>
-
-                  {/* Period and Location */}
-                  <div className="flex flex-wrap gap-2 text-sm">
-                    <span className="flex items-center gap-1 text-[#64ffda] bg-[#64ffda]/10 px-3 py-1 rounded-full">
-                      <FaCalendarAlt className="w-3 h-3" />
-                      {exp.period}
-                    </span>
-                    <span className="flex items-center gap-1 text-[#8892b0] bg-[#112240] px-3 py-1 rounded-full">
-                      <FaMapMarkerAlt className="w-3 h-3" />
-                      {exp.location}
-                    </span>
-                  </div>
-
-                  {/* Responsibilities */}
-                  <ul className="space-y-3">
-                    {exp.responsibilities.map((resp, idx) => (
-                      <li key={idx} className="text-[#8892b0] text-sm flex">
-                        <span className="text-[#64ffda] mr-2 mt-1.5 flex-shrink-0">•</span>
-                        <span>{resp}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
+                <h4 className="text-lg font-semibold text-[#64ffda] mb-4">{exp.company}</h4>
+                <ul className="space-y-2">
+                  {exp.responsibilities.map((resp, respIndex) => (
+                    <li key={respIndex} className="flex items-start gap-2 text-[#8892b0]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#64ffda] mt-2" />
+                      <span>{resp}</span>
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </div>

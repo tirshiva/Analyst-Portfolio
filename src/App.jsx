@@ -13,10 +13,10 @@ const App = () => {
   const [currentSection, setCurrentSection] = useState('home');
 
   const sectionVariants = {
-    hidden: { opacity: 0, scale: 0.95 },
+    hidden: { opacity: 0, y: 20 },
     visible: { 
       opacity: 1, 
-      scale: 1,
+      y: 0,
       transition: {
         duration: 0.5,
         ease: [0.6, -0.05, 0.01, 0.99]
@@ -24,7 +24,7 @@ const App = () => {
     },
     exit: { 
       opacity: 0, 
-      scale: 0.95,
+      y: -20,
       transition: {
         duration: 0.5,
         ease: [0.6, -0.05, 0.01, 0.99]
@@ -34,28 +34,30 @@ const App = () => {
 
   return (
     <Router>
-      <div className="min-h-screen bg-[#0a192f] text-[#ccd6f6]">
+      <div className="min-h-screen bg-[#0a192f] text-[#ccd6f6] overflow-x-hidden">
         <Navbar currentSection={currentSection} setCurrentSection={setCurrentSection} />
         <main className="pt-16">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentSection}
-              variants={sectionVariants}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              className="relative min-h-[calc(100vh-4rem)]"
-            >
-              <DynamicBackground section={currentSection} />
-              <div className="relative z-10 w-full min-h-[calc(100vh-4rem)]">
-                {currentSection === 'home' && <Hero />}
-                {currentSection === 'projects' && <Projects />}
-                {currentSection === 'about' && <About />}
-                {currentSection === 'experience' && <Experience />}
-                {currentSection === 'contact' && <Contact />}
-              </div>
-            </motion.div>
-          </AnimatePresence>
+          <div className="relative">
+            <DynamicBackground section={currentSection} />
+            <div className="relative z-10">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentSection}
+                  variants={sectionVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  className="min-h-[calc(100vh-4rem)]"
+                >
+                  {currentSection === 'home' && <Hero />}
+                  {currentSection === 'projects' && <Projects />}
+                  {currentSection === 'about' && <About />}
+                  {currentSection === 'experience' && <Experience />}
+                  {currentSection === 'contact' && <Contact />}
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </div>
         </main>
       </div>
     </Router>
