@@ -7,12 +7,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: {
-          dark: '#0a192f',
-          light: '#112240',
-          accent: '#64ffda',
-          text: '#ccd6f6',
-          textLight: '#8892b0'
+        apple: {
+          white: '#f5f5f7',
+          black: '#1d1d1f',
+          gray: '#86868b',
+          blue: '#0071e3',
+          lightgray: '#e5e5e5',
+          darkgray: '#424245',
         },
         accent: {
           50: '#FFFFFF',   // White

@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion';
 import Typewriter from 'typewriter-effect';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import NeuralBackground from './NeuralBackground';
+import DynamicHeroBackground from './DynamicHeroBackground';
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-y-auto">
-      {/* Neural Network Background */}
-      <NeuralBackground />
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-y-auto bg-apple-white text-apple-black">
+      {/* Dynamic, professional background */}
+      <DynamicHeroBackground />
       
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
@@ -24,8 +24,8 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mb-6"
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#ccd6f6] mb-4">
-              Hi, I'm <span className="text-[#64ffda]">Shivanshu</span>
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-apple-black mb-4">
+              Hi, I'm <span className="text-apple-blue">Shivanshu</span>
             </h1>
           </motion.div>
 
@@ -36,7 +36,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="mb-8"
           >
-            <div className="text-2xl sm:text-3xl md:text-4xl font-bold">
+            <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-apple-gray">
               <Typewriter
                 options={{
                   strings: [
@@ -48,7 +48,7 @@ const Hero = () => {
                   loop: true,
                   deleteSpeed: 50,
                   delay: 50,
-                  wrapperClassName: 'text-[#c792ea] font-mono tracking-wide'
+                  wrapperClassName: 'font-mono tracking-wide'
                 }}
               />
             </div>
@@ -61,7 +61,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="mb-12"
           >
-            <p className="text-[#8892b0] text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
+            <p className="text-apple-gray text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
               I transform complex data into actionable insights, helping businesses make data-driven decisions.
               Specializing in SQL, Python, and data visualization.
             </p>
@@ -78,7 +78,7 @@ const Hero = () => {
               href="https://github.com/Shivanshu2407"
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-4 bg-[#64ffda]/10 text-[#64ffda] rounded-lg hover:bg-[#64ffda]/20 transition-all duration-300 transform hover:scale-110"
+              className="group p-4 bg-apple-blue/10 text-apple-blue rounded-lg hover:bg-apple-blue/20 transition-all duration-300 transform hover:scale-110"
             >
               <FaGithub className="w-6 h-6" />
             </a>
@@ -86,7 +86,7 @@ const Hero = () => {
               href="https://www.linkedin.com/in/shivanshu2407/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-4 bg-[#64ffda]/10 text-[#64ffda] rounded-lg hover:bg-[#64ffda]/20 transition-all duration-300 transform hover:scale-110"
+              className="group p-4 bg-apple-blue/10 text-apple-blue rounded-lg hover:bg-apple-blue/20 transition-all duration-300 transform hover:scale-110"
             >
               <FaLinkedin className="w-6 h-6" />
             </a>

@@ -133,7 +133,7 @@ const DynamicBackground = ({ section }) => {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full opacity-30"
+      className="absolute inset-0 w-full h-full opacity-5"
       style={{ zIndex: 0 }}
     />
   );
