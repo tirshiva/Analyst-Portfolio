@@ -14,7 +14,12 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-y-auto bg-apple-white text-apple-black">
+    <section 
+      id="home" 
+      className="min-h-screen flex items-center justify-center relative overflow-y-auto bg-apple-white text-apple-black"
+      role="banner"
+      aria-label="Hero section"
+    >
       {/* Dynamic, professional background */}
       <DynamicHeroBackground />
       
@@ -24,17 +29,16 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="text-center"
+          className="text-center space-y-8"
         >
           {/* Greeting */}
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mb-6"
           >
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-apple-black mb-4">
-              Hi, I'm <span className="text-apple-blue">Shivanshu</span>
+              Hi, I'm <span className="text-apple-blue hover-scale inline-block">Shivanshu</span>
             </h1>
           </motion.div>
 
@@ -43,7 +47,6 @@ const Hero = () => {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="mb-8"
           >
             <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-apple-gray">
               <Typewriter
@@ -68,7 +71,6 @@ const Hero = () => {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="mb-12"
           >
             <p className="text-apple-gray text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
               I transform complex data into actionable insights, helping businesses make data-driven decisions.
@@ -83,22 +85,28 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.8 }}
             className="flex justify-center gap-6"
           >
-            <a
+            <motion.a
               href="https://github.com/Shivanshu2407"
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-4 bg-apple-blue/10 text-apple-blue rounded-lg hover:bg-apple-blue/20 transition-all duration-300 transform hover:scale-110"
+              className="group p-4 bg-apple-blue/10 text-apple-blue rounded-lg hover:bg-apple-blue/20 transition-all duration-300 transform hover:scale-110 focus-ring"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="Visit GitHub profile"
             >
               <FaGithub className="w-6 h-6" />
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="https://www.linkedin.com/in/shivanshu2407/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-4 bg-apple-blue/10 text-apple-blue rounded-lg hover:bg-apple-blue/20 transition-all duration-300 transform hover:scale-110"
+              className="group p-4 bg-apple-blue/10 text-apple-blue rounded-lg hover:bg-apple-blue/20 transition-all duration-300 transform hover:scale-110 focus-ring"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="Visit LinkedIn profile"
             >
               <FaLinkedin className="w-6 h-6" />
-            </a>
+            </motion.a>
           </motion.div>
 
           <motion.div
@@ -107,13 +115,16 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 1.0 }}
             className="flex justify-center gap-6 mt-8"
           >
-            <button
+            <motion.button
               onClick={handleResumeDownload}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-apple-blue text-white font-semibold text-lg shadow hover:bg-apple-black transition-all duration-300"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-apple-blue text-white font-semibold text-lg shadow hover:bg-apple-black transition-all duration-300 focus-ring hover-lift"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="Download resume"
             >
               <FaDownload className="w-5 h-5" />
               Download Resume
-            </button>
+            </motion.button>
           </motion.div>
         </motion.div>
       </div>
