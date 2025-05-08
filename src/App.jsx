@@ -12,10 +12,10 @@ import './styles/theme.css';
 
 const App = () => (
   <Router>
-    <div className="min-h-screen bg-apple-white text-apple-black overflow-x-hidden">
+  <div className="min-h-screen bg-apple-white text-apple-black overflow-x-hidden">
       <ScrollProgress />
-      <Navbar />
-      <main className="pt-16">
+    <Navbar />
+    <main className="pt-16">
         <section id="home" className="scroll-mt-16">
           <ScrollAnimation>
             <Hero />
@@ -41,8 +41,8 @@ const App = () => (
             <Contact />
           </ScrollAnimation>
         </section>
-      </main>
-    </div>
+    </main>
+  </div>
   </Router>
 );
 

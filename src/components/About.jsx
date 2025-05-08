@@ -5,7 +5,7 @@ const skills = [
   {
     icon: <FaCode className="w-6 h-6 text-apple-blue" />,
     title: "Programming",
-    description: "Proficient in Python, R, and SQL for data analysis and machine learning applications."
+    description: "Proficient in Python and SQL for data analysis and machine learning applications."
   },
   {
     icon: <FaDatabase className="w-6 h-6 text-apple-blue" />,
