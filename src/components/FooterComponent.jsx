@@ -1,7 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaTruck, FaBoxes, FaChartLine, FaArrowUp } from 'react-icons/fa';
 import { socialLinks } from '../data/projects';
+
+// Add twitter link if not in the data file
+const footerSocialLinks = {
+  ...socialLinks
+};
 
 const FooterComponent = () => {
   const containerVariants = {
@@ -30,92 +35,173 @@ const FooterComponent = () => {
   const buttonVariants = {
     hover: {
       scale: 1.05,
-      boxShadow: "0 0 20px rgba(0, 0, 0, 0.1)",
       transition: {
-        duration: 0.3,
-        yoyo: Infinity,
-        repeat: 1
+        duration: 0.3
       }
     },
     tap: { scale: 0.95 }
   };
+  
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  const footerLinks = [
+    { name: 'Home', href: '#home' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'About', href: '#about' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Contact', href: '#contact' }
+  ];
 
   return (
-    <footer className="relative bg-[#0a192f] py-12 sm:py-16">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a192f] to-[#112240]" />
+    <footer className="relative bg-supply-dark text-white py-16 sm:py-20">
+      {/* Supply chain themed background elements */}
+      <div className="absolute inset-0 overflow-hidden opacity-5">
+        <div className="absolute top-10 left-10">
+          <FaTruck className="w-32 h-32" />
+        </div>
+        <div className="absolute bottom-10 right-10">
+          <FaBoxes className="w-24 h-24" />
+        </div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <FaChartLine className="w-48 h-48" />
+        </div>
+      </div>
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12"
-        >
-          {/* Contact Section */}
-          <motion.div variants={itemVariants} className="space-y-4">
-            <h3 className="text-lg sm:text-xl font-semibold text-[#ccd6f6]">Get in Touch</h3>
-            <p className="text-[#8892b0] max-w-md">
-              Have a project in mind or want to discuss potential opportunities? I'd love to hear from you.
-            </p>
-            <div className="flex items-center gap-4">
-              <motion.a
-                href={`mailto:${socialLinks.email}`}
-                variants={buttonVariants}
-                whileHover="hover"
-                whileTap="tap"
-                className="flex items-center gap-2 px-4 py-2 bg-[#64ffda] text-[#0a192f] rounded-md font-mono text-sm hover:bg-[#64ffda]/90 transition-all duration-300"
-              >
-                <FaEnvelope className="w-4 h-4" />
-                <span>Email Me</span>
-              </motion.a>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+          {/* Brand Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="col-span-1 md:col-span-1"
+          >
+            <div className="flex items-center gap-3 mb-4">
+              <FaTruck className="text-supply-primary w-6 h-6" />
+              <h3 className="text-xl font-bold text-white">Supply Chain Analyst</h3>
             </div>
-          </motion.div>
-
-          {/* Connect Section */}
-          <motion.div variants={itemVariants} className="space-y-4">
-            <h3 className="text-lg sm:text-xl font-semibold text-[#ccd6f6]">Connect</h3>
-            <p className="text-[#8892b0]">
-              Follow me on social media to stay updated with my latest projects and insights.
+            <p className="text-supply-lightgray mb-6">
+              Transforming supply chain data into actionable insights and optimizing logistics through analytics.
             </p>
             <div className="flex gap-4">
               <motion.a
-                href={socialLinks.github}
+                href={footerSocialLinks.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 variants={buttonVariants}
                 whileHover="hover"
                 whileTap="tap"
-                className="p-3 rounded-md border border-[#64ffda]/20 hover:border-[#64ffda] transition-all duration-200 bg-[#112240]/50 hover:bg-[#64ffda]/10"
-                aria-label="GitHub"
-              >
-                <FaGithub className="w-5 h-5 text-[#64ffda]" />
-              </motion.a>
-              <motion.a
-                href={socialLinks.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                variants={buttonVariants}
-                whileHover="hover"
-                whileTap="tap"
-                className="p-3 rounded-md border border-[#64ffda]/20 hover:border-[#64ffda] transition-all duration-200 bg-[#112240]/50 hover:bg-[#64ffda]/10"
+                className="p-2 rounded-full bg-supply-primary/20 hover:bg-supply-primary/30 text-supply-primary transition-colors"
                 aria-label="LinkedIn"
               >
-                <FaLinkedin className="w-5 h-5 text-[#64ffda]" />
+                <FaLinkedin className="w-5 h-5" />
+              </motion.a>
+              <motion.a
+                href={footerSocialLinks.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                variants={buttonVariants}
+                whileHover="hover"
+                whileTap="tap"
+                className="p-2 rounded-full bg-supply-primary/20 hover:bg-supply-primary/30 text-supply-primary transition-colors"
+                aria-label="GitHub"
+              >
+                <FaGithub className="w-5 h-5" />
               </motion.a>
             </div>
           </motion.div>
-        </motion.div>
 
-        {/* Copyright */}
-        <motion.div
-          variants={itemVariants}
-          className="mt-12 pt-8 border-t border-[#64ffda]/10 text-center"
-        >
-          <p className="text-[#8892b0]">
+          {/* Quick Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="col-span-1"
+          >
+            <h3 className="text-lg font-semibold mb-4 text-white">Quick Links</h3>
+            <ul className="space-y-2">
+              {footerLinks.map((link, index) => (
+                <li key={index}>
+                  <a 
+                    href={link.href} 
+                    className="text-supply-lightgray hover:text-supply-primary transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Services */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="col-span-1"
+          >
+            <h3 className="text-lg font-semibold mb-4 text-white">Expertise</h3>
+            <ul className="space-y-2">
+              <li className="text-supply-lightgray">Supply Chain Analytics</li>
+              <li className="text-supply-lightgray">Inventory Optimization</li>
+              <li className="text-supply-lightgray">Logistics Analysis</li>
+              <li className="text-supply-lightgray">Demand Forecasting</li>
+              <li className="text-supply-lightgray">Data Visualization</li>
+            </ul>
+          </motion.div>
+
+          {/* Contact */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="col-span-1"
+          >
+            <h3 className="text-lg font-semibold mb-4 text-white">Contact</h3>
+            <p className="text-supply-lightgray mb-4">
+              Interested in working together? Let's connect.
+            </p>
+            <motion.a
+              href={`mailto:${footerSocialLinks.email}`}
+              variants={buttonVariants}
+              whileHover="hover"
+              whileTap="tap"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-supply-primary text-white rounded-lg shadow-md hover:bg-supply-highlight transition-all duration-300"
+            >
+              <FaEnvelope className="w-4 h-4" />
+              <span>Email Me</span>
+            </motion.a>
+          </motion.div>
+        </div>
+
+        {/* Divider */}
+        <div className="h-px bg-supply-primary/30 my-10"></div>
+
+        {/* Bottom Section */}
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <p className="text-supply-lightgray text-sm mb-4 md:mb-0">
             © {new Date().getFullYear()} Shivanshu Tiwari. All rights reserved.
           </p>
-        </motion.div>
+          <motion.button
+            onClick={scrollToTop}
+            variants={buttonVariants}
+            whileHover="hover"
+            whileTap="tap"
+            className="p-3 rounded-full bg-supply-primary/20 hover:bg-supply-primary text-supply-primary hover:text-white transition-all duration-300"
+            aria-label="Scroll to top"
+          >
+            <FaArrowUp className="w-4 h-4" />
+          </motion.button>
+        </div>
       </div>
     </footer>
   );

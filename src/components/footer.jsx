@@ -1,8 +1,14 @@
 // filepath: src/components/Footer.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter, FaTruck, FaBoxes, FaChartLine, FaArrowUp } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaTruck, FaBoxes, FaChartLine, FaArrowUp, FaTwitter } from 'react-icons/fa';
 import { socialLinks } from '../data/projects';
+
+// Add twitter link if not in the data file
+const footerSocialLinks = {
+  ...socialLinks,
+  twitter: "https://x.com/shivanshut24" // Add default Twitter link
+};
 
 const Footer = () => {
   const containerVariants = {
@@ -87,7 +93,7 @@ const Footer = () => {
             </p>
             <div className="flex gap-4">
               <motion.a
-                href={socialLinks.linkedin}
+                href={footerSocialLinks.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 variants={buttonVariants}
@@ -99,7 +105,7 @@ const Footer = () => {
                 <FaLinkedin className="w-5 h-5" />
               </motion.a>
               <motion.a
-                href={socialLinks.github}
+                href={footerSocialLinks.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 variants={buttonVariants}
@@ -111,7 +117,7 @@ const Footer = () => {
                 <FaGithub className="w-5 h-5" />
               </motion.a>
               <motion.a
-                href={socialLinks.twitter}
+                href={footerSocialLinks.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
                 variants={buttonVariants}
@@ -179,7 +185,7 @@ const Footer = () => {
               Interested in working together? Let's connect.
             </p>
             <motion.a
-              href={`mailto:${socialLinks.email}`}
+              href={`mailto:${footerSocialLinks.email}`}
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"

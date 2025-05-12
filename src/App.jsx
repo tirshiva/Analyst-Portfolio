@@ -5,7 +5,7 @@ import Projects from './components/Projects';
 import About from './components/About';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
-import Footer from './components/Footer';
+import Footer from './components/FooterComponent';
 import ScrollProgress from './components/ScrollProgress';
 import ScrollAnimation from './components/ScrollAnimation';
 import './styles/theme.css';
