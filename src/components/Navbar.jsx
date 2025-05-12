@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaBars, FaTimes, FaDownload } from 'react-icons/fa';
+import { FaBars, FaTimes, FaDownload, FaChartLine, FaTruck, FaBoxes, FaWarehouse } from 'react-icons/fa';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,11 +29,11 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: 'home' },
-    { name: 'Projects', href: 'projects' },
-    { name: 'About', href: 'about' },
-    { name: 'Experience', href: 'experience' },
-    { name: 'Contact', href: 'contact' }
+    { name: 'Home', href: 'home', icon: <FaChartLine className="w-4 h-4" /> },
+    { name: 'Projects', href: 'projects', icon: <FaBoxes className="w-4 h-4" /> },
+    { name: 'About', href: 'about', icon: <FaTruck className="w-4 h-4" /> },
+    { name: 'Experience', href: 'experience', icon: <FaWarehouse className="w-4 h-4" /> },
+    { name: 'Contact', href: 'contact', icon: <FaChartLine className="w-4 h-4" /> }
   ];
 
   const handleResumeDownload = () => {
@@ -56,8 +56,10 @@ const Navbar = () => {
   return (
     <nav 
       className={`fixed w-full z-50 transition-all duration-300
-        ${scrolled ? 'bg-white/80 backdrop-blur-md shadow-md' : 'bg-white/60 backdrop-blur-md'}
-        border-b border-apple-lightgray`}
+        ${scrolled 
+          ? 'bg-white/90 backdrop-blur-md shadow-md' 
+          : 'bg-white/70 backdrop-blur-md'}
+        border-b border-supply-lightgray`}
       role="navigation"
       aria-label="Main navigation"
     >
@@ -66,35 +68,45 @@ const Navbar = () => {
           {/* Logo */}
           <motion.button
             onClick={() => handleNavClick('home')}
-            className="text-apple-black font-bold text-xl hover:text-apple-blue transition-colors duration-200 focus-ring"
+            className="text-supply-dark font-bold text-xl hover:text-supply-primary transition-colors duration-200 focus-ring flex items-center"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             aria-label="Go to home"
           >
-            Portfolio
+            <FaTruck className="mr-2 text-supply-primary" />
+            <span className="bg-gradient-to-r from-supply-primary to-supply-secondary bg-clip-text text-transparent">
+              Supply Chain Analyst
+            </span>
           </motion.button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
               <motion.button
                 key={link.name}
                 onClick={() => handleNavClick(link.href)}
-                className={`text-sm font-medium transition-colors duration-200 focus-ring
+                className={`text-sm font-medium transition-colors duration-200 focus-ring flex items-center
                   ${activeSection === link.href 
-                    ? 'text-apple-blue' 
-                    : 'text-apple-black hover:text-apple-blue'}`}
+                    ? 'text-supply-primary' 
+                    : 'text-supply-dark hover:text-supply-primary'}`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 aria-current={activeSection === link.href ? 'page' : undefined}
               >
+                <span className="mr-1.5">{link.icon}</span>
                 {link.name}
+                {activeSection === link.href && (
+                  <motion.div 
+                    className="absolute bottom-0 left-0 w-full h-0.5 bg-supply-primary rounded-full" 
+                    layoutId="activeSection"
+                  />
+                )}
               </motion.button>
             ))}
             {/* Resume Button */}
             <motion.button
               onClick={handleResumeDownload}
-              className="ml-4 px-4 py-2 rounded-full text-sm font-medium bg-apple-blue text-white hover:bg-apple-black transition-all duration-300 focus-ring hover-lift"
+              className="ml-4 px-4 py-2 rounded-lg text-sm font-medium bg-supply-primary text-white hover:bg-supply-highlight transition-all duration-300 focus-ring hover-lift"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               aria-label="Download resume"
@@ -106,7 +118,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <motion.button
-            className="md:hidden p-2 text-apple-black hover:text-apple-blue transition-colors duration-300 focus-ring"
+            className="md:hidden p-2 text-supply-dark hover:text-supply-primary transition-colors duration-300 focus-ring"
             onClick={() => setIsOpen(!isOpen)}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -134,11 +146,14 @@ const Navbar = () => {
             role="dialog"
             aria-modal="true"
           >
-            <div className="flex items-center justify-between h-16 px-6 border-b border-apple-lightgray bg-white">
-              <span className="text-apple-black font-bold text-xl">Menu</span>
+            <div className="flex items-center justify-between h-16 px-6 border-b border-supply-lightgray bg-white">
+              <span className="text-supply-dark font-bold text-xl flex items-center">
+                <FaTruck className="mr-2 text-supply-primary" />
+                Menu
+              </span>
               <motion.button
                 onClick={() => setIsOpen(false)}
-                className="p-2 text-apple-black hover:text-apple-blue transition-colors duration-300 focus-ring"
+                className="p-2 text-supply-dark hover:text-supply-primary transition-colors duration-300 focus-ring"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 aria-label="Close menu"
@@ -146,31 +161,32 @@ const Navbar = () => {
                 <FaTimes size={24} />
               </motion.button>
             </div>
-            <div className="flex-1 flex flex-col justify-center items-center space-y-8 bg-white p-6">
+            <div className="flex-1 flex flex-col justify-center items-center space-y-6 bg-white p-6">
               {navLinks.map((link) => (
                 <motion.button
                   key={link.name}
                   onClick={() => handleNavClick(link.href)}
-                  className={`text-lg font-medium transition-colors duration-200 focus-ring w-full py-3 px-4 rounded-lg
+                  className={`text-lg font-medium transition-colors duration-200 focus-ring w-full py-3 px-4 rounded-lg flex items-center
                     ${activeSection === link.href 
-                      ? 'bg-apple-blue text-white' 
-                      : 'text-apple-black hover:bg-apple-lightgray'}`}
+                      ? 'bg-supply-primary text-white' 
+                      : 'text-supply-dark hover:bg-supply-light'}`}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   aria-current={activeSection === link.href ? 'page' : undefined}
                 >
+                  <span className="mr-3">{link.icon}</span>
                   {link.name}
                 </motion.button>
               ))}
               <motion.button
                 onClick={handleResumeDownload}
-                className="mt-8 w-full px-6 py-3 rounded-lg text-lg font-medium bg-apple-blue text-white hover:bg-apple-black transition-all duration-300 focus-ring hover-lift"
+                className="mt-6 w-full px-6 py-3 rounded-lg text-lg font-medium bg-supply-primary text-white hover:bg-supply-highlight transition-all duration-300 focus-ring hover-lift flex items-center justify-center"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 aria-label="Download resume"
               >
                 <FaDownload className="w-5 h-5 inline mr-2" />
-                Resume
+                Download Resume
               </motion.button>
             </div>
           </motion.div>

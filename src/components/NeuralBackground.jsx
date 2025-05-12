@@ -28,17 +28,26 @@ const NeuralBackground = () => {
     containerRef.current.appendChild(renderer.domElement);
     rendererRef.current = renderer;
 
-    // Create nodes
+    // Create nodes with supply chain theme colors
     const nodes = [];
     const nodeGeometry = new THREE.SphereGeometry(0.05, 16, 16);
-    const nodeMaterial = new THREE.MeshBasicMaterial({ 
-      color: 0x007AFF,
-      transparent: true,
-      opacity: 0.8
-    });
-
-    for (let i = 0; i < 50; i++) {
-      const node = new THREE.Mesh(nodeGeometry, nodeMaterial.clone());
+    
+    // Supply chain themed colors
+    const nodeColors = [
+      0x1A5276, // supply-primary
+      0x2E86C1, // supply-secondary
+      0x3498DB, // supply-accent
+      0x27AE60, // supply-success
+    ];
+    
+    for (let i = 0; i < 60; i++) {
+      const nodeMaterial = new THREE.MeshBasicMaterial({ 
+        color: nodeColors[i % nodeColors.length],
+        transparent: true,
+        opacity: 0.8
+      });
+      
+      const node = new THREE.Mesh(nodeGeometry, nodeMaterial);
       node.position.set(
         (Math.random() - 0.5) * 10,
         (Math.random() - 0.5) * 10,
@@ -54,12 +63,12 @@ const NeuralBackground = () => {
     }
     nodesRef.current = nodes;
 
-    // Create lines
+    // Create lines with supply chain theme
     const lines = [];
     const lineMaterial = new THREE.LineBasicMaterial({ 
-      color: 0x007AFF,
+      color: 0x1A5276, // supply-primary
       transparent: true,
-      opacity: 0.2
+      opacity: 0.15
     });
 
     for (let i = 0; i < nodes.length; i++) {

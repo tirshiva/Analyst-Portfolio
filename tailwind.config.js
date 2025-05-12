@@ -15,6 +15,23 @@ export default {
           lightgray: '#e5e5e5',
           darkgray: '#424245',
         },
+        // Supply chain themed colors
+        supply: {
+          primary: '#1A5276',    // Deep blue - primary brand color
+          secondary: '#2E86C1',  // Medium blue - secondary brand color
+          accent: '#3498DB',     // Light blue - accent color
+          highlight: '#21618C',  // Highlight blue
+          success: '#27AE60',    // Green for positive metrics
+          warning: '#F39C12',    // Amber for caution/warning
+          danger: '#C0392B',     // Red for critical issues
+          light: '#ECF0F1',      // Light background
+          dark: '#2C3E50',       // Dark text/background
+          gray: '#7F8C8D',       // Neutral gray
+          lightgray: '#D6DBDF',  // Light gray for borders
+          chart1: '#2471A3',     // Chart color 1
+          chart2: '#148F77',     // Chart color 2
+          chart3: '#D4AC0D',     // Chart color 3
+        },
         accent: {
           50: '#FFFFFF',   // White
           100: '#F4F4F4',  // Light Gray
