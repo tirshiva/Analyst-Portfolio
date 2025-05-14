@@ -15,22 +15,24 @@ export default {
           lightgray: '#e5e5e5',
           darkgray: '#424245',
         },
-        // Supply chain themed colors
+        // Modern masculine data analyst color palette
         supply: {
-          primary: '#1A5276',    // Deep blue - primary brand color
-          secondary: '#2E86C1',  // Medium blue - secondary brand color
-          accent: '#3498DB',     // Light blue - accent color
-          highlight: '#21618C',  // Highlight blue
-          success: '#27AE60',    // Green for positive metrics
-          warning: '#F39C12',    // Amber for caution/warning
-          danger: '#C0392B',     // Red for critical issues
-          light: '#ECF0F1',      // Light background
-          dark: '#2C3E50',       // Dark text/background
-          gray: '#7F8C8D',       // Neutral gray
-          lightgray: '#D6DBDF',  // Light gray for borders
-          chart1: '#2471A3',     // Chart color 1
-          chart2: '#148F77',     // Chart color 2
-          chart3: '#D4AC0D',     // Chart color 3
+          primary: '#2563EB',    // Strong Blue - primary brand color
+          secondary: '#1E40AF',  // Deep Blue - secondary brand color
+          accent: '#3B82F6',     // Bright Blue - accent color
+          highlight: '#0284C7',  // Teal Blue - highlight color
+          success: '#10B981',    // Emerald - for positive metrics
+          warning: '#F59E0B',    // Amber - for caution/warning
+          danger: '#DC2626',     // Red - for critical issues
+          light: '#F8FAFC',      // Light background
+          dark: '#0F172A',       // Dark text/background
+          gray: '#64748B',       // Slate gray
+          lightgray: '#E2E8F0',  // Light gray for borders
+          chart1: '#2563EB',     // Chart color 1 - blue
+          chart2: '#0284C7',     // Chart color 2 - teal blue
+          chart3: '#10B981',     // Chart color 3 - emerald
+          chart4: '#1E40AF',     // Chart color 4 - deep blue
+          chart5: '#3B82F6',     // Chart color 5 - bright blue
         },
         accent: {
           50: '#FFFFFF',   // White
@@ -59,6 +61,7 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        heading: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
         mono: ['Fira Code', 'monospace']
       },
       boxShadow: {
@@ -71,7 +74,13 @@ export default {
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
         'slide-up': 'slideUp 0.5s ease-out',
+        'slide-in-right': 'slideInRight 0.5s ease-out',
+        'slide-in-left': 'slideInLeft 0.5s ease-out',
         'bounce-slow': 'bounce 3s infinite',
+        'pulse-slow': 'pulseSlow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'float': 'float 3s ease-in-out infinite',
+        'shimmer': 'shimmer 2s infinite linear',
+        'spin-slow': 'spin 8s linear infinite',
       },
       keyframes: {
         fadeIn: {
@@ -81,6 +90,26 @@ export default {
         slideUp: {
           '0%': { transform: 'translateY(20px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        slideInRight: {
+          '0%': { transform: 'translateX(20px)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+        slideInLeft: {
+          '0%': { transform: 'translateX(-20px)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+        pulseSlow: {
+          '0%, 100%': { opacity: '0.6' },
+          '50%': { opacity: '0.8' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '-1000px 0' },
+          '100%': { backgroundPosition: '1000px 0' },
         },
       },
     },

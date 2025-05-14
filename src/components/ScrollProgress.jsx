@@ -1,6 +1,6 @@
 import { motion, useScroll, useSpring } from 'framer-motion';
 
-const ScrollProgress = () => {
+const ScrollProgress = ({ color }) => {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -10,8 +10,11 @@ const ScrollProgress = () => {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 right-0 h-1 bg-supply-primary origin-left z-50"
-      style={{ scaleX }}
+      className="fixed top-0 left-0 right-0 h-1 origin-left z-50"
+      style={{ 
+        scaleX,
+        background: color || '#4361EE' // Use provided color or default to primary blue
+      }}
       role="progressbar"
       aria-valuemin={0}
       aria-valuemax={100}

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaBars, FaTimes, FaDownload, FaChartLine, FaTruck, FaBoxes, FaWarehouse } from 'react-icons/fa';
+import { FaBars, FaTimes, FaDownload, FaChartLine, FaDatabase, FaLaptopCode, FaUserTie, FaEnvelope, FaChartBar } from 'react-icons/fa';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,10 +30,10 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', href: 'home', icon: <FaChartLine className="w-4 h-4" /> },
-    { name: 'Projects', href: 'projects', icon: <FaBoxes className="w-4 h-4" /> },
-    { name: 'About', href: 'about', icon: <FaTruck className="w-4 h-4" /> },
-    { name: 'Experience', href: 'experience', icon: <FaWarehouse className="w-4 h-4" /> },
-    { name: 'Contact', href: 'contact', icon: <FaChartLine className="w-4 h-4" /> }
+    { name: 'Projects', href: 'projects', icon: <FaChartBar className="w-4 h-4" /> },
+    { name: 'About', href: 'about', icon: <FaUserTie className="w-4 h-4" /> },
+    { name: 'Experience', href: 'experience', icon: <FaLaptopCode className="w-4 h-4" /> },
+    { name: 'Contact', href: 'contact', icon: <FaEnvelope className="w-4 h-4" /> }
   ];
 
   const handleResumeDownload = () => {
@@ -54,14 +54,17 @@ const Navbar = () => {
   };
 
   return (
-    <nav 
+    <motion.nav 
       className={`fixed w-full z-50 transition-all duration-300
         ${scrolled 
           ? 'bg-white/90 backdrop-blur-md shadow-md' 
           : 'bg-white/70 backdrop-blur-md'}
-        border-b border-supply-lightgray`}
+        border-b border-supply-lightgray/30`}
       role="navigation"
       aria-label="Main navigation"
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -69,13 +72,13 @@ const Navbar = () => {
           <motion.button
             onClick={() => handleNavClick('home')}
             className="text-supply-dark font-bold text-xl hover:text-supply-primary transition-colors duration-200 focus-ring flex items-center"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
             aria-label="Go to home"
           >
-            <FaTruck className="mr-2 text-supply-primary" />
+            <FaDatabase className="mr-2 text-supply-primary" />
             <span className="bg-gradient-to-r from-supply-primary to-supply-secondary bg-clip-text text-transparent">
-              Supply Chain Analyst
+              Data Analyst
             </span>
           </motion.button>
 
@@ -85,20 +88,29 @@ const Navbar = () => {
               <motion.button
                 key={link.name}
                 onClick={() => handleNavClick(link.href)}
-                className={`text-sm font-medium transition-colors duration-200 focus-ring flex items-center
+                className={`relative text-sm font-medium transition-colors duration-200 focus-ring flex items-center py-2
                   ${activeSection === link.href 
                     ? 'text-supply-primary' 
                     : 'text-supply-dark hover:text-supply-primary'}`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ y: -1 }}
+                whileTap={{ scale: 0.98 }}
                 aria-current={activeSection === link.href ? 'page' : undefined}
               >
                 <span className="mr-1.5">{link.icon}</span>
                 {link.name}
-                {activeSection === link.href && (
+                {activeSection === link.href ? (
                   <motion.div 
-                    className="absolute bottom-0 left-0 w-full h-0.5 bg-supply-primary rounded-full" 
+                    className="absolute bottom-0 left-0 w-full h-0.5 bg-supply-primary rounded-none" 
                     layoutId="activeSection"
+                    initial={{ width: 0 }}
+                    animate={{ width: '100%' }}
+                    transition={{ duration: 0.3 }}
+                  />
+                ) : (
+                  <motion.div 
+                    className="absolute bottom-0 left-0 w-0 h-0.5 bg-supply-primary/50 rounded-none opacity-0" 
+                    whileHover={{ width: '100%', opacity: 1 }}
+                    transition={{ duration: 0.3 }}
                   />
                 )}
               </motion.button>
@@ -106,9 +118,9 @@ const Navbar = () => {
             {/* Resume Button */}
             <motion.button
               onClick={handleResumeDownload}
-              className="ml-4 px-4 py-2 rounded-lg text-sm font-medium bg-supply-primary text-white hover:bg-supply-highlight transition-all duration-300 focus-ring hover-lift"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="ml-4 px-5 py-2 rounded-md text-sm font-medium bg-supply-primary text-white shadow-sm hover:shadow-md transition-all duration-300 focus-ring"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               aria-label="Download resume"
             >
               <FaDownload className="w-4 h-4 inline mr-2" />
@@ -118,14 +130,14 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <motion.button
-            className="md:hidden p-2 text-supply-dark hover:text-supply-primary transition-colors duration-300 focus-ring"
+            className="md:hidden p-2 text-supply-dark hover:text-supply-primary transition-colors duration-300 focus-ring bg-white/80 rounded-md shadow-sm"
             onClick={() => setIsOpen(!isOpen)}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
           >
-            {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+            {isOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
           </motion.button>
         </div>
       </div>
@@ -134,44 +146,49 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
             transition={{ 
               type: "spring",
               stiffness: 300,
               damping: 30
             }}
-            className="md:hidden fixed inset-0 bg-white z-50 flex flex-col shadow-2xl"
+            className="md:hidden fixed inset-0 bg-white/95 backdrop-blur-lg z-50 flex flex-col shadow-xl"
             role="dialog"
             aria-modal="true"
           >
-            <div className="flex items-center justify-between h-16 px-6 border-b border-supply-lightgray bg-white">
+            <div className="flex items-center justify-between h-16 px-6 border-b border-supply-lightgray/30 bg-white/80">
               <span className="text-supply-dark font-bold text-xl flex items-center">
-                <FaTruck className="mr-2 text-supply-primary" />
-                Menu
+                <FaDatabase className="mr-2 text-supply-primary" />
+                <span className="bg-gradient-to-r from-supply-primary to-supply-secondary bg-clip-text text-transparent">
+                  Menu
+                </span>
               </span>
               <motion.button
                 onClick={() => setIsOpen(false)}
-                className="p-2 text-supply-dark hover:text-supply-primary transition-colors duration-300 focus-ring"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
+                className="p-2 text-supply-dark hover:text-supply-primary transition-colors duration-300 focus-ring bg-white/80 rounded-md shadow-sm"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 aria-label="Close menu"
               >
-                <FaTimes size={24} />
+                <FaTimes size={20} />
               </motion.button>
             </div>
-            <div className="flex-1 flex flex-col justify-center items-center space-y-6 bg-white p-6">
-              {navLinks.map((link) => (
+            <div className="flex-1 flex flex-col justify-center items-center space-y-4 bg-white/50 p-6">
+              {navLinks.map((link, index) => (
                 <motion.button
                   key={link.name}
                   onClick={() => handleNavClick(link.href)}
-                  className={`text-lg font-medium transition-colors duration-200 focus-ring w-full py-3 px-4 rounded-lg flex items-center
+                  className={`text-lg font-medium transition-all duration-300 focus-ring w-full py-3 px-6 rounded-md flex items-center
                     ${activeSection === link.href 
-                      ? 'bg-supply-primary text-white' 
-                      : 'text-supply-dark hover:bg-supply-light'}`}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                      ? 'bg-supply-primary text-white shadow-sm' 
+                      : 'text-supply-dark hover:bg-supply-light/70 hover:shadow-sm'}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ scale: 1.01, x: 3 }}
+                  whileTap={{ scale: 0.99 }}
                   aria-current={activeSection === link.href ? 'page' : undefined}
                 >
                   <span className="mr-3">{link.icon}</span>
@@ -180,9 +197,12 @@ const Navbar = () => {
               ))}
               <motion.button
                 onClick={handleResumeDownload}
-                className="mt-6 w-full px-6 py-3 rounded-lg text-lg font-medium bg-supply-primary text-white hover:bg-supply-highlight transition-all duration-300 focus-ring hover-lift flex items-center justify-center"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                className="mt-6 w-full px-6 py-3 rounded-md text-lg font-medium bg-supply-primary text-white shadow-sm hover:shadow-md transition-all duration-300 focus-ring flex items-center justify-center"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: navLinks.length * 0.1 }}
+                whileHover={{ scale: 1.01 }}
+                whileTap={{ scale: 0.99 }}
                 aria-label="Download resume"
               >
                 <FaDownload className="w-5 h-5 inline mr-2" />
@@ -192,7 +212,7 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </motion.nav>
   );
 };
 

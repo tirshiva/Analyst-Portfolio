@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaTruck, FaBoxes, FaChartLine, FaArrowUp } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaDatabase, FaChartLine, FaCode, FaArrowUp } from 'react-icons/fa';
 import { socialLinks } from '../data/projects';
 
 // Add twitter link if not in the data file
@@ -59,13 +59,13 @@ const FooterComponent = () => {
 
   return (
     <footer className="relative bg-supply-dark text-white py-16 sm:py-20">
-      {/* Supply chain themed background elements */}
+      {/* Data analysis themed background elements */}
       <div className="absolute inset-0 overflow-hidden opacity-5">
         <div className="absolute top-10 left-10">
-          <FaTruck className="w-32 h-32" />
+          <FaDatabase className="w-32 h-32" />
         </div>
         <div className="absolute bottom-10 right-10">
-          <FaBoxes className="w-24 h-24" />
+          <FaCode className="w-24 h-24" />
         </div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <FaChartLine className="w-48 h-48" />
@@ -83,11 +83,11 @@ const FooterComponent = () => {
             className="col-span-1 md:col-span-1"
           >
             <div className="flex items-center gap-3 mb-4">
-              <FaTruck className="text-supply-primary w-6 h-6" />
-              <h3 className="text-xl font-bold text-white">Supply Chain Analyst</h3>
+              <FaDatabase className="text-supply-primary w-6 h-6" />
+              <h3 className="text-xl font-bold text-white">Data Analyst</h3>
             </div>
-            <p className="text-supply-lightgray mb-6">
-              Transforming supply chain data into actionable insights and optimizing logistics through analytics.
+            <p className="text-gray-300 mb-6">
+              Transforming complex data into actionable insights and driving business decisions through advanced analytics.
             </p>
             <div className="flex gap-4">
               <motion.a
@@ -97,7 +97,7 @@ const FooterComponent = () => {
                 variants={buttonVariants}
                 whileHover="hover"
                 whileTap="tap"
-                className="p-2 rounded-full bg-supply-primary/20 hover:bg-supply-primary/30 text-supply-primary transition-colors"
+                className="p-2 rounded-md bg-supply-primary/20 hover:bg-supply-primary/30 text-supply-primary transition-colors"
                 aria-label="LinkedIn"
               >
                 <FaLinkedin className="w-5 h-5" />
@@ -109,7 +109,7 @@ const FooterComponent = () => {
                 variants={buttonVariants}
                 whileHover="hover"
                 whileTap="tap"
-                className="p-2 rounded-full bg-supply-primary/20 hover:bg-supply-primary/30 text-supply-primary transition-colors"
+                className="p-2 rounded-md bg-supply-primary/20 hover:bg-supply-primary/30 text-supply-primary transition-colors"
                 aria-label="GitHub"
               >
                 <FaGithub className="w-5 h-5" />
@@ -131,7 +131,7 @@ const FooterComponent = () => {
                 <li key={index}>
                   <a 
                     href={link.href} 
-                    className="text-supply-lightgray hover:text-supply-primary transition-colors"
+                    className="text-gray-300 hover:text-supply-primary transition-colors"
                   >
                     {link.name}
                   </a>
@@ -150,11 +150,11 @@ const FooterComponent = () => {
           >
             <h3 className="text-lg font-semibold mb-4 text-white">Expertise</h3>
             <ul className="space-y-2">
-              <li className="text-supply-lightgray">Supply Chain Analytics</li>
-              <li className="text-supply-lightgray">Inventory Optimization</li>
-              <li className="text-supply-lightgray">Logistics Analysis</li>
-              <li className="text-supply-lightgray">Demand Forecasting</li>
-              <li className="text-supply-lightgray">Data Visualization</li>
+              <li className="text-gray-300">Data Analysis</li>
+              <li className="text-gray-300">Machine Learning</li>
+              <li className="text-gray-300">Statistical Modeling</li>
+              <li className="text-gray-300">Predictive Analytics</li>
+              <li className="text-gray-300">Data Visualization</li>
             </ul>
           </motion.div>
 
@@ -167,7 +167,7 @@ const FooterComponent = () => {
             className="col-span-1"
           >
             <h3 className="text-lg font-semibold mb-4 text-white">Contact</h3>
-            <p className="text-supply-lightgray mb-4">
+            <p className="text-gray-300 mb-4">
               Interested in working together? Let's connect.
             </p>
             <motion.a
@@ -175,7 +175,7 @@ const FooterComponent = () => {
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-supply-primary text-white rounded-lg shadow-md hover:bg-supply-highlight transition-all duration-300"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-supply-primary text-white rounded-md shadow-md hover:bg-supply-secondary transition-all duration-300"
             >
               <FaEnvelope className="w-4 h-4" />
               <span>Email Me</span>
@@ -188,7 +188,7 @@ const FooterComponent = () => {
 
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-supply-lightgray text-sm mb-4 md:mb-0">
+          <p className="text-gray-300 text-sm mb-4 md:mb-0">
             © {new Date().getFullYear()} Shivanshu Tiwari. All rights reserved.
           </p>
           <motion.button
@@ -196,7 +196,7 @@ const FooterComponent = () => {
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap"
-            className="p-3 rounded-full bg-supply-primary/20 hover:bg-supply-primary text-supply-primary hover:text-white transition-all duration-300"
+            className="p-3 rounded-md bg-supply-primary/20 hover:bg-supply-primary text-supply-primary hover:text-white transition-all duration-300"
             aria-label="Scroll to top"
           >
             <FaArrowUp className="w-4 h-4" />

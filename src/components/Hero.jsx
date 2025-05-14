@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaDownload, FaChartLine, FaTruck, FaBoxes, FaWarehouse, FaShippingFast, FaNetworkWired, FaDatabase } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaDownload, FaChartLine, FaDatabase, FaArrowRight, FaCode } from 'react-icons/fa';
+import { SiPython, SiTensorflow, SiPowerbi } from 'react-icons/si';
 
 const Hero = () => {
   const handleResumeDownload = () => {
@@ -11,149 +12,193 @@ const Hero = () => {
     document.body.removeChild(link);
   };
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.5, ease: "easeOut" }
+    }
+  };
+
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-supply-light to-white py-20">
-      {/* Static background with decorative elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Background circles */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-supply-primary/5 rounded-full -mr-48 -mt-48"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-supply-secondary/5 rounded-full -ml-48 -mb-48"></div>
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
+      {/* Clean background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-supply-light/10 to-white overflow-hidden">
+        {/* Subtle background elements */}
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-supply-primary/5 rounded-full -mr-96 -mt-96 animate-pulse-slow"></div>
+        <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-supply-secondary/5 rounded-full -ml-96 -mb-96 animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
         
-        {/* Decorative grid pattern */}
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.03]"></div>
-        
-        {/* Supply chain themed decorative elements */}
-        <div className="absolute top-1/4 left-10 opacity-10">
-          <FaTruck className="w-24 h-24 text-supply-primary" />
-        </div>
-        <div className="absolute bottom-1/4 right-10 opacity-10">
-          <FaBoxes className="w-20 h-20 text-supply-secondary" />
-        </div>
-        <div className="absolute top-3/4 left-1/3 opacity-5">
-          <FaWarehouse className="w-32 h-32 text-supply-accent" />
-        </div>
-        <div className="absolute top-1/3 right-1/4 opacity-5">
-          <FaChartLine className="w-16 h-16 text-supply-success" />
-        </div>
+        {/* Very subtle grid pattern */}
+        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.01]"></div>
       </div>
       
       {/* Main content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
-          {/* Left side - Text content */}
-          <div className="w-full md:w-1/2 text-left">
-            <div className="mb-4">
-              <span className="px-4 py-1 bg-supply-primary/10 text-supply-primary rounded-full text-sm font-medium inline-block">
-                Supply Chain Data Analytics
+        <motion.div 
+          className="flex flex-col items-center justify-center text-center"
+          initial="hidden"
+          animate="visible"
+          variants={containerVariants}
+        >
+          {/* Professional hero content */}
+          <motion.div className="max-w-3xl mx-auto" variants={itemVariants}>
+            <motion.div className="mb-6" variants={itemVariants}>
+              <span className="px-4 py-1.5 bg-supply-primary/10 text-supply-primary rounded-md text-sm font-medium inline-block border border-supply-primary/20">
+                Data Analysis & Machine Learning
               </span>
-            </div>
+            </motion.div>
             
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-supply-dark mb-4">
-              Hi, I'm <span className="text-supply-primary">Shivanshu Tiwari</span>
-            </h1>
+            <motion.h1 
+              className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 tracking-tight leading-tight"
+              variants={itemVariants}
+            >
+              Hi, I'm <span className="bg-gradient-to-r from-supply-primary to-supply-secondary bg-clip-text text-transparent">Shivanshu Tiwari</span>
+            </motion.h1>
             
-            <p className="text-xl sm:text-2xl text-supply-gray mb-6">
-              Supply Chain Data Analyst
-            </p>
+            <motion.p 
+              className="text-xl sm:text-2xl text-supply-gray mb-6 font-medium"
+              variants={itemVariants}
+            >
+              Data Analyst & ML Specialist
+            </motion.p>
             
-            <p className="text-supply-gray mb-8 text-lg">
-              Transforming complex supply chain data into actionable insights and optimizing logistics operations through advanced analytics and machine learning solutions.
-            </p>
+            <motion.p 
+              className="text-supply-gray mb-8 text-lg leading-relaxed mx-auto"
+              variants={itemVariants}
+            >
+              Transforming complex business challenges into data-driven solutions through advanced analytics and machine learning techniques. Specializing in predictive modeling, data visualization, and actionable insights.
+            </motion.p>
             
-            <div className="flex flex-wrap gap-4 mb-8">
-              <a
+            <motion.div 
+              className="flex flex-wrap gap-4 mb-10 justify-center"
+              variants={itemVariants}
+            >
+              <motion.a
                 href="#projects"
-                className="px-6 py-3 bg-supply-primary text-white rounded-lg text-base font-medium shadow-md hover:bg-supply-highlight transition-all duration-300 flex items-center justify-center"
+                className="px-6 py-3 bg-supply-primary text-white rounded-md text-base font-medium shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                <FaChartLine className="mr-2" /> View My Work
-              </a>
+                <FaChartLine className="mr-2" /> View My Work <FaArrowRight className="ml-2" />
+              </motion.a>
               
-              <button
+              <motion.button
                 onClick={handleResumeDownload}
-                className="px-6 py-3 bg-white text-supply-primary border border-supply-primary rounded-lg text-base font-medium shadow-md hover:bg-supply-light transition-all duration-300 flex items-center justify-center"
+                className="px-6 py-3 bg-white text-supply-primary border border-supply-primary/30 rounded-md text-base font-medium shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
                 <FaDownload className="mr-2" /> Download CV
-              </button>
-              
-              <a
-                href="#contact"
-                className="px-6 py-3 bg-supply-light text-supply-dark rounded-lg text-base font-medium shadow-md hover:bg-supply-lightgray transition-all duration-300 flex items-center justify-center"
-              >
-                Get in Touch
-              </a>
-            </div>
+              </motion.button>
+            </motion.div>
             
-            <div className="flex space-x-4">
-              <a 
+            {/* Horizontal line separator */}
+            <motion.div 
+              className="w-24 h-1 bg-supply-primary/30 mx-auto mb-10"
+              variants={itemVariants}
+            ></motion.div>
+            
+            {/* Tech stack icons */}
+            <motion.div variants={itemVariants} className="mb-10">
+              <p className="text-sm text-supply-gray mb-5 font-medium uppercase tracking-wider">Technical Expertise</p>
+              <div className="flex flex-wrap gap-3 justify-center">
+                {[
+                  { icon: <SiPython className="w-5 h-5" />, label: "Python", color: "bg-supply-primary" },
+                  { icon: <FaDatabase className="w-5 h-5" />, label: "SQL", color: "bg-supply-secondary" },
+                  { icon: <SiTensorflow className="w-5 h-5" />, label: "TensorFlow", color: "bg-supply-accent" },
+                  { icon: <FaCode className="w-5 h-5" />, label: "Machine Learning", color: "bg-supply-highlight" },
+                  { icon: <SiPowerbi className="w-5 h-5" />, label: "Power BI", color: "bg-supply-accent" },
+                ].map((tech, index) => (
+                  <motion.div
+                    key={index}
+                    className="flex items-center px-3 py-1.5 bg-white rounded-md shadow-sm border border-gray-100"
+                    whileHover={{ y: -2 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  >
+                    <span className={`${tech.color} text-white p-1 rounded-md mr-2`}>
+                      {tech.icon}
+                    </span>
+                    <span className="text-xs font-medium text-supply-dark">{tech.label}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+            
+            <motion.div 
+              className="flex space-x-4 justify-center"
+              variants={itemVariants}
+            >
+              <motion.a 
                 href="https://github.com/Shivanshu2407" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-supply-gray hover:text-supply-primary transition-colors"
+                className="p-2 text-supply-gray hover:text-supply-primary transition-colors bg-white rounded-md shadow-sm hover:shadow-md"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label="GitHub Profile"
               >
-                <FaGithub className="w-6 h-6" />
-              </a>
-              <a 
+                <FaGithub className="w-5 h-5" />
+              </motion.a>
+              <motion.a 
                 href="https://www.linkedin.com/in/shivanshu2407/" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-supply-gray hover:text-supply-primary transition-colors"
+                className="p-2 text-supply-gray hover:text-supply-primary transition-colors bg-white rounded-md shadow-sm hover:shadow-md"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label="LinkedIn Profile"
               >
-                <FaLinkedin className="w-6 h-6" />
-              </a>
-            </div>
-          </div>
+                <FaLinkedin className="w-5 h-5" />
+              </motion.a>
+            </motion.div>
+          </motion.div>
           
-          {/* Right side - Visual element */}
-          <div className="w-full md:w-1/2 flex justify-center">
-            <div className="relative">
-              {/* Main visual element */}
-              <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96">
-                {/* Background glow */}
-                <div className="absolute inset-0 bg-supply-primary/20 rounded-full blur-3xl transform scale-75"></div>
-                
-                {/* Main circle */}
-                <div className="absolute inset-0 bg-gradient-to-br from-supply-light to-white rounded-full border-4 border-supply-primary/20 shadow-xl flex items-center justify-center">
-                  {/* Center icon */}
-                  <FaNetworkWired className="w-24 h-24 text-supply-primary/80" />
-                </div>
-                
-                {/* Orbiting elements */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 bg-white p-4 rounded-full shadow-lg border border-supply-lightgray">
-                  <FaChartLine className="w-8 h-8 text-supply-primary" />
-                </div>
-                
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-8 bg-white p-4 rounded-full shadow-lg border border-supply-lightgray">
-                  <FaDatabase className="w-8 h-8 text-supply-secondary" />
-                </div>
-                
-                <div className="absolute left-0 top-1/2 -translate-x-8 -translate-y-1/2 bg-white p-4 rounded-full shadow-lg border border-supply-lightgray">
-                  <FaTruck className="w-8 h-8 text-supply-accent" />
-                </div>
-                
-                <div className="absolute right-0 top-1/2 translate-x-8 -translate-y-1/2 bg-white p-4 rounded-full shadow-lg border border-supply-lightgray">
-                  <FaBoxes className="w-8 h-8 text-supply-success" />
-                </div>
-                
-                {/* Connecting lines */}
-                <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                  <line x1="50%" y1="50%" x2="50%" y2="0" stroke="#1A5276" strokeWidth="2" strokeDasharray="5,5" strokeOpacity="0.3" />
-                  <line x1="50%" y1="50%" x2="50%" y2="100%" stroke="#1A5276" strokeWidth="2" strokeDasharray="5,5" strokeOpacity="0.3" />
-                  <line x1="50%" y1="50%" x2="0" y2="50%" stroke="#1A5276" strokeWidth="2" strokeDasharray="5,5" strokeOpacity="0.3" />
-                  <line x1="50%" y1="50%" x2="100%" y2="50%" stroke="#1A5276" strokeWidth="2" strokeDasharray="5,5" strokeOpacity="0.3" />
-                </svg>
-              </div>
-              
-              {/* Floating badges */}
-              <div className="absolute -top-4 -right-4 px-3 py-1 bg-supply-primary text-white text-sm font-medium rounded-lg shadow-md">
-                Data Analysis
-              </div>
-              
-              <div className="absolute -bottom-4 -left-4 px-3 py-1 bg-supply-secondary text-white text-sm font-medium rounded-lg shadow-md">
-                Supply Chain
-              </div>
+          {/* Animated scroll indicator */}
+          <motion.div 
+            className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+            initial={{ opacity: 0 }}
+            animate={{ 
+              opacity: 1,
+              y: [0, 10, 0]
+            }}
+            transition={{ 
+              opacity: { delay: 2, duration: 1 },
+              y: {
+                duration: 1.5, 
+                repeat: Infinity,
+                repeatType: "loop"
+              }
+            }}
+          >
+            <div className="w-6 h-10 border-2 border-supply-primary/30 rounded-full flex justify-center pt-2">
+              <motion.div 
+                className="w-1 h-2 bg-supply-primary rounded-full"
+                animate={{ 
+                  opacity: [0.5, 1, 0.5],
+                  y: [0, 4, 0]
+                }}
+                transition={{ 
+                  duration: 1.5, 
+                  repeat: Infinity,
+                  repeatType: "loop" 
+                }}
+              />
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
