@@ -27,6 +27,22 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+  
+  // Control body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      // Prevent body scrolling when menu is open
+      document.body.style.overflow = 'hidden';
+    } else {
+      // Re-enable scrolling when menu is closed
+      document.body.style.overflow = 'auto';
+    }
+    
+    // Cleanup function to ensure scrolling is re-enabled when component unmounts
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isOpen]);
 
   const navLinks = [
     { name: 'Home', href: 'home', icon: <FaChartLine className="w-4 h-4" /> },
@@ -46,16 +62,29 @@ const Navbar = () => {
   };
 
   const handleNavClick = (href) => {
-    const section = document.getElementById(href);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
+    // Close the mobile menu first
     setIsOpen(false);
+    
+    // Small delay to ensure menu closes before scrolling
+    setTimeout(() => {
+      const section = document.getElementById(href);
+      if (section) {
+        // Calculate the position to scroll to (accounting for navbar height)
+        const navbarHeight = 64; // 16 * 4 = 64px (h-16)
+        const sectionPosition = section.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+        
+        // Scroll to the section
+        window.scrollTo({
+          top: sectionPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 100);
   };
 
   return (
     <motion.nav 
-      className={`fixed w-full z-50 transition-all duration-300
+      className={`fixed w-full z-[90] transition-all duration-300
         ${scrolled 
           ? 'bg-white/90 backdrop-blur-md shadow-md' 
           : 'bg-white/70 backdrop-blur-md'}
@@ -65,6 +94,7 @@ const Navbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
+      style={{ position: 'fixed', top: 0, left: 0, right: 0 }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -128,7 +158,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <motion.button
-            className="md:hidden p-1.5 sm:p-2 text-supply-dark hover:text-supply-primary transition-colors duration-300 focus-ring bg-white/80 rounded-md shadow-sm"
+            className="md:hidden p-1.5 sm:p-2 text-supply-dark hover:text-supply-primary transition-colors duration-300 focus-ring bg-white/80 rounded-md shadow-sm z-[101]"
             onClick={() => setIsOpen(!isOpen)}
             whileTap={{ scale: 0.95 }}
             aria-label={isOpen ? "Close menu" : "Open menu"}
@@ -151,9 +181,10 @@ const Navbar = () => {
               stiffness: 300,
               damping: 30
             }}
-            className="md:hidden fixed inset-0 bg-white/95 backdrop-blur-lg z-50 flex flex-col shadow-xl"
+            className="md:hidden fixed inset-0 top-0 left-0 right-0 bottom-0 bg-white/95 backdrop-blur-lg z-[100] flex flex-col shadow-xl"
             role="dialog"
             aria-modal="true"
+            style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
           >
             <div className="flex items-center justify-between h-14 sm:h-16 px-4 sm:px-6 border-b border-supply-lightgray/30 bg-white/80">
               <span className="text-supply-dark font-bold text-base sm:text-xl flex items-center">
