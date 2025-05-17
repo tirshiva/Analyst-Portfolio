@@ -114,7 +114,7 @@ const DynamicBackground = ({ section }) => {
 
     // Initialize
     resizeCanvas();
-    // initParticles();
+    initParticles();
     animate();
 
     // Handle resize
