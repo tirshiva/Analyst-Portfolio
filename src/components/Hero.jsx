@@ -72,14 +72,14 @@ const Hero = () => {
               className="text-lg sm:text-xl md:text-2xl text-supply-gray mb-4 sm:mb-6 font-medium"
               variants={itemVariants}
             >
-              Data Analyst & ML Specialist
+              Data Analyst & Machine Learning Specialist
             </motion.p>
             
             <motion.p 
               className="text-supply-gray mb-6 sm:mb-8 text-base sm:text-lg leading-relaxed mx-auto px-4 sm:px-6 md:px-8 max-w-full sm:max-w-2xl"
               variants={itemVariants}
             >
-              Transforming complex business challenges into data-driven solutions through advanced analytics and machine learning techniques. Specializing in predictive modeling, data visualization, and actionable insights.
+              deploying machine learning models and MLOps pipelines to solve complex business challenges
             </motion.p>
             
             <motion.div 
@@ -136,7 +136,7 @@ const Hero = () => {
               variants={itemVariants}
             >
               <motion.a 
-                href="https://github.com/Shivanshu2407" 
+                href="https://github.com/tirshiva" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-1.5 sm:p-2 text-supply-gray hover:text-supply-primary transition-colors bg-white rounded-md shadow-sm hover:shadow-md"
