@@ -79,7 +79,7 @@ const Hero = () => {
               className="text-supply-gray mb-6 sm:mb-8 text-base sm:text-lg leading-relaxed mx-auto px-4 sm:px-6 md:px-8 max-w-full sm:max-w-2xl"
               variants={itemVariants}
             >
-              deploying machine learning models and MLOps pipelines to solve complex business challenges
+              Deploying machine learning models and MLOps pipelines to solve complex business challenges
             </motion.p>
             
             <motion.div 
