@@ -107,14 +107,14 @@ const DynamicBackground = ({ section }) => {
       });
 
       // Draw connections
-      drawConnections();
+      // drawConnections(); // <-- Remove or comment out this line
 
       animationFrameId = requestAnimationFrame(animate);
     };
 
     // Initialize
     resizeCanvas();
-    initParticles();
+    // initParticles();
     animate();
 
     // Handle resize
@@ -139,4 +139,4 @@ const DynamicBackground = ({ section }) => {
   );
 };
 
-export default DynamicBackground; 
+export default DynamicBackground;

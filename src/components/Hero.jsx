@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaDownload, FaChartLine, FaDatabase, FaArrowRight, FaCode } from 'react-icons/fa';
-import { SiPython, SiTensorflow, SiPowerbi } from 'react-icons/si';
+import { FaGithub, FaLinkedin, FaDownload, FaChartLine, FaDatabase, FaArrowRight, FaCode, FaAws } from 'react-icons/fa';
+import { SiPython } from 'react-icons/si';
 
 const Hero = () => {
   const handleResumeDownload = () => {
@@ -68,18 +68,18 @@ const Hero = () => {
               Hi, I'm <span className="bg-gradient-to-r from-supply-primary to-supply-secondary bg-clip-text text-transparent">Shivanshu Tiwari</span>
             </motion.h1>
             
-            <motion.p 
+            {/* <motion.p 
               className="text-lg sm:text-xl md:text-2xl text-supply-gray mb-4 sm:mb-6 font-medium"
               variants={itemVariants}
             >
               Data Analyst & Machine Learning Specialist
-            </motion.p>
+            </motion.p> */}
             
             <motion.p 
               className="text-supply-gray mb-6 sm:mb-8 text-base sm:text-lg leading-relaxed mx-auto px-4 sm:px-6 md:px-8 max-w-full sm:max-w-2xl"
               variants={itemVariants}
             >
-              Deploying machine learning models and MLOps pipelines to solve complex business challenges
+              Deploying machine learning models and MLOps pipelines to solve complex business challenges.
             </motion.p>
             
             <motion.div 
@@ -114,9 +114,9 @@ const Hero = () => {
                 {[
                   { icon: <SiPython className="w-4 h-4 sm:w-5 sm:h-5" />, label: "Python", color: "bg-supply-primary" },
                   { icon: <FaDatabase className="w-4 h-4 sm:w-5 sm:h-5" />, label: "SQL", color: "bg-supply-secondary" },
-                  { icon: <SiTensorflow className="w-4 h-4 sm:w-5 sm:h-5" />, label: "TensorFlow", color: "bg-supply-accent" },
                   { icon: <FaCode className="w-4 h-4 sm:w-5 sm:h-5" />, label: "Machine Learning", color: "bg-supply-highlight" },
-                  { icon: <SiPowerbi className="w-4 h-4 sm:w-5 sm:h-5" />, label: "Power BI", color: "bg-supply-accent" },
+                  { icon: <FaCode className="w-4 h-4 sm:w-5 sm:h-5" />, label: "MLOps", color: "bg-supply-accent" },
+                  { icon: <FaAws className="w-4 h-4 sm:w-5 sm:h-5" />, label: "AWS", color: "bg-yellow-400" },
                 ].map((tech, index) => (
                   <motion.div
                     key={index}

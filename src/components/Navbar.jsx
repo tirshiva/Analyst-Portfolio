@@ -108,7 +108,7 @@ const Navbar = () => {
           >
             <FaDatabase className="mr-1.5 sm:mr-2 text-supply-primary w-4 h-4 sm:w-5 sm:h-5" />
             <span className="bg-gradient-to-r from-supply-primary to-supply-secondary bg-clip-text text-transparent">
-              Data Analyst
+              Portfolio
             </span>
           </motion.button>
 

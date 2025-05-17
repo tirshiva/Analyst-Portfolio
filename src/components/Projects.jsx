@@ -81,7 +81,7 @@ const Projects = () => (
           Looking for more examples of my work? Check out my GitHub repository for additional projects.
         </p>
         <motion.a
-          href="https://github.com/Shivanshu2407"
+          href="https://github.com/tirshiva"
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.05 }}
