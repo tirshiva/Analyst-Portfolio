@@ -12,6 +12,15 @@
 export const projects = [
   {
     id: 1,
+    title: "Premier League Prediction",
+    description: "machine Learning tool predicting match results of the premier league",
+    techStack: ["Python", "MLOps", "Docker", "Ensemble"],
+    githubLink: "https://github.com/tirshiva/Premier-League-Prediction-/tree/master",
+    // demoLink: "https://house-prediction-regression-model.onrender.com/",
+    // image: "/images/01.png" // Fixed path
+  },
+  {
+    id: 2,
     title: "ML-Powered Property Price Predictor",
     description: "Machine Learning real estate tool predicting prices using Python, Scikit-learn.",
     techStack: ["Python", "Scikit-learn", "Flask", "Linear Regression"],
@@ -20,7 +29,7 @@ export const projects = [
     image: "/images/01.png" // Fixed path
   },
   {
-    id: 2,
+    id: 3,
     title: "Business Insights 360",
     description: "Power BI dashboard providing actionable insights across Finance, Sales, Marketing, and Supply Chain departments.",
     techStack: ["Power BI", "DAX", "Power Query", "Business Intelligence"],
@@ -29,7 +38,7 @@ export const projects = [
     image: "/images/02.png" // Fixed path
   },
   {
-    id: 3,
+    id: 4,
     title: "Customer Churn Prediction",
     description: "Machine learning model for churn prediction in the telecommunications industry.",
     techStack: ["Python","Random Forest Classifier","Hyperparameter tuning","Cross Validation"],
@@ -38,7 +47,7 @@ export const projects = [
     image: "/images/Churn.png" // Fixed path
   },
   {
-    id: 4,
+    id: 5,
     title: "Employee Retention Analytics",
     description: "Predicting employee attrition using machine learning to improve workforce retention.",
     techStack: ["Human Resource Analytics","Classification","Neural Network","Deep Learning"],
