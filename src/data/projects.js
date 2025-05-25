@@ -13,7 +13,7 @@ export const projects = [
   {
     id: 1,
     title: "Premier League Prediction",
-    description: "machine Learning tool predicting match results of the premier league",
+    description: "Machine Learning tool predicting match results of the Premier League.",
     techStack: ["Python", "MLOps", "Docker", "Ensemble"],
     githubLink: "https://github.com/tirshiva/Premier-League-Prediction-/tree/master",
     // demoLink: "https://house-prediction-regression-model.onrender.com/",
