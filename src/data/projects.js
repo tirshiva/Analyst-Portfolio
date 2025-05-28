@@ -12,10 +12,10 @@
 export const projects = [
   {
     id: 1,
-    title: "Premier League Prediction",
-    description: "Machine Learning tool predicting match results of the Premier League.",
-    techStack: ["Python", "MLOps", "Docker", "Ensemble"],
-    githubLink: "https://github.com/tirshiva/Premier-League-Prediction-/tree/master",
+    title: "Vehicle Insurance Domain",
+    description: "MLOps project showcasing vehicle insurance pipeline with data processing, model deployment, and CI/CD automation features.",
+    techStack: ["MongoDB","MLOps","CI/CD", "AWS EC2"],
+    githubLink: "https://github.com/tirshiva/MLOps-Proj1",
     // demoLink: "https://house-prediction-regression-model.onrender.com/",
     // image: "/images/01.png" // Fixed path
   },
