@@ -12,7 +12,7 @@ import Documentation from './components/Documentation';
 import './styles/theme.css';
 
 const App = () => {
-  // Page transition variants
+  // Page transition variants with slower, smoother transitions
   const pageVariants = {
     initial: {
       opacity: 0
@@ -20,15 +20,29 @@ const App = () => {
     in: {
       opacity: 1,
       transition: {
-        duration: 0.6,
-        ease: "easeInOut"
+        duration: 0.8,
+        ease: [0.4, 0, 0.2, 1]
       }
     },
     out: {
       opacity: 0,
       transition: {
-        duration: 0.4,
-        ease: "easeInOut"
+        duration: 0.6,
+        ease: [0.4, 0, 0.2, 1]
+      }
+    }
+  };
+
+  // Section animation variants
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.4, 0, 0.2, 1],
+        staggerChildren: 0.1
       }
     }
   };
@@ -56,7 +70,7 @@ const App = () => {
                 opacity: [0.1, 0.15, 0.1]
               }}
               transition={{ 
-                duration: 15, 
+                duration: 20, 
                 repeat: Infinity,
                 repeatType: "reverse"
               }}
@@ -80,26 +94,54 @@ const App = () => {
             {/* Projects Section */}
             <section id="projects" className="scroll-mt-20 py-20 relative z-10 bg-white">
               <ScrollAnimation>
-                <Projects />
+                <motion.div
+                  variants={sectionVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-100px" }}
+                >
+                  <Projects />
+                </motion.div>
               </ScrollAnimation>
             </section>
             
             {/* About Section */}
             <section id="about" className="scroll-mt-20 py-20 relative z-10 bg-gray-50/50">
               <ScrollAnimation>
-                <About />
+                <motion.div
+                  variants={sectionVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-100px" }}
+                >
+                  <About />
+                </motion.div>
               </ScrollAnimation>
             </section>
 
             {/* Documentation Section */}
             <section id="documentation" className="scroll-mt-20 py-20 relative z-10 bg-white">
-              <Documentation />
+              <motion.div
+                variants={sectionVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+              >
+                <Documentation />
+              </motion.div>
             </section>
 
             {/* Contact Section */}
             <section id="contact" className="scroll-mt-20 py-20 relative z-10 bg-gray-50/50">
               <ScrollAnimation>
-                <Contact />
+                <motion.div
+                  variants={sectionVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-100px" }}
+                >
+                  <Contact />
+                </motion.div>
               </ScrollAnimation>
             </section>
           </main>
