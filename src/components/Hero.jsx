@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaDownload, FaChartLine, FaDatabase, FaArrowRight, FaCode, FaAws } from 'react-icons/fa';
-import { SiPython } from 'react-icons/si';
+import { FaGithub, FaLinkedin, FaDownload, FaBrain, FaRobot, FaArrowRight, FaCode, FaAws } from 'react-icons/fa';
+import { SiPython, SiTensorflow, SiPytorch } from 'react-icons/si';
 
 const Hero = () => {
   const handleResumeDownload = () => {
@@ -35,16 +35,6 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
-      {/* Clean background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-supply-light/10 to-white overflow-hidden">
-        {/* Subtle background elements */}
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-supply-primary/5 rounded-full -mr-96 -mt-96 animate-pulse-slow"></div>
-        <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-supply-secondary/5 rounded-full -ml-96 -mb-96 animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
-        
-        {/* Very subtle grid pattern */}
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.01]"></div>
-      </div>
-      
       {/* Main content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
@@ -57,7 +47,7 @@ const Hero = () => {
           <motion.div className="max-w-3xl mx-auto" variants={itemVariants}>
             <motion.div className="mb-6" variants={itemVariants}>
               <span className="px-4 py-1.5 bg-supply-primary/10 text-supply-primary rounded-md text-sm font-medium inline-block border border-supply-primary/20">
-                Data Analysis & Machine Learning
+                Machine Learning & ML Ops Engineer
               </span>
             </motion.div>
             
@@ -68,18 +58,11 @@ const Hero = () => {
               Hi, I'm <span className="bg-gradient-to-r from-supply-primary to-supply-secondary bg-clip-text text-transparent">Shivanshu Tiwari</span>
             </motion.h1>
             
-            {/* <motion.p 
-              className="text-lg sm:text-xl md:text-2xl text-supply-gray mb-4 sm:mb-6 font-medium"
-              variants={itemVariants}
-            >
-              Data Analyst & Machine Learning Specialist
-            </motion.p> */}
-            
             <motion.p 
               className="text-supply-gray mb-6 sm:mb-8 text-base sm:text-lg leading-relaxed mx-auto px-4 sm:px-6 md:px-8 max-w-full sm:max-w-2xl"
               variants={itemVariants}
             >
-              Deploying machine learning models and MLOps pipelines to solve complex business challenges.
+              Building and deploying scalable machine learning solutions with a focus on MLOps and production-ready AI systems.
             </motion.p>
             
             <motion.div 
@@ -90,7 +73,7 @@ const Hero = () => {
                 href="#projects"
                 className="px-4 sm:px-6 py-2.5 sm:py-3 bg-supply-primary text-white rounded-md text-sm sm:text-base font-medium shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center"
               >
-                <FaChartLine className="mr-2" /> View My Work <FaArrowRight className="ml-2" />
+                <FaBrain className="mr-2" /> View My Work <FaArrowRight className="ml-2" />
               </motion.a>
               
               <motion.button
@@ -113,9 +96,9 @@ const Hero = () => {
               <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
                 {[
                   { icon: <SiPython className="w-4 h-4 sm:w-5 sm:h-5" />, label: "Python", color: "bg-supply-primary" },
-                  { icon: <FaDatabase className="w-4 h-4 sm:w-5 sm:h-5" />, label: "SQL", color: "bg-supply-secondary" },
-                  { icon: <FaCode className="w-4 h-4 sm:w-5 sm:h-5" />, label: "Machine Learning", color: "bg-supply-highlight" },
-                  { icon: <FaCode className="w-4 h-4 sm:w-5 sm:h-5" />, label: "MLOps", color: "bg-supply-accent" },
+                  { icon: <SiTensorflow className="w-4 h-4 sm:w-5 sm:h-5" />, label: "TensorFlow", color: "bg-supply-secondary" },
+                  { icon: <SiPytorch className="w-4 h-4 sm:w-5 sm:h-5" />, label: "PyTorch", color: "bg-supply-highlight" },
+                  { icon: <FaRobot className="w-4 h-4 sm:w-5 sm:h-5" />, label: "MLOps", color: "bg-supply-accent" },
                   { icon: <FaAws className="w-4 h-4 sm:w-5 sm:h-5" />, label: "AWS", color: "bg-yellow-400" },
                 ].map((tech, index) => (
                   <motion.div

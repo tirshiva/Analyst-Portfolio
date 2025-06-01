@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaBars, FaTimes, FaDownload, FaChartLine, FaDatabase, FaLaptopCode, FaUserTie, FaEnvelope, FaChartBar } from 'react-icons/fa';
+import { FaBars, FaTimes, FaDownload, FaBrain, FaRobot, FaUserTie, FaEnvelope, FaChartBar } from 'react-icons/fa';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +12,7 @@ const Navbar = () => {
       setScrolled(window.scrollY > 50);
       
       // Update active section based on scroll position
-      const sections = ['home', 'projects', 'about', 'experience', 'contact'];
+      const sections = ['home', 'projects', 'about', 'contact'];
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -31,24 +31,20 @@ const Navbar = () => {
   // Control body scroll when mobile menu is open
   useEffect(() => {
     if (isOpen) {
-      // Prevent body scrolling when menu is open
       document.body.style.overflow = 'hidden';
     } else {
-      // Re-enable scrolling when menu is closed
       document.body.style.overflow = 'auto';
     }
     
-    // Cleanup function to ensure scrolling is re-enabled when component unmounts
     return () => {
       document.body.style.overflow = 'auto';
     };
   }, [isOpen]);
 
   const navLinks = [
-    { name: 'Home', href: 'home', icon: <FaChartLine className="w-4 h-4" /> },
+    { name: 'Home', href: 'home', icon: <FaBrain className="w-4 h-4" /> },
     { name: 'Projects', href: 'projects', icon: <FaChartBar className="w-4 h-4" /> },
     { name: 'About', href: 'about', icon: <FaUserTie className="w-4 h-4" /> },
-    { name: 'Experience', href: 'experience', icon: <FaLaptopCode className="w-4 h-4" /> },
     { name: 'Contact', href: 'contact', icon: <FaEnvelope className="w-4 h-4" /> }
   ];
 
@@ -62,18 +58,14 @@ const Navbar = () => {
   };
 
   const handleNavClick = (href) => {
-    // Close the mobile menu first
     setIsOpen(false);
     
-    // Small delay to ensure menu closes before scrolling
     setTimeout(() => {
       const section = document.getElementById(href);
       if (section) {
-        // Calculate the position to scroll to (accounting for navbar height)
-        const navbarHeight = 64; // 16 * 4 = 64px (h-16)
+        const navbarHeight = 64;
         const sectionPosition = section.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
         
-        // Scroll to the section
         window.scrollTo({
           top: sectionPosition,
           behavior: 'smooth'
@@ -106,7 +98,7 @@ const Navbar = () => {
             whileTap={{ scale: 0.98 }}
             aria-label="Go to home"
           >
-            <FaDatabase className="mr-1.5 sm:mr-2 text-supply-primary w-4 h-4 sm:w-5 sm:h-5" />
+            <FaBrain className="mr-1.5 sm:mr-2 text-supply-primary w-4 h-4 sm:w-5 sm:h-5" />
             <span className="bg-gradient-to-r from-supply-primary to-supply-secondary bg-clip-text text-transparent">
               Portfolio
             </span>
@@ -188,7 +180,7 @@ const Navbar = () => {
           >
             <div className="flex items-center justify-between h-14 sm:h-16 px-4 sm:px-6 border-b border-supply-lightgray/30 bg-white/80">
               <span className="text-supply-dark font-bold text-base sm:text-xl flex items-center">
-                <FaDatabase className="mr-1.5 sm:mr-2 text-supply-primary w-4 h-4 sm:w-5 sm:h-5" />
+                <FaBrain className="mr-1.5 sm:mr-2 text-supply-primary w-4 h-4 sm:w-5 sm:h-5" />
                 <span className="bg-gradient-to-r from-supply-primary to-supply-secondary bg-clip-text text-transparent">
                   Menu
                 </span>

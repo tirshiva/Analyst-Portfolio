@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaDatabase, FaChartLine, FaCode, FaArrowUp } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaBrain, FaRobot, FaCode, FaArrowUp } from 'react-icons/fa';
 import { socialLinks } from '../data/projects';
 
 // Add twitter link if not in the data file
@@ -53,7 +53,6 @@ const FooterComponent = () => {
     { name: 'Home', href: '#home' },
     { name: 'Projects', href: '#projects' },
     { name: 'About', href: '#about' },
-    { name: 'Experience', href: '#experience' },
     { name: 'Contact', href: '#contact' }
   ];
 
@@ -62,13 +61,13 @@ const FooterComponent = () => {
       {/* Subtle background elements */}
       <div className="absolute inset-0 overflow-hidden opacity-[0.02]">
         <div className="absolute top-10 left-10">
-          <FaDatabase className="w-32 h-32 text-supply-primary" />
+          <FaBrain className="w-32 h-32 text-supply-primary" />
         </div>
         <div className="absolute bottom-10 right-10">
-          <FaCode className="w-24 h-24 text-supply-secondary" />
+          <FaRobot className="w-24 h-24 text-supply-secondary" />
         </div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <FaChartLine className="w-48 h-48 text-supply-primary" />
+          <FaCode className="w-48 h-48 text-supply-primary" />
         </div>
       </div>
       
@@ -83,11 +82,11 @@ const FooterComponent = () => {
             className="col-span-1 sm:col-span-2 md:col-span-1"
           >
             <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-              <FaDatabase className="text-supply-primary w-5 h-5 sm:w-6 sm:h-6" />
-              <h3 className="text-lg sm:text-xl font-bold text-supply-dark">Data Analyst</h3>
+              <FaBrain className="text-supply-primary w-5 h-5 sm:w-6 sm:h-6" />
+              <h3 className="text-lg sm:text-xl font-bold text-supply-dark">Data Scientist</h3>
             </div>
             <p className="text-supply-gray mb-4 sm:mb-6 text-sm sm:text-base">
-              Transforming complex data into actionable insights and driving business decisions through advanced analytics.
+              Building and deploying scalable machine learning solutions with a focus on MLOps and production-ready AI systems.
             </p>
             <div className="flex gap-3 sm:gap-4">
               <motion.a
@@ -150,11 +149,11 @@ const FooterComponent = () => {
           >
             <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-supply-dark">Expertise</h3>
             <ul className="space-y-1 sm:space-y-2 text-sm sm:text-base">
-              <li className="text-supply-gray">Data Analysis</li>
               <li className="text-supply-gray">Machine Learning</li>
-              <li className="text-supply-gray">Statistical Modeling</li>
-              <li className="text-supply-gray">Predictive Analytics</li>
-              <li className="text-supply-gray">Data Visualization</li>
+              <li className="text-supply-gray">ML Ops</li>
+              <li className="text-supply-gray">Deep Learning</li>
+              <li className="text-supply-gray">Data Science</li>
+              <li className="text-supply-gray">Cloud ML</li>
             </ul>
           </motion.div>
 

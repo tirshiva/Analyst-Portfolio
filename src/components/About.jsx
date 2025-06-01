@@ -1,42 +1,42 @@
 import { motion } from 'framer-motion';
-import { FaCode, FaDatabase, FaChartLine, FaBrain, FaTruck, FaBoxes, FaWarehouse, FaShippingFast, FaChartBar, FaNetworkWired, FaIndustry } from 'react-icons/fa';
+import { FaBrain, FaDatabase, FaChartLine, FaCode, FaRobot, FaCloud, FaServer, FaChartBar, FaNetworkWired, FaIndustry, FaTools } from 'react-icons/fa';
 
 const skills = [
   {
-    icon: <FaChartLine className="w-8 h-8 text-supply-primary" />,
-    title: "Supply Chain Analytics",
-    description: "Expertise in analyzing supply chain data to identify bottlenecks, optimize inventory, and improve logistics efficiency."
+    icon: <FaBrain className="w-8 h-8 text-supply-primary" />,
+    title: "Machine Learning",
+    description: "Expertise in developing and deploying ML models for predictive analytics, pattern recognition, and automated decision-making."
   },
   {
     icon: <FaDatabase className="w-8 h-8 text-supply-secondary" />,
-    title: "Data Management",
-    description: "Proficient in handling large supply chain datasets using SQL, Python, and specialized data management tools."
+    title: "Data Science",
+    description: "Proficient in data analysis, statistical modeling, and extracting actionable insights from complex datasets."
   },
   {
-    icon: <FaBoxes className="w-8 h-8 text-supply-accent" />,
-    title: "Inventory Optimization",
-    description: "Experience in developing models for optimal inventory levels, reducing costs while maintaining service levels."
+    icon: <FaRobot className="w-8 h-8 text-supply-accent" />,
+    title: "ML Ops",
+    description: "Experience in building scalable ML pipelines, model versioning, and production deployment of machine learning systems."
   },
   {
-    icon: <FaBrain className="w-8 h-8 text-supply-success" />,
-    title: "Machine Learning",
-    description: "Building predictive models for demand forecasting, supplier performance, and logistics optimization."
+    icon: <FaCloud className="w-8 h-8 text-supply-success" />,
+    title: "Cloud ML",
+    description: "Building and deploying ML solutions on cloud platforms with focus on scalability and performance."
   },
   {
-    icon: <FaShippingFast className="w-8 h-8 text-supply-highlight" />,
-    title: "Logistics Analysis",
-    description: "Analyzing transportation networks to optimize routes, reduce costs, and improve delivery performance."
+    icon: <FaTools className="w-8 h-8 text-supply-highlight" />,
+    title: "ML Tools & Frameworks",
+    description: "Proficient in TensorFlow, PyTorch, scikit-learn, and other modern ML frameworks and tools."
   },
   {
     icon: <FaChartBar className="w-8 h-8 text-supply-chart1" />,
-    title: "Performance Metrics",
-    description: "Creating KPI dashboards to track and improve supply chain performance across multiple dimensions."
+    title: "Data Visualization",
+    description: "Creating intuitive visualizations to communicate complex ML results and data insights effectively."
   }
 ];
 
 const About = () => (
-  <section id="about" className="bg-gradient-to-b from-white to-supply-light text-supply-dark py-16 sm:py-24">
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="about" className="text-supply-dark py-16 sm:py-24 relative">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -53,8 +53,8 @@ const About = () => (
           About <span className="text-supply-primary">Me</span>
         </h2>
         <p className="text-supply-gray text-base sm:text-xl max-w-3xl mx-auto px-4">
-          Supply Chain Data Analyst with expertise in analytics, machine learning, and business intelligence, 
-          focused on transforming complex supply chain data into actionable insights.
+          Data Scientist and ML Engineer with expertise in machine learning, data science, and ML Ops, 
+          focused on building scalable and production-ready AI solutions.
         </p>
       </motion.div>
       
@@ -91,32 +91,31 @@ const About = () => (
             <div className="relative">
               <div className="absolute inset-0 bg-supply-primary/20 rounded-full blur-xl"></div>
               <div className="relative flex items-center justify-center w-48 h-48 bg-supply-primary/10 rounded-full">
-                <FaNetworkWired className="w-24 h-24 text-supply-primary" />
+                <FaServer className="w-24 h-24 text-supply-primary" />
               </div>
             </div>
           </div>
           <div className="md:w-2/3">
-            <h3 className="text-2xl font-bold mb-4 text-supply-primary">Supply Chain Expertise</h3>
+            <h3 className="text-2xl font-bold mb-4 text-supply-primary">ML & Data Science Expertise</h3>
             <p className="text-supply-gray mb-4">
-              My background in supply chain management combined with data analytics skills allows me to bridge the gap between 
-              technical solutions and business needs. I specialize in:
+              My background in machine learning and data science allows me to build end-to-end AI solutions. I specialize in:
             </p>
             <ul className="space-y-2">
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-supply-primary mt-2"></span>
-                <span className="text-supply-dark">End-to-end supply chain visibility and analytics</span>
+                <span className="text-supply-dark">End-to-end ML pipeline development and deployment</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-supply-primary mt-2"></span>
-                <span className="text-supply-dark">Demand forecasting and inventory optimization</span>
+                <span className="text-supply-dark">Model development, training, and optimization</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-supply-primary mt-2"></span>
-                <span className="text-supply-dark">Logistics network analysis and transportation optimization</span>
+                <span className="text-supply-dark">ML Ops and production deployment</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-supply-primary mt-2"></span>
-                <span className="text-supply-dark">Supplier performance analytics and risk management</span>
+                <span className="text-supply-dark">Data preprocessing and feature engineering</span>
               </li>
             </ul>
           </div>

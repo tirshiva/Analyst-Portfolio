@@ -12,48 +12,123 @@
 export const projects = [
   {
     id: 1,
-    title: "Vehicle Insurance Domain",
-    description: "MLOps project showcasing vehicle insurance pipeline with data processing, model deployment, and CI/CD automation features.",
-    techStack: ["MongoDB","MLOps","CI/CD", "AWS EC2"],
+    title: "MLOps Insurance Pipeline",
+    description: "End-to-end MLOps pipeline for vehicle insurance prediction with automated data processing, model training, and deployment using CI/CD.",
+    techStack: [
+      "MLOps",
+      "CI/CD",
+      "AWS EC2",
+      "MongoDB",
+      "Docker",
+      "Kubernetes",
+      "Python",
+      "FastAPI",
+      "GitHub Actions",
+      "MLflow"
+    ],
     githubLink: "https://github.com/tirshiva/MLOps-Proj1",
-    // demoLink: "https://house-prediction-regression-model.onrender.com/",
-    // image: "/images/01.png" // Fixed path
+    image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: 2,
-    title: "ML-Powered Property Price Predictor",
-    description: "Machine Learning real estate tool predicting prices using Python, Scikit-learn.",
-    techStack: ["Python", "Scikit-learn", "Flask", "Linear Regression"],
+    title: "Real Estate Price Predictor",
+    description: "Advanced ML model for property price prediction using feature engineering and regression techniques.",
+    techStack: [
+      "Python",
+      "Scikit-learn",
+      "Flask",
+      "Linear Regression",
+      "Feature Engineering",
+      "Pandas",
+      "NumPy",
+      "HTML/CSS",
+      "REST API",
+      "Heroku"
+    ],
     githubLink: "https://github.com/tirshiva/House-Prediction-Regression-Model",
     demoLink: "https://house-prediction-regression-model.onrender.com/",
-    image: "/images/01.png" // Fixed path
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: 3,
-    title: "Business Insights 360",
-    description: "Power BI dashboard providing actionable insights across Finance, Sales, Marketing, and Supply Chain departments.",
-    techStack: ["Power BI", "DAX", "Power Query", "Business Intelligence"],
-    githubLink: "https://github.com/tirshiva/Business_Insight_360",
-    demoLink: "https://app.powerbi.com/view?r=eyJrIjoiM2I4YTM3NDMtMGEzZi00NjQ4LTliOGEtM2JjZWMzNmQ0N2FjIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9",
-    image: "/images/02.png" // Fixed path
+    title: "Customer Churn Analysis",
+    description: "Machine learning model for predicting customer churn with advanced feature engineering and model optimization.",
+    techStack: [
+      "Python",
+      "Random Forest",
+      "Hyperparameter Tuning",
+      "Cross Validation",
+      "Streamlit",
+      "Pandas",
+      "NumPy",
+      "Matplotlib",
+      "Seaborn",
+      "AWS S3"
+    ],
+    githubLink: "https://github.com/tirshiva/Customer-Churn-Analysis/tree/main",
+    demoLink: "https://shivanshu2407-customer-churn-analysis-srcapp-b4z2jc.streamlit.app/",
+    image: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: 4,
-    title: "Customer Churn Prediction",
-    description: "Machine learning model for churn prediction in the telecommunications industry.",
-    techStack: ["Python","Random Forest Classifier","Hyperparameter tuning","Cross Validation"],
-    githubLink: "https://github.com/tirshiva/Customer-Churn-Analysis/tree/main",
-    demoLink: "https://shivanshu2407-customer-churn-analysis-srcapp-b4z2jc.streamlit.app/",
-    image: "/images/Churn.png" // Fixed path
+    title: "Employee Attrition Predictor",
+    description: "Deep learning model for predicting employee attrition using neural networks and advanced analytics.",
+    techStack: [
+      "Deep Learning",
+      "Neural Networks",
+      "TensorFlow",
+      "Data Analysis",
+      "HR Analytics",
+      "Keras",
+      "Pandas",
+      "NumPy",
+      "Scikit-learn",
+      "Jupyter Notebooks"
+    ],
+    githubLink: "https://github.com/tirshiva/Employe-Attrition-Project/tree/main",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: 5,
-    title: "Employee Retention Analytics",
-    description: "Predicting employee attrition using machine learning to improve workforce retention.",
-    techStack: ["Human Resource Analytics","Classification","Neural Network","Deep Learning"],
-    githubLink: "https://github.com/tirshiva/Employe-Attrition-Project/tree/main",
-    // demoLink: "https://shivanshu2407-customer-churn-analysis-srcapp-b4z2jc.streamlit.app/",
-    image: "/images/Emp Attr.png" // Fixed path
+    title: "Business Intelligence Dashboard",
+    description: "Interactive Power BI dashboard for business analytics with advanced DAX calculations and data modeling.",
+    techStack: [
+      "Power BI",
+      "DAX",
+      "Power Query",
+      "Data Modeling",
+      "Business Intelligence",
+      "SQL",
+      "Data Visualization",
+      "ETL",
+      "Data Warehousing",
+      "Excel"
+    ],
+    githubLink: "https://github.com/tirshiva/Business_Insight_360",
+    demoLink: "https://app.powerbi.com/view?r=eyJrIjoiM2I4YTM3NDMtMGEzZi00NjQ4LTliOGEtM2JjZWMzNmQ0N2FjIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    id: 6,
+    title: "AI-Powered Supply Chain Optimization System",
+    description: "An end-to-end ML system for optimizing supply chain operations, featuring demand forecasting, inventory optimization, and route planning using advanced machine learning algorithms and real-time data processing.",
+    techStack: [
+      "Python",
+      "TensorFlow",
+      "Apache Airflow",
+      "AWS S3",
+      "AWS Lambda",
+      "Docker",
+      "Kubernetes",
+      "FastAPI",
+      "React",
+      "MongoDB",
+      "Time Series Analysis",
+      "Reinforcement Learning"
+    ],
+    githubLink: "https://github.com/tirshiva/Supply-Chain-Inventory-Solution",
+    // demoLink: "https://supply-chain-optimization-demo.com",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800"
   }
 ];
 

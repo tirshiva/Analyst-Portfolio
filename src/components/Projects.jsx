@@ -1,17 +1,13 @@
 import { motion } from 'framer-motion';
 import { projects } from '../data/projects';
 import ProjectCard from './ProjectCard';
-import { FaBoxes, FaChartLine, FaTruck } from 'react-icons/fa';
+import { FaBrain, FaRobot, FaChartLine, FaCloud } from 'react-icons/fa';
 
 const Projects = () => (
   <section
     id="projects"
-    className="bg-gradient-to-b from-supply-light to-white text-supply-dark py-16 sm:py-24 relative overflow-hidden"
+    className="text-supply-dark py-16 sm:py-24 relative overflow-hidden"
   >
-    {/* Background decorative elements */}
-    <div className="absolute top-0 right-0 w-64 h-64 bg-supply-primary/5 rounded-full -mr-32 -mt-32"></div>
-    <div className="absolute bottom-0 left-0 w-96 h-96 bg-supply-secondary/5 rounded-full -ml-48 -mb-48"></div>
-    
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -30,7 +26,7 @@ const Projects = () => (
           <span className="text-supply-primary">Projects</span>
         </h2>
         <p className="text-supply-gray text-base sm:text-lg max-w-2xl mx-auto mb-6 px-4">
-          A showcase of my most impactful work in supply chain analytics, data science, and machine learning solutions.
+          A showcase of my machine learning, data science, and ML Ops projects demonstrating end-to-end AI solutions.
         </p>
         
         {/* Project categories */}
@@ -39,19 +35,25 @@ const Projects = () => (
             whileHover={{ scale: 1.05 }}
             className="px-4 py-2 bg-white shadow-sm rounded-lg border border-supply-lightgray flex items-center text-supply-primary"
           >
-            <FaChartLine className="mr-2" /> Analytics
+            <FaBrain className="mr-2" /> Machine Learning
           </motion.div>
           <motion.div 
             whileHover={{ scale: 1.05 }}
             className="px-4 py-2 bg-white shadow-sm rounded-lg border border-supply-lightgray flex items-center text-supply-secondary"
           >
-            <FaBoxes className="mr-2" /> Inventory
+            <FaRobot className="mr-2" /> ML Ops
           </motion.div>
           <motion.div 
             whileHover={{ scale: 1.05 }}
             className="px-4 py-2 bg-white shadow-sm rounded-lg border border-supply-lightgray flex items-center text-supply-accent"
           >
-            <FaTruck className="mr-2" /> Logistics
+            <FaChartLine className="mr-2" /> Data Science
+          </motion.div>
+          <motion.div 
+            whileHover={{ scale: 1.05 }}
+            className="px-4 py-2 bg-white shadow-sm rounded-lg border border-supply-lightgray flex items-center text-supply-highlight"
+          >
+            <FaCloud className="mr-2" /> Cloud ML
           </motion.div>
         </div>
       </motion.div>
@@ -78,7 +80,7 @@ const Projects = () => (
         className="mt-16 text-center"
       >
         <p className="text-supply-gray mb-6">
-          Looking for more examples of my work? Check out my GitHub repository for additional projects.
+          Explore more of my machine learning and data science projects on GitHub.
         </p>
         <motion.a
           href="https://github.com/tirshiva"

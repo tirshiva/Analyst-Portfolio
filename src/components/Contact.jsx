@@ -10,18 +10,7 @@ const socialLinks = {
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-supply-light relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-supply-primary/5 rounded-full -mr-32 -mt-32"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-supply-secondary/5 rounded-full -ml-48 -mb-48"></div>
-      
-      <div className="absolute right-10 top-20 opacity-10">
-        <FaTruck className="w-32 h-32 text-supply-primary" />
-      </div>
-      <div className="absolute left-10 bottom-20 opacity-10">
-        <FaBoxes className="w-32 h-32 text-supply-secondary" />
-      </div>
-      
+    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="max-w-5xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
