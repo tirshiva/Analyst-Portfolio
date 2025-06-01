@@ -9,14 +9,20 @@ const Article = () => {
   const { articleId } = useParams();
   const navigate = useNavigate();
   const id = parseInt(articleId);
+  
+  console.log('Article ID from params:', articleId);
+  console.log('Parsed ID:', id);
+  console.log('Available articles:', articles);
+  console.log('Article content object:', articleContent);
+  
   const article = articles.find(a => a.id === id);
   const content = articleContent[id];
 
-  console.log('Article ID:', id);
-  console.log('Article:', article);
-  console.log('Content:', content);
+  console.log('Found article:', article);
+  console.log('Found content:', content);
 
   if (!article || !content) {
+    console.log('Article or content not found. Article:', article, 'Content:', content);
     return (
       <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">

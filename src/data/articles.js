@@ -118,5 +118,95 @@ export const articles = [
         icon: "FaBookOpen"
       }
     ]
+  },
+  {
+    id: 9,
+    title: "Model Evaluation Metrics",
+    description: "Master essential model evaluation metrics for classification and regression tasks. Learn how to interpret and use these metrics effectively in your machine learning projects.",
+    category: "Machine Learning",
+    readTime: "20 min read",
+    link: "/articles/9",
+    resources: [
+      {
+        title: "Scikit-learn Metrics Documentation",
+        link: "https://scikit-learn.org/stable/modules/model_evaluation.html",
+        icon: "FaBookOpen"
+      }
+    ]
+  },
+  {
+    id: 10,
+    title: "Containerization with Docker",
+    description: "Learn how to containerize your applications using Docker. Understand Docker concepts, best practices, and how to create efficient Docker images for your projects.",
+    category: "DevOps",
+    readTime: "25 min read",
+    link: "/articles/10",
+    resources: [
+      {
+        title: "Docker Documentation",
+        link: "https://docs.docker.com/",
+        icon: "FaBookOpen"
+      }
+    ]
+  },
+  {
+    id: 11,
+    title: "AWS Cloud Deployment Guide",
+    description: "A comprehensive guide to deploying applications on AWS cloud. Learn about AWS services, infrastructure setup, and best practices for cloud deployment.",
+    category: "Cloud Computing",
+    readTime: "35 min read",
+    link: "/articles/11",
+    resources: [
+      {
+        title: "AWS Documentation",
+        link: "https://aws.amazon.com/documentation/",
+        icon: "FaBookOpen"
+      }
+    ]
+  },
+  {
+    id: 12,
+    title: "CI/CD Pipeline Implementation",
+    description: "Learn how to implement robust CI/CD pipelines for automated testing, building, and deployment. Master tools like Jenkins, GitHub Actions, and GitLab CI.",
+    category: "DevOps",
+    readTime: "25 min read",
+    link: "/articles/12",
+    resources: [
+      {
+        title: "GitHub Actions Documentation",
+        link: "https://docs.github.com/en/actions",
+        icon: "FaBookOpen"
+      }
+    ]
+  },
+  {
+    id: 13,
+    title: "Microservices Architecture",
+    description: "Master the principles and practices of microservices architecture. Learn how to design, implement, and maintain scalable microservices-based applications.",
+    category: "Architecture",
+    readTime: "30 min read",
+    link: "/articles/13",
+    resources: [
+      {
+        title: "Microservices.io",
+        link: "https://microservices.io/",
+        icon: "FaBookOpen"
+      }
+    ]
+  },
+  {
+    id: 14,
+    title: "System Design Patterns",
+    description: "Master essential system design patterns and principles. Learn how to design scalable, maintainable, and efficient software systems.",
+    category: "Architecture",
+    readTime: "28 min read",
+    link: "/articles/14",
+    resources: [
+      {
+        title: "Design Patterns Documentation",
+        link: "https://refactoring.guru/design-patterns",
+        icon: "FaBookOpen"
+      }
+    ]
   }
 ]; 

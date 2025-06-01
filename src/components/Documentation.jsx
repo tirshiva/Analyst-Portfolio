@@ -14,11 +14,17 @@ const Documentation = () => {
           transition={{ duration: 0.5 }}
         >
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              Documentation
+            <div className="inline-block mb-3">
+              <span className="px-4 py-1 bg-supply-primary/10 text-supply-primary rounded-full text-sm font-medium">
+                Knowledge Base
+              </span>
+            </div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+              <span className="text-supply-dark">Technical </span>
+              <span className="bg-gradient-to-r from-supply-primary to-supply-secondary bg-clip-text text-transparent">Documentation</span>
             </h1>
-            <p className="text-lg text-gray-600">
-              Explore our comprehensive guides and tutorials
+            <p className="text-supply-gray text-base sm:text-lg max-w-2xl mx-auto">
+              Explore our comprehensive guides and tutorials on machine learning, data science, and ML Ops
             </p>
           </div>
 
@@ -33,18 +39,18 @@ const Documentation = () => {
               >
                 <Link to={`/articles/${article.id}`} className="block p-6">
                   <div className="flex items-center mb-4">
-                    <FaBookOpen className="text-indigo-600 mr-2" />
-                    <span className="text-sm font-medium text-indigo-600">
+                    <FaBookOpen className="text-supply-primary mr-2" />
+                    <span className="text-sm font-medium text-supply-primary">
                       {article.category}
                     </span>
                   </div>
-                  <h2 className="text-xl font-bold text-gray-900 mb-2">
+                  <h2 className="text-xl font-bold text-supply-dark mb-2">
                     {article.title}
                   </h2>
-                  <p className="text-gray-600 mb-4 line-clamp-3">
+                  <p className="text-supply-gray mb-4 line-clamp-3">
                     {article.description}
                   </p>
-                  <div className="flex items-center justify-between text-sm text-gray-500">
+                  <div className="flex items-center justify-between text-sm text-supply-gray">
                     <div className="flex items-center">
                       <FaClock className="mr-1" />
                       <span>{article.readTime}</span>
