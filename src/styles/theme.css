@@ -38,18 +38,36 @@
   --tracking-wide: 0.025em;
   --tracking-wider: 0.05em;
 
-  /* Colors - Modern Professional Palette */
-  --color-primary: #0A2647;
-  --color-primary-dark: #144272;
-  --color-secondary: #205295;
-  --color-accent: #2C74B3;
-  --color-text: #19376D;
-  --color-text-light: #576CBC;
-  --color-background: #ffffff;
-  --color-background-alt: #F6F1F1;
-  --color-success: #0E8388;
-  --color-error: #E74646;
-  --color-warning: #F2921D;
+  /* Primary Colors */
+  --color-primary: #2C3E50;      /* Dark grey-blue */
+  --color-secondary: #34495E;    /* Slightly lighter grey-blue */
+  --color-accent: #7F8C8D;       /* Medium grey */
+  --color-highlight: #95A5A6;    /* Light grey */
+  
+  /* Background Colors */
+  --color-background: #FFFFFF;   /* Pure white */
+  --color-background-alt: #F8F9FA; /* Off-white */
+  --color-background-dark: #ECF0F1; /* Light grey */
+  
+  /* Text Colors */
+  --color-text: #2C3E50;         /* Dark grey-blue for main text */
+  --color-text-light: #7F8C8D;   /* Medium grey for secondary text */
+  --color-text-lighter: #95A5A6; /* Light grey for subtle text */
+  
+  /* Border Colors */
+  --color-border: #E5E9F0;       /* Very light grey for borders */
+  --color-border-dark: #D1D8E0;  /* Slightly darker grey for borders */
+  
+  /* Interactive Colors */
+  --color-hover: #34495E;        /* Darker grey for hover states */
+  --color-active: #2C3E50;       /* Dark grey for active states */
+  --color-focus: #3498DB;        /* Blue for focus states */
+  
+  /* Status Colors */
+  --color-success: #27AE60;      /* Green for success states */
+  --color-error: #E74C3C;        /* Red for error states */
+  --color-warning: #F1C40F;      /* Yellow for warning states */
+  --color-info: #3498DB;         /* Blue for info states */
 
   /* Gradients */
   --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
@@ -211,4 +229,105 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Tailwind-like utility classes */
+.text-supply-dark {
+  color: var(--color-text);
+}
+
+.text-supply-gray {
+  color: var(--color-text-light);
+}
+
+.text-supply-light {
+  color: var(--color-text-lighter);
+}
+
+.text-supply-primary {
+  color: var(--color-primary);
+}
+
+.text-supply-secondary {
+  color: var(--color-secondary);
+}
+
+.text-supply-accent {
+  color: var(--color-accent);
+}
+
+.text-supply-highlight {
+  color: var(--color-highlight);
+}
+
+.bg-supply-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-supply-secondary {
+  background-color: var(--color-secondary);
+}
+
+.bg-supply-accent {
+  background-color: var(--color-accent);
+}
+
+.bg-supply-highlight {
+  background-color: var(--color-highlight);
+}
+
+.bg-supply-light {
+  background-color: var(--color-background-alt);
+}
+
+.bg-supply-dark {
+  background-color: var(--color-background-dark);
+}
+
+.border-supply-lightgray {
+  border-color: var(--color-border);
+}
+
+.border-supply-darkgray {
+  border-color: var(--color-border-dark);
+}
+
+/* Hover states */
+.hover\:bg-supply-primary:hover {
+  background-color: var(--color-hover);
+}
+
+.hover\:text-supply-primary:hover {
+  color: var(--color-hover);
+}
+
+/* Focus ring */
+.focus-ring:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-focus);
+}
+
+/* Transitions */
+.transition-colors {
+  transition-property: color, background-color, border-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background-alt);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-highlight);
 } 

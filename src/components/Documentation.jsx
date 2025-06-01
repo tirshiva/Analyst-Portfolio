@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaBrain, FaChartLine, FaBook, FaLightbulb, FaRobot, FaIndustry, FaChartBar, FaGlobe, FaGraduationCap } from 'react-icons/fa';
+import { FaBrain, FaChartLine, FaBook, FaRobot, FaTools } from 'react-icons/fa';
 import { SiTensorflow, SiPytorch, SiScikitlearn } from 'react-icons/si';
 
 const Documentation = () => {
@@ -9,103 +9,108 @@ const Documentation = () => {
       title: "What is Machine Learning?",
       icon: <FaBrain className="w-6 h-6 text-supply-primary" />,
       content: `
-        Machine Learning is a branch of artificial intelligence that enables computers to learn from data and improve their performance without being explicitly programmed. Think of it as teaching computers to learn from examples, just like how humans learn from experience.
+        Machine Learning is a fascinating field where computers learn from data to make predictions or decisions without being explicitly programmed. Think of it as teaching computers to recognize patterns and learn from experience, much like how humans learn.
 
-        Key Characteristics:
-        - Learning from Data: ML systems learn patterns and relationships from historical data
-        - Adaptability: Models can improve their performance over time with more data
-        - Automation: Can automate complex decision-making processes
-        - Pattern Recognition: Excels at identifying patterns in large datasets
-
-        Real-World Analogy:
-        Just as a child learns to recognize a cat by seeing many pictures of cats, ML algorithms learn to make predictions by analyzing numerous examples. The more quality data they process, the better they become at their tasks.
+        At its core, Machine Learning is about:
+        • Finding patterns in data
+        • Making predictions based on those patterns
+        • Improving accuracy over time through experience
+        • Automating decision-making processes
       `
     },
     {
-      id: "scope-of-ml",
-      title: "Scope of Machine Learning",
-      icon: <FaGlobe className="w-6 h-6 text-supply-secondary" />,
+      id: "ml-impact",
+      title: "The Impact of Machine Learning",
+      icon: <FaChartLine className="w-6 h-6 text-supply-primary" />,
       content: `
-        Machine Learning has become a transformative force across industries, with applications growing exponentially:
+        Machine Learning is revolutionizing industries across the globe. From healthcare to finance, transportation to entertainment, ML is transforming how we live and work.
 
-        1. Industry Applications:
-           - Healthcare: Disease prediction, drug discovery, medical imaging
-           - Finance: Fraud detection, algorithmic trading, risk assessment
-           - Retail: Customer segmentation, demand forecasting, recommendation systems
-           - Manufacturing: Predictive maintenance, quality control, supply chain optimization
-           - Transportation: Self-driving vehicles, route optimization, traffic prediction
-
-        2. Emerging Trends:
-           - Edge Computing: ML on mobile and IoT devices
-           - AutoML: Automated machine learning model development
-           - Federated Learning: Privacy-preserving distributed learning
-           - Quantum Machine Learning: Integration with quantum computing
-           - Explainable AI: Making ML decisions more transparent
-
-        3. Career Opportunities:
-           - Machine Learning Engineer
-           - Data Scientist
-           - AI Research Scientist
-           - ML Ops Engineer
-           - AI Product Manager
+        Key impacts include:
+        • Personalized recommendations in e-commerce
+        • Early disease detection in healthcare
+        • Fraud detection in banking
+        • Autonomous vehicles in transportation
+        • Smart assistants in our daily lives
       `
     },
     {
-      id: "real-facts",
-      title: "Real Facts About Machine Learning",
-      icon: <FaChartBar className="w-6 h-6 text-supply-accent" />,
+      id: "ml-technologies",
+      title: "Technologies Built with Machine Learning",
+      icon: <FaRobot className="w-6 h-6 text-supply-primary" />,
       content: `
-        Understanding the reality of Machine Learning is crucial for its effective application:
+        Modern ML technologies are reshaping our world. Here are some groundbreaking applications:
 
-        1. Current State:
-           - ML models are only as good as their training data
-           - Most successful applications are narrow and specific
-           - Human oversight remains essential
-           - Implementation costs can be significant
-           - Model maintenance is an ongoing process
+        • Natural Language Processing (NLP)
+          - Chatbots and virtual assistants
+          - Language translation services
+          - Sentiment analysis tools
 
-        2. Common Misconceptions:
-           - ML is not magic; it requires careful design and implementation
-           - More data doesn't always mean better results
-           - Complex models aren't always better than simple ones
-           - ML can't solve every problem
-           - AI won't replace human jobs entirely
+        • Computer Vision
+          - Facial recognition systems
+          - Medical image analysis
+          - Autonomous vehicle perception
 
-        3. Success Factors:
-           - Clear problem definition
-           - Quality data availability
-           - Domain expertise
-           - Proper evaluation metrics
-           - Continuous monitoring and improvement
+        • Recommendation Systems
+          - E-commerce product recommendations
+          - Content streaming suggestions
+          - Social media feeds
+
+        • Predictive Analytics
+          - Weather forecasting
+          - Stock market predictions
+          - Customer behavior analysis
       `
     },
     {
-      id: "impact",
-      title: "Impact and Future",
-      icon: <FaLightbulb className="w-6 h-6 text-supply-highlight" />,
+      id: "my-journey",
+      title: "My Journey into Machine Learning",
+      icon: <FaBook className="w-6 h-6 text-supply-primary" />,
       content: `
-        Machine Learning is reshaping our world and will continue to do so:
+        My journey into Machine Learning began unexpectedly while working as a Seller Support Associate at Amazon. It was during my daily interactions with sellers and analyzing their concerns that I first noticed the potential of data-driven solutions.
 
-        1. Current Impact:
-           - Improved decision-making across industries
-           - Enhanced automation of routine tasks
-           - Better personalization of services
-           - More efficient resource utilization
-           - New insights from data analysis
+        The turning point came when I started noticing patterns in seller issues and realized that many of these could be predicted and prevented. This curiosity led me to explore data analysis and eventually, Machine Learning.
 
-        2. Future Directions:
-           - More accessible ML tools and platforms
-           - Increased focus on ethical AI
-           - Better integration with existing systems
-           - More emphasis on model interpretability
-           - Growth in specialized ML applications
+        My learning path unfolded in several stages:
 
-        3. Challenges to Address:
-           - Data privacy and security
-           - Algorithmic bias and fairness
-           - Model transparency
-           - Resource requirements
-           - Skill gap in the workforce
+        1. The Beginning (Data Analysis)
+          • Started with Excel and SQL to analyze seller data
+          • Learned to identify patterns in customer behavior
+          • Developed basic statistical analysis skills
+
+        2. The Discovery (Machine Learning)
+          • Took online courses in Python and ML fundamentals
+          • Built my first predictive model for seller performance
+          • Learned about different ML algorithms and their applications
+
+        3. The Evolution (MLOps)
+          • Discovered the importance of model deployment and monitoring
+          • Learned about containerization and cloud platforms
+          • Understood the significance of model versioning and tracking
+
+        4. The Realization (End-to-End ML)
+          • Gained experience in the complete ML lifecycle
+          • Learned to handle data ingestion and preprocessing
+          • Mastered model training, evaluation, and deployment
+          • Understood the importance of monitoring and maintenance
+
+        This journey taught me that Machine Learning is not just about building models; it's about solving real-world problems and creating value through data-driven insights.
+      `
+    },
+    {
+      id: "mlops-insights",
+      title: "Understanding MLOps",
+      icon: <FaTools className="w-6 h-6 text-supply-primary" />,
+      content: `
+        MLOps, or Machine Learning Operations, is the practice of applying DevOps principles to Machine Learning systems. It's about making ML models production-ready and maintainable.
+
+        Key aspects of MLOps include:
+        • Version control for models and data
+        • Automated testing and validation
+        • Continuous integration and deployment
+        • Model monitoring and performance tracking
+        • Infrastructure management and scaling
+
+        My experience with MLOps has taught me that successful ML projects require not just good models, but robust infrastructure and processes to support them.
       `
     }
   ];
@@ -129,7 +134,7 @@ const Documentation = () => {
             Machine Learning <span className="text-supply-primary">in a Nutshell</span>
           </h2>
           <p className="text-supply-gray text-base sm:text-xl max-w-3xl mx-auto px-4">
-            A comprehensive overview of Machine Learning, its scope, and real-world impact.
+            A comprehensive overview of Machine Learning, its applications, and my personal journey.
           </p>
         </motion.div>
 
