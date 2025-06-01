@@ -87,7 +87,6 @@ const Navbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      style={{ position: 'fixed', top: 0, left: 0, right: 0 }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -177,11 +176,11 @@ const Navbar = () => {
               stiffness: 300,
               damping: 30
             }}
-            className="md:hidden fixed inset-0 top-16 bg-white/95 backdrop-blur-lg z-[100] flex flex-col shadow-xl"
+            className="md:hidden fixed inset-x-0 top-16 bg-white/95 backdrop-blur-lg z-[100] flex flex-col shadow-xl"
             role="dialog"
             aria-modal="true"
           >
-            <div className="flex flex-col p-4 space-y-2">
+            <div className="flex flex-col p-4 space-y-2 max-h-[calc(100vh-4rem)] overflow-y-auto">
               {navLinks.map((link) => (
                 <motion.button
                   key={link.name}
