@@ -14,7 +14,7 @@ const ProjectCard = ({ project }) => {
     <>
       {/* Modal with all details */}
       <AnimatePresence>
-        {showModal && (
+      {showModal && (
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -26,78 +26,78 @@ const ProjectCard = ({ project }) => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               className="relative bg-white rounded-xl shadow-2xl p-6 max-w-3xl w-full max-h-[90vh] overflow-y-auto"
-            >
-              <button
-                onClick={() => setShowModal(false)}
+          >
+            <button
+              onClick={() => setShowModal(false)}
                 className="absolute top-4 right-4 p-2 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors"
-                aria-label="Close"
-              >
-                <FaTimes className="w-5 h-5" />
-              </button>
-              
+              aria-label="Close"
+            >
+              <FaTimes className="w-5 h-5" />
+            </button>
+            
               <div className="mb-6">
-                <h3 className="text-2xl font-bold text-supply-dark">{project.title}</h3>
+              <h3 className="text-2xl font-bold text-supply-dark">{project.title}</h3>
                 <p className="text-supply-gray text-sm mt-1">Click the links below to explore the project</p>
-              </div>
-              
-              {project.image && (
+            </div>
+            
+            {project.image && (
                 <div className="mb-6 rounded-lg overflow-hidden border border-gray-100 shadow-sm">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-auto object-cover"
-                    style={{ maxHeight: '40vh' }}
-                  />
-                </div>
-              )}
-              
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-auto object-cover"
+                  style={{ maxHeight: '40vh' }}
+                />
+              </div>
+            )}
+            
               <div className="prose prose-sm max-w-none mb-6">
                 <p className="text-supply-gray leading-relaxed">{project.description}</p>
               </div>
-              
-              <div className="mb-6">
+            
+            <div className="mb-6">
                 <h4 className="text-sm uppercase text-supply-gray font-semibold mb-3">Technologies Used</h4>
-                <div className="flex flex-wrap gap-2">
-                  {project.techStack && project.techStack.map((tech, i) => (
-                    <span
-                      key={i}
+              <div className="flex flex-wrap gap-2">
+                {project.techStack && project.techStack.map((tech, i) => (
+                  <span
+                    key={i}
                       className="px-3 py-1.5 bg-gray-50 text-supply-dark rounded-lg text-sm font-medium border border-gray-100"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
-              
-              <div className="flex flex-wrap gap-4">
-                {project.githubLink && (
-                  <a
-                    href={project.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
+            </div>
+            
+            <div className="flex flex-wrap gap-4">
+              {project.githubLink && (
+                <a
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-5 py-2.5 bg-supply-dark text-white rounded-lg text-sm font-medium hover:bg-supply-primary transition-all duration-300 shadow-sm hover:shadow-md"
-                    onClick={handleLinkClick}
-                  >
-                    <FaGithub className="w-5 h-5" />
-                    View on GitHub
-                  </a>
-                )}
-                {project.demoLink && (
-                  <a
-                    href={project.demoLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  onClick={handleLinkClick}
+                >
+                  <FaGithub className="w-5 h-5" />
+                  View on GitHub
+                </a>
+              )}
+              {project.demoLink && (
+                <a
+                  href={project.demoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-5 py-2.5 bg-supply-primary text-white rounded-lg text-sm font-medium hover:bg-supply-highlight transition-all duration-300 shadow-sm hover:shadow-md"
-                    onClick={handleLinkClick}
-                  >
-                    <FaExternalLinkAlt className="w-5 h-5" />
-                    View Live Demo
-                  </a>
-                )}
-              </div>
-            </motion.div>
+                  onClick={handleLinkClick}
+                >
+                  <FaExternalLinkAlt className="w-5 h-5" />
+                  View Live Demo
+                </a>
+              )}
+            </div>
           </motion.div>
-        )}
+          </motion.div>
+      )}
       </AnimatePresence>
 
       {/* Project Card */}
