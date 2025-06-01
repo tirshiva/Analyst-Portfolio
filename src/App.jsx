@@ -37,21 +37,18 @@ const App = () => {
     <Router>
       <AnimatePresence mode="wait">
         <motion.div
-          className="min-h-screen relative text-supply-dark overflow-x-hidden"
+          className="min-h-screen relative text-supply-dark overflow-x-hidden bg-white"
           initial="initial"
           animate="in"
           exit="out"
           variants={pageVariants}
         >
           {/* Main gradient background */}
-          <div className="fixed inset-0 bg-white"></div>
-          
-          {/* Subtle gradient overlay */}
-          <div className="fixed inset-0 bg-gradient-to-br from-white via-gray-50/10 to-white"></div>
+          <div className="fixed inset-0 bg-gradient-to-b from-white via-gray-50/5 to-white"></div>
           
           {/* Minimal decorative elements */}
           <div className="fixed inset-0 overflow-hidden pointer-events-none">
-            {/* Single subtle gradient blob */}
+            {/* Subtle gradient blob */}
             <motion.div 
               className="absolute top-1/4 right-1/4 w-[800px] h-[800px] bg-gradient-to-br from-gray-50/10 to-gray-100/10 rounded-full blur-3xl"
               animate={{ 
@@ -71,27 +68,36 @@ const App = () => {
 
           <ScrollProgress color="#2563EB" />
           <Navbar />
+          
           <main className="pt-16 relative z-10">
-            <ScrollAnimation>
-              <Hero />
-            </ScrollAnimation>
+            {/* Hero Section */}
+            <section id="home" className="min-h-screen">
+              <ScrollAnimation>
+                <Hero />
+              </ScrollAnimation>
+            </section>
             
-            <section id="projects" className="scroll-mt-20 relative z-10">
+            {/* Projects Section */}
+            <section id="projects" className="scroll-mt-20 py-20 relative z-10 bg-white">
               <ScrollAnimation>
                 <Projects />
               </ScrollAnimation>
             </section>
             
-            <section id="about" className="scroll-mt-20 relative z-10">
+            {/* About Section */}
+            <section id="about" className="scroll-mt-20 py-20 relative z-10 bg-gray-50/50">
               <ScrollAnimation>
                 <About />
               </ScrollAnimation>
             </section>
 
             {/* Documentation Section */}
-            <Documentation />
+            <section id="documentation" className="scroll-mt-20 py-20 relative z-10 bg-white">
+              <Documentation />
+            </section>
 
-            <section id="contact" className="scroll-mt-20 relative z-10">
+            {/* Contact Section */}
+            <section id="contact" className="scroll-mt-20 py-20 relative z-10 bg-gray-50/50">
               <ScrollAnimation>
                 <Contact />
               </ScrollAnimation>
