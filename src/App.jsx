@@ -123,8 +123,18 @@ const App = () => {
                   </section>
                 </>
               } />
-              <Route path="/documentation" element={<Documentation />} />
-              <Route path="/articles/:articleId" element={<Article />} />
+              <Route path="/documentation" element={
+                <>
+                  <section id="documentation" className="min-h-screen py-20 relative z-10 bg-supply-background">
+                    <Documentation />
+                  </section>
+                </>
+              } />
+              <Route path="/articles/:articleId" element={
+                <div className="min-h-screen">
+                  <Article />
+                </div>
+              } />
             </Routes>
           </main>
           

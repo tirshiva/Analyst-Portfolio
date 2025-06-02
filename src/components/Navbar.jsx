@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes, FaBrain, FaRobot, FaUserTie, FaEnvelope, FaChartBar, FaArrowUp } from 'react-icons/fa';
 
@@ -7,23 +7,47 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const observerRef = useRef(null);
+
+  // Setup intersection observer for section detection
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: '-20% 0px -70% 0px', // Adjust the margins to control when a section is considered "active"
+      threshold: [0, 0.25, 0.5, 0.75, 1]
+    };
+
+    const handleIntersect = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.id;
+          setActiveSection(sectionId);
+        }
+      });
+    };
+
+    observerRef.current = new IntersectionObserver(handleIntersect, options);
+
+    // Observe all sections
+    const sections = ['home', 'projects', 'documentation', 'about', 'contact'];
+    sections.forEach(section => {
+      const element = document.getElementById(section);
+      if (element) {
+        observerRef.current.observe(element);
+      }
+    });
+
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, []);
 
   const handleScroll = useCallback(() => {
     const scrollPosition = window.scrollY;
     setScrolled(scrollPosition > 50);
     setShowScrollTop(scrollPosition > 500);
-
-    // Update active section based on scroll position
-    const sections = ['home', 'projects', 'about', 'documentation', 'contact'];
-    const currentSection = sections.find(section => {
-      const element = document.getElementById(section);
-      if (element) {
-        const rect = element.getBoundingClientRect();
-        return rect.top <= 100 && rect.bottom >= 100;
-      }
-      return false;
-    });
-    if (currentSection) setActiveSection(currentSection);
   }, []);
 
   useEffect(() => {
@@ -47,8 +71,8 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', href: 'home', icon: <FaBrain className="w-4 h-4" /> },
     { name: 'Projects', href: 'projects', icon: <FaChartBar className="w-4 h-4" /> },
-    { name: 'About', href: 'about', icon: <FaUserTie className="w-4 h-4" /> },
     { name: 'Documentation', href: 'documentation', icon: <FaRobot className="w-4 h-4" /> },
+    { name: 'About', href: 'about', icon: <FaUserTie className="w-4 h-4" /> },
     { name: 'Contact', href: 'contact', icon: <FaEnvelope className="w-4 h-4" /> }
   ];
 
@@ -112,28 +136,35 @@ const Navbar = () => {
                 <motion.button
                   key={link.name}
                   onClick={() => handleNavClick(link.href)}
-                  className={`relative text-xs lg:text-sm font-medium transition-colors duration-200 focus-ring flex items-center py-2
+                  className={`relative text-xs lg:text-sm font-medium transition-all duration-200 focus-ring flex items-center py-2
                     ${activeSection === link.href 
-                      ? 'text-supply-primary' 
+                      ? 'text-supply-primary scale-105 font-semibold' 
                       : 'text-supply-dark hover:text-supply-primary'}`}
                   whileTap={{ scale: 0.98 }}
                   aria-current={activeSection === link.href ? 'page' : undefined}
                 >
-                  <span className="mr-1 lg:mr-1.5">{link.icon}</span>
+                  <motion.span 
+                    className="mr-1 lg:mr-1.5"
+                    animate={{ 
+                      scale: activeSection === link.href ? 1.1 : 1,
+                      color: activeSection === link.href ? 'var(--supply-primary)' : 'inherit'
+                    }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    {link.icon}
+                  </motion.span>
                   {link.name}
-                  {activeSection === link.href ? (
+                  {activeSection === link.href && (
                     <motion.div 
                       className="absolute bottom-0 left-0 w-full h-0.5 bg-supply-primary rounded-none" 
                       layoutId="activeSection"
                       initial={{ width: 0 }}
                       animate={{ width: '100%' }}
-                      transition={{ duration: 0.3 }}
-                    />
-                  ) : (
-                    <motion.div 
-                      className="absolute bottom-0 left-0 w-0 h-0.5 bg-supply-primary/50 rounded-none opacity-0" 
-                      whileHover={{ width: '100%', opacity: 1 }}
-                      transition={{ duration: 0.3 }}
+                      transition={{ 
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 30
+                      }}
                     />
                   )}
                 </motion.button>
@@ -177,15 +208,37 @@ const Navbar = () => {
                   <motion.button
                     key={link.name}
                     onClick={() => handleNavClick(link.href)}
-                    className={`flex items-center px-4 py-4 rounded-lg text-base font-medium transition-colors duration-200
+                    className={`relative flex items-center px-4 py-4 rounded-lg text-base font-medium transition-all duration-200
                       ${activeSection === link.href 
-                        ? 'bg-supply-primary/10 text-supply-primary' 
+                        ? 'bg-supply-primary/10 text-supply-primary scale-105 font-semibold' 
                         : 'text-supply-dark hover:bg-supply-light'}`}
                     whileTap={{ scale: 0.98 }}
                     aria-current={activeSection === link.href ? 'page' : undefined}
                   >
-                    <span className="mr-3 text-lg">{link.icon}</span>
+                    <motion.span 
+                      className="mr-3 text-lg"
+                      animate={{ 
+                        scale: activeSection === link.href ? 1.1 : 1,
+                        color: activeSection === link.href ? 'var(--supply-primary)' : 'inherit'
+                      }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {link.icon}
+                    </motion.span>
                     {link.name}
+                    {activeSection === link.href && (
+                      <motion.div 
+                        className="absolute right-4 w-1.5 h-1.5 rounded-full bg-supply-primary"
+                        layoutId="mobileActiveSection"
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ 
+                          type: "spring",
+                          stiffness: 300,
+                          damping: 30
+                        }}
+                      />
+                    )}
                   </motion.button>
                 ))}
               </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaBookOpen, FaClock, FaTag } from 'react-icons/fa';
+import { FaBookOpen, FaTag } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { articles } from '../data/articles';
 
@@ -15,7 +15,7 @@ const Documentation = () => {
         >
           <div className="text-center mb-12">
             <div className="inline-block mb-3">
-              <span className="px-4 py-1 bg-supply-primary/10 text-supply-primary rounded-full text-sm font-medium">
+              <span className="px-4 py-1.5 bg-supply-primary/10 text-supply-primary rounded-full text-sm font-medium">
                 Knowledge Base
               </span>
             </div>
@@ -28,37 +28,31 @@ const Documentation = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {articles.map((article) => (
               <motion.div
                 key={article.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: article.id * 0.1 }}
-                className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               >
                 <Link to={`/articles/${article.id}`} className="block p-6">
                   <div className="flex items-center mb-4">
-                    <FaBookOpen className="text-supply-primary mr-2" />
+                    <FaBookOpen className="text-supply-primary mr-2 w-4 h-4" />
                     <span className="text-sm font-medium text-supply-primary">
                       {article.category}
                     </span>
                   </div>
-                  <h2 className="text-xl font-bold text-supply-dark mb-2">
+                  <h2 className="text-xl font-bold text-supply-dark mb-3">
                     {article.title}
                   </h2>
                   <p className="text-supply-gray mb-4 line-clamp-3">
                     {article.description}
                   </p>
-                  <div className="flex items-center justify-between text-sm text-supply-gray">
-                    <div className="flex items-center">
-                      <FaClock className="mr-1" />
-                      <span>{article.readTime}</span>
-                    </div>
-                    <div className="flex items-center">
-                      <FaTag className="mr-1" />
-                      <span>{article.category}</span>
-                    </div>
+                  <div className="flex items-center text-sm text-supply-gray">
+                    <FaTag className="mr-1.5 w-4 h-4" />
+                    <span className="font-medium">{article.category}</span>
                   </div>
                 </Link>
               </motion.div>
