@@ -1,77 +1,131 @@
-# Data Analyst Portfolio Website
+# Portfolio Website
 
-A modern, responsive portfolio website built with React and Tailwind CSS to showcase data analysis projects.
+A modern, responsive portfolio website built with React, Vite, and Tailwind CSS. Features smooth animations, interactive components, and a clean user interface.
 
 ## Features
 
-- Responsive design that works on all devices
-- Smooth scrolling navigation
-- Animated sections using Framer Motion
-- Project showcase with filterable categories
-- Contact form
-- Easy to customize project data
+- 🎨 Modern and responsive design
+- ⚡ Fast performance with Vite
+- 🎭 Smooth animations using Framer Motion
+- 📱 Mobile-first approach
+- 🎯 Interactive components
+- 📝 Documentation section
+- 🎨 Custom color scheme and styling
+- 🔍 SEO friendly
 
-## Setup Instructions
+## Tech Stack
 
-1. Install dependencies:
-```bash
-npm install
+- **Frontend Framework:** React 18
+- **Build Tool:** Vite 5
+- **Styling:** Tailwind CSS 3
+- **Animations:** Framer Motion
+- **Routing:** React Router DOM 6
+- **Icons:** React Icons
+- **Type Animation:** React Type Animation
+- **3D Graphics:** Three.js
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+- [Node.js](https://nodejs.org/) (LTS version recommended)
+- npm (comes with Node.js)
+- Git
+
+## Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <your-repository-url>
+   cd portfolio
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**
+   The application will be available at `http://localhost:5173`
+
+## Project Structure
+
+```
+portfolio/
+├── public/              # Static assets
+├── src/                 # Source files
+│   ├── components/      # React components
+│   ├── data/           # Data files
+│   ├── styles/         # Global styles
+│   ├── App.jsx         # Main App component
+│   └── main.jsx        # Entry point
+├── index.html          # HTML template
+├── package.json        # Project dependencies
+├── tailwind.config.js  # Tailwind configuration
+└── vite.config.js      # Vite configuration
 ```
 
-2. Start the development server:
-```bash
-npm run dev
-```
+## Available Scripts
 
-3. Build for production:
-```bash
-npm run build
-```
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
 
-## Customizing Content
+## Development
 
-### Projects
+### Adding New Components
 
-To add or modify projects, edit the `src/data/projects.js` file. Each project should follow this format:
+1. Create a new file in `src/components/`
+2. Import and use the component in `App.jsx` or other components
+3. Style using Tailwind CSS classes
 
-```javascript
-{
-  id: 1,
-  title: "Project Title",
-  description: "Project description",
-  techStack: ["Technology 1", "Technology 2"],
-  githubLink: "https://github.com/...",
-  demoLink: "https://demo-link.com",
-  image: "/path-to-image.jpg" // Optional
-}
-```
+### Styling
 
-### Personal Information
+- Uses Tailwind CSS for styling
+- Custom colors and themes defined in `tailwind.config.js`
+- Global styles in `src/styles/globals.css`
 
-Update your personal information in the following files:
-- `src/components/Hero.jsx` - Update name, title, and introduction
-- `src/data/projects.js` - Update social media links
+### Animations
 
-### Profile Image
+- Uses Framer Motion for animations
+- Animation components in `src/components/animations/`
+- Reusable animation variants in `src/styles/animations.js`
 
-Replace the profile image placeholder in `src/components/Hero.jsx` with your actual image:
+## Deployment
 
-```jsx
-<img
-  src="/path-to-your-image.jpg"
-  alt="Your Name"
-  className="w-full h-full object-cover"
-/>
-```
+The project is configured for deployment on Vercel. To deploy:
 
-## Technologies Used
-
-- React
-- Tailwind CSS
-- Framer Motion
-- React Scroll
-- React Icons
+1. Push your changes to the repository
+2. Connect your repository to Vercel
+3. Vercel will automatically deploy your site
 
 ## Contributing
 
-Feel free to fork this repository and customize it for your own use. If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request. 
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Contact
+
+Your Name - [@yourtwitter](https://twitter.com/yourtwitter)
+Project Link: [https://github.com/yourusername/portfolio](https://github.com/yourusername/portfolio)
+
+## Acknowledgments
+
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [React Router](https://reactrouter.com/)
+- [React Icons](https://react-icons.github.io/react-icons/) 
