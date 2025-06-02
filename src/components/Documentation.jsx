@@ -32,6 +32,7 @@ const Documentation = () => {
             {articles.map((article) => (
               <motion.div
                 key={article.id}
+                id={`article-${article.id}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: article.id * 0.1 }}

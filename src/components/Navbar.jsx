@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes, FaBrain, FaRobot, FaUserTie, FaEnvelope, FaChartBar, FaArrowUp } from 'react-icons/fa';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,12 +9,70 @@ const Navbar = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [showScrollTop, setShowScrollTop] = useState(false);
   const observerRef = useRef(null);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const returnFromArticle = useRef(false);
+
+  // Handle initial route and article return navigation
+  useEffect(() => {
+    const handleNavigation = () => {
+      // Handle direct URL navigation
+      if (location.pathname === '/documentation') {
+        navigate('/');
+        setTimeout(() => {
+          const section = document.getElementById('documentation');
+          if (section) {
+            const navbarHeight = 64;
+            const sectionPosition = section.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+            window.scrollTo({
+              top: sectionPosition,
+              behavior: 'smooth'
+            });
+            setActiveSection('documentation');
+          }
+        }, 100);
+      }
+      // Handle article return
+      else if (location.pathname.startsWith('/articles/')) {
+        const articleId = location.pathname.split('/').pop();
+        sessionStorage.setItem('returnToArticle', articleId);
+        returnFromArticle.current = true;
+      } else if (location.pathname === '/' && returnFromArticle.current) {
+        returnFromArticle.current = false;
+        const articleId = sessionStorage.getItem('returnToArticle');
+        
+        if (articleId) {
+          sessionStorage.removeItem('returnToArticle');
+          
+          const checkForArticle = setInterval(() => {
+            const articleElement = document.getElementById(`article-${articleId}`);
+            if (articleElement) {
+              clearInterval(checkForArticle);
+              const navbarHeight = 64;
+              const articlePosition = articleElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+              
+              window.scrollTo({
+                top: articlePosition,
+                behavior: 'smooth'
+              });
+              
+              setActiveSection('documentation');
+            }
+          }, 100);
+
+          setTimeout(() => clearInterval(checkForArticle), 5000);
+        }
+      }
+    };
+
+    handleNavigation();
+  }, [location.pathname, navigate]);
 
   // Setup intersection observer for section detection
   useEffect(() => {
     const options = {
       root: null,
-      rootMargin: '-20% 0px -70% 0px', // Adjust the margins to control when a section is considered "active"
+      rootMargin: '-20% 0px -70% 0px',
       threshold: [0, 0.25, 0.5, 0.75, 1]
     };
 
@@ -79,12 +138,17 @@ const Navbar = () => {
   const handleNavClick = (href) => {
     setIsOpen(false);
     
+    // Always navigate to home first if not already there
+    if (location.pathname !== '/') {
+      navigate('/');
+    }
+    
+    // Wait for navigation to complete before scrolling
     setTimeout(() => {
       const section = document.getElementById(href);
       if (section) {
         const navbarHeight = 64;
         const sectionPosition = section.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
-        
         window.scrollTo({
           top: sectionPosition,
           behavior: 'smooth'
