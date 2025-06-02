@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaArrowLeft, FaBookOpen, FaCode, FaLightbulb, FaExclamationTriangle } from 'react-icons/fa';
+import { FaArrowLeft, FaBookOpen, FaCode, FaLightbulb, FaExclamationTriangle, FaArrowUp } from 'react-icons/fa';
 import { articles } from '../data/articles';
 import { articleContent } from '../data/articles/index';
 import { useParams, useNavigate } from 'react-router-dom';
@@ -21,6 +21,14 @@ const Article = () => {
   console.log('Found article:', article);
   console.log('Found content:', content);
 
+  // Scroll to top when article loads
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }, [articleId]);
+
   if (!article || !content) {
     console.log('Article or content not found. Article:', article, 'Content:', content);
     return (
@@ -40,7 +48,7 @@ const Article = () => {
             </p>
             <button
               onClick={() => navigate('/documentation')}
-              className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
+              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-supply-primary hover:bg-supply-highlight transition-all duration-300"
             >
               <FaArrowLeft className="mr-2" />
               Back to Documentation
@@ -58,33 +66,28 @@ const Article = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
+          className="space-y-8"
         >
-          <button
-            onClick={() => navigate('/documentation')}
-            className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 mb-8"
-          >
-            <FaArrowLeft className="mr-2" />
-            Back to Documentation
-          </button>
-
-          <div className="bg-white shadow rounded-lg p-6 mb-8">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">{content.title}</h1>
-            <p className="text-lg text-gray-600 mb-6">{content.description}</p>
+          {/* Article Header */}
+          <div className="bg-white shadow rounded-lg p-6 sm:p-8">
+            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{content.title}</h1>
+            <p className="text-base sm:text-lg text-gray-600 mb-6">{content.description}</p>
             <div className="flex items-center text-sm text-gray-500">
               <span className="mr-4">{article.category}</span>
               <span>{article.readTime}</span>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white shadow rounded-lg p-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-                <FaBookOpen className="mr-2 text-indigo-600" />
+          {/* Article Content */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            <div className="bg-white shadow rounded-lg p-6 sm:p-8">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                <FaBookOpen className="mr-2 text-supply-primary" />
                 Key Concepts
               </h2>
               <ul className="space-y-4">
                 {content.content.keyConcepts.map((concept, index) => (
-                  <li key={index} className="border-l-4 border-indigo-600 pl-4">
+                  <li key={index} className="border-l-4 border-supply-primary pl-4">
                     <h3 className="font-semibold text-gray-900">{concept.title}</h3>
                     <p className="text-gray-600">{concept.description}</p>
                   </li>
@@ -92,14 +95,14 @@ const Article = () => {
               </ul>
             </div>
 
-            <div className="bg-white shadow rounded-lg p-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-                <FaCode className="mr-2 text-indigo-600" />
+            <div className="bg-white shadow rounded-lg p-6 sm:p-8">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                <FaCode className="mr-2 text-supply-primary" />
                 Implementation
               </h2>
               <ul className="space-y-4">
                 {content.content.implementation.map((impl, index) => (
-                  <li key={index} className="border-l-4 border-indigo-600 pl-4">
+                  <li key={index} className="border-l-4 border-supply-primary pl-4">
                     <h3 className="font-semibold text-gray-900">{impl.title}</h3>
                     <p className="text-gray-600">{impl.description}</p>
                   </li>
@@ -107,14 +110,14 @@ const Article = () => {
               </ul>
             </div>
 
-            <div className="bg-white shadow rounded-lg p-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-                <FaLightbulb className="mr-2 text-indigo-600" />
+            <div className="bg-white shadow rounded-lg p-6 sm:p-8">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                <FaLightbulb className="mr-2 text-supply-primary" />
                 Best Practices
               </h2>
               <ul className="space-y-4">
                 {content.content.bestPractices.map((practice, index) => (
-                  <li key={index} className="border-l-4 border-indigo-600 pl-4">
+                  <li key={index} className="border-l-4 border-supply-primary pl-4">
                     <h3 className="font-semibold text-gray-900">{practice.title}</h3>
                     <p className="text-gray-600">{practice.description}</p>
                   </li>
@@ -122,14 +125,14 @@ const Article = () => {
               </ul>
             </div>
 
-            <div className="bg-white shadow rounded-lg p-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-                <FaExclamationTriangle className="mr-2 text-indigo-600" />
+            <div className="bg-white shadow rounded-lg p-6 sm:p-8">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                <FaExclamationTriangle className="mr-2 text-supply-primary" />
                 Common Pitfalls
               </h2>
               <ul className="space-y-4">
                 {content.content.commonPitfalls.map((pitfall, index) => (
-                  <li key={index} className="border-l-4 border-indigo-600 pl-4">
+                  <li key={index} className="border-l-4 border-supply-primary pl-4">
                     <h3 className="font-semibold text-gray-900">{pitfall.title}</h3>
                     <p className="text-gray-600">{pitfall.description}</p>
                   </li>
@@ -138,14 +141,14 @@ const Article = () => {
             </div>
           </div>
 
-          <div className="mt-8 bg-white shadow rounded-lg p-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Professional Explanation</h2>
-            <p className="text-gray-600">{content.content.professionalExplanation}</p>
+          <div className="bg-white shadow rounded-lg p-6 sm:p-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Professional Explanation</h2>
+            <p className="text-gray-600 leading-relaxed">{content.content.professionalExplanation}</p>
           </div>
 
           {article.resources && article.resources.length > 0 && (
-            <div className="mt-8 bg-white shadow rounded-lg p-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Additional Resources</h2>
+            <div className="bg-white shadow rounded-lg p-6 sm:p-8">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Additional Resources</h2>
               <ul className="space-y-4">
                 {article.resources.map((resource, index) => (
                   <li key={index}>
@@ -153,7 +156,7 @@ const Article = () => {
                       href={resource.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-indigo-600 hover:text-indigo-800 flex items-center"
+                      className="text-supply-primary hover:text-supply-highlight flex items-center transition-colors duration-300"
                     >
                       <FaBookOpen className="mr-2" />
                       {resource.title}
@@ -163,6 +166,26 @@ const Article = () => {
               </ul>
             </div>
           )}
+
+          {/* Back to Documentation Button */}
+          <div className="flex justify-center pt-8">
+            <button
+              onClick={() => navigate('/documentation')}
+              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-supply-primary hover:bg-supply-highlight transition-all duration-300 shadow-sm hover:shadow-md"
+            >
+              <FaArrowLeft className="mr-2" />
+              Back to Documentation
+            </button>
+          </div>
+
+          {/* Scroll to Top Button */}
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="fixed bottom-8 right-8 p-3 rounded-full bg-supply-primary text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-supply-highlight"
+            aria-label="Scroll to top"
+          >
+            <FaArrowUp className="w-5 h-5" />
+          </button>
         </motion.div>
       </div>
     </div>
