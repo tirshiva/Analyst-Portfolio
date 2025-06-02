@@ -143,14 +143,14 @@ const Navbar = () => {
             {/* Mobile menu button */}
             <motion.button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 rounded-md text-supply-dark hover:text-supply-primary focus-ring"
+              className="md:hidden p-2.5 rounded-md text-supply-dark hover:text-supply-primary focus-ring"
               whileTap={{ scale: 0.95 }}
               aria-label="Toggle menu"
             >
               {isOpen ? (
-                <FaTimes className="w-5 h-5" />
+                <FaTimes className="w-6 h-6" />
               ) : (
-                <FaBars className="w-5 h-5" />
+                <FaBars className="w-6 h-6" />
               )}
             </motion.button>
           </div>
@@ -172,19 +172,19 @@ const Navbar = () => {
               role="dialog"
               aria-modal="true"
             >
-              <div className="flex flex-col p-4 space-y-2 max-h-[calc(100vh-4rem)] overflow-y-auto">
+              <div className="flex flex-col p-4 space-y-3 max-h-[calc(100vh-4rem)] overflow-y-auto">
                 {navLinks.map((link) => (
                   <motion.button
                     key={link.name}
                     onClick={() => handleNavClick(link.href)}
-                    className={`flex items-center px-4 py-3 rounded-lg text-base font-medium transition-colors duration-200
+                    className={`flex items-center px-4 py-4 rounded-lg text-base font-medium transition-colors duration-200
                       ${activeSection === link.href 
                         ? 'bg-supply-primary/10 text-supply-primary' 
                         : 'text-supply-dark hover:bg-supply-light'}`}
                     whileTap={{ scale: 0.98 }}
                     aria-current={activeSection === link.href ? 'page' : undefined}
                   >
-                    <span className="mr-3">{link.icon}</span>
+                    <span className="mr-3 text-lg">{link.icon}</span>
                     {link.name}
                   </motion.button>
                 ))}
