@@ -1,210 +1,127 @@
+import { article1 } from './articles/article1';
+import { article2 } from './articles/article2';
+import { article3 } from './articles/article3';
+import { article4 } from './articles/article4';
+import { article5 } from './articles/article5';
+import { article6 } from './articles/article6';
+
 export const articles = [
   {
     id: 1,
-    title: "Core Programming Concepts",
-    description: "Master the fundamental concepts of programming including variables, data types, control structures, functions, and basic problem-solving techniques. Learn how to write clean, efficient, and maintainable code.",
-    category: "Programming Fundamentals",
-    readTime: "15 min read",
+    title: "Introduction to Machine Learning",
+    description: "A comprehensive guide to understanding the fundamentals of machine learning, its types, applications, and how to get started with ML projects.",
+    category: "Machine Learning",
+    readTime: "25 min read",
     link: "/articles/1",
     resources: [
       {
-        title: "Official Documentation",
-        link: "https://docs.python.org/3/tutorial/",
+        title: "Scikit-learn Documentation",
+        link: "https://scikit-learn.org/stable/",
+        icon: "FaBookOpen"
+      },
+      {
+        title: "TensorFlow Documentation",
+        link: "https://www.tensorflow.org/learn",
         icon: "FaBookOpen"
       }
     ]
   },
   {
     id: 2,
-    title: "Essential Data Structures and Algorithms",
-    description: "Explore fundamental data structures (arrays, linked lists, trees, graphs) and algorithms (sorting, searching, dynamic programming) with practical examples and real-world applications.",
-    category: "Computer Science",
-    readTime: "20 min read",
+    title: "Introduction to Deep Learning",
+    description: "An accessible introduction to deep learning, its core concepts, architectures, and real-world applications.",
+    category: "Deep Learning",
+    readTime: "28 min read",
     link: "/articles/2",
     resources: [
       {
-        title: "Official Documentation",
-        link: "https://docs.python.org/3/tutorial/datastructures.html",
+        title: "Deep Learning Specialization (Coursera)",
+        link: "https://www.coursera.org/specializations/deep-learning",
         icon: "FaBookOpen"
-      }
-    ]
-  },
-  {
-    id: 3,
-    title: "Object-Oriented Programming Principles",
-    description: "Learn the core principles of OOP including classes, objects, inheritance, polymorphism, and encapsulation. Understand how to design and implement object-oriented solutions.",
-    category: "Programming",
-    readTime: "18 min read",
-    link: "/articles/3",
-    resources: [
+      },
       {
-        title: "Official Documentation",
-        link: "https://docs.python.org/3/tutorial/classes.html",
-        icon: "FaBookOpen"
-      }
-    ]
-  },
-  {
-    id: 4,
-    title: "Database Fundamentals",
-    description: "Master the basics of database design, SQL, and data modeling. Learn about normalization, relationships, indexing, and working with both SQL and NoSQL databases.",
-    category: "Databases",
-    readTime: "25 min read",
-    link: "/articles/4",
-    resources: [
-      {
-        title: "Official Documentation",
-        link: "https://www.postgresql.org/docs/",
-        icon: "FaBookOpen"
-      }
-    ]
-  },
-  {
-    id: 5,
-    title: "Web Development Basics",
-    description: "Learn the fundamentals of web development including HTML, CSS, JavaScript, and modern frameworks. Understand client-server architecture, REST APIs, and responsive design.",
-    category: "Web Development",
-    readTime: "22 min read",
-    link: "/articles/5",
-    resources: [
-      {
-        title: "Official Documentation",
-        link: "https://developer.mozilla.org/en-US/docs/Web",
-        icon: "FaBookOpen"
-      }
-    ]
-  },
-  {
-    id: 6,
-    title: "Machine Learning Introduction",
-    description: "Get started with machine learning concepts, algorithms, and tools. Learn about supervised and unsupervised learning, model evaluation, and common ML algorithms.",
-    category: "Machine Learning",
-    readTime: "25 min read",
-    link: "/articles/6",
-    resources: [
-      {
-        title: "Official Documentation",
-        link: "https://scikit-learn.org/stable/",
-        icon: "FaBookOpen"
-      }
-    ]
-  },
-  {
-    id: 7,
-    title: "Deep Learning Fundamentals",
-    description: "Dive into deep learning concepts, neural networks, and popular frameworks. Learn about CNNs, RNNs, and how to build and train deep learning models.",
-    category: "Deep Learning",
-    readTime: "28 min read",
-    link: "/articles/7",
-    resources: [
-      {
-        title: "Official Documentation",
+        title: "PyTorch Documentation",
         link: "https://pytorch.org/docs/stable/",
         icon: "FaBookOpen"
       }
     ]
   },
   {
-    id: 8,
-    title: "Practical ML Deployment",
-    description: "Learn how to deploy and maintain machine learning models in production. Master MLOps practices, containerization, CI/CD, and model monitoring.",
-    category: "MLOps",
+    id: 3,
+    title: "Introduction to Natural Language Processing (NLP)",
+    description: "A beginner-friendly guide to Natural Language Processing, its core concepts, techniques, and real-world applications.",
+    category: "Natural Language Processing",
+    readTime: "24 min read",
+    link: "/articles/3",
+    resources: [
+      {
+        title: "NLTK Documentation",
+        link: "https://www.nltk.org/",
+        icon: "FaBookOpen"
+      },
+      {
+        title: "Hugging Face Transformers",
+        link: "https://huggingface.co/docs/transformers/index",
+        icon: "FaBookOpen"
+      }
+    ]
+  },
+  {
+    id: 4,
+    title: "Introduction to LangChain and Generative AI",
+    description: "A beginner-friendly guide to LangChain, its core concepts, and how it integrates with generative AI models to build powerful applications.",
+    category: "Generative AI",
     readTime: "30 min read",
-    link: "/articles/8",
+    link: "/articles/4",
     resources: [
       {
-        title: "Official Documentation",
-        link: "https://mlflow.org/docs/latest/",
+        title: "LangChain Documentation",
+        link: "https://langchain.readthedocs.io/",
+        icon: "FaBookOpen"
+      },
+      {
+        title: "OpenAI API Documentation",
+        link: "https://beta.openai.com/docs/",
         icon: "FaBookOpen"
       }
     ]
   },
   {
-    id: 9,
-    title: "Model Evaluation Metrics",
-    description: "Master essential model evaluation metrics for classification and regression tasks. Learn how to interpret and use these metrics effectively in your machine learning projects.",
+    id: 5,
+    title: "What is ML Ops?",
+    description: "An introduction to ML Ops, its importance, and how it bridges the gap between machine learning model development and deployment.",
+    category: "ML Ops",
+    readTime: "22 min read",
+    link: "/articles/5",
+    resources: [
+      {
+        title: "MLflow Documentation",
+        link: "https://mlflow.org/docs/latest/index.html",
+        icon: "FaBookOpen"
+      },
+      {
+        title: "Kubeflow Documentation",
+        link: "https://www.kubeflow.org/docs/",
+        icon: "FaBookOpen"
+      }
+    ]
+  },
+  {
+    id: 6,
+    title: "Standard Machine Learning Project Template",
+    description: "A comprehensive guide to setting up a standard machine learning project using ML Ops, automated pipelines, exception handling, logging, Docker, and more.",
     category: "Machine Learning",
-    readTime: "20 min read",
-    link: "/articles/9",
+    readTime: "35 min read",
+    link: "/articles/6",
     resources: [
       {
-        title: "Scikit-learn Metrics Documentation",
-        link: "https://scikit-learn.org/stable/modules/model_evaluation.html",
+        title: "Apache Airflow Documentation",
+        link: "https://airflow.apache.org/docs/",
         icon: "FaBookOpen"
-      }
-    ]
-  },
-  {
-    id: 10,
-    title: "Containerization with Docker",
-    description: "Learn how to containerize your applications using Docker. Understand Docker concepts, best practices, and how to create efficient Docker images for your projects.",
-    category: "DevOps",
-    readTime: "25 min read",
-    link: "/articles/10",
-    resources: [
+      },
       {
         title: "Docker Documentation",
         link: "https://docs.docker.com/",
-        icon: "FaBookOpen"
-      }
-    ]
-  },
-  {
-    id: 11,
-    title: "AWS Cloud Deployment Guide",
-    description: "A comprehensive guide to deploying applications on AWS cloud. Learn about AWS services, infrastructure setup, and best practices for cloud deployment.",
-    category: "Cloud Computing",
-    readTime: "35 min read",
-    link: "/articles/11",
-    resources: [
-      {
-        title: "AWS Documentation",
-        link: "https://aws.amazon.com/documentation/",
-        icon: "FaBookOpen"
-      }
-    ]
-  },
-  {
-    id: 12,
-    title: "CI/CD Pipeline Implementation",
-    description: "Learn how to implement robust CI/CD pipelines for automated testing, building, and deployment. Master tools like Jenkins, GitHub Actions, and GitLab CI.",
-    category: "DevOps",
-    readTime: "25 min read",
-    link: "/articles/12",
-    resources: [
-      {
-        title: "GitHub Actions Documentation",
-        link: "https://docs.github.com/en/actions",
-        icon: "FaBookOpen"
-      }
-    ]
-  },
-  {
-    id: 13,
-    title: "Microservices Architecture",
-    description: "Master the principles and practices of microservices architecture. Learn how to design, implement, and maintain scalable microservices-based applications.",
-    category: "Architecture",
-    readTime: "30 min read",
-    link: "/articles/13",
-    resources: [
-      {
-        title: "Microservices.io",
-        link: "https://microservices.io/",
-        icon: "FaBookOpen"
-      }
-    ]
-  },
-  {
-    id: 14,
-    title: "System Design Patterns",
-    description: "Master essential system design patterns and principles. Learn how to design scalable, maintainable, and efficient software systems.",
-    category: "Architecture",
-    readTime: "28 min read",
-    link: "/articles/14",
-    resources: [
-      {
-        title: "Design Patterns Documentation",
-        link: "https://refactoring.guru/design-patterns",
         icon: "FaBookOpen"
       }
     ]

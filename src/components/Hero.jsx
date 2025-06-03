@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaDownload, FaBrain, FaRobot, FaArrowRight, FaCode, FaAws } from 'react-icons/fa';
-import { SiPython, SiTensorflow, SiPytorch } from 'react-icons/si';
+import { SiPython, SiTensorflow, SiFlask, SiScikitlearn } from 'react-icons/si';
 
 const Hero = () => {
   const handleResumeDownload = () => {
@@ -97,7 +97,8 @@ const Hero = () => {
                 {[
                   { icon: <SiPython className="w-5 h-5 sm:w-6 sm:h-6" />, label: "Python", color: "bg-supply-primary" },
                   { icon: <SiTensorflow className="w-5 h-5 sm:w-6 sm:h-6" />, label: "TensorFlow", color: "bg-supply-secondary" },
-                  { icon: <SiPytorch className="w-5 h-5 sm:w-6 sm:h-6" />, label: "PyTorch", color: "bg-supply-highlight" },
+                  { icon: <SiFlask className="w-5 h-5 sm:w-6 sm:h-6" />, label: "Flask", color: "bg-supply-highlight" },
+                  { icon: <SiScikitlearn className="w-5 h-5 sm:w-6 sm:h-6" />, label: "Scikit-learn", color: "bg-supply-accent" },
                   { icon: <FaRobot className="w-5 h-5 sm:w-6 sm:h-6" />, label: "MLOps", color: "bg-supply-accent" },
                   { icon: <FaAws className="w-5 h-5 sm:w-6 sm:h-6" />, label: "AWS", color: "bg-yellow-400" },
                 ].map((tech, index) => (
