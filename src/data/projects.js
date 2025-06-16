@@ -129,6 +129,24 @@ export const projects = [
     githubLink: "https://github.com/tirshiva/Supply-Chain-Inventory-Solution",
     // demoLink: "https://supply-chain-optimization-demo.com",
     image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    id: 7,
+    title: "Expense Manager",
+    description: "A full-stack expense management system with a Streamlit frontend and FastAPI backend, featuring expense tracking, categorization, and analytics.",
+    techStack: [
+      "Python",
+      "Streamlit",
+      "FastAPI",
+      "MongoDB",
+      "Data Visualization",
+      "REST API",
+      "Docker",
+      "GitHub Actions",
+      "CI/CD"
+    ],
+    githubLink: "https://github.com/tirshiva/Expense-Tracker-App",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800"
   }
 ];
 
