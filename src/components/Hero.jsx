@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaDownload, FaBrain, FaRobot, FaArrowRight, FaCode, FaAws } from 'react-icons/fa';
-import { SiPython, SiTensorflow, SiFlask, SiScikitlearn } from 'react-icons/si';
+import { SiPython, SiTensorflow, SiPytorch, SiAmazonaws, SiDocker } from 'react-icons/si';
 
 const Hero = () => {
   const handleResumeDownload = () => {
     const link = document.createElement('a');
-    link.href = '/Shivanshu_Tiwari_CV.pdf';
-    link.download = 'Shivanshu_Tiwari_CV.pdf';
+    link.href = '/Resume_Data_Scientist.pdf';
+    link.download = 'Resume_Data_Scientist.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -95,12 +95,11 @@ const Hero = () => {
               <p className="text-xs sm:text-sm text-supply-gray mb-4 sm:mb-5 font-medium uppercase tracking-wider">Technical Expertise</p>
               <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
                 {[
-                  { icon: <SiPython className="w-5 h-5 sm:w-6 sm:h-6" />, label: "Python", color: "bg-supply-primary" },
-                  { icon: <SiTensorflow className="w-5 h-5 sm:w-6 sm:h-6" />, label: "TensorFlow", color: "bg-supply-secondary" },
-                  { icon: <SiFlask className="w-5 h-5 sm:w-6 sm:h-6" />, label: "Flask", color: "bg-supply-highlight" },
-                  { icon: <SiScikitlearn className="w-5 h-5 sm:w-6 sm:h-6" />, label: "Scikit-learn", color: "bg-supply-accent" },
-                  { icon: <FaRobot className="w-5 h-5 sm:w-6 sm:h-6" />, label: "MLOps", color: "bg-supply-accent" },
-                  { icon: <FaAws className="w-5 h-5 sm:w-6 sm:h-6" />, label: "AWS", color: "bg-yellow-400" },
+                  { icon: <SiPython className="w-5 h-5 sm:w-6 sm:h-6" />, label: "Python", color: "bg-yellow-400" },
+                  { icon: <SiTensorflow className="w-5 h-5 sm:w-6 sm:h-6" />, label: "TensorFlow", color: "bg-orange-500" },
+                  { icon: <SiPytorch className="w-5 h-5 sm:w-6 sm:h-6" />, label: "PyTorch", color: "bg-red-500" },
+                  { icon: <SiAmazonaws className="w-5 h-5 sm:w-6 sm:h-6" />, label: "AWS", color: "bg-yellow-600" },
+                  { icon: <SiDocker className="w-5 h-5 sm:w-6 sm:h-6" />, label: "Docker", color: "bg-blue-500" },
                 ].map((tech, index) => (
                   <motion.div
                     key={index}

@@ -9,7 +9,6 @@ import Contact from './components/Contact';
 import Footer from './components/FooterComponent';
 import ScrollProgress from './components/ScrollProgress';
 import ScrollAnimation from './components/ScrollAnimation';
-import Documentation from './components/Documentation';
 import Article from './components/Article';
 import './styles/theme.css';
 
@@ -103,11 +102,6 @@ const App = () => {
                     </ScrollAnimation>
                   </section>
             
-                  {/* Documentation Section */}
-                  <section id="documentation" className="scroll-mt-20 py-20 relative z-10 bg-supply-background">
-                    <Documentation />
-                  </section>
-            
                   {/* About Section */}
                   <section id="about" className="scroll-mt-20 py-20 relative z-10 bg-supply-background-alt">
                     <ScrollAnimation>
@@ -120,13 +114,6 @@ const App = () => {
                     <ScrollAnimation>
                       <Contact />
                     </ScrollAnimation>
-                  </section>
-                </>
-              } />
-              <Route path="/documentation" element={
-                <>
-                  <section id="documentation" className="min-h-screen py-20 relative z-10 bg-supply-background">
-                    <Documentation />
                   </section>
                 </>
               } />

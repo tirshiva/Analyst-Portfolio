@@ -29,17 +29,7 @@ const Article = () => {
     });
   }, [articleId]);
 
-  const handleBackToDocumentation = () => {
-    // First navigate to the documentation route
-    navigate('/documentation');
-    // Then scroll to the documentation section
-    setTimeout(() => {
-      const documentationSection = document.getElementById('documentation');
-      if (documentationSection) {
-        documentationSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100);
-  };
+  // Remove handleBackToDocumentation, all navigation to /documentation, and all 'Back to Documentation' buttons.
 
   if (!article || !content) {
     console.log('Article or content not found. Article:', article, 'Content:', content);
@@ -59,11 +49,11 @@ const Article = () => {
               The article you're looking for doesn't exist.
             </p>
             <button
-              onClick={handleBackToDocumentation}
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-supply-primary hover:bg-supply-highlight transition-all duration-300"
             >
               <FaArrowLeft className="mr-2" />
-              Back to Documentation
+              Back to Top
             </button>
           </motion.div>
         </div>
@@ -182,11 +172,11 @@ const Article = () => {
           {/* Back to Documentation Button */}
           <div className="flex justify-center pt-8">
             <button
-              onClick={handleBackToDocumentation}
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-supply-primary hover:bg-supply-highlight transition-all duration-300 shadow-sm hover:shadow-md"
             >
               <FaArrowLeft className="mr-2" />
-              Back to Documentation
+              Back to Top
             </button>
           </div>
 
