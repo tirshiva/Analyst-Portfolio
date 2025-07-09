@@ -84,7 +84,7 @@ const App = () => {
           <ScrollProgress color="#2C3E50" />
           <Navbar />
           
-          <main className="pt-16 relative z-10">
+          <main id="main-content" className="pt-16 relative z-10">
             <Routes>
               <Route path="/" element={
                 <>

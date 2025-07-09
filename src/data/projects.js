@@ -13,7 +13,7 @@ export const projects = [
   {
     id: 1,
     title: "MLOps Insurance Pipeline",
-    description: "End-to-end MLOps pipeline for vehicle insurance prediction with automated data processing, model training, and deployment using CI/CD.",
+    description: "Developed an end-to-end MLOps pipeline for vehicle insurance prediction, automating data processing, model training, and deployment with CI/CD. Enabled rapid, reliable model updates and reduced manual intervention, improving operational efficiency for insurers.",
     techStack: [
       "MLOps",
       "CI/CD",
@@ -32,7 +32,7 @@ export const projects = [
   {
     id: 2,
     title: "Real Estate Price Predictor",
-    description: "Advanced ML model for property price prediction using feature engineering and regression techniques.",
+    description: "Built an advanced ML model to predict property prices using feature engineering and regression. Helped users and realtors make informed decisions by providing accurate, data-driven price estimates.",
     techStack: [
       "Python",
       "Scikit-learn",
@@ -52,7 +52,7 @@ export const projects = [
   {
     id: 3,
     title: "Customer Churn Analysis",
-    description: "Machine learning model for predicting customer churn with advanced feature engineering and model optimization.",
+    description: "Created a machine learning solution to predict customer churn, leveraging advanced feature engineering and model optimization. Enabled businesses to proactively retain customers and reduce churn rates.",
     techStack: [
       "Python",
       "Random Forest",
@@ -72,7 +72,7 @@ export const projects = [
   {
     id: 4,
     title: "Employee Attrition Predictor",
-    description: "Deep learning model for predicting employee attrition using neural networks and advanced analytics.",
+    description: "Developed a deep learning model to predict employee attrition using neural networks and advanced analytics. Provided HR teams with actionable insights to improve retention and workforce planning.",
     techStack: [
       "Deep Learning",
       "Neural Networks",
@@ -91,7 +91,7 @@ export const projects = [
   {
     id: 5,
     title: "Business Intelligence Dashboard",
-    description: "Interactive Power BI dashboard for business analytics with advanced DAX calculations and data modeling.",
+    description: "Designed an interactive Power BI dashboard for business analytics, featuring advanced DAX calculations and data modeling. Empowered stakeholders to make data-driven decisions with real-time insights.",
     techStack: [
       "Power BI",
       "DAX",
@@ -111,7 +111,7 @@ export const projects = [
   {
     id: 6,
     title: "AI-Powered Supply Chain Optimization System",
-    description: "An end-to-end ML system for optimizing supply chain operations, featuring demand forecasting, inventory optimization, and route planning using advanced machine learning algorithms and real-time data processing.",
+    description: "Engineered an ML system for supply chain optimization, including demand forecasting, inventory management, and route planning. Improved operational efficiency and reduced costs for logistics teams using real-time data and advanced algorithms.",
     techStack: [
       "Python",
       "TensorFlow",
@@ -133,7 +133,7 @@ export const projects = [
   {
     id: 7,
     title: "Expense Manager",
-    description: "A full-stack expense management system with a Streamlit frontend and FastAPI backend, featuring expense tracking, categorization, and analytics.",
+    description: "Developed a full-stack expense management system with analytics, tracking, and categorization features. Enabled users to monitor spending patterns and make informed financial decisions.",
     techStack: [
       "Python",
       "Streamlit",

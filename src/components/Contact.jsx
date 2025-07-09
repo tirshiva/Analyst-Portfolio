@@ -111,6 +111,16 @@ const Contact = () => {
                     <p className="text-supply-dark">Gurgaon, India</p>
                   </div>
                 </div>
+                <div className="mt-6">
+                  <a
+                    href="/contact.vcf"
+                    download="Shivanshu_Tiwari.vcf"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-supply-primary text-white text-sm font-medium shadow hover:bg-supply-highlight transition-colors border border-supply-primary"
+                    aria-label="Download vCard"
+                  >
+                    <FaEnvelope className="w-4 h-4" /> Download vCard
+                  </a>
+                </div>
               </div>
             </div>
             
