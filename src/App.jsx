@@ -103,14 +103,14 @@ const App = () => {
                   </section>
             
                   {/* About Section */}
-                  <section id="about" className="scroll-mt-20 py-20 relative z-10 bg-supply-background-alt">
+                  <section className="scroll-mt-20 py-20 relative z-10 bg-supply-background-alt">
                     <ScrollAnimation>
                       <About />
                     </ScrollAnimation>
                   </section>
             
                   {/* Contact Section */}
-                  <section id="contact" className="scroll-mt-20 py-20 relative z-10 bg-supply-background-alt">
+                  <section id="contact" className="scroll-mt-20 py-20 relative z-10 bg-supply-background">
                     <ScrollAnimation>
                       <Contact />
                     </ScrollAnimation>

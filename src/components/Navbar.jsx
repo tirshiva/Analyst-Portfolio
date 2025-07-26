@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaBars, FaTimes, FaBrain, FaRobot, FaUserTie, FaEnvelope, FaChartBar, FaArrowUp } from 'react-icons/fa';
+import { FaBars, FaTimes, FaBrain, FaRobot, FaUserTie, FaEnvelope, FaChartBar, FaArrowUp, FaGraduationCap } from 'react-icons/fa';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
@@ -88,7 +88,7 @@ const Navbar = () => {
     observerRef.current = new IntersectionObserver(handleIntersect, options);
 
     // Observe all sections
-    const sections = ['home', 'projects', 'about', 'contact'];
+    const sections = ['home', 'projects', 'experience', 'certification', 'contact'];
     sections.forEach(section => {
       const element = document.getElementById(section);
       if (element) {
@@ -130,7 +130,8 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', href: 'home', icon: <FaBrain className="w-4 h-4" /> },
     { name: 'Projects', href: 'projects', icon: <FaChartBar className="w-4 h-4" /> },
-    { name: 'About', href: 'about', icon: <FaUserTie className="w-4 h-4" /> },
+    { name: 'Experience', href: 'experience', icon: <FaUserTie className="w-4 h-4" /> },
+    { name: 'Certification', href: 'certification', icon: <FaGraduationCap className="w-4 h-4" /> },
     { name: 'Contact', href: 'contact', icon: <FaEnvelope className="w-4 h-4" /> }
   ];
 

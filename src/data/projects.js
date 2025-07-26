@@ -147,6 +147,19 @@ export const projects = [
     ],
     githubLink: "https://github.com/tirshiva/Expense-Tracker-App",
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    id: 8,
+    title: "ML Weather App",
+    description: "Developed a simple weather app using FastAPI and Requests library. It fetches weather data from the API and displays it in a user-friendly format.",
+    techStack: [
+      "Python",
+      "Requests",
+      "FastAPI",
+      "Weather API",
+    ],
+    githubLink: "https://github.com/tirshiva/weather-ML-app",
+    // image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800"
   }
 ];
 

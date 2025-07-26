@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaDownload, FaBrain, FaRobot, FaArrowRight, FaCode, FaAws } from 'react-icons/fa';
-import { SiPython, SiTensorflow, SiPytorch, SiAmazonaws, SiDocker } from 'react-icons/si';
+import { SiPython, SiPytorch, SiAmazonaws, SiFastapi, SiScikitlearn } from 'react-icons/si';
 
 const Hero = () => {
   const handleResumeDownload = () => {
@@ -45,9 +45,13 @@ const Hero = () => {
         >
           {/* Professional hero content */}
           <motion.div className="max-w-3xl mx-auto" variants={itemVariants}>
-            <motion.div className="mb-4 sm:mb-6" variants={itemVariants}>
+            <motion.div className="mb-4 sm:mb-6 flex flex-col sm:flex-row gap-2 justify-center items-center" variants={itemVariants}>
               <span className="px-3 sm:px-4 py-1.5 bg-supply-primary/10 text-supply-primary rounded-md text-xs sm:text-sm font-medium inline-block border border-supply-primary/20">
                 Machine Learning & ML Ops Engineer
+              </span>
+              <span className="px-3 sm:px-4 py-1.5 bg-supply-secondary/10 text-supply-secondary rounded-md text-xs sm:text-sm font-medium inline-block border border-supply-secondary/20 flex items-center gap-1">
+                <FaBrain className="w-3 h-3" />
+                IIT Roorkee Certified
               </span>
             </motion.div>
             
@@ -62,7 +66,7 @@ const Hero = () => {
               className="text-supply-gray mb-6 sm:mb-8 text-base sm:text-lg md:text-xl leading-relaxed mx-auto px-4 sm:px-6 md:px-8 max-w-full sm:max-w-2xl"
               variants={itemVariants}
             >
-              Building and deploying scalable machine learning solutions with a focus on MLOps and production-ready AI systems.
+              Data Scientist at Amazon specializing in e-commerce analytics, inventory forecasting, and AI-powered customer support solutions.
             </motion.p>
             
             <motion.div 
@@ -84,6 +88,19 @@ const Hero = () => {
               </motion.button>
             </motion.div>
             
+            <motion.div 
+              className="flex justify-center mb-8 sm:mb-10"
+              variants={itemVariants}
+            >
+              <motion.a
+                href="#experience"
+                className="px-4 py-2 bg-supply-secondary/10 text-supply-secondary border border-supply-secondary/30 rounded-md text-sm font-medium hover:bg-supply-secondary/20 transition-all duration-300 flex items-center gap-2"
+              >
+                <FaBrain className="w-4 h-4" />
+                View Experience
+              </motion.a>
+            </motion.div>
+            
             {/* Horizontal line separator */}
             <motion.div 
               className="w-16 sm:w-24 h-0.5 sm:h-1 bg-supply-primary/30 mx-auto mb-8 sm:mb-10"
@@ -96,10 +113,11 @@ const Hero = () => {
               <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
                 {[
                   { icon: <SiPython className="w-5 h-5 sm:w-6 sm:h-6" />, label: "Python", color: "bg-yellow-400" },
-                  { icon: <SiTensorflow className="w-5 h-5 sm:w-6 sm:h-6" />, label: "TensorFlow", color: "bg-orange-500" },
+                  { icon: <SiScikitlearn className="w-5 h-5 sm:w-6 sm:h-6" />, label: "Scikit-learn", color: "bg-orange-500" },
                   { icon: <SiPytorch className="w-5 h-5 sm:w-6 sm:h-6" />, label: "PyTorch", color: "bg-red-500" },
+                  { icon: <FaBrain className="w-5 h-5 sm:w-6 sm:h-6" />, label: "NLP", color: "bg-purple-500" },
+                  { icon: <SiFastapi className="w-5 h-5 sm:w-6 sm:h-6" />, label: "FastAPI", color: "bg-green-500" },
                   { icon: <SiAmazonaws className="w-5 h-5 sm:w-6 sm:h-6" />, label: "AWS", color: "bg-yellow-600" },
-                  { icon: <SiDocker className="w-5 h-5 sm:w-6 sm:h-6" />, label: "Docker", color: "bg-blue-500" },
                 ].map((tech, index) => (
                   <motion.div
                     key={index}
