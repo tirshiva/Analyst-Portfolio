@@ -180,14 +180,7 @@ const Article = () => {
             </button>
           </div>
 
-          {/* Scroll to Top Button */}
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="fixed bottom-8 right-8 p-3 rounded-full bg-supply-primary text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-supply-highlight"
-            aria-label="Scroll to top"
-          >
-            <FaArrowUp className="w-5 h-5" />
-          </button>
+          {/* Scroll to Top Button removed to avoid overlap with chatbot */}
         </motion.div>
       </div>
     </div>

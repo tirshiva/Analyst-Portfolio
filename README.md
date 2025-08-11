@@ -1,3 +1,19 @@
+## Environment setup
+
+Create a `.env` file in the project root with your Gemini API key:
+
+```
+GEMINI_API_KEY=YOUR_GEMINI_KEY
+```
+
+For Vite dev sessions, you can also export it inline in PowerShell before starting dev:
+
+```
+$env:GEMINI_API_KEY="YOUR_GEMINI_KEY"; npm run dev
+```
+
+On Vercel or your hosting provider, add an environment variable named `GEMINI_API_KEY` with the same value.
+
 # Portfolio Website
 
 A modern, responsive portfolio website built with React, Vite, and Tailwind CSS. Features smooth animations, interactive components, and a clean user interface.

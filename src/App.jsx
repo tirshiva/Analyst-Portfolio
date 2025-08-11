@@ -11,6 +11,8 @@ import ScrollProgress from './components/ScrollProgress';
 import ScrollAnimation from './components/ScrollAnimation';
 import Article from './components/Article';
 import './styles/theme.css';
+import Chatbot from './components/Chatbot';
+import profileContext from './data/profileContext';
 
 const App = () => {
   // Page transition variants with optimized timing
@@ -126,6 +128,7 @@ const App = () => {
           </main>
           
           <Footer />
+          <Chatbot profileContext={profileContext} />
         </motion.div>
       </AnimatePresence>
     </Router>
