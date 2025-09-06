@@ -7,17 +7,8 @@ export const profileContext = {
   title: 'Data Scientist / AI Engineer',
   location: 'Gurgaon, India',
   summary:
-    'Data Scientist specializing in e-commerce analytics, inventory forecasting, NLP-based support systems, and AWS-based ML solutions.',
-  experience: [
-    {
-      company: 'Amazon',
-      role: 'Data Scientist',
-      period: 'March 2024 - Present',
-      focus:
-        'Seller Support Analytics, inventory forecasting, NLP ticket classification, FBA insights. ~15% client satisfaction improvement via automation.',
-      skills: ['Python', 'Machine Learning', 'NLP', 'Time Series', 'AWS', 'SQL']
-    },
-  ],
+    'Data Scientist specializing in machine learning, analytics, NLP, and AI-powered solutions for various industries.',
+  experience: [],
   skills: [
     'Statistical Analysis',
     'Data Visualization',
@@ -49,11 +40,30 @@ export const profileContext = {
     githubLink,
     demoLink
   })),
-  certification: 'Executive Post Graduate Certification in Data Science & AI – IIT Roorkee',
-  education: 'Bachelor of Science in Mathematics and Computing',
+  education: [
+    {
+      degree: 'Master of Computer Applications (MCA)',
+      institution: 'Indira Gandhi National Open University',
+      period: '2025 - 2027',
+      status: 'Pursuing'
+    },
+    {
+      degree: 'Executive Diploma in Data Science and Artificial Intelligence',
+      institution: 'iHub, IIT Roorkee',
+      period: '2024 - 2025',
+      status: 'Completed'
+    },
+    {
+      degree: 'Bachelor of Science in Mathematics and Computing',
+      institution: 'Chhatrapati Shahuji Maharaj University',
+      location: 'Kanpur',
+      period: '2019 - 2022',
+      status: 'Completed'
+    }
+  ],
   social: socialLinks,
   contactEmail: 'st955218@gmail.com',
-  websiteSections: ['Home', 'Projects', 'About', 'Experience', 'Certification', 'Contact']
+  websiteSections: ['Home', 'Projects', 'About', 'Experience', 'Education', 'Contact']
 };
 
 export default profileContext;

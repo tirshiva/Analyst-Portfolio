@@ -88,7 +88,7 @@ const Navbar = () => {
     observerRef.current = new IntersectionObserver(handleIntersect, options);
 
     // Observe all sections
-    const sections = ['home', 'projects', 'experience', 'certification', 'contact'];
+    const sections = ['home', 'projects', 'experience', 'education', 'contact'];
     sections.forEach(section => {
       const element = document.getElementById(section);
       if (element) {
@@ -131,7 +131,7 @@ const Navbar = () => {
     { name: 'Home', href: 'home', icon: <FaBrain className="w-4 h-4" /> },
     { name: 'Projects', href: 'projects', icon: <FaChartBar className="w-4 h-4" /> },
     { name: 'Experience', href: 'experience', icon: <FaUserTie className="w-4 h-4" /> },
-    { name: 'Certification', href: 'certification', icon: <FaGraduationCap className="w-4 h-4" /> },
+    { name: 'Education', href: 'education', icon: <FaGraduationCap className="w-4 h-4" /> },
     { name: 'Contact', href: 'contact', icon: <FaEnvelope className="w-4 h-4" /> }
   ];
 

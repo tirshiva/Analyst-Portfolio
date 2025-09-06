@@ -51,7 +51,7 @@ const Hero = () => {
               </span>
               <span className="px-3 sm:px-4 py-1.5 bg-supply-secondary/10 text-supply-secondary rounded-md text-xs sm:text-sm font-medium inline-block border border-supply-secondary/20 flex items-center gap-1">
                 <FaBrain className="w-3 h-3" />
-                IIT Roorkee Certified
+                AI & ML Certified
               </span>
             </motion.div>
             
@@ -66,7 +66,7 @@ const Hero = () => {
               className="text-supply-gray mb-6 sm:mb-8 text-base sm:text-lg md:text-xl leading-relaxed mx-auto px-4 sm:px-6 md:px-8 max-w-full sm:max-w-2xl"
               variants={itemVariants}
             >
-              Data Scientist at Amazon specializing in e-commerce analytics, inventory forecasting, and AI-powered customer support solutions.
+              Data Scientist specializing in machine learning, analytics, and AI-powered solutions for various industries.
             </motion.p>
             
             <motion.div 

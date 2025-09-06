@@ -5,14 +5,13 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
 import About from './components/About';
+import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/FooterComponent';
 import ScrollProgress from './components/ScrollProgress';
 import ScrollAnimation from './components/ScrollAnimation';
 import Article from './components/Article';
 import './styles/theme.css';
-import Chatbot from './components/Chatbot';
-import profileContext from './data/profileContext';
 
 const App = () => {
   // Page transition variants with optimized timing
@@ -110,6 +109,13 @@ const App = () => {
                       <About />
                     </ScrollAnimation>
                   </section>
+
+                  {/* Experience Section */}
+                  <section id="experience" className="scroll-mt-20 py-20 relative z-10 bg-supply-background">
+                    <ScrollAnimation>
+                      <Experience />
+                    </ScrollAnimation>
+                  </section>
             
                   {/* Contact Section */}
                   <section id="contact" className="scroll-mt-20 py-20 relative z-10 bg-supply-background">
@@ -128,7 +134,6 @@ const App = () => {
           </main>
           
           <Footer />
-          <Chatbot profileContext={profileContext} />
         </motion.div>
       </AnimatePresence>
     </Router>
