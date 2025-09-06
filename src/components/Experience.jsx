@@ -13,11 +13,11 @@ const experiences = [
     responsibilities: [
       "Assist Amazon sellers with inventory management, payment processing, and tax-related queries",
       "Resolve complex account data issues and provide comprehensive seller support solutions",
-      "Utilize Amazon's internal MLU (Machine Learning Utilities) for advanced data analytics",
       "Perform root cause analysis to identify and resolve seller account discrepancies",
-      "Collaborate with cross-functional teams to improve seller experience and platform efficiency"
+      "Collaborate with cross-functional teams to improve seller experience and platform efficiency",
+      "Utilize Amazon's internal MLU (Machine Learning University) for advanced data analytics"
     ],
-    skills: ["Data Analytics", "SQL", "Python", "MS Excel", "Root Cause Analysis", "Customer Support", "Problem Solving"],
+    skills: ["Data Analytics", "Python", "MS Excel", "Root Cause Analysis", "Problem Solving","SQL","AWS"],
     achievements: [
       "Mastered Amazon's internal analytics tools and MLU platform",
       "Developed expertise in seller account management and troubleshooting",
@@ -33,17 +33,17 @@ const experiences = [
     color: "bg-gradient-to-r from-blue-500 to-blue-600",
     category: "Customer Service & Technical Support",
     responsibilities: [
-      "Resolved complex service tickets escalated by Tier 1 associates for US-based Comcast clients",
+      "Resolved complex service tickets escalated by Tier 1 associates for US-based clients",
       "Specialized in billing inquiries, payment processing, and account management issues",
       "Provided technical support for network troubleshooting and connectivity problems",
       "Mentored Tier 1 associates and improved their resolution capabilities",
       "Maintained high customer satisfaction scores through effective problem resolution"
     ],
-    skills: ["Customer Service", "Technical Support", "Billing Systems", "Network Troubleshooting", "Team Leadership", "US Client Management"],
+    skills: ["Technical Support", "Billing Systems", "Network Troubleshooting", "Team Leadership", "CRM"],
     achievements: [
       "Successfully resolved 95%+ of escalated tickets within SLA",
       "Trained and mentored multiple Tier 1 associates",
-      "Maintained excellent customer satisfaction ratings for Comcast clients"
+      "Maintained excellent customer satisfaction ratings for clients"
     ]
   },
   {
@@ -57,14 +57,13 @@ const experiences = [
     responsibilities: [
       "Specialized in Lenskart's innovative Home Try-On service for eyewear customers",
       "Provided personalized consultation for frame selection and style recommendations",
-      "Managed end-to-end customer journey from virtual try-on to final purchase",
+      "Managed end-to-end customer journey from try-on to final purchase",
       "Resolved customer queries related to frame fitting, prescription accuracy, and delivery",
       "Contributed to improving customer experience and conversion rates for online eyewear sales"
     ],
-    skills: ["E-commerce", "Customer Consultation", "Product Knowledge", "Virtual Try-On Technology", "Sales Support", "Customer Experience"],
+    skills: ["E-commerce", "Customer Consultation", "Product Knowledge", "Virtual Try-On Technology", "Sales Support"],
     achievements: [
       "Enhanced customer satisfaction for Home Try-On service",
-      "Developed expertise in virtual eyewear fitting and consultation",
       "Contributed to improved conversion rates for online eyewear sales"
     ]
   },

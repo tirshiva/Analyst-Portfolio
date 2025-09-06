@@ -47,12 +47,12 @@ const Hero = () => {
           <motion.div className="max-w-3xl mx-auto" variants={itemVariants}>
             <motion.div className="mb-4 sm:mb-6 flex flex-col sm:flex-row gap-2 justify-center items-center" variants={itemVariants}>
               <span className="px-3 sm:px-4 py-1.5 bg-supply-primary/10 text-supply-primary rounded-md text-xs sm:text-sm font-medium inline-block border border-supply-primary/20">
-                Machine Learning & ML Ops Engineer
+                AI & ML Engineer
               </span>
-              <span className="px-3 sm:px-4 py-1.5 bg-supply-secondary/10 text-supply-secondary rounded-md text-xs sm:text-sm font-medium inline-block border border-supply-secondary/20 flex items-center gap-1">
+              {/* <span className="px-3 sm:px-4 py-1.5 bg-supply-secondary/10 text-supply-secondary rounded-md text-xs sm:text-sm font-medium inline-block border border-supply-secondary/20 flex items-center gap-1">
                 <FaBrain className="w-3 h-3" />
                 AI & ML Certified
-              </span>
+              </span> */}
             </motion.div>
             
             <motion.h1 
@@ -115,7 +115,7 @@ const Hero = () => {
                   { icon: <SiPython className="w-5 h-5 sm:w-6 sm:h-6" />, label: "Python", color: "bg-yellow-400" },
                   { icon: <SiScikitlearn className="w-5 h-5 sm:w-6 sm:h-6" />, label: "Scikit-learn", color: "bg-orange-500" },
                   { icon: <SiPytorch className="w-5 h-5 sm:w-6 sm:h-6" />, label: "PyTorch", color: "bg-red-500" },
-                  { icon: <FaBrain className="w-5 h-5 sm:w-6 sm:h-6" />, label: "NLP", color: "bg-purple-500" },
+                  // { icon: <FaBrain className="w-5 h-5 sm:w-6 sm:h-6" />, label: "NLP", color: "bg-purple-500" },
                   { icon: <SiFastapi className="w-5 h-5 sm:w-6 sm:h-6" />, label: "FastAPI", color: "bg-green-500" },
                   { icon: <SiAmazonaws className="w-5 h-5 sm:w-6 sm:h-6" />, label: "AWS", color: "bg-yellow-600" },
                 ].map((tech, index) => (
