@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
 import About from './components/About';
+import Education from './components/Education';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/FooterComponent';
@@ -96,13 +97,6 @@ const App = () => {
                     </ScrollAnimation>
                   </section>
             
-                  {/* Projects Section */}
-                  <section id="projects" className="scroll-mt-20 py-20 relative z-10 bg-supply-background">
-                    <ScrollAnimation>
-                      <Projects />
-                    </ScrollAnimation>
-                  </section>
-            
                   {/* About Section */}
                   <section className="scroll-mt-20 py-20 relative z-10 bg-supply-background-alt">
                     <ScrollAnimation>
@@ -110,15 +104,29 @@ const App = () => {
                     </ScrollAnimation>
                   </section>
 
+                  {/* Education Section */}
+                  <section id="education" className="scroll-mt-20 py-20 relative z-10 bg-supply-background">
+                    <ScrollAnimation>
+                      <Education />
+                    </ScrollAnimation>
+                  </section>
+
                   {/* Experience Section */}
-                  <section id="experience" className="scroll-mt-20 py-20 relative z-10 bg-supply-background">
+                  <section id="experience" className="scroll-mt-20 py-20 relative z-10 bg-supply-background-alt">
                     <ScrollAnimation>
                       <Experience />
                     </ScrollAnimation>
                   </section>
+
+                  {/* Projects Section */}
+                  <section id="projects" className="scroll-mt-20 py-20 relative z-10 bg-supply-background">
+                    <ScrollAnimation>
+                      <Projects />
+                    </ScrollAnimation>
+                  </section>
             
                   {/* Contact Section */}
-                  <section id="contact" className="scroll-mt-20 py-20 relative z-10 bg-supply-background">
+                  <section id="contact" className="scroll-mt-20 py-20 relative z-10 bg-supply-background-alt">
                     <ScrollAnimation>
                       <Contact />
                     </ScrollAnimation>

@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { FaBrain, FaDatabase, FaChartLine, FaCode, FaRobot, FaCloud, FaServer, FaChartBar, FaNetworkWired, FaIndustry, FaTools } from 'react-icons/fa';
-import Education from './Education';
 
 const skills = [
   {
@@ -80,28 +79,6 @@ const About = () => (
       </motion.div>
       
 
-      {/* Education Section */}
-      <section id="education" className="mt-16">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.4 }}
-        >
-        <div className="text-center mb-8">
-          <h3 className="text-2xl font-bold text-supply-dark mb-3">
-            <span className="text-supply-secondary">Education</span>
-          </h3>
-          <p className="text-supply-gray text-base max-w-2xl mx-auto">
-            Academic journey and professional development in computer science and data science.
-          </p>
-        </div>
-        
-        <div className="max-w-4xl mx-auto">
-          <Education />
-        </div>
-        </motion.div>
-      </section>
     </div>
   </section>
 );
