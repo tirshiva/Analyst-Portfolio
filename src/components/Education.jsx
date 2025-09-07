@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaGraduationCap, FaUniversity, FaCalendarAlt, FaExternalLinkAlt, FaEye, FaMapMarkerAlt, FaTrophy, FaStar, FaTools } from 'react-icons/fa';
+import { FaCalendarAlt, FaGraduationCap, FaMapMarkerAlt, FaStar, FaTools, FaTrophy, FaUniversity } from 'react-icons/fa';
 
 const Education = () => {
   const educationData = [
@@ -11,24 +11,25 @@ const Education = () => {
       location: "Distance Learning",
       icon: <FaGraduationCap className="w-10 h-10 text-white" />,
       color: "bg-gradient-to-r from-purple-500 to-purple-600",
-      category: "Graduate Studies",
+      category: "Post Graduation",
       description: "Advanced studies in computer applications, software development, and information technology.",
       focus: [
         "Software Development",
-        "Database Management",
-        "System Analysis & Design",
-        "Web Technologies",
-        "Mobile Application Development",
-        "Project Management"
+        "Machine Learning",
+        "Data Science",
+        "Artificial Intelligence",
+        "Cloud Computing",
+        "DevOps"
       ],
       achievements: [
         "Pursuing advanced degree in computer applications",
-        "Focus on modern software development practices",
-        "Comprehensive understanding of IT systems"
+        "Gained expertise in machine learning, data science, and artificial intelligence",
+        "Gained expertise in cloud computing and devops",
+        "Gained expertise in software development"
       ]
     },
     {
-      degree: "Executive Diploma in Data Science and Artificial Intelligence",
+      degree: "Diploma in Data Science and Artificial Intelligence",
       institution: "iHub, IIT Roorkee",
       period: "2024 - 2025",
       status: "Completed",
@@ -40,9 +41,6 @@ const Education = () => {
       focus: [
         "Machine Learning Algorithms",
         "Deep Learning & Neural Networks",
-        "Data Analysis & Visualization",
-        "AI Implementation",
-        "Statistical Modeling",
         "ML Ops & Deployment"
       ],
       achievements: [
@@ -52,22 +50,20 @@ const Education = () => {
       ]
     },
     {
-      degree: "Bachelor of Science in Mathematics and Computing",
+      degree: "Bachelor of Science in Mathematics",
       institution: "Chhatrapati Shahuji Maharaj University",
       period: "2019 - 2022",
       status: "Completed",
       location: "Kanpur",
       icon: <FaGraduationCap className="w-10 h-10 text-white" />,
       color: "bg-gradient-to-r from-green-500 to-green-600",
-      category: "Undergraduate Studies",
+      category: "Graduation",
       description: "Foundation in mathematical concepts, computational methods, and analytical problem-solving techniques.",
       focus: [
         "Mathematical Analysis",
-        "Computational Methods",
         "Statistical Mathematics",
         "Programming Fundamentals",
-        "Data Structures & Algorithms",
-        "Mathematical Modeling"
+        "Data Structures & Algorithms"
       ],
       achievements: [
         "Strong foundation in mathematical concepts",
@@ -88,7 +84,7 @@ const Education = () => {
           <FaUniversity className="w-64 h-64 text-supply-secondary" />
         </div>
       </div>
-      
+
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -109,7 +105,7 @@ const Education = () => {
             Comprehensive academic background in computer science, mathematics, and data science
           </p>
         </motion.div>
-        
+
         {/* Education Grid */}
         <div className="space-y-8">
           {educationData.map((edu, idx) => (
@@ -146,18 +142,17 @@ const Education = () => {
                         <span className="text-sm">{edu.location}</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                          edu.status === 'Completed' 
-                            ? 'bg-green-500/20 text-green-200' 
-                            : 'bg-blue-500/20 text-blue-200'
-                        }`}>
+                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${edu.status === 'Completed'
+                          ? 'bg-green-500/20 text-green-200'
+                          : 'bg-blue-500/20 text-blue-200'
+                          }`}>
                           {edu.status}
                         </span>
                       </div>
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Card content */}
                 <div className="p-6">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -170,14 +165,14 @@ const Education = () => {
                       <p className="text-supply-gray text-sm leading-relaxed mb-6">
                         {edu.description}
                       </p>
-                      
+
                       <h5 className="text-sm uppercase text-supply-gray font-semibold mb-4 flex items-center gap-2">
                         <FaTools className="w-4 h-4" />
                         Focus Areas
                       </h5>
                       <div className="flex flex-wrap gap-2">
                         {edu.focus.map((area, areaIdx) => (
-                          <span 
+                          <span
                             key={areaIdx}
                             className="px-3 py-1 bg-gradient-to-r from-supply-primary/10 to-supply-secondary/10 text-supply-primary border border-supply-primary/20 rounded-full text-xs font-medium hover:bg-supply-primary/20 transition-colors duration-200"
                           >
@@ -208,7 +203,7 @@ const Education = () => {
             </motion.div>
           ))}
         </div>
-        
+
         {/* Call to action */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

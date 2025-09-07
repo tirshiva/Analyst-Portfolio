@@ -15,6 +15,13 @@ const Projects = () => {
     );
   });
 
+  // Ensure newest projects (higher id) appear first
+  const sortedProjects = [...filteredProjects].sort((a, b) => {
+    const aId = typeof a.id === 'number' ? a.id : 0;
+    const bId = typeof b.id === 'number' ? b.id : 0;
+    return bId - aId;
+  });
+
   return (
     <section
       id="projects"
@@ -87,8 +94,8 @@ const Projects = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
-          {filteredProjects.length > 0 ? (
-            filteredProjects.map((project, idx) => (
+          {sortedProjects.length > 0 ? (
+            sortedProjects.map((project, idx) => (
               <motion.div
                 key={project.id || idx}
                 initial={{ opacity: 0, y: 30 }}

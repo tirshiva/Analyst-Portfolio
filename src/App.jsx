@@ -1,17 +1,15 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Projects from './components/Projects';
+import { AnimatePresence, motion } from 'framer-motion';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import About from './components/About';
+import Contact from './components/Contact';
 import Education from './components/Education';
 import Experience from './components/Experience';
-import Contact from './components/Contact';
 import Footer from './components/FooterComponent';
-import ScrollProgress from './components/ScrollProgress';
+import Hero from './components/Hero';
+import Navbar from './components/Navbar';
+import Projects from './components/Projects';
 import ScrollAnimation from './components/ScrollAnimation';
-import Article from './components/Article';
+import ScrollProgress from './components/ScrollProgress';
 import './styles/theme.css';
 
 const App = () => {
@@ -62,30 +60,30 @@ const App = () => {
         >
           {/* Main gradient background */}
           <div className="fixed inset-0 bg-gradient-to-b from-white via-supply-background-alt/5 to-white"></div>
-          
+
           {/* Minimal decorative elements */}
           <div className="fixed inset-0 overflow-hidden pointer-events-none">
             {/* Subtle gradient blob */}
-              <motion.div 
+            <motion.div
               className="absolute top-1/4 right-1/4 w-[800px] h-[800px] bg-gradient-to-br from-supply-background-alt/10 to-supply-background-dark/10 rounded-full blur-3xl"
-                animate={{ 
-                  scale: [1, 1.05, 1],
+              animate={{
+                scale: [1, 1.05, 1],
                 opacity: [0.1, 0.15, 0.1]
-                }}
-                transition={{ 
-                duration: 20, 
-                  repeat: Infinity,
-                  repeatType: "reverse"
-                }}
-              ></motion.div>
-              
-              {/* Subtle grid pattern */}
+              }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                repeatType: "reverse"
+              }}
+            ></motion.div>
+
+            {/* Subtle grid pattern */}
             <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.01]"></div>
-            </div>
-            
+          </div>
+
           <ScrollProgress color="#2C3E50" />
           <Navbar />
-          
+
           <main id="main-content" className="pt-16 relative z-10">
             <Routes>
               <Route path="/" element={
@@ -96,7 +94,7 @@ const App = () => {
                       <Hero />
                     </ScrollAnimation>
                   </section>
-            
+
                   {/* About Section */}
                   <section className="scroll-mt-20 py-20 relative z-10 bg-supply-background-alt">
                     <ScrollAnimation>
@@ -124,7 +122,7 @@ const App = () => {
                       <Projects />
                     </ScrollAnimation>
                   </section>
-            
+
                   {/* Contact Section */}
                   <section id="contact" className="scroll-mt-20 py-20 relative z-10 bg-supply-background-alt">
                     <ScrollAnimation>
@@ -133,14 +131,10 @@ const App = () => {
                   </section>
                 </>
               } />
-              <Route path="/articles/:articleId" element={
-                <div className="min-h-screen">
-                  <Article />
-                </div>
-              } />
+              {/* Removed invalid Article route */}
             </Routes>
           </main>
-          
+
           <Footer />
         </motion.div>
       </AnimatePresence>
