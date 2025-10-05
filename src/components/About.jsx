@@ -1,40 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaBrain, FaDatabase, FaChartLine, FaCode, FaRobot, FaCloud, FaServer, FaChartBar, FaNetworkWired, FaIndustry, FaTools } from 'react-icons/fa';
-
-const skills = [
-  {
-    icon: <FaBrain className="w-8 h-8 text-supply-primary" />,
-    title: "Machine Learning",
-    description: "Expertise in developing and deploying ML models for predictive analytics, pattern recognition, and automated decision-making."
-  },
-  {
-    icon: <FaDatabase className="w-8 h-8 text-supply-secondary" />,
-    title: "Data Analytics",
-    description: "Specialized in data analysis, statistical modeling, and business intelligence for various industries."
-  },
-  {
-    icon: <FaRobot className="w-8 h-8 text-supply-accent" />,
-    title: "NLP & AI Research",
-    description: "Experience in natural language processing, clustering algorithms, and AI research for various applications."
-  },
-  {
-    icon: <FaCloud className="w-8 h-8 text-supply-success" />,
-    title: "AWS & Cloud ML",
-    description: "Building and deploying ML solutions on AWS cloud platform with focus on scalability and production performance."
-  },
-  {
-    icon: <FaTools className="w-8 h-8 text-supply-highlight" />,
-    title: "ML Tools & Frameworks",
-    description: "Proficient in TensorFlow, PyTorch, scikit-learn, and other modern ML frameworks and tools."
-  },
-  {
-    icon: <FaChartBar className="w-8 h-8 text-supply-chart1" />,
-    title: "Time Series Analysis",
-    description: "Expert in time series forecasting, statistical modeling, and business intelligence for various industries."
-  }
-];
-
-const experience = [];
+import { FaBriefcase, FaGraduationCap } from 'react-icons/fa';
 
 const About = () => (
   <section className="text-supply-dark py-16 sm:py-24 relative">
@@ -54,27 +19,35 @@ const About = () => (
         </p>
       </motion.div>
       
-      {/* Compact Skills Overview */}
+      {/* Brief Experience and Education */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7, delay: 0.2 }}
-        className="bg-white rounded-xl shadow-lg border border-supply-lightgray p-6 sm:p-8"
+        className="grid grid-cols-1 md:grid-cols-2 gap-6"
       >
-        <h3 className="text-xl font-bold text-supply-dark mb-6 text-center">Core Expertise</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {skills.map((skill, idx) => (
-            <div key={idx} className="flex items-center gap-3 p-3 rounded-lg hover:bg-supply-light/50 transition-colors duration-200">
-              <div className="p-2 bg-supply-primary/10 rounded-lg">
-                {skill.icon}
-              </div>
-                              <div>
-                  <h4 className="font-semibold text-supply-dark text-base">{skill.title}</h4>
-                  <p className="text-supply-gray text-sm">{skill.description}</p>
-                </div>
-            </div>
-          ))}
+        <div className="bg-white rounded-xl shadow-lg border border-supply-lightgray p-6">
+          <div className="flex items-center gap-3 mb-3">
+            <FaBriefcase className="w-5 h-5 text-supply-primary" />
+            <h3 className="text-lg font-bold text-supply-dark">Experience</h3>
+          </div>
+          <ul className="space-y-2 text-sm text-supply-gray">
+            <li><span className="font-semibold text-supply-dark">Amazon</span> — Seller Support Associate (2024–Present)</li>
+            <li><span className="font-semibold text-supply-dark">Concentrix</span> — Sales Advisor (2022–2024)</li>
+            <li><span className="font-semibold text-supply-dark">Lenskart</span> — Consultant, Home Try-On (2022)</li>
+          </ul>
+        </div>
+        <div className="bg-white rounded-xl shadow-lg border border-supply-lightgray p-6">
+          <div className="flex items-center gap-3 mb-3">
+            <FaGraduationCap className="w-5 h-5 text-supply-secondary" />
+            <h3 className="text-lg font-bold text-supply-dark">Education</h3>
+          </div>
+          <ul className="space-y-2 text-sm text-supply-gray">
+            <li>MCA, IGNOU — 2025–2027 (Pursuing)</li>
+            <li>Diploma in DS & AI, iHub IIT Roorkee — 2024–2025</li>
+            <li>B.Sc. Mathematics, CSJM University — 2019–2022</li>
+          </ul>
         </div>
       </motion.div>
       
