@@ -12,13 +12,14 @@
 export const projects = [
   {
     id: 1,
-    title: "MLOps Insurance Pipeline",
-    description: "Developed an end-to-end MLOps pipeline for vehicle insurance prediction, automating data processing, model training, and deployment with CI/CD. Enabled rapid, reliable model updates and reduced manual intervention, improving operational efficiency for insurers.",
+    title: "Vehicle-Insurance-Purchase-Prediction MLOps Pipeline",
+    description: "Developed a pipeline for vehicle insurance prediction, automating data processing, model training, and deployment with CI/CD, dockerization, and cloud hosting on AWS EC2.",
     techStack: [
-      "MLOps",
-      "CI/CD",
       "AWS EC2",
-      "MongoDB"
+      "MongoDB",
+      "Docker",
+      "CI/CD",
+      "MLOps"
     ],
     githubLink: "https://github.com/tirshiva/MLOps-Proj1",
     image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=800"
@@ -26,7 +27,7 @@ export const projects = [
   {
     id: 2,
     title: "Real Estate Price Predictor",
-    description: "Built an advanced ML model to predict property prices using feature engineering and regression. Helped users and realtors make informed decisions by providing accurate, data-driven price estimates.",
+    description: "A Linear Regression model that predicts house prices based on various features such as location, size, and amenities. Built using Python and Scikit-learn, and deployed with Flask for real-time predictions.",
     techStack: [
       "Python",
       "Scikit-learn",
@@ -40,7 +41,7 @@ export const projects = [
   {
     id: 3,
     title: "Customer Churn Analysis",
-    description: "Created a machine learning solution to predict customer churn, leveraging advanced feature engineering and model optimization. Enabled businesses to proactively retain customers and reduce churn rates.",
+    description: "A Machine learning project based on Random Forest Classifier to predict customer churn. The model is trained on a telecom dataset and includes hyperparameter tuning and cross-validation to enhance accuracy.",
     techStack: [
       "Python",
       "Random Forest",
