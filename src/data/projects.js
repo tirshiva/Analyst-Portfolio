@@ -12,7 +12,7 @@
 export const projects = [
   {
     id: 1,
-    title: "Vehicle-Insurance-Purchase-Prediction MLOps Pipeline",
+    title: "Vehicle Insurance Purchase Prediction MLOps Pipeline",
     description: "Developed a pipeline for vehicle insurance prediction, automating data processing, model training, and deployment with CI/CD, dockerization, and cloud hosting on AWS EC2.",
     techStack: [
       "AWS EC2",
