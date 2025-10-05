@@ -2,8 +2,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import About from './components/About';
 import Contact from './components/Contact';
-import Education from './components/Education';
-import Experience from './components/Experience';
 import Footer from './components/FooterComponent';
 import Hero from './components/Hero';
 import Navbar from './components/Navbar';
@@ -96,23 +94,9 @@ const App = () => {
                   </section>
 
                   {/* About Section */}
-                  <section className="scroll-mt-20 py-20 relative z-10 bg-supply-background-alt">
+                  <section id="about" className="scroll-mt-20 py-20 relative z-10 bg-supply-background-alt">
                     <ScrollAnimation>
                       <About />
-                    </ScrollAnimation>
-                  </section>
-
-                  {/* Education Section */}
-                  <section id="education" className="scroll-mt-20 py-20 relative z-10 bg-supply-background">
-                    <ScrollAnimation>
-                      <Education />
-                    </ScrollAnimation>
-                  </section>
-
-                  {/* Experience Section */}
-                  <section id="experience" className="scroll-mt-20 py-20 relative z-10 bg-supply-background-alt">
-                    <ScrollAnimation>
-                      <Experience />
                     </ScrollAnimation>
                   </section>
 
