@@ -12,7 +12,7 @@
 export const projects = [
   {
     id: 1,
-    title: "Vehicle-Insurance-Purchase-Prediction MLOps Pipeline",
+    title: "Vehicle Insurance Purchase Prediction Pipeline",
     description: "Developed a pipeline for vehicle insurance prediction, automating data processing, model training, and deployment with CI/CD, dockerization, and cloud hosting on AWS EC2.",
     techStack: [
       "AWS EC2",
@@ -51,6 +51,18 @@ export const projects = [
     githubLink: "https://github.com/tirshiva/Customer-Churn-Analysis/tree/main",
     demoLink: "https://shivanshu2407-customer-churn-analysis-srcapp-b4z2jc.streamlit.app/",
     image: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    id: 4,
+    title: "E-commerce Backend API",
+    description: "Developed a RESTful API for an e-commerce platform using Fastapi and postgres SQL. The API supports product management, and order processing.",
+    techStack: [
+      "FastAPI",
+      "PostgreSQL",
+      "Python",
+      "RESTful API"
+    ],
+    githubLink: "https://github.com/tirshiva/fruit-store-Backend"
   }
 ];
 
