@@ -5,8 +5,8 @@ import { SiPython, SiPytorch, SiAmazonaws, SiFastapi, SiScikitlearn } from 'reac
 const Hero = () => {
   const handleResumeDownload = () => {
     const link = document.createElement('a');
-    link.href = '/Resume_Data_Scientist.pdf';
-    link.download = 'Resume_Data_Scientist.pdf';
+    link.href = '/autoCV.pdf';
+    link.download = 'autoCV.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -47,12 +47,12 @@ const Hero = () => {
           <motion.div className="max-w-3xl mx-auto" variants={itemVariants}>
             <motion.div className="mb-4 sm:mb-6 flex flex-col sm:flex-row gap-2 justify-center items-center" variants={itemVariants}>
               <span className="px-3 sm:px-4 py-1.5 bg-supply-primary/10 text-supply-primary rounded-md text-xs sm:text-sm font-medium inline-block border border-supply-primary/20">
-                AI & ML Engineer
+                Data Scientist
               </span>
-              {/* <span className="px-3 sm:px-4 py-1.5 bg-supply-secondary/10 text-supply-secondary rounded-md text-xs sm:text-sm font-medium inline-block border border-supply-secondary/20 flex items-center gap-1">
+              <span className="px-3 sm:px-4 py-1.5 bg-supply-secondary/10 text-supply-secondary rounded-md text-xs sm:text-sm font-medium inline-block border border-supply-secondary/20 flex items-center gap-1">
                 <FaBrain className="w-3 h-3" />
-                AI & ML Certified
-              </span> */}
+                Backend Developer
+              </span>
             </motion.div>
             
             <motion.h1 
@@ -66,7 +66,7 @@ const Hero = () => {
               className="text-supply-gray mb-6 sm:mb-8 text-base sm:text-lg md:text-xl leading-relaxed mx-auto px-4 sm:px-6 md:px-8 max-w-full sm:max-w-2xl"
               variants={itemVariants}
             >
-              Data Scientist specializing in machine learning, analytics, and AI-powered solutions
+              Data Scientist specializing in building and deploying machine learning models, Building backend systems.
             </motion.p>
             
             <motion.div 
@@ -88,7 +88,7 @@ const Hero = () => {
               </motion.button>
             </motion.div>
             
-            <motion.div 
+            {/* <motion.div 
               className="flex justify-center mb-8 sm:mb-10"
               variants={itemVariants}
             >
@@ -99,7 +99,7 @@ const Hero = () => {
                 <FaBrain className="w-4 h-4" />
                 View Experience
               </motion.a>
-            </motion.div>
+            </motion.div> */}
             
             {/* Horizontal line separator */}
             <motion.div 
