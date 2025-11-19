@@ -15,7 +15,7 @@ const About = () => (
           About <span className="text-supply-primary">Me</span>
         </h2>
         <p className="text-supply-gray text-base sm:text-lg max-w-2xl mx-auto">
-          Data Scientist specializing in analytics, machine learning, and data-driven solutions.
+          Data Scientist specializing in predictive modeling and Time Series Analysis.
         </p>
       </motion.div>
       
@@ -33,9 +33,9 @@ const About = () => (
             <h3 className="text-lg font-bold text-supply-dark">Experience</h3>
           </div>
           <ul className="space-y-2 text-sm text-supply-gray">
-            <li><span className="font-semibold text-supply-dark">Amazon</span> — Seller Support Associate (2024–Present)</li>
-            <li><span className="font-semibold text-supply-dark">Concentrix</span> — Sales Advisor (2022–2024)</li>
-            <li><span className="font-semibold text-supply-dark">Lenskart</span> — Consultant, Home Try-On (2022)</li>
+            <li><span className="font-semibold text-supply-dark">Amazon</span> — Business Analyst, Seller Operations (Mar 2024– Present)</li>
+            <li><span className="font-semibold text-supply-dark">Concentrix</span> — Operations Analyst (Oct 2022– Feb2024)</li>
+            <li><span className="font-semibold text-supply-dark">Lenskart</span> — Consultant (Jan 2022 - Sep 2022)</li>
           </ul>
         </div>
         <div className="bg-white rounded-xl shadow-lg border border-supply-lightgray p-6">

@@ -86,7 +86,7 @@ const FooterComponent = () => {
               <h3 className="text-lg sm:text-xl font-bold text-supply-dark">Data Scientist</h3>
             </div>
             <p className="text-supply-gray mb-4 sm:mb-6 text-sm sm:text-base">
-              Building and deploying scalable machine learning solutions with a focus on MLOps and production-ready AI systems.
+              Implementing predictive models and time series analysis for business intelligence.
             </p>
             <div className="flex gap-3 sm:gap-4">
               <motion.a
@@ -150,10 +150,10 @@ const FooterComponent = () => {
             <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-supply-dark">Expertise</h3>
             <ul className="space-y-1 sm:space-y-2 text-sm sm:text-base">
               <li className="text-supply-gray">Machine Learning</li>
-              <li className="text-supply-gray">ML Ops</li>
               <li className="text-supply-gray">Deep Learning</li>
-              <li className="text-supply-gray">Data Science</li>
-              <li className="text-supply-gray">Cloud ML</li>
+              <li className="text-supply-gray">ML Ops</li>
+              <li className="text-supply-gray">Backend Development</li>
+              <li className="text-supply-gray">Cloud Deployment</li>
             </ul>
           </motion.div>
 

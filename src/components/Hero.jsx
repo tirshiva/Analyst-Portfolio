@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaDownload, FaBrain, FaRobot, FaArrowRight, FaCode, FaAws } from 'react-icons/fa';
-import { SiPython, SiPytorch, SiAmazonaws, SiFastapi, SiScikitlearn } from 'react-icons/si';
+import { SiPython, SiPytorch, SiAmazonaws, SiFastapi, SiScikitlearn, SiBackendless, SiIcloud } from 'react-icons/si';
 
 const Hero = () => {
   const handleResumeDownload = () => {
@@ -66,7 +66,7 @@ const Hero = () => {
               className="text-supply-gray mb-6 sm:mb-8 text-base sm:text-lg md:text-xl leading-relaxed mx-auto px-4 sm:px-6 md:px-8 max-w-full sm:max-w-2xl"
               variants={itemVariants}
             >
-              Data Scientist specializing in machine learning, analytics, and AI-powered solutions
+              Data Scientist specializing in predictive modeling and Time Series Analysis.
             </motion.p>
             
             <motion.div 
@@ -114,10 +114,10 @@ const Hero = () => {
                 {[
                   { icon: <SiPython className="w-5 h-5 sm:w-6 sm:h-6" />, label: "Python", color: "bg-yellow-400" },
                   { icon: <SiScikitlearn className="w-5 h-5 sm:w-6 sm:h-6" />, label: "Scikit-learn", color: "bg-orange-500" },
-                  { icon: <SiPytorch className="w-5 h-5 sm:w-6 sm:h-6" />, label: "PyTorch", color: "bg-red-500" },
+                  { icon: <SiPython className="w-5 h-5 sm:w-6 sm:h-6" />, label: "TensorFlow", color: "bg-red-500" },
                   // { icon: <FaBrain className="w-5 h-5 sm:w-6 sm:h-6" />, label: "NLP", color: "bg-purple-500" },
-                  { icon: <SiFastapi className="w-5 h-5 sm:w-6 sm:h-6" />, label: "FastAPI", color: "bg-green-500" },
-                  { icon: <SiAmazonaws className="w-5 h-5 sm:w-6 sm:h-6" />, label: "AWS", color: "bg-yellow-600" },
+                  { icon: <SiBackendless className="w-5 h-5 sm:w-6 sm:h-6" />, label: "FastAPI", color: "bg-green-500" },
+                  { icon: <SiIcloud className="w-5 h-5 sm:w-6 sm:h-6" />, label: "AWS", color: "bg-yellow-600" },
                 ].map((tech, index) => (
                   <motion.div
                     key={index}
