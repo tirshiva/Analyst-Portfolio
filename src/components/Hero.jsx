@@ -5,8 +5,8 @@ import { SiBackendless, SiIcloud, SiPython, SiScikitlearn } from 'react-icons/si
 const Hero = () => {
   const handleResumeDownload = () => {
     const link = document.createElement('a');
-    link.href = '/Resume_Data_Scientist.pdf';
-    link.download = 'Resume_Data_Scientist.pdf';
+    link.href = '/resume_shivanshu_tiwari.pdf'; // Ensure this path is correct
+    link.download = 'resume_shivanshu_tiwari.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
