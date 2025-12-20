@@ -63,6 +63,18 @@ export const projects = [
       "RESTful API"
     ],
     githubLink: "https://github.com/tirshiva/fruit-store-Backend"
+  },
+  {
+    id: 5,
+    title: "Calorie Burnt Prediction",
+    description: "A Machine Learning model that predicts the number of calories burnt during various physical activities based on user inputs like Exercise name, Reps/duration of activity, Weight. Built using Python and Scikit-learn.",
+    techStack: [
+      "Python",
+      "Scikit-learn",
+      "Randomm Forest Regressor",
+      "Gradient Boosting Regressor"
+    ],
+    githubLink: "https://github.com/tirshiva/calorie-predictor",
   }
 ];
 

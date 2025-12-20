@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaDownload, FaBrain, FaRobot, FaArrowRight, FaCode, FaAws } from 'react-icons/fa';
-import { SiPython, SiPytorch, SiAmazonaws, SiFastapi, SiScikitlearn, SiBackendless, SiIcloud } from 'react-icons/si';
+import { FaArrowRight, FaBrain, FaDownload, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { SiBackendless, SiIcloud, SiPython, SiScikitlearn } from 'react-icons/si';
 
 const Hero = () => {
   const handleResumeDownload = () => {
@@ -37,7 +37,7 @@ const Hero = () => {
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden py-16 sm:py-20">
       {/* Main content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
+        <motion.div
           className="flex flex-col items-center justify-center text-center"
           initial="hidden"
           animate="visible"
@@ -47,29 +47,29 @@ const Hero = () => {
           <motion.div className="max-w-3xl mx-auto" variants={itemVariants}>
             <motion.div className="mb-4 sm:mb-6 flex flex-col sm:flex-row gap-2 justify-center items-center" variants={itemVariants}>
               <span className="px-3 sm:px-4 py-1.5 bg-supply-primary/10 text-supply-primary rounded-md text-xs sm:text-sm font-medium inline-block border border-supply-primary/20">
-                AI & ML Engineer
+                Data Analyst & Scientist
               </span>
               {/* <span className="px-3 sm:px-4 py-1.5 bg-supply-secondary/10 text-supply-secondary rounded-md text-xs sm:text-sm font-medium inline-block border border-supply-secondary/20 flex items-center gap-1">
                 <FaBrain className="w-3 h-3" />
                 AI & ML Certified
               </span> */}
             </motion.div>
-            
-            <motion.h1 
+
+            <motion.h1
               className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 tracking-tight leading-tight px-4 sm:px-0"
               variants={itemVariants}
             >
               Hi, I'm <span className="bg-gradient-to-r from-supply-primary to-supply-secondary bg-clip-text text-transparent">Shivanshu Tiwari</span>
             </motion.h1>
-            
-            <motion.p 
+
+            <motion.p
               className="text-supply-gray mb-6 sm:mb-8 text-base sm:text-lg md:text-xl leading-relaxed mx-auto px-4 sm:px-6 md:px-8 max-w-full sm:max-w-2xl"
               variants={itemVariants}
             >
-              Data Scientist specializing in predictive modeling and Time Series Analysis.
+              Data Analyst with 3+ years of experience with Amazon and Concentrix.
             </motion.p>
-            
-            <motion.div 
+
+            <motion.div
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-10 justify-center px-4"
               variants={itemVariants}
             >
@@ -79,7 +79,7 @@ const Hero = () => {
               >
                 <FaBrain className="mr-2 w-5 h-5" /> View My Work <FaArrowRight className="ml-2 w-5 h-5" />
               </motion.a>
-              
+
               <motion.button
                 onClick={handleResumeDownload}
                 className="w-full sm:w-auto px-6 py-3 sm:py-3.5 bg-white text-supply-primary border border-supply-primary/30 rounded-md text-base sm:text-lg font-medium shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center"
@@ -87,8 +87,8 @@ const Hero = () => {
                 <FaDownload className="mr-2 w-5 h-5" /> Download CV
               </motion.button>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               className="flex justify-center mb-8 sm:mb-10"
               variants={itemVariants}
             >
@@ -100,13 +100,13 @@ const Hero = () => {
                 View Experience
               </motion.a>
             </motion.div>
-            
+
             {/* Horizontal line separator */}
-            <motion.div 
+            <motion.div
               className="w-16 sm:w-24 h-0.5 sm:h-1 bg-supply-primary/30 mx-auto mb-8 sm:mb-10"
               variants={itemVariants}
             ></motion.div>
-            
+
             {/* Tech stack icons */}
             <motion.div variants={itemVariants} className="mb-8 sm:mb-10 px-2 sm:px-0">
               <p className="text-xs sm:text-sm text-supply-gray mb-4 sm:mb-5 font-medium uppercase tracking-wider">Technical Expertise</p>
@@ -131,13 +131,13 @@ const Hero = () => {
                 ))}
               </div>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               className="flex space-x-4 sm:space-x-5 justify-center"
               variants={itemVariants}
             >
-              <motion.a 
-                href="https://github.com/tirshiva" 
+              <motion.a
+                href="https://github.com/tirshiva"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 sm:p-2.5 text-supply-gray hover:text-supply-primary transition-colors bg-white rounded-md shadow-sm hover:shadow-md"
@@ -145,8 +145,8 @@ const Hero = () => {
               >
                 <FaGithub className="w-5 h-5 sm:w-6 sm:h-6" />
               </motion.a>
-              <motion.a 
-                href="https://www.linkedin.com/in/shivanshu2407/" 
+              <motion.a
+                href="https://www.linkedin.com/in/shivanshu2407/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 sm:p-2.5 text-supply-gray hover:text-supply-primary transition-colors bg-white rounded-md shadow-sm hover:shadow-md"
@@ -162,4 +162,4 @@ const Hero = () => {
   );
 };
 
-export default Hero; 
+export default Hero;
