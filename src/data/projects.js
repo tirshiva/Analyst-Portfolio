@@ -80,5 +80,5 @@ export const projects = [
 export const socialLinks = {
   linkedin: "https://www.linkedin.com/in/shivanshu2407/",
   github: "https://github.com/tirshiva",
-  email: "st955218@gmail.com"
+  email: "shivanshutiwari.ml@gmail.com"
 };

@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaLinkedin, FaGithub, FaTwitter, FaMapMarkerAlt, FaPhoneAlt, FaTruck, FaBoxes } from 'react-icons/fa';
+import { FaEnvelope, FaGithub, FaLinkedin, FaMapMarkerAlt, FaTwitter } from 'react-icons/fa';
 
 const socialLinks = {
-  email: "st955218@gmail.com",
+  email: "shivanshutiwari.ml@gmail.com",
   linkedin: "https://www.linkedin.com/in/shivanshu2407/",
   github: "https://github.com/Shivanshu2407",
   twitter: "https://x.com/shivanshut24"
@@ -26,7 +26,7 @@ const Contact = () => {
           </div>
           <h2 className="text-4xl font-bold text-supply-dark mb-4">Let's <span className="text-supply-primary">Connect</span></h2>
           <p className="text-supply-gray text-lg mb-8 max-w-2xl mx-auto">
-            Interested in discussing supply chain analytics solutions or data-driven opportunities? 
+            Interested in discussing supply chain analytics solutions or data-driven opportunities?
             I'm always open to exploring new projects and collaborations.
           </p>
         </motion.div>
@@ -44,28 +44,28 @@ const Contact = () => {
             <form className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-supply-gray mb-1">Name</label>
-                <input 
-                  type="text" 
-                  id="name" 
-                  className="w-full px-4 py-2 border border-supply-lightgray rounded-lg focus:ring-2 focus:ring-supply-primary focus:border-supply-primary transition-colors" 
+                <input
+                  type="text"
+                  id="name"
+                  className="w-full px-4 py-2 border border-supply-lightgray rounded-lg focus:ring-2 focus:ring-supply-primary focus:border-supply-primary transition-colors"
                   placeholder="Your name"
                 />
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-supply-gray mb-1">Email</label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  className="w-full px-4 py-2 border border-supply-lightgray rounded-lg focus:ring-2 focus:ring-supply-primary focus:border-supply-primary transition-colors" 
+                <input
+                  type="email"
+                  id="email"
+                  className="w-full px-4 py-2 border border-supply-lightgray rounded-lg focus:ring-2 focus:ring-supply-primary focus:border-supply-primary transition-colors"
                   placeholder="Your email"
                 />
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-supply-gray mb-1">Message</label>
-                <textarea 
-                  id="message" 
-                  rows="4" 
-                  className="w-full px-4 py-2 border border-supply-lightgray rounded-lg focus:ring-2 focus:ring-supply-primary focus:border-supply-primary transition-colors" 
+                <textarea
+                  id="message"
+                  rows="4"
+                  className="w-full px-4 py-2 border border-supply-lightgray rounded-lg focus:ring-2 focus:ring-supply-primary focus:border-supply-primary transition-colors"
                   placeholder="Your message"
                 ></textarea>
               </div>
@@ -79,7 +79,7 @@ const Contact = () => {
               </motion.button>
             </form>
           </motion.div>
-          
+
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
@@ -123,7 +123,7 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="bg-white p-8 rounded-xl shadow-md">
               <h3 className="text-xl font-semibold text-supply-dark mb-6">Connect With Me</h3>
               <div className="flex gap-4">
@@ -162,7 +162,7 @@ const Contact = () => {
                 >
                   <FaTwitter className="w-6 h-6" />
                 </motion.a>
-                
+
                 <motion.a
                   href={`mailto:${socialLinks.email}`}
                   whileHover={{ scale: 1.1, y: -5 }}
@@ -173,7 +173,7 @@ const Contact = () => {
                   <FaEnvelope className="w-6 h-6" />
                 </motion.a>
               </div>
-              
+
               <div className="mt-8 p-4 bg-supply-primary/10 rounded-lg">
                 <p className="text-supply-dark text-sm">
                   I typically respond within 24 hours. Looking forward to connecting with you!
@@ -187,4 +187,4 @@ const Contact = () => {
   );
 };
 
-export default Contact; 
+export default Contact;

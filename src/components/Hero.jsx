@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
 import { FaArrowRight, FaBrain, FaDownload, FaGithub, FaLinkedin } from 'react-icons/fa';
-import { SiBackendless, SiIcloud, SiPython, SiScikitlearn } from 'react-icons/si';
+import { SiIcloud, SiPython, SiScikitlearn } from 'react-icons/si';
 
 const Hero = () => {
   const handleResumeDownload = () => {
     const link = document.createElement('a');
-    link.href = '/resume_shivanshu_tiwari.pdf'; // Ensure this path is correct
-    link.download = 'resume_shivanshu_tiwari.pdf';
+    link.href = '/resume_shivanshu_tiwari1.pdf'; // Ensure this path is correct
+    link.download = 'resume_shivanshu_tiwari1.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -115,8 +115,7 @@ const Hero = () => {
                   { icon: <SiPython className="w-5 h-5 sm:w-6 sm:h-6" />, label: "Python", color: "bg-yellow-400" },
                   { icon: <SiScikitlearn className="w-5 h-5 sm:w-6 sm:h-6" />, label: "Scikit-learn", color: "bg-orange-500" },
                   { icon: <SiPython className="w-5 h-5 sm:w-6 sm:h-6" />, label: "TensorFlow", color: "bg-red-500" },
-                  // { icon: <FaBrain className="w-5 h-5 sm:w-6 sm:h-6" />, label: "NLP", color: "bg-purple-500" },
-                  { icon: <SiBackendless className="w-5 h-5 sm:w-6 sm:h-6" />, label: "FastAPI", color: "bg-green-500" },
+                  // { icon: <SiBackendless className="w-5 h-5 sm:w-6 sm:h-6" />, label: "FastAPI", color: "bg-green-500" },
                   { icon: <SiIcloud className="w-5 h-5 sm:w-6 sm:h-6" />, label: "AWS", color: "bg-yellow-600" },
                 ].map((tech, index) => (
                   <motion.div
