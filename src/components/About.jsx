@@ -33,8 +33,8 @@ const About = () => (
             <h3 className="text-lg font-bold text-supply-dark">Experience</h3>
           </div>
           <ul className="space-y-2 text-sm text-supply-gray">
-            <li><span className="font-semibold text-supply-dark">Amazon</span> — Data Analyst, Seller Operations (Mar 2024– Present)</li>
-            <li><span className="font-semibold text-supply-dark">Concentrix</span> — Data Analyst (Oct 2022– Feb2024)</li>
+            <li><span className="font-semibold text-supply-dark">Amazon</span> — Data Analyst, Seller Operations (Mar 2024 – Present)</li>
+            <li><span className="font-semibold text-supply-dark">Concentrix</span> — Technical Support Executive (Sept 2022 – Feb 2024)</li>
           </ul>
         </div>
         <div className="bg-white rounded-xl shadow-lg border border-supply-lightgray p-6">

@@ -66,7 +66,7 @@ const Hero = () => {
               className="text-supply-gray mb-6 sm:mb-8 text-base sm:text-lg md:text-xl leading-relaxed mx-auto px-4 sm:px-6 md:px-8 max-w-full sm:max-w-2xl"
               variants={itemVariants}
             >
-              Data Analyst with 3+ years of experience with Amazon and Concentrix.
+              Data Scientist specializing in predictive modeling and Time Series Analysis.
             </motion.p>
 
             <motion.div
