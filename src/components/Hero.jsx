@@ -1,17 +1,8 @@
 import { motion } from 'framer-motion';
-import { FaArrowRight, FaBrain, FaDownload, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaArrowRight, FaBrain, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { SiAmazonaws, SiApacheairflow, SiApachespark, SiPostgresql, SiPython } from 'react-icons/si';
 
 const Hero = () => {
-  const handleResumeDownload = () => {
-    const link = document.createElement('a');
-    link.href = '/resume_shivanshu_tiwari1.pdf'; // Ensure this path is correct
-    link.download = 'resume_shivanshu_tiwari1.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -75,17 +66,10 @@ const Hero = () => {
             >
               <motion.a
                 href="#projects"
-                className="w-full sm:w-auto px-6 py-3 sm:py-3.5 bg-supply-primary text-white rounded-md text-base sm:text-lg font-medium shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center"
+                className="w-full sm:w-auto px-7 py-3 sm:py-3.5 bg-supply-primary text-white rounded-md text-base sm:text-lg font-medium shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center"
               >
                 <FaBrain className="mr-2 w-5 h-5" /> View My Work <FaArrowRight className="ml-2 w-5 h-5" />
               </motion.a>
-
-              <motion.button
-                onClick={handleResumeDownload}
-                className="w-full sm:w-auto px-6 py-3 sm:py-3.5 bg-white text-supply-primary border border-supply-primary/30 rounded-md text-base sm:text-lg font-medium shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center"
-              >
-                <FaDownload className="mr-2 w-5 h-5" /> Download CV
-              </motion.button>
             </motion.div>
 
             {/* Horizontal line separator */}
