@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { projects } from '../data/projects';
 import ProjectCard from './ProjectCard';
-import { FaBrain, FaRobot, FaChartLine, FaCloud, FaSearch } from 'react-icons/fa';
+import { FaCogs, FaChartLine, FaCloud, FaProjectDiagram, FaSearch } from 'react-icons/fa';
 
 const Projects = () => {
   const [search, setSearch] = useState('');
@@ -45,7 +45,7 @@ const Projects = () => {
             <span className="text-supply-primary">Projects</span>
           </h2>
           <p className="text-supply-gray text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-6 sm:mb-8 px-4">
-            A showcase of my machine learning, data science, and ML Ops projects demonstrating end-to-end AI solutions.
+            A showcase of data engineering projects focused on reliable pipelines, cloud data platforms, and ML-ready datasets.
           </p>
           {/* Project categories */}
           <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mt-6 sm:mt-8">
@@ -53,25 +53,25 @@ const Projects = () => {
               whileHover={{ scale: 1.05 }}
               className="px-4 py-2.5 bg-white shadow-sm rounded-lg border border-supply-lightgray flex items-center text-supply-primary text-sm sm:text-base"
             >
-              <FaBrain className="mr-2 w-4 h-4 sm:w-5 sm:h-5" /> Machine Learning
+              <FaProjectDiagram className="mr-2 w-4 h-4 sm:w-5 sm:h-5" /> Data Pipelines
             </motion.div>
             <motion.div 
               whileHover={{ scale: 1.05 }}
               className="px-4 py-2.5 bg-white shadow-sm rounded-lg border border-supply-lightgray flex items-center text-supply-secondary text-sm sm:text-base"
             >
-              <FaRobot className="mr-2 w-4 h-4 sm:w-5 sm:h-5" /> ML Ops
+              <FaCogs className="mr-2 w-4 h-4 sm:w-5 sm:h-5" /> ETL / ELT
             </motion.div>
             <motion.div 
               whileHover={{ scale: 1.05 }}
               className="px-4 py-2.5 bg-white shadow-sm rounded-lg border border-supply-lightgray flex items-center text-supply-accent text-sm sm:text-base"
             >
-              <FaChartLine className="mr-2 w-4 h-4 sm:w-5 sm:h-5" /> Data Science
+              <FaChartLine className="mr-2 w-4 h-4 sm:w-5 sm:h-5" /> Analytics Engineering
             </motion.div>
             <motion.div 
               whileHover={{ scale: 1.05 }}
               className="px-4 py-2.5 bg-white shadow-sm rounded-lg border border-supply-lightgray flex items-center text-supply-highlight text-sm sm:text-base"
             >
-              <FaCloud className="mr-2 w-4 h-4 sm:w-5 sm:h-5" /> Cloud ML
+              <FaCloud className="mr-2 w-4 h-4 sm:w-5 sm:h-5" /> Cloud Data
             </motion.div>
           </div>
         </motion.div>
@@ -85,7 +85,7 @@ const Projects = () => {
               type="text"
               value={search}
               onChange={e => setSearch(e.target.value)}
-              placeholder="Search by keyword or tech (e.g. Python, MLOps)"
+              placeholder="Search by keyword or tech (e.g. SQL, Airflow)"
               className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-supply-primary text-sm sm:text-base"
               aria-label="Search projects by keyword or technology"
             />
@@ -119,7 +119,7 @@ const Projects = () => {
           className="mt-16 sm:mt-20 text-center"
         >
           <p className="text-supply-gray text-base sm:text-lg mb-6 sm:mb-8">
-            Explore more of my machine learning and data science projects on GitHub.
+            Explore more of my data engineering and analytics projects on GitHub.
           </p>
           <motion.a
             href="https://github.com/tirshiva"

@@ -83,10 +83,10 @@ const FooterComponent = () => {
           >
             <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
               <FaBrain className="text-supply-primary w-5 h-5 sm:w-6 sm:h-6" />
-              <h3 className="text-lg sm:text-xl font-bold text-supply-dark">Data Scientist</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-supply-dark">Data Engineer</h3>
             </div>
             <p className="text-supply-gray mb-4 sm:mb-6 text-sm sm:text-base">
-              Implementing predictive models and time series analysis for business intelligence.
+              Designing scalable data pipelines and cloud data platforms that power ML and Deep Learning.
             </p>
             <div className="flex gap-3 sm:gap-4">
               <motion.a
@@ -149,11 +149,11 @@ const FooterComponent = () => {
           >
             <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-supply-dark">Expertise</h3>
             <ul className="space-y-1 sm:space-y-2 text-sm sm:text-base">
-              <li className="text-supply-gray">Machine Learning</li>
-              <li className="text-supply-gray">Deep Learning</li>
-              <li className="text-supply-gray">ML Ops</li>
-              <li className="text-supply-gray">Backend Development</li>
-              <li className="text-supply-gray">Cloud Deployment</li>
+              <li className="text-supply-gray">Data Pipelines & ETL/ELT</li>
+              <li className="text-supply-gray">SQL & Data Modeling</li>
+              <li className="text-supply-gray">Workflow Orchestration</li>
+              <li className="text-supply-gray">Cloud Data Platforms</li>
+              <li className="text-supply-gray">ML & Deep Learning Enablement</li>
             </ul>
           </motion.div>
 
@@ -167,7 +167,7 @@ const FooterComponent = () => {
           >
             <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-supply-dark">Contact</h3>
             <p className="text-supply-gray mb-3 sm:mb-4 text-sm sm:text-base">
-              Interested in working together? Let's connect.
+              Open to data engineering roles and pipeline-focused projects.
             </p>
             <motion.a
               href={`mailto:${footerSocialLinks.email}`}

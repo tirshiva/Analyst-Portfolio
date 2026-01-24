@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaArrowRight, FaBrain, FaDownload, FaGithub, FaLinkedin } from 'react-icons/fa';
-import { SiIcloud, SiPython, SiScikitlearn } from 'react-icons/si';
+import { SiAmazonaws, SiApacheairflow, SiApachespark, SiPostgresql, SiPython } from 'react-icons/si';
 
 const Hero = () => {
   const handleResumeDownload = () => {
@@ -47,7 +47,7 @@ const Hero = () => {
           <motion.div className="max-w-3xl mx-auto" variants={itemVariants}>
             <motion.div className="mb-4 sm:mb-6 flex flex-col sm:flex-row gap-2 justify-center items-center" variants={itemVariants}>
               <span className="px-3 sm:px-4 py-1.5 bg-supply-primary/10 text-supply-primary rounded-md text-xs sm:text-sm font-medium inline-block border border-supply-primary/20">
-                Data Analyst & Scientist
+                Data Engineer
               </span>
               {/* <span className="px-3 sm:px-4 py-1.5 bg-supply-secondary/10 text-supply-secondary rounded-md text-xs sm:text-sm font-medium inline-block border border-supply-secondary/20 flex items-center gap-1">
                 <FaBrain className="w-3 h-3" />
@@ -66,7 +66,7 @@ const Hero = () => {
               className="text-supply-gray mb-6 sm:mb-8 text-base sm:text-lg md:text-xl leading-relaxed mx-auto px-4 sm:px-6 md:px-8 max-w-full sm:max-w-2xl"
               variants={itemVariants}
             >
-              Data Scientist specializing in predictive modeling and Time Series Analysis.
+              Data Engineer specializing in data pipelines with Machine Learning and Deep Learning expertise.
             </motion.p>
 
             <motion.div
@@ -88,19 +88,6 @@ const Hero = () => {
               </motion.button>
             </motion.div>
 
-            <motion.div
-              className="flex justify-center mb-8 sm:mb-10"
-              variants={itemVariants}
-            >
-              <motion.a
-                href="#experience"
-                className="px-4 py-2 bg-supply-secondary/10 text-supply-secondary border border-supply-secondary/30 rounded-md text-sm font-medium hover:bg-supply-secondary/20 transition-all duration-300 flex items-center gap-2"
-              >
-                <FaBrain className="w-4 h-4" />
-                View Experience
-              </motion.a>
-            </motion.div>
-
             {/* Horizontal line separator */}
             <motion.div
               className="w-16 sm:w-24 h-0.5 sm:h-1 bg-supply-primary/30 mx-auto mb-8 sm:mb-10"
@@ -109,14 +96,14 @@ const Hero = () => {
 
             {/* Tech stack icons */}
             <motion.div variants={itemVariants} className="mb-8 sm:mb-10 px-2 sm:px-0">
-              <p className="text-xs sm:text-sm text-supply-gray mb-4 sm:mb-5 font-medium uppercase tracking-wider">Technical Expertise</p>
+              <p className="text-xs sm:text-sm text-supply-gray mb-4 sm:mb-5 font-medium uppercase tracking-wider">Data Engineering Stack</p>
               <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
                 {[
                   { icon: <SiPython className="w-5 h-5 sm:w-6 sm:h-6" />, label: "Python", color: "bg-yellow-400" },
-                  { icon: <SiScikitlearn className="w-5 h-5 sm:w-6 sm:h-6" />, label: "Scikit-learn", color: "bg-orange-500" },
-                  { icon: <SiPython className="w-5 h-5 sm:w-6 sm:h-6" />, label: "TensorFlow", color: "bg-red-500" },
-                  // { icon: <SiBackendless className="w-5 h-5 sm:w-6 sm:h-6" />, label: "FastAPI", color: "bg-green-500" },
-                  { icon: <SiIcloud className="w-5 h-5 sm:w-6 sm:h-6" />, label: "AWS", color: "bg-yellow-600" },
+                  { icon: <SiPostgresql className="w-5 h-5 sm:w-6 sm:h-6" />, label: "SQL (Postgres)", color: "bg-blue-600" },
+                  { icon: <SiApacheairflow className="w-5 h-5 sm:w-6 sm:h-6" />, label: "Airflow", color: "bg-sky-500" },
+                  { icon: <SiApachespark className="w-5 h-5 sm:w-6 sm:h-6" />, label: "Spark", color: "bg-orange-600" },
+                  { icon: <SiAmazonaws className="w-5 h-5 sm:w-6 sm:h-6" />, label: "AWS", color: "bg-yellow-600" },
                 ].map((tech, index) => (
                   <motion.div
                     key={index}

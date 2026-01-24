@@ -26,8 +26,8 @@ const Contact = () => {
           </div>
           <h2 className="text-4xl font-bold text-supply-dark mb-4">Let's <span className="text-supply-primary">Connect</span></h2>
           <p className="text-supply-gray text-lg mb-8 max-w-2xl mx-auto">
-            Interested in discussing supply chain analytics solutions or data-driven opportunities?
-            I'm always open to exploring new projects and collaborations.
+            Interested in data engineering roles or pipeline projects? I’m open to opportunities
+            focused on building reliable data systems and ML-ready datasets.
           </p>
         </motion.div>
 
@@ -40,7 +40,7 @@ const Contact = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="bg-white p-8 rounded-xl shadow-md"
           >
-            <h3 className="text-xl font-semibold text-supply-dark mb-6">Send Me a Message</h3>
+            <h3 className="text-xl font-semibold text-supply-dark mb-6">Start a Data Conversation</h3>
             <form className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-supply-gray mb-1">Name</label>
@@ -176,7 +176,7 @@ const Contact = () => {
 
               <div className="mt-8 p-4 bg-supply-primary/10 rounded-lg">
                 <p className="text-supply-dark text-sm">
-                  I typically respond within 24 hours. Looking forward to connecting with you!
+                  I typically respond within 24 hours. Happy to share details about my data engineering work.
                 </p>
               </div>
             </div>
