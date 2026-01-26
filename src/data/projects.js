@@ -49,7 +49,7 @@ export const projects = [
       "Model Selection"
     ],
     githubLink: "https://github.com/tirshiva/Customer-Churn-Analysis/tree/main",
-    demoLink: "https://shivanshu2407-customer-churn-analysis-srcapp-b4z2jc.streamlit.app/",
+    // demoLink: "https://shivanshu2407-customer-churn-analysis-srcapp-b4z2jc.streamlit.app/",
     image: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?auto=format&fit=crop&q=80&w=800"
   },
   {
