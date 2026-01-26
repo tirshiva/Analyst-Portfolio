@@ -12,11 +12,11 @@
 export const projects = [
   {
     id: 1,
-    title: "Vehicle Insurance Purchase Prediction Pipeline",
-    description: "Developed a pipeline for vehicle insurance prediction, automating data processing, model training, and deployment with CI/CD, dockerization, and cloud hosting on AWS EC2.",
+    title: "Insurance Purchase Prediction",
+    description: "Developed a pipeline for vehicle insurance purchase prediction, automating data processing, model training, and deployment with CI/CD, dockerization, and cloud hosting on AWS EC2.",
     techStack: [
       "AWS EC2",
-      "MongoDB",
+      "NoSQL",
       "Docker",
       "CI/CD",
       "MLOps"
@@ -31,8 +31,8 @@ export const projects = [
     techStack: [
       "Python",
       "Scikit-learn",
-      "Flask",
-      "Linear Regression"
+      "Grid Search",
+      "Regression"
     ],
     githubLink: "https://github.com/tirshiva/House-Prediction-Regression-Model",
     demoLink: "https://house-prediction-regression-model.onrender.com/",
@@ -43,10 +43,10 @@ export const projects = [
     title: "Customer Churn Analysis",
     description: "A Machine learning project based on Random Forest Classifier to predict customer churn. The model is trained on a telecom dataset and includes hyperparameter tuning and cross-validation to enhance accuracy.",
     techStack: [
-      "Python",
-      "Random Forest",
-      "Hyperparameter Tuning",
-      "Cross Validation"
+      "PCA",
+      "Random Forest Classifier",
+      "Feature Selection",
+      "Model Selection"
     ],
     githubLink: "https://github.com/tirshiva/Customer-Churn-Analysis/tree/main",
     demoLink: "https://shivanshu2407-customer-churn-analysis-srcapp-b4z2jc.streamlit.app/",
@@ -54,25 +54,26 @@ export const projects = [
   },
   {
     id: 4,
-    title: "E-commerce Backend API",
+    title: "Fruit Store Backend API",
     description: "Developed a RESTful API for an e-commerce platform using Fastapi and postgres SQL. The API supports product management, and order processing.",
     techStack: [
       "FastAPI",
       "PostgreSQL",
-      "Python",
       "RESTful API"
     ],
     githubLink: "https://github.com/tirshiva/fruit-store-Backend"
   },
   {
     id: 5,
-    title: "Calorie Burnt Prediction",
-    description: "A Machine Learning model that predicts the number of calories burnt during various physical activities based on user inputs like Exercise name, Reps/duration of activity, Weight. Built using Python and Scikit-learn.",
+    title: "YouTube Analytics Data Pipeline",
+    description: "A data pipeline that extracts data from the YouTube API and loads it into staging schema, after which it is transformed and loaded into core schema, Airflow is used to schedule the pipeline and Docker is used to containerize the pipeline.",
     techStack: [
-      "Randomm Forest Regressor",
-      "Gradient Boosting Regressor"
+      "Python",
+      "Apache Airflow",
+      "Docker",
+      "CI/CD"
     ],
-    githubLink: "https://github.com/tirshiva/calorie-predictor",
+    githubLink: "https://github.com/tirshiva/youtube-etl",
   }
 ];
 
