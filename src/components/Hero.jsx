@@ -79,7 +79,7 @@ const Hero = () => {
             ></motion.div>
 
             {/* Tech stack icons */}
-            <motion.div variants={itemVariants} className="mb-8 sm:mb-10 px-2 sm:px-0">
+            {/* <motion.div variants={itemVariants} className="mb-8 sm:mb-10 px-2 sm:px-0">
               <p className="text-xs sm:text-sm text-supply-gray mb-4 sm:mb-5 font-medium uppercase tracking-wider">Data Engineering Stack</p>
               <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
                 {[
@@ -100,7 +100,7 @@ const Hero = () => {
                   </motion.div>
                 ))}
               </div>
-            </motion.div>
+            </motion.div> */}
 
             <motion.div
               className="flex space-x-4 sm:space-x-5 justify-center"
