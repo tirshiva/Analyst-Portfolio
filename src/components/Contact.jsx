@@ -26,8 +26,7 @@ const Contact = () => {
           </div>
           <h2 className="text-4xl font-bold text-supply-dark mb-4">Let's <span className="text-supply-primary">Connect</span></h2>
           <p className="text-supply-gray text-lg mb-8 max-w-2xl mx-auto">
-            Interested in data engineering roles or pipeline projects? I’m open to opportunities
-            focused on building reliable data systems and ML-ready datasets.
+            Interested in AI Engineering roles. I’m open to opportunities
           </p>
         </motion.div>
 
@@ -176,7 +175,7 @@ const Contact = () => {
 
               <div className="mt-8 p-4 bg-supply-primary/10 rounded-lg">
                 <p className="text-supply-dark text-sm">
-                  I typically respond within 24 hours. Happy to share details about my data engineering work.
+                  I typically respond within 24 hours. 
                 </p>
               </div>
             </div>

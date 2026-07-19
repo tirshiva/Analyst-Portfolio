@@ -86,7 +86,7 @@ const FooterComponent = () => {
               <h3 className="text-lg sm:text-xl font-bold text-supply-dark">Data Engineer</h3>
             </div>
             <p className="text-supply-gray mb-4 sm:mb-6 text-sm sm:text-base">
-              Designing scalable data pipelines and cloud data platforms that power ML and Deep Learning.
+              Designing AI applications that power business process.
             </p>
             <div className="flex gap-3 sm:gap-4">
               <motion.a
@@ -167,7 +167,7 @@ const FooterComponent = () => {
           >
             <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-supply-dark">Contact</h3>
             <p className="text-supply-gray mb-3 sm:mb-4 text-sm sm:text-base">
-              Open to data engineering roles and pipeline-focused projects.
+              Open to AI Engineering roles
             </p>
             <motion.a
               href={`mailto:${footerSocialLinks.email}`}

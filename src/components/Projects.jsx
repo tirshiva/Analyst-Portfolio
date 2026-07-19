@@ -45,7 +45,7 @@ const Projects = () => {
             <span className="text-supply-primary">Projects</span>
           </h2>
           <p className="text-supply-gray text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-6 sm:mb-8 px-4">
-            A showcase of data engineering projects focused on reliable pipelines, cloud data platforms, and ML-ready datasets.
+            A showcase of projects I worked recently
           </p>
           {/* Project categories */}
           <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mt-6 sm:mt-8">
@@ -53,15 +53,15 @@ const Projects = () => {
               whileHover={{ scale: 1.05 }}
               className="px-4 py-2.5 bg-white shadow-sm rounded-lg border border-supply-lightgray flex items-center text-supply-primary text-sm sm:text-base"
             >
-              <FaProjectDiagram className="mr-2 w-4 h-4 sm:w-5 sm:h-5" /> Data Pipelines
+              <FaProjectDiagram className="mr-2 w-4 h-4 sm:w-5 sm:h-5" /> AI Engineering
             </motion.div>
             <motion.div 
               whileHover={{ scale: 1.05 }}
               className="px-4 py-2.5 bg-white shadow-sm rounded-lg border border-supply-lightgray flex items-center text-supply-secondary text-sm sm:text-base"
             >
-              <FaCogs className="mr-2 w-4 h-4 sm:w-5 sm:h-5" /> ETL / ELT
+              <FaCogs className="mr-2 w-4 h-4 sm:w-5 sm:h-5" /> Backend Development
             </motion.div>
-            <motion.div 
+            {/* <motion.div 
               whileHover={{ scale: 1.05 }}
               className="px-4 py-2.5 bg-white shadow-sm rounded-lg border border-supply-lightgray flex items-center text-supply-accent text-sm sm:text-base"
             >
@@ -72,7 +72,7 @@ const Projects = () => {
               className="px-4 py-2.5 bg-white shadow-sm rounded-lg border border-supply-lightgray flex items-center text-supply-highlight text-sm sm:text-base"
             >
               <FaCloud className="mr-2 w-4 h-4 sm:w-5 sm:h-5" /> Cloud Data
-            </motion.div>
+            </motion.div> */}
           </div>
         </motion.div>
 
@@ -119,7 +119,7 @@ const Projects = () => {
           className="mt-16 sm:mt-20 text-center"
         >
           <p className="text-supply-gray text-base sm:text-lg mb-6 sm:mb-8">
-            Explore more of my data engineering and analytics projects on GitHub.
+            Explore more of my engineering and analytics projects on GitHub.
           </p>
           <motion.a
             href="https://github.com/tirshiva"
