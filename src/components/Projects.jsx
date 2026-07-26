@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { projects } from '../data/projects';
+import profile from '../data/profile';
 import ProjectCard from './ProjectCard';
 import { FaCogs, FaChartLine, FaCloud, FaProjectDiagram, FaSearch } from 'react-icons/fa';
 
@@ -119,17 +120,17 @@ const Projects = () => {
           className="mt-16 sm:mt-20 text-center"
         >
           <p className="text-supply-gray text-base sm:text-lg mb-6 sm:mb-8">
-            Explore more of my engineering and analytics projects on GitHub.
+            {profile.projects.callToAction}
           </p>
           <motion.a
-            href="https://github.com/tirshiva"
+            href={profile.socialLinks.github}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center px-6 py-3 sm:py-3.5 bg-supply-primary text-white rounded-lg shadow-md hover:bg-supply-highlight transition-all duration-300 text-base sm:text-lg font-medium"
           >
-            View More on GitHub
+            {profile.projects.githubText}
           </motion.a>
         </motion.div>
       </div>

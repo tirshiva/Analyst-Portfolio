@@ -1,12 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaGithub, FaLinkedin, FaMapMarkerAlt, FaTwitter } from 'react-icons/fa';
-
-const socialLinks = {
-  email: "shivanshutiwari.ml@gmail.com",
-  linkedin: "https://www.linkedin.com/in/shivanshu2407/",
-  github: "https://github.com/Shivanshu2407",
-  twitter: "https://x.com/shivanshut24"
-};
+import profile from '../data/profile';
 
 const Contact = () => {
   return (
@@ -26,7 +20,7 @@ const Contact = () => {
           </div>
           <h2 className="text-4xl font-bold text-supply-dark mb-4">Let's <span className="text-supply-primary">Connect</span></h2>
           <p className="text-supply-gray text-lg mb-8 max-w-2xl mx-auto">
-            Interested in AI Engineering roles. I’m open to opportunities
+            {profile.contact.intro}
           </p>
         </motion.div>
 
@@ -96,8 +90,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="text-sm font-medium text-supply-gray">Email</h4>
-                    <a href={`mailto:${socialLinks.email}`} className="text-supply-dark hover:text-supply-primary transition-colors">
-                      {socialLinks.email}
+                    <a href={`mailto:${profile.socialLinks.email}`} className="text-supply-dark hover:text-supply-primary transition-colors">
+                      {profile.socialLinks.email}
                     </a>
                   </div>
                 </div>
@@ -107,13 +101,13 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="text-sm font-medium text-supply-gray">Location</h4>
-                    <p className="text-supply-dark">Gurgaon, India</p>
+                    <p className="text-supply-dark">{profile.contact.location}</p>
                   </div>
                 </div>
                 <div className="mt-6">
                   <a
-                    href="/contact.vcf"
-                    download="Shivanshu_Tiwari.vcf"
+                    href={profile.contact.vcfFile}
+                    download={profile.contact.vcfDownloadName}
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-supply-primary text-white text-sm font-medium shadow hover:bg-supply-highlight transition-colors border border-supply-primary"
                     aria-label="Download vCard"
                   >
@@ -127,7 +121,7 @@ const Contact = () => {
               <h3 className="text-xl font-semibold text-supply-dark mb-6">Connect With Me</h3>
               <div className="flex gap-4">
                 <motion.a
-                  href={socialLinks.linkedin}
+                  href={profile.socialLinks.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -5 }}
@@ -139,7 +133,7 @@ const Contact = () => {
                 </motion.a>
 
                 <motion.a
-                  href={socialLinks.github}
+                  href={profile.socialLinks.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -5 }}
@@ -151,7 +145,7 @@ const Contact = () => {
                 </motion.a>
 
                 <motion.a
-                  href={socialLinks.twitter}
+                  href={profile.socialLinks.twitter}
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -5 }}
@@ -163,7 +157,7 @@ const Contact = () => {
                 </motion.a>
 
                 <motion.a
-                  href={`mailto:${socialLinks.email}`}
+                  href={`mailto:${profile.socialLinks.email}`}
                   whileHover={{ scale: 1.1, y: -5 }}
                   whileTap={{ scale: 0.95 }}
                   className="p-4 rounded-full bg-supply-light text-supply-primary hover:bg-supply-primary hover:text-white transition-all duration-300 shadow-sm"

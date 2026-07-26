@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaBriefcase, FaGraduationCap } from 'react-icons/fa';
+import profile from '../data/profile';
 
 const About = () => (
   <section className="text-supply-dark py-12 sm:py-16 relative">
@@ -15,7 +16,7 @@ const About = () => (
           About <span className="text-supply-primary">Me</span>
         </h2>
         <p className="text-supply-gray text-sm sm:text-base max-w-3xl mx-auto">
-          AI Engineer, working on projects to develop and deliver agentic AI solutions in process optimization and better customer experience.
+          {profile.about.summary}
         </p>
       </motion.div>
 
@@ -33,7 +34,9 @@ const About = () => (
               Career Focus
             </h3>
             <ul className="space-y-1.5 text-xs sm:text-sm text-supply-gray">
-              <li>Designing backend systems capable to power LLMs to perform actions using tools</li>
+              {profile.about.careerFocus.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
             </ul>
           </div>
           <div>
@@ -42,9 +45,11 @@ const About = () => (
               <h3 className="text-sm sm:text-base font-semibold text-supply-dark">Experience</h3>
             </div>
             <ul className="space-y-1.5 text-xs sm:text-sm text-supply-gray">
-              <li><span className="font-semibold text-supply-dark">Amazon</span> — AI Engineer (Mar 2026 – Present)</li>
-              <li><span className="font-semibold text-supply-dark">Amazon</span> — Business Analyst (Mar 2024 – Jan 2026)</li>
-              <li><span className="font-semibold text-supply-dark">Concentrix</span> — Customer Service Representative (Sept 2022 – Feb 2024)</li>
+              {profile.about.experiences.map((item, index) => (
+                <li key={index}>
+                  <span className="font-semibold text-supply-dark">{item.company}</span> — {item.role} ({item.duration})
+                </li>
+              ))}
             </ul>
           </div>
           <div>
@@ -53,9 +58,9 @@ const About = () => (
               <h3 className="text-sm sm:text-base font-semibold text-supply-dark">Education</h3>
             </div>
             <ul className="space-y-1.5 text-xs sm:text-sm text-supply-gray">
-              {/* <li>MCA, IGNOU — 2025–2027 (Pursuing)</li> */}
-              <li>Diploma in DS & AI, iHub IIT Roorkee — 2024–2025</li>
-              <li>B.Sc. Mathematics, CSJM University — 2019–2022</li>
+              {profile.about.education.map((item, index) => (
+                <li key={index}>{item.degree}, {item.institution} — {item.duration}</li>
+              ))}
             </ul>
           </div>
         </div>

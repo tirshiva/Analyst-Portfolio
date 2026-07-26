@@ -1,12 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaBrain, FaRobot, FaCode, FaArrowUp } from 'react-icons/fa';
-import { socialLinks } from '../data/projects';
+import profile from '../data/profile';
 
-// Add twitter link if not in the data file
-const footerSocialLinks = {
-  ...socialLinks
-};
+const footerSocialLinks = profile.socialLinks;
 
 const FooterComponent = () => {
   const containerVariants = {
@@ -83,10 +80,10 @@ const FooterComponent = () => {
           >
             <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
               <FaBrain className="text-supply-primary w-5 h-5 sm:w-6 sm:h-6" />
-              <h3 className="text-lg sm:text-xl font-bold text-supply-dark">Data Engineer</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-supply-dark">{profile.title}</h3>
             </div>
             <p className="text-supply-gray mb-4 sm:mb-6 text-sm sm:text-base">
-              Designing AI applications that power business process.
+              {profile.contact.availability}
             </p>
             <div className="flex gap-3 sm:gap-4">
               <motion.a
@@ -167,10 +164,10 @@ const FooterComponent = () => {
           >
             <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-supply-dark">Contact</h3>
             <p className="text-supply-gray mb-3 sm:mb-4 text-sm sm:text-base">
-              Open to AI Engineering roles
+              {profile.contact.availability}
             </p>
             <motion.a
-              href={`mailto:${footerSocialLinks.email}`}
+              href={`mailto:${profile.socialLinks.email}`}
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
@@ -188,7 +185,7 @@ const FooterComponent = () => {
         {/* Bottom Section */}
         <div className="flex flex-col sm:flex-row justify-between items-center">
           <p className="text-supply-gray text-xs sm:text-sm mb-4 sm:mb-0 text-center sm:text-left">
-            © {new Date().getFullYear()} Shivanshu Tiwari. All rights reserved.
+            © {new Date().getFullYear()} {profile.name}. All rights reserved.
           </p>
           <motion.button
             onClick={scrollToTop}
