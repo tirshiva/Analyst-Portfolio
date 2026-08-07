@@ -1,11 +1,11 @@
 {
-  "name": "Shivanshu Tiwari - Portfolio",
-  "short_name": "Portfolio",
-  "description": "Portfolio website of Shivanshu Tiwari, Data Engineer with ML and Deep Learning expertise.",
+  "name": "Shivanshu Tiwari — AI Engineer Portfolio",
+  "short_name": "Shivanshu Tiwari",
+  "description": "Portfolio of Shivanshu Tiwari, AI Engineer specializing in data engineering, AIOps, and production AI systems.",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#3b82f6",
+  "theme_color": "#4F46E5",
   "icons": [
     {
       "src": "/vite.svg",
@@ -18,4 +18,4 @@
       "type": "image/svg+xml"
     }
   ]
-} 
+}

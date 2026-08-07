@@ -38,30 +38,30 @@
   --tracking-wide: 0.025em;
   --tracking-wider: 0.05em;
 
-  /* Primary Colors */
-  --color-primary: #2C3E50;      /* Dark grey-blue */
-  --color-secondary: #34495E;    /* Slightly lighter grey-blue */
-  --color-accent: #7F8C8D;       /* Medium grey */
-  --color-highlight: #95A5A6;    /* Light grey */
+  /* Primary Colors — modern indigo AI/tech palette */
+  --color-primary: #4F46E5;      /* Indigo 600 */
+  --color-secondary: #6366F1;    /* Indigo 500 */
+  --color-accent: #818CF8;       /* Indigo 400 */
+  --color-highlight: #4338CA;    /* Indigo 700 */
   
   /* Background Colors */
-  --color-background: #FFFFFF;   /* Pure white */
-  --color-background-alt: #F8F9FA; /* Off-white */
-  --color-background-dark: #ECF0F1; /* Light grey */
+  --color-background: #FFFFFF;
+  --color-background-alt: #F8FAFC; /* Slate 50 */
+  --color-background-dark: #EEF2FF; /* Indigo 50 */
   
   /* Text Colors */
-  --color-text: #2C3E50;         /* Dark grey-blue for main text */
-  --color-text-light: #7F8C8D;   /* Medium grey for secondary text */
-  --color-text-lighter: #95A5A6; /* Light grey for subtle text */
+  --color-text: #0F172A;         /* Slate 900 */
+  --color-text-light: #64748B;   /* Slate 500 */
+  --color-text-lighter: #94A3B8; /* Slate 400 */
   
   /* Border Colors */
-  --color-border: #E5E9F0;       /* Very light grey for borders */
-  --color-border-dark: #D1D8E0;  /* Slightly darker grey for borders */
+  --color-border: #E2E8F0;       /* Slate 200 */
+  --color-border-dark: #CBD5E1;  /* Slate 300 */
   
   /* Interactive Colors */
-  --color-hover: #34495E;        /* Darker grey for hover states */
-  --color-active: #2C3E50;       /* Dark grey for active states */
-  --color-focus: #3498DB;        /* Blue for focus states */
+  --color-hover: #4338CA;
+  --color-active: #3730A3;
+  --color-focus: #6366F1;
   
   /* Status Colors */
   --color-success: #27AE60;      /* Green for success states */
@@ -73,7 +73,10 @@
   --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
   --gradient-accent: linear-gradient(135deg, #F6F1F1 0%, #ffffff 100%);
   --gradient-card: linear-gradient(135deg, #ffffff 0%, #F6F1F1 100%);
-  --gradient-hero: linear-gradient(135deg, #0A2647 0%, #205295 50%, #2C74B3 100%);
+  --gradient-hero: linear-gradient(135deg, #312E81 0%, #4F46E5 50%, #6366F1 100%);
+  --gradient-mesh: radial-gradient(at 40% 20%, rgba(99, 102, 241, 0.12) 0px, transparent 50%),
+                   radial-gradient(at 80% 0%, rgba(139, 92, 246, 0.08) 0px, transparent 50%),
+                   radial-gradient(at 0% 50%, rgba(59, 130, 246, 0.06) 0px, transparent 50%);
 
   /* Transitions */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -277,6 +280,14 @@
 }
 
 .bg-supply-light {
+  background-color: var(--color-background-alt);
+}
+
+.bg-supply-background {
+  background-color: var(--color-background);
+}
+
+.bg-supply-background-alt {
   background-color: var(--color-background-alt);
 }
 

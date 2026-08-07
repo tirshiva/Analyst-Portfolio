@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://analyst-portfolio-beta.vercel.app/sitemap.xml

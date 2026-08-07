@@ -9,7 +9,7 @@
   line-height: 1.6;
   font-weight: 400;
   background: #ffffff;
-  color: #19376D;
+  color: #0F172A;
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -21,7 +21,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background: #ffffff;
-  color: #19376D;
+  color: #0F172A;
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
@@ -44,17 +44,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-track {
-  background: #F6F1F1;
+  background: #F8FAFC;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #0A2647;
+  background: #6366F1;
   border-radius: 6px;
-  border: 2px solid #F6F1F1;
+  border: 2px solid #F8FAFC;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #205295;
+  background: #4F46E5;
 }
 
 /* Custom animations */

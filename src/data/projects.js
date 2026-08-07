@@ -1,85 +1,58 @@
-// This file contains all your project information
-// To add a new project, copy an existing project object and modify its details
-// Each project should have the following properties:
-// - id: A unique number for the project
-// - title: The name of your project
-// - description: A brief description of what the project does
-// - techStack: An array of technologies used
-// - githubLink: Link to the GitHub repository
-// - demoLink: Link to live demo (if available)
-// - image: Path to project image (optional)
-
 export const projects = [
   {
+    id: 5,
+    title: 'YouTube Analytics Data Pipeline',
+    description:
+      'End-to-end ETL pipeline extracting YouTube API data into staging, transforming via dbt-style logic, and loading into core schemas — orchestrated with Apache Airflow and containerized with Docker.',
+    category: 'Data Engineering',
+    techStack: ['Python', 'Apache Airflow', 'Docker', 'CI/CD', 'ETL/ELT'],
+    githubLink: 'https://github.com/tirshiva/youtube-etl',
+    image:
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800'
+  },
+  {
     id: 1,
-    title: "Insurance Purchase Prediction",
-    description: "Developed a pipeline for vehicle insurance purchase prediction, automating data processing, model training, and deployment with CI/CD, dockerization, and cloud hosting on AWS EC2.",
-    techStack: [
-      "AWS EC2",
-      "NoSQL",
-      "Docker",
-      "CI/CD",
-      "MLOps"
-    ],
-    githubLink: "https://github.com/tirshiva/MLOps-Proj1",
-    image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=800"
+    title: 'Insurance Purchase Prediction',
+    description:
+      'Production MLOps pipeline for vehicle insurance purchase prediction — automated data processing, model training, Docker containerization, CI/CD, and cloud deployment on AWS EC2.',
+    category: 'Machine Learning',
+    techStack: ['AWS EC2', 'Docker', 'CI/CD', 'MLOps', 'Python'],
+    githubLink: 'https://github.com/tirshiva/MLOps-Proj1',
+    image:
+      'https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=800'
   },
   {
     id: 2,
-    title: "Real Estate Price Predictor",
-    description: "A Linear Regression model that predicts house prices based on various features such as location, size, and amenities. Built using Python and Scikit-learn, and deployed with Flask for real-time predictions.",
-    techStack: [
-      "Python",
-      "Scikit-learn",
-      "Grid Search",
-      "Regression"
-    ],
-    githubLink: "https://github.com/tirshiva/House-Prediction-Regression-Model",
-    demoLink: "https://house-prediction-regression-model.onrender.com/",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800"
+    title: 'Real Estate Price Predictor',
+    description:
+      'ML regression system predicting house prices from location, size, and amenities — built with Scikit-learn, hyperparameter tuning via Grid Search, and deployed via Flask for real-time inference.',
+    category: 'Machine Learning',
+    techStack: ['Python', 'Scikit-learn', 'Grid Search', 'Flask', 'Regression'],
+    githubLink: 'https://github.com/tirshiva/House-Prediction-Regression-Model',
+    demoLink: 'https://house-prediction-regression-model.onrender.com/',
+    image:
+      'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800'
   },
   {
     id: 3,
-    title: "Customer Churn Analysis",
-    description: "A Machine learning project based on Random Forest Classifier to predict customer churn. The model is trained on a telecom dataset and includes hyperparameter tuning and cross-validation to enhance accuracy.",
-    techStack: [
-      "PCA",
-      "Random Forest Classifier",
-      "Feature Selection",
-      "Model Selection"
-    ],
-    githubLink: "https://github.com/tirshiva/Customer-Churn-Analysis/tree/main",
-    // demoLink: "https://shivanshu2407-customer-churn-analysis-srcapp-b4z2jc.streamlit.app/",
-    image: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?auto=format&fit=crop&q=80&w=800"
+    title: 'Customer Churn Analysis',
+    description:
+      'Predictive analytics pipeline using Random Forest with PCA-based feature selection, hyperparameter tuning, and cross-validation on telecom customer data.',
+    category: 'Machine Learning',
+    techStack: ['Random Forest', 'PCA', 'Feature Selection', 'Python', 'Cross-Validation'],
+    githubLink: 'https://github.com/tirshiva/Customer-Churn-Analysis/tree/main',
+    image:
+      'https://images.unsplash.com/photo-1573497620053-ea5300f94f21?auto=format&fit=crop&q=80&w=800'
   },
   {
     id: 4,
-    title: "Fruit Store Backend API",
-    description: "Developed a RESTful API for an e-commerce platform using Fastapi and postgres SQL. The API supports product management, and order processing.",
-    techStack: [
-      "FastAPI",
-      "PostgreSQL",
-      "RESTful API"
-    ],
-    githubLink: "https://github.com/tirshiva/fruit-store-Backend"
-  },
-  {
-    id: 5,
-    title: "YouTube Analytics Data Pipeline",
-    description: "A data pipeline that extracts data from the YouTube API and loads it into staging schema, after which it is transformed and loaded into core schema, Airflow is used to schedule the pipeline and Docker is used to containerize the pipeline.",
-    techStack: [
-      "Python",
-      "Apache Airflow",
-      "Docker",
-      "CI/CD"
-    ],
-    githubLink: "https://github.com/tirshiva/youtube-etl",
+    title: 'Fruit Store Backend API',
+    description:
+      'Production-ready RESTful API for e-commerce — product catalog, order processing, and inventory management built with FastAPI and PostgreSQL.',
+    category: 'Backend Engineering',
+    techStack: ['FastAPI', 'PostgreSQL', 'RESTful API', 'Python'],
+    githubLink: 'https://github.com/tirshiva/fruit-store-Backend',
+    image:
+      'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800'
   }
 ];
-
-// Social media and contact links
-export const socialLinks = {
-  linkedin: "https://www.linkedin.com/in/shivanshu2407/",
-  github: "https://github.com/tirshiva",
-  email: "shivanshutiwari.ml@gmail.com"
-};

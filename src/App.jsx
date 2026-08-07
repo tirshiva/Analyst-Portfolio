@@ -8,41 +8,19 @@ import Navbar from './components/Navbar';
 import Projects from './components/Projects';
 import ScrollAnimation from './components/ScrollAnimation';
 import ScrollProgress from './components/ScrollProgress';
+import Skills from './components/Skills';
 import './styles/theme.css';
 
 const App = () => {
-  // Page transition variants with optimized timing
   const pageVariants = {
-    initial: {
-      opacity: 0
-    },
+    initial: { opacity: 0 },
     in: {
       opacity: 1,
-      transition: {
-        duration: 0.4,
-        ease: [0.4, 0, 0.2, 1]
-      }
+      transition: { duration: 0.4, ease: [0.4, 0, 0.2, 1] }
     },
     out: {
       opacity: 0,
-      transition: {
-        duration: 0.3,
-        ease: [0.4, 0, 0.2, 1]
-      }
-    }
-  };
-
-  // Section animation variants with optimized timing
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: [0.4, 0, 0.2, 1],
-        staggerChildren: 0.05
-      }
+      transition: { duration: 0.3, ease: [0.4, 0, 0.2, 1] }
     }
   };
 
@@ -56,66 +34,68 @@ const App = () => {
           exit="out"
           variants={pageVariants}
         >
-          {/* Main gradient background */}
-          <div className="fixed inset-0 bg-gradient-to-b from-white via-supply-background-alt/5 to-white"></div>
+          {/* Gradient mesh background */}
+          <div
+            className="fixed inset-0 pointer-events-none"
+            style={{ background: 'var(--gradient-mesh)' }}
+          />
 
-          {/* Minimal decorative elements */}
+          {/* Decorative elements */}
           <div className="fixed inset-0 overflow-hidden pointer-events-none">
-            {/* Subtle gradient blob */}
             <motion.div
-              className="absolute top-1/4 right-1/4 w-[800px] h-[800px] bg-gradient-to-br from-supply-background-alt/10 to-supply-background-dark/10 rounded-full blur-3xl"
-              animate={{
-                scale: [1, 1.05, 1],
-                opacity: [0.1, 0.15, 0.1]
-              }}
-              transition={{
-                duration: 20,
-                repeat: Infinity,
-                repeatType: "reverse"
-              }}
-            ></motion.div>
-
-            {/* Subtle grid pattern */}
-            <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.01]"></div>
+              className="absolute -top-32 -right-32 w-[600px] h-[600px] bg-indigo-400/10 rounded-full blur-3xl"
+              animate={{ scale: [1, 1.08, 1], opacity: [0.08, 0.14, 0.08] }}
+              transition={{ duration: 18, repeat: Infinity, repeatType: 'reverse' }}
+            />
+            <motion.div
+              className="absolute bottom-1/4 -left-32 w-[500px] h-[500px] bg-violet-400/8 rounded-full blur-3xl"
+              animate={{ scale: [1, 1.06, 1], opacity: [0.06, 0.1, 0.06] }}
+              transition={{ duration: 22, repeat: Infinity, repeatType: 'reverse' }}
+            />
+            <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.4]" />
           </div>
 
-          <ScrollProgress color="#2C3E50" />
+          <ScrollProgress color="#4F46E5" />
           <Navbar />
 
           <main id="main-content" className="pt-16 relative z-10">
             <Routes>
-              <Route path="/" element={
-                <>
-                  {/* Hero Section */}
-                  <section id="home" className="min-h-screen">
-                    <ScrollAnimation>
-                      <Hero />
-                    </ScrollAnimation>
-                  </section>
+              <Route
+                path="/"
+                element={
+                  <>
+                    <section id="home" className="min-h-screen">
+                      <ScrollAnimation>
+                        <Hero />
+                      </ScrollAnimation>
+                    </section>
 
-                  {/* About Section */}
-                  <section id="about" className="scroll-mt-20 py-20 relative z-10 bg-supply-background-alt">
-                    <ScrollAnimation>
-                      <About />
-                    </ScrollAnimation>
-                  </section>
+                    <section id="about" className="scroll-mt-20 py-20 relative z-10 bg-supply-background-alt/80 backdrop-blur-sm">
+                      <ScrollAnimation>
+                        <About />
+                      </ScrollAnimation>
+                    </section>
 
-                  {/* Projects Section */}
-                  <section id="projects" className="scroll-mt-20 py-20 relative z-10 bg-supply-background">
-                    <ScrollAnimation>
-                      <Projects />
-                    </ScrollAnimation>
-                  </section>
+                    <section id="skills" className="scroll-mt-20 py-20 relative z-10 bg-supply-background">
+                      <ScrollAnimation>
+                        <Skills />
+                      </ScrollAnimation>
+                    </section>
 
-                  {/* Contact Section */}
-                  <section id="contact" className="scroll-mt-20 py-20 relative z-10 bg-supply-background-alt">
-                    <ScrollAnimation>
-                      <Contact />
-                    </ScrollAnimation>
-                  </section>
-                </>
-              } />
-              {/* Removed invalid Article route */}
+                    <section id="projects" className="scroll-mt-20 py-20 relative z-10 bg-supply-background-alt/80 backdrop-blur-sm">
+                      <ScrollAnimation>
+                        <Projects />
+                      </ScrollAnimation>
+                    </section>
+
+                    <section id="contact" className="scroll-mt-20 py-20 relative z-10 bg-supply-background">
+                      <ScrollAnimation>
+                        <Contact />
+                      </ScrollAnimation>
+                    </section>
+                  </>
+                }
+              />
             </Routes>
           </main>
 

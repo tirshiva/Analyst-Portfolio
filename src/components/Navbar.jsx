@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaBars, FaTimes, FaBrain, FaRobot, FaUserTie, FaEnvelope, FaChartBar, FaArrowUp } from 'react-icons/fa';
+import { FaBars, FaTimes, FaBrain, FaUserTie, FaEnvelope, FaChartBar, FaCode } from 'react-icons/fa';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
@@ -88,7 +88,7 @@ const Navbar = () => {
     observerRef.current = new IntersectionObserver(handleIntersect, options);
 
     // Observe all sections
-    const sections = ['home', 'about', 'projects', 'contact'];
+    const sections = ['home', 'about', 'skills', 'projects', 'contact'];
     sections.forEach(section => {
       const element = document.getElementById(section);
       if (element) {
@@ -130,6 +130,7 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', href: 'home', icon: <FaBrain className="w-4 h-4" /> },
     { name: 'About', href: 'about', icon: <FaUserTie className="w-4 h-4" /> },
+    { name: 'Skills', href: 'skills', icon: <FaCode className="w-4 h-4" /> },
     { name: 'Projects', href: 'projects', icon: <FaChartBar className="w-4 h-4" /> },
     { name: 'Contact', href: 'contact', icon: <FaEnvelope className="w-4 h-4" /> }
   ];
@@ -178,23 +179,9 @@ const Navbar = () => {
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <motion.button
-              onClick={() => handleNavClick('home')}
-              className="text-supply-dark font-bold text-base sm:text-xl hover:text-supply-primary transition-colors duration-200 focus-ring flex items-center"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              aria-label="Go to home"
-            >
-              <FaBrain className="mr-1.5 sm:mr-2 text-supply-primary w-4 h-4 sm:w-5 sm:h-5" />
-              <span className="bg-gradient-to-r from-supply-primary to-supply-secondary bg-clip-text text-transparent">
-                Portfolio
-              </span>
-            </motion.button>
-
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-4 lg:space-x-6">
+          <div className="flex items-center justify-end h-16 relative">
+            {/* Desktop Navigation - centered */}
+            <div className="hidden md:flex items-center space-x-4 lg:space-x-6 absolute left-1/2 -translate-x-1/2">
               {navLinks.map((link) => (
                 <motion.button
                   key={link.name}
@@ -315,4 +302,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar; 
+export default Navbar;
