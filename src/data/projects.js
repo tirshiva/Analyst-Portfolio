@@ -1,5 +1,16 @@
 export const projects = [
   {
+    id: 6,
+    title: 'JD Customized Resume',
+    description:
+      'Modular ATS and resume analysis service built with FastAPI, LangGraph, and pluggable LLM providers for JD analysis, RAG retrieval, gap analysis, ATS scoring, and approval-gated MCP workflows.',
+    category: 'AI / Backend Engineering',
+    techStack: ['FastAPI', 'LangGraph', 'pgvector', 'Ollama', 'OpenAI', 'Azure OpenAI'],
+    githubLink: 'https://github.com/tirshiva/jd-customized-resume',
+    image:
+      'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800'
+  },
+  {
     id: 5,
     title: 'YouTube Analytics Data Pipeline',
     description:
