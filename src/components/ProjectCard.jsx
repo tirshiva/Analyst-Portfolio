@@ -1,77 +1,75 @@
 import { motion } from 'framer-motion';
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
+import ProjectThumbnail from './ProjectThumbnail';
+import { useReducedMotion } from '../utils/motion';
 
-const ProjectCard = ({ project }) => (
-  <motion.div
-    whileHover={{ y: -6 }}
-    transition={{ duration: 0.25 }}
-    className="group bg-white/90 backdrop-blur-sm rounded-2xl shadow-sm border border-indigo-50 overflow-hidden flex flex-col h-full hover:shadow-lg hover:shadow-indigo-500/10 hover:border-indigo-100 transition-all duration-300"
-  >
-    {project.image && (
-      <div className="relative h-44 overflow-hidden">
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent" />
+const ProjectCard = ({ project }) => {
+  const reducedMotion = useReducedMotion();
+
+  return (
+    <motion.article
+      whileHover={reducedMotion ? {} : { y: -4 }}
+      transition={{ duration: 0.2 }}
+      className="group bg-white rounded-2xl shadow-sm border border-supply-border overflow-hidden flex flex-col h-full hover:shadow-card hover:border-supply-primary/20 transition-all"
+    >
+      <ProjectThumbnail
+        title={project.title}
+        category={project.category}
+        className="h-40"
+      />
+
+      <div className="p-5 flex flex-col flex-grow">
         {project.category && (
-          <span className="absolute top-3 left-3 px-2.5 py-1 rounded-lg text-xs font-semibold bg-white/90 text-indigo-700 backdrop-blur-sm">
-            {project.category}
-          </span>
+          <span className="text-xs font-semibold text-supply-primary mb-2">{project.category}</span>
         )}
-      </div>
-    )}
+        <h3 className="font-bold text-lg mb-2 text-supply-dark group-hover:text-supply-primary transition-colors">
+          {project.title}
+        </h3>
+        <p className="text-supply-gray text-sm mb-4 flex-grow leading-relaxed line-clamp-3">
+          {project.description}
+        </p>
 
-    <div className="p-5 flex flex-col flex-grow">
-      <h3 className="font-bold text-lg mb-2 text-supply-dark group-hover:text-supply-primary transition-colors">
-        {project.title}
-      </h3>
-      <p className="text-supply-gray text-sm mb-4 flex-grow leading-relaxed">
-        {project.description}
-      </p>
+        <div className="flex flex-wrap gap-1.5 mb-4">
+          {project.techStack?.slice(0, 4).map((tech) => (
+            <span
+              key={tech}
+              className="px-2 py-0.5 rounded-md text-xs font-medium bg-supply-background-alt text-supply-primary border border-supply-border"
+            >
+              {tech}
+            </span>
+          ))}
+          {project.techStack?.length > 4 && (
+            <span className="px-2 py-0.5 rounded-md text-xs text-supply-gray">
+              +{project.techStack.length - 4}
+            </span>
+          )}
+        </div>
 
-      <div className="flex flex-wrap gap-1.5 mb-5">
-        {project.techStack?.slice(0, 5).map((tech, i) => (
-          <span
-            key={i}
-            className="px-2.5 py-1 rounded-md text-xs font-medium bg-indigo-50 text-indigo-700 border border-indigo-100"
-          >
-            {tech}
-          </span>
-        ))}
-        {project.techStack?.length > 5 && (
-          <span className="px-2.5 py-1 rounded-md text-xs font-medium bg-slate-50 text-slate-500 border border-slate-100">
-            +{project.techStack.length - 5}
-          </span>
-        )}
+        <div className="flex gap-2 mt-auto">
+          {project.githubLink && (
+            <a
+              href={project.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-supply-background-alt text-supply-dark text-xs font-semibold border border-supply-border hover:bg-supply-primary hover:text-white hover:border-supply-primary transition-colors focus-ring"
+            >
+              <FaGithub className="w-3.5 h-3.5" /> Code
+            </a>
+          )}
+          {project.demoLink && (
+            <a
+              href={project.demoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-supply-primary/10 text-supply-primary text-xs font-semibold border border-supply-primary/20 hover:bg-supply-primary hover:text-white transition-colors focus-ring"
+            >
+              <FaExternalLinkAlt className="w-3.5 h-3.5" /> Demo
+            </a>
+          )}
+        </div>
       </div>
-
-      <div className="flex gap-2 mt-auto">
-        {project.githubLink && (
-          <a
-            href={project.githubLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-slate-50 text-slate-700 text-xs font-semibold border border-slate-100 hover:bg-indigo-600 hover:text-white hover:border-indigo-600 transition-colors"
-          >
-            <FaGithub className="w-3.5 h-3.5" /> Code
-          </a>
-        )}
-        {project.demoLink && (
-          <a
-            href={project.demoLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-indigo-50 text-indigo-700 text-xs font-semibold border border-indigo-100 hover:bg-indigo-600 hover:text-white hover:border-indigo-600 transition-colors"
-          >
-            <FaExternalLinkAlt className="w-3.5 h-3.5" /> Demo
-          </a>
-        )}
-      </div>
-    </div>
-  </motion.div>
-);
+    </motion.article>
+  );
+};
 
 export default ProjectCard;

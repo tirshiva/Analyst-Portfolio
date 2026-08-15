@@ -17,22 +17,22 @@ export default {
         },
         // Modern masculine data analyst color palette
         supply: {
-          primary: '#2563EB',    // Strong Blue - primary brand color
-          secondary: '#1E40AF',  // Deep Blue - secondary brand color
-          accent: '#3B82F6',     // Bright Blue - accent color
-          highlight: '#0284C7',  // Teal Blue - highlight color
-          success: '#10B981',    // Emerald - for positive metrics
-          warning: '#F59E0B',    // Amber - for caution/warning
-          danger: '#DC2626',     // Red - for critical issues
-          light: '#F8FAFC',      // Light background
-          dark: '#0F172A',       // Dark text/background
-          gray: '#64748B',       // Slate gray
-          lightgray: '#E2E8F0',  // Light gray for borders
-          chart1: '#2563EB',     // Chart color 1 - blue
-          chart2: '#0284C7',     // Chart color 2 - teal blue
-          chart3: '#10B981',     // Chart color 3 - emerald
-          chart4: '#1E40AF',     // Chart color 4 - deep blue
-          chart5: '#3B82F6',     // Chart color 5 - bright blue
+          primary: '#2563EB',
+          secondary: '#1E40AF',
+          accent: '#3B82F6',
+          highlight: '#1D4ED8',
+          success: '#10B981',
+          warning: '#F59E0B',
+          danger: '#DC2626',
+          light: '#F8FAFC',
+          dark: '#0F172A',
+          gray: '#475569',
+          lightgray: '#E2E8F0',
+          chart1: '#2563EB',
+          chart2: '#3B82F6',
+          chart3: '#10B981',
+          chart4: '#1E40AF',
+          chart5: '#60A5FA',
         },
         accent: {
           50: '#FFFFFF',   // White

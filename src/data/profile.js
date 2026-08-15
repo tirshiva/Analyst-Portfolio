@@ -9,6 +9,12 @@ const profile = {
   heroDescription:
     'Building production AI systems, scalable data pipelines, and cloud-native platforms that turn complex data into intelligent business outcomes.',
   ctaText: 'Explore My Work',
+  secondaryCtaText: 'Get In Touch',
+
+  photo: {
+    src: '/profile.jpeg',
+    alt: 'Shivanshu Tiwari — AI Engineer'
+  },
 
   seo: {
     siteUrl: SITE_URL,
@@ -62,26 +68,26 @@ const profile = {
     ai: [
       'LLM Applications',
       'RAG Pipelines',
+      'LangGraph',
       'Model Serving',
-      'Feature Engineering',
       'MLOps'
     ],
     dataEngineering: [
+      'Apache Airflow',
+      'ETL/ELT',
       'PySpark',
-      'Pandas',
       'Data Modeling',
-      'Pipeline Orchestration'
+      'PostgreSQL'
     ],
-    cloud: ['AWS', 'Docker', 'CI/CD', 'Git', 'REST APIs'],
+    cloud: ['AWS', 'Docker', 'CI/CD', 'FastAPI', 'REST APIs'],
     languages: ['Python', 'SQL']
   },
 
   techStack: [
-    { label: 'Python', color: 'bg-yellow-400' },
-    { label: 'AWS', color: 'bg-amber-500' },
-    { label: 'Docker', color: 'bg-indigo-500' },
-    { label: 'Git', color: 'bg-gray-500' },
-    { label: 'FastAPI', color: 'bg-emerald-500' }
+    { label: 'Python' },
+    { label: 'Apache Airflow' },
+    { label: 'FastAPI' },
+    { label: 'AWS' }
   ],
 
   expertise: [
@@ -92,11 +98,9 @@ const profile = {
     'MLOps & Model Deployment'
   ],
 
-  projectCategories: [
-    { label: 'AI Engineering', icon: 'brain' },
-    { label: 'Data Engineering', icon: 'cogs' },
-    { label: 'MLOps & Cloud', icon: 'cloud' }
-  ],
+  featuredProjectId: 6,
+
+  searchSuggestions: ['Airflow', 'MLOps', 'FastAPI', 'LangGraph', 'Python'],
 
   sections: {
     projects: {
@@ -107,8 +111,7 @@ const profile = {
     },
     contact: {
       badge: 'Get In Touch',
-      title: "Let's Connect",
-      formHeading: "Let's Build Something Intelligent"
+      title: "Let's Connect"
     }
   },
 

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { FaArrowUp, FaBrain, FaCode, FaEnvelope, FaGithub, FaLinkedin, FaRobot } from 'react-icons/fa';
 import profile from '../data/profile';
+import ProfileAvatar from './ProfileAvatar';
 
 const FooterComponent = () => {
   const buttonVariants = {
@@ -15,17 +16,17 @@ const FooterComponent = () => {
   const footerLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Skills', href: '#skills' },
     { name: 'Contact', href: '#contact' }
   ];
 
   return (
-    <footer className="relative bg-white/90 backdrop-blur-sm border-t border-indigo-50 py-16 sm:py-20">
+    <footer className="relative bg-white/90 backdrop-blur-sm border-t border-supply-border py-12 sm:py-16">
       <div className="absolute inset-0 overflow-hidden opacity-[0.03] pointer-events-none">
-        <FaBrain className="absolute top-10 left-10 w-32 h-32 text-indigo-500" />
-        <FaRobot className="absolute bottom-10 right-10 w-24 h-24 text-violet-500" />
-        <FaCode className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 text-indigo-400" />
+        <FaBrain className="absolute top-10 left-10 w-32 h-32 text-supply-primary" />
+        <FaRobot className="absolute bottom-10 right-10 w-24 h-24 text-supply-secondary" />
+        <FaCode className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 text-supply-accent" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,9 +39,7 @@ const FooterComponent = () => {
             className="col-span-1 sm:col-span-2 md:col-span-1"
           >
             <div className="flex items-center gap-2 mb-3">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-600 to-violet-600 flex items-center justify-center">
-                <span className="text-white text-xs font-bold">ST</span>
-              </div>
+              <ProfileAvatar size="sm" />
               <h3 className="text-lg font-bold text-supply-dark">{profile.shortTitle}</h3>
             </div>
             <p className="text-supply-gray mb-5 text-sm leading-relaxed">
@@ -54,7 +53,7 @@ const FooterComponent = () => {
                 variants={buttonVariants}
                 whileHover="hover"
                 whileTap="tap"
-                className="p-2 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-supply-primary transition-colors"
+                className="p-2 rounded-lg bg-supply-background-alt hover:bg-supply-primary/10 text-supply-primary transition-colors focus-ring"
                 aria-label="LinkedIn"
               >
                 <FaLinkedin className="w-4 h-4" />
@@ -66,7 +65,7 @@ const FooterComponent = () => {
                 variants={buttonVariants}
                 whileHover="hover"
                 whileTap="tap"
-                className="p-2 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-supply-primary transition-colors"
+                className="p-2 rounded-lg bg-supply-background-alt hover:bg-supply-primary/10 text-supply-primary transition-colors focus-ring"
                 aria-label="GitHub"
               >
                 <FaGithub className="w-4 h-4" />
@@ -102,7 +101,7 @@ const FooterComponent = () => {
             <ul className="space-y-2 text-sm">
               {profile.expertise.map((item) => (
                 <li key={item} className="text-supply-gray flex items-start gap-2">
-                  <span className="mt-1.5 w-1 h-1 rounded-full bg-indigo-400 flex-shrink-0" />
+                  <span className="mt-1.5 w-1 h-1 rounded-full bg-supply-primary flex-shrink-0" />
                   {item}
                 </li>
               ))}
@@ -122,7 +121,7 @@ const FooterComponent = () => {
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white rounded-lg shadow-sm hover:shadow-md transition-all text-sm font-medium"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-primary text-white rounded-lg shadow-sm hover:shadow-md transition-all text-sm font-medium focus-ring"
             >
               <FaEnvelope className="w-3.5 h-3.5" />
               Email Me
@@ -130,7 +129,7 @@ const FooterComponent = () => {
           </motion.div>
         </div>
 
-        <div className="h-px bg-indigo-50 my-8 sm:my-10" />
+        <div className="h-px bg-supply-border my-8" />
 
         <div className="flex flex-col sm:flex-row justify-between items-center">
           <p className="text-supply-gray text-xs sm:text-sm mb-4 sm:mb-0">
@@ -141,7 +140,7 @@ const FooterComponent = () => {
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap"
-            className="p-2.5 rounded-lg bg-indigo-50 hover:bg-indigo-600 hover:text-white text-supply-primary transition-all"
+            className="p-2.5 rounded-lg bg-supply-background-alt hover:bg-supply-primary hover:text-white text-supply-primary transition-all focus-ring"
             aria-label="Scroll to top"
           >
             <FaArrowUp className="w-4 h-4" />
