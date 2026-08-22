@@ -38,13 +38,13 @@ const profile = {
       {
         company: 'EY',
         role: 'AI Engineer',
-        duration: 'Jun 2026 – Present',
+        duration: 'Mar 2026 – Present',
         description:
           'Building enterprise AI applications, data orchestration pipelines, and model-driven automation for strategic business outcomes.'
       },
       {
         company: 'Amazon',
-        role: 'Business Analyst',
+        role: 'Data Engineer',
         duration: 'Mar 2024 – Jan 2026',
         description:
           'Developed analytics pipelines, automation workflows, and reporting frameworks that improved operational decision-making.'
@@ -73,34 +73,32 @@ const profile = {
       'MLOps'
     ],
     dataEngineering: [
-      'Apache Airflow',
       'ETL/ELT',
       'PySpark',
       'Data Modeling',
       'PostgreSQL'
     ],
-    cloud: ['AWS', 'Docker', 'CI/CD', 'FastAPI', 'REST APIs'],
+    cloud: ['AWS', 'Docker', 'FastAPI', 'REST APIs'],
     languages: ['Python', 'SQL']
   },
 
   techStack: [
     { label: 'Python' },
-    { label: 'Apache Airflow' },
+    { label: 'Agentic AI' },
     { label: 'FastAPI' },
     { label: 'AWS' }
   ],
-
   expertise: [
     'AI Systems & LLM Applications',
     'Data Pipelines & ETL/ELT',
-    'Workflow Orchestration',
+    'Multi-Agent Workflows',
     'Cloud Data Platforms',
     'MLOps & Model Deployment'
   ],
 
-  featuredProjectId: 6,
+  featuredProjectId: 7,
 
-  searchSuggestions: ['Airflow', 'MLOps', 'FastAPI', 'LangGraph', 'Python'],
+  searchSuggestions: ['MLOps', 'FastAPI', 'LangGraph', 'Python'],
 
   sections: {
     projects: {
@@ -116,7 +114,7 @@ const profile = {
   },
 
   contact: {
-    location: 'Gurgaon, India',
+    location: 'Noida, India',
     availability: 'Open to AI Engineering and Data Engineering roles',
     intro:
       'Interested in collaborating on AI systems, data pipelines, and cloud-native engineering projects.',

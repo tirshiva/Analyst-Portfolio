@@ -1,5 +1,14 @@
 export const projects = [
   {
+    id: 7,
+    title: 'India Business Research & Decision Agent',
+    description:
+      'Multi-agent LangGraph system that researches Indian location-based business questions using public APIs, maps, government catalogs, and document RAG — then returns a cited opportunity score with a critic quality loop.',
+    category: 'AI / Backend Engineering',
+    techStack: ['LangGraph', 'RAG', 'Multi-Agent', 'Public APIs', 'Python'],
+    githubLink: 'https://github.com/tirshiva/business-research-assistant'
+  },
+  {
     id: 6,
     title: 'JD Customized Resume',
     description:
