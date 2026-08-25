@@ -10,7 +10,7 @@ const ProjectCard = ({ project }) => {
     <motion.article
       whileHover={reducedMotion ? {} : { y: -4 }}
       transition={{ duration: 0.2 }}
-      className="group bg-white rounded-2xl shadow-sm border border-supply-border overflow-hidden flex flex-col h-full hover:shadow-card hover:border-supply-primary/20 transition-all"
+      className="group bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden flex flex-col h-full hover:shadow-md hover:border-blue-100 transition-all"
     >
       <ProjectThumbnail
         title={project.title}
@@ -33,7 +33,7 @@ const ProjectCard = ({ project }) => {
           {project.techStack?.slice(0, 4).map((tech) => (
             <span
               key={tech}
-              className="px-2 py-0.5 rounded-md text-xs font-medium bg-supply-background-alt text-supply-primary border border-supply-border"
+              className="px-2 py-0.5 rounded-full text-xs font-medium bg-slate-50 text-slate-600 border border-slate-100"
             >
               {tech}
             </span>
@@ -51,7 +51,7 @@ const ProjectCard = ({ project }) => {
               href={project.githubLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-supply-background-alt text-supply-dark text-xs font-semibold border border-supply-border hover:bg-supply-primary hover:text-white hover:border-supply-primary transition-colors focus-ring"
+              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-full bg-slate-50 text-slate-800 text-xs font-semibold border border-slate-100 hover:bg-supply-primary hover:text-white hover:border-supply-primary transition-colors focus-ring"
             >
               <FaGithub className="w-3.5 h-3.5" /> Code
             </a>
@@ -61,7 +61,7 @@ const ProjectCard = ({ project }) => {
               href={project.demoLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-supply-primary/10 text-supply-primary text-xs font-semibold border border-supply-primary/20 hover:bg-supply-primary hover:text-white transition-colors focus-ring"
+              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-full bg-blue-50 text-supply-primary text-xs font-semibold border border-blue-100 hover:bg-supply-primary hover:text-white transition-colors focus-ring"
             >
               <FaExternalLinkAlt className="w-3.5 h-3.5" /> Demo
             </a>

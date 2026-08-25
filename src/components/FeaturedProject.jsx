@@ -22,11 +22,11 @@ const FeaturedProject = ({ project }) => {
       <div className="flex items-center gap-2 mb-4">
         <FaStar className="w-4 h-4 text-amber-500" aria-hidden="true" />
         <span className="text-sm font-semibold text-supply-primary uppercase tracking-wide">
-          Flagship Project
+          Featured
         </span>
       </div>
 
-      <div className="group grid grid-cols-1 lg:grid-cols-2 gap-0 bg-white rounded-2xl border border-supply-border shadow-card overflow-hidden hover:shadow-lg transition-shadow">
+      <div className="group grid grid-cols-1 lg:grid-cols-2 gap-0 bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden hover:shadow-md transition-shadow">
         <ProjectThumbnail
           title={project.title}
           category={project.category}
@@ -34,7 +34,7 @@ const FeaturedProject = ({ project }) => {
         />
         <div className="p-6 sm:p-8 flex flex-col justify-center">
           {project.category && (
-            <span className="inline-block w-fit px-2.5 py-1 mb-3 rounded-lg text-xs font-semibold bg-supply-primary/10 text-supply-primary">
+            <span className="inline-block w-fit px-2.5 py-1 mb-3 rounded-full text-xs font-semibold bg-blue-50 text-supply-primary">
               {project.category}
             </span>
           )}
@@ -48,7 +48,7 @@ const FeaturedProject = ({ project }) => {
             {project.techStack?.map((tech) => (
               <span
                 key={tech}
-                className="px-2.5 py-1 rounded-md text-xs font-medium bg-supply-background-alt text-supply-primary border border-supply-border"
+                className="px-2.5 py-1 rounded-full text-xs font-medium bg-slate-50 text-slate-600 border border-slate-100"
               >
                 {tech}
               </span>
@@ -60,7 +60,7 @@ const FeaturedProject = ({ project }) => {
                 href={project.githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-supply-primary text-white text-sm font-semibold hover:bg-supply-hover transition-colors focus-ring"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-gradient-primary text-white text-sm font-semibold hover:shadow-md transition-all focus-ring"
               >
                 <FaGithub className="w-4 h-4" /> View Code
               </a>
@@ -70,7 +70,7 @@ const FeaturedProject = ({ project }) => {
                 href={project.demoLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-supply-background-alt text-supply-primary text-sm font-semibold border border-supply-border hover:border-supply-primary/30 transition-colors focus-ring"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white text-supply-primary text-sm font-semibold border border-slate-200 hover:border-supply-primary/40 transition-colors focus-ring"
               >
                 <FaExternalLinkAlt className="w-4 h-4" /> Live Demo
               </a>

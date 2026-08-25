@@ -1,11 +1,9 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaBars, FaTimes, FaBrain, FaUserTie, FaEnvelope, FaChartBar, FaCode } from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useFocusTrap } from '../hooks/useFocusTrap';
 import { useReducedMotion } from '../utils/motion';
-import profile from '../data/profile';
-import ProfileAvatar from './ProfileAvatar';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +31,7 @@ const Navbar = () => {
     };
 
     observerRef.current = new IntersectionObserver(handleIntersect, options);
-    ['home', 'about', 'projects', 'skills', 'contact'].forEach((id) => {
+    ['home', 'projects', 'skills', 'experience', 'contact'].forEach((id) => {
       const el = document.getElementById(id);
       if (el) observerRef.current.observe(el);
     });
@@ -64,11 +62,11 @@ const Navbar = () => {
   }, [isOpen]);
 
   const navLinks = [
-    { name: 'Home', href: 'home', icon: <FaBrain className="w-4 h-4" /> },
-    { name: 'About', href: 'about', icon: <FaUserTie className="w-4 h-4" /> },
-    { name: 'Projects', href: 'projects', icon: <FaChartBar className="w-4 h-4" /> },
-    { name: 'Skills', href: 'skills', icon: <FaCode className="w-4 h-4" /> },
-    { name: 'Contact', href: 'contact', icon: <FaEnvelope className="w-4 h-4" /> }
+    { name: 'Home', href: 'home' },
+    { name: 'Skills', href: 'skills' },
+    { name: 'Projects', href: 'projects' },
+    { name: 'Experience', href: 'experience' },
+    { name: 'Contact', href: 'contact' }
   ];
 
   const handleNavClick = (href) => {
@@ -84,10 +82,10 @@ const Navbar = () => {
   };
 
   const linkClass = (href) =>
-    `relative text-xs lg:text-sm font-medium transition-colors duration-200 focus-ring flex items-center py-2 ${
+    `relative text-sm font-medium transition-colors duration-200 focus-ring py-2 ${
       activeSection === href
-        ? 'text-supply-primary font-semibold'
-        : 'text-supply-dark hover:text-supply-primary'
+        ? 'text-supply-primary'
+        : 'text-slate-700 hover:text-supply-primary'
     }`;
 
   return (
@@ -95,8 +93,8 @@ const Navbar = () => {
       <motion.nav
         className={`fixed w-full z-[90] transition-all duration-300 border-b ${
           scrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-sm border-supply-border'
-            : 'bg-white/80 backdrop-blur-md border-transparent'
+            ? 'bg-white/95 backdrop-blur-md shadow-sm border-slate-100'
+            : 'bg-white border-transparent'
         }`}
         role="navigation"
         aria-label="Main navigation"
@@ -104,21 +102,20 @@ const Navbar = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.4 }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <motion.button
               onClick={() => handleNavClick('home')}
-              className="flex items-center gap-2 focus-ring rounded-lg"
+              className="focus-ring rounded-lg"
               whileTap={{ scale: 0.98 }}
               aria-label="Go to home"
             >
-              <ProfileAvatar size="md" />
-              <span className="hidden sm:inline font-semibold bg-gradient-to-r from-supply-primary to-supply-secondary bg-clip-text text-transparent">
-                {profile.name.split(' ')[0]}
+              <span className="text-lg font-semibold text-slate-900 tracking-tight">
+                Portfolio
               </span>
             </motion.button>
 
-            <div className="hidden md:flex items-center gap-4 lg:gap-6">
+            <div className="hidden md:flex items-center gap-7">
               {navLinks.map((link) => (
                 <motion.button
                   key={link.name}
@@ -127,7 +124,6 @@ const Navbar = () => {
                   whileTap={{ scale: 0.98 }}
                   aria-current={activeSection === link.href ? 'true' : undefined}
                 >
-                  <span className="mr-1.5">{link.icon}</span>
                   {link.name}
                   {activeSection === link.href && (
                     <motion.div
@@ -141,7 +137,7 @@ const Navbar = () => {
 
             <motion.button
               onClick={() => setIsOpen((v) => !v)}
-              className="md:hidden p-2.5 rounded-lg text-supply-dark hover:bg-supply-background-alt focus-ring"
+              className="md:hidden p-2.5 rounded-lg text-slate-800 hover:bg-slate-50 focus-ring"
               whileTap={{ scale: 0.95 }}
               aria-label={isOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isOpen}
@@ -158,7 +154,7 @@ const Navbar = () => {
           <>
             <motion.button
               type="button"
-              className="fixed inset-0 z-[95] bg-slate-900/40 backdrop-blur-sm md:hidden"
+              className="fixed inset-0 z-[95] bg-slate-900/30 backdrop-blur-sm md:hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -175,21 +171,20 @@ const Navbar = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
               transition={{ type: 'spring', stiffness: 400, damping: 32 }}
-              className="md:hidden fixed inset-x-0 top-16 z-[100] bg-white border-b border-supply-border shadow-xl"
+              className="md:hidden fixed inset-x-0 top-16 z-[100] bg-white border-b border-slate-100 shadow-xl"
             >
               <div className="flex flex-col p-4 space-y-1 max-h-[calc(100vh-4rem)] overflow-y-auto">
                 {navLinks.map((link) => (
                   <button
                     key={link.name}
                     onClick={() => handleNavClick(link.href)}
-                    className={`flex items-center px-4 py-3.5 rounded-xl text-base font-medium transition-colors focus-ring ${
+                    className={`px-4 py-3.5 rounded-xl text-base font-medium transition-colors focus-ring text-left ${
                       activeSection === link.href
-                        ? 'bg-supply-primary/10 text-supply-primary'
-                        : 'text-supply-dark hover:bg-supply-background-alt'
+                        ? 'bg-blue-50 text-supply-primary'
+                        : 'text-slate-800 hover:bg-slate-50'
                     }`}
                     aria-current={activeSection === link.href ? 'true' : undefined}
                   >
-                    <span className="mr-3">{link.icon}</span>
                     {link.name}
                   </button>
                 ))}

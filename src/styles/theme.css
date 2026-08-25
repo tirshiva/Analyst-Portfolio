@@ -38,11 +38,12 @@
   --tracking-wide: 0.025em;
   --tracking-wider: 0.05em;
 
-  /* Brand — Indigo blue */
+  /* Brand — clean blue with purple CTA */
   --color-primary: #2563EB;
-  --color-secondary: #1D4ED8;
-  --color-accent: #3B82F6;
-  --color-highlight: #1E40AF;
+  --color-secondary: #3B82F6;
+  --color-accent: #60A5FA;
+  --color-highlight: #7C3AED;
+  --color-linkedin: #0A66C2;
 
   /* Backgrounds */
   --color-background: #FFFFFF;
@@ -70,13 +71,11 @@
   --color-info: #3498DB;         /* Blue for info states */
 
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, var(--color-highlight) 0%, var(--color-primary) 55%, var(--color-accent) 100%);
+  --gradient-primary: linear-gradient(90deg, #2563EB 0%, #4F46E5 50%, #7C3AED 100%);
   --gradient-accent: linear-gradient(135deg, #F8FAFC 0%, #FFFFFF 100%);
-  --gradient-card: linear-gradient(135deg, #FFFFFF 0%, #EFF6FF 100%);
-  --gradient-hero: linear-gradient(135deg, #1E3A8A 0%, #2563EB 50%, #3B82F6 100%);
-  --gradient-mesh: radial-gradient(at 25% 15%, rgba(37, 99, 235, 0.08) 0px, transparent 50%),
-                   radial-gradient(at 85% 10%, rgba(59, 130, 246, 0.06) 0px, transparent 45%),
-                   radial-gradient(at 10% 80%, rgba(30, 64, 175, 0.04) 0px, transparent 50%);
+  --gradient-card: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 100%);
+  --gradient-hero: linear-gradient(90deg, #2563EB 0%, #38BDF8 100%);
+  --gradient-mesh: none;
 
   /* Transitions */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -90,8 +89,8 @@
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
   --shadow-outline: 0 0 0 3px rgba(66, 153, 225, 0.5);
-  --shadow-button: 0 4px 14px rgba(37, 99, 235, 0.22);
-  --shadow-card: 0 8px 24px rgba(15, 23, 42, 0.06);
+  --shadow-button: 0 8px 20px rgba(79, 70, 229, 0.28);
+  --shadow-card: 0 10px 30px rgba(15, 23, 42, 0.06);
 
   /* 3D Effects */
   --transform-3d: perspective(1000px) rotateX(0deg) rotateY(0deg);
@@ -317,10 +316,26 @@
 }
 
 .text-gradient-hero {
-  background: linear-gradient(135deg, #1E40AF 0%, #2563EB 45%, #60A5FA 100%);
+  background: linear-gradient(90deg, #2563EB 0%, #38BDF8 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: var(--gradient-primary);
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: var(--shadow-button);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.btn-pill:hover {
+  box-shadow: 0 10px 24px rgba(79, 70, 229, 0.35);
 }
 
 .shadow-button {

@@ -122,7 +122,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Custom utilities */
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-supply-primary to-supply-accent;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-supply-primary to-sky-400;
   }
 
   .line-clamp-3 {

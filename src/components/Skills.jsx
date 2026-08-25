@@ -15,20 +15,17 @@ const Skills = () => {
 
   return (
     <div className="text-supply-dark">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={reducedMotion ? false : { opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-10"
+          className="text-center mb-12"
         >
-          <span className="px-4 py-1.5 bg-supply-primary/10 text-supply-primary rounded-full text-sm font-medium">
-            Technical Skills
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold mt-4 mb-3">
-            AI & <span className="text-supply-primary">Data Engineering</span> Stack
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 text-slate-900">
+            Technical <span className="text-supply-primary">Skills</span>
           </h2>
-          <p className="text-supply-gray text-sm sm:text-base max-w-2xl mx-auto">
+          <p className="text-slate-500 text-sm sm:text-base max-w-2xl mx-auto">
             Full toolkit for building production AI systems and scalable data platforms.
           </p>
         </motion.div>
@@ -44,19 +41,19 @@ const Skills = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08 }}
-                className="rounded-2xl border border-supply-border bg-white p-5 sm:p-6 shadow-sm hover:shadow-card transition-shadow"
+                className="rounded-2xl border border-slate-100 bg-white p-5 sm:p-6 shadow-sm hover:shadow-md transition-shadow"
               >
                 <div className="flex items-center gap-2 mb-4">
-                  <div className="p-2 rounded-lg bg-supply-primary/10">
+                  <div className="p-2 rounded-full bg-blue-50">
                     <Icon className="w-4 h-4 text-supply-primary" />
                   </div>
-                  <h3 className="text-base font-semibold text-supply-dark">{config.label}</h3>
+                  <h3 className="text-base font-semibold text-slate-900">{config.label}</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium bg-supply-background-alt text-supply-dark border border-supply-border"
+                      className="px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-slate-50 text-slate-700 border border-slate-100"
                     >
                       {skill}
                     </span>

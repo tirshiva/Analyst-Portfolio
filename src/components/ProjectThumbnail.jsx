@@ -1,10 +1,10 @@
 const CATEGORY_GRADIENTS = {
-  'AI / Backend Engineering': 'from-blue-800 via-blue-700 to-indigo-600',
-  'Data Engineering': 'from-indigo-800 via-blue-700 to-blue-600',
-  'Machine Learning': 'from-blue-700 via-indigo-600 to-violet-600',
-  'Backend Engineering': 'from-slate-700 via-slate-600 to-slate-800',
-  'MLOps & Cloud': 'from-blue-700 via-sky-600 to-indigo-500',
-  default: 'from-blue-600 via-indigo-600 to-blue-500'
+  'AI / Backend Engineering': 'from-blue-500 via-indigo-500 to-violet-500',
+  'Data Engineering': 'from-sky-500 via-blue-500 to-indigo-500',
+  'Machine Learning': 'from-blue-500 via-violet-500 to-purple-500',
+  'Backend Engineering': 'from-slate-500 via-blue-500 to-indigo-500',
+  'MLOps & Cloud': 'from-blue-500 via-sky-400 to-indigo-500',
+  default: 'from-blue-500 via-indigo-500 to-violet-500'
 };
 
 const ProjectThumbnail = ({ title, category, className = '' }) => {

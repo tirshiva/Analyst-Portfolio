@@ -53,14 +53,10 @@ const Projects = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-10 sm:mb-12"
         >
-          <span className="px-4 py-1.5 bg-supply-primary/10 text-supply-primary rounded-full text-sm font-medium">
-            {profile.sections.projects.badge}
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-4 mb-3">
-            <span className="text-supply-dark">Featured </span>
-            <span className="text-supply-primary">Projects</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 text-slate-900">
+            Featured <span className="text-supply-primary">Projects</span>
           </h2>
-          <p className="text-supply-gray text-base sm:text-lg max-w-2xl mx-auto">
+          <p className="text-slate-500 text-base sm:text-lg max-w-2xl mx-auto">
             {profile.sections.projects.subtitle}
           </p>
         </motion.div>
@@ -73,10 +69,10 @@ const Projects = () => {
               key={cat}
               type="button"
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 rounded-xl text-sm font-medium border transition-all focus-ring ${
+              className={`px-4 py-2 rounded-full text-sm font-medium border transition-all focus-ring ${
                 activeCategory === cat
                   ? 'bg-supply-primary text-white border-supply-primary shadow-sm'
-                  : 'bg-white text-supply-dark border-supply-border hover:border-supply-primary/30'
+                  : 'bg-white text-slate-700 border-slate-200 hover:border-supply-primary/40'
               }`}
               aria-pressed={activeCategory === cat}
             >
@@ -100,7 +96,7 @@ const Projects = () => {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search by keyword or tech..."
-              className="w-full pl-10 pr-10 py-2.5 rounded-xl border border-supply-border bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-supply-primary/40 text-sm"
+              className="w-full pl-10 pr-10 py-2.5 rounded-full border border-slate-200 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-supply-primary/30 text-sm"
               aria-label="Search projects by keyword or technology"
             />
             {search && (
@@ -180,7 +176,7 @@ const Projects = () => {
             href={profile.socialLinks.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-7 py-3.5 bg-gradient-primary text-white rounded-xl shadow-button font-semibold hover:shadow-lg transition-all focus-ring"
+            className="btn-pill px-7 py-3 text-sm focus-ring"
           >
             {profile.projects.githubText}
           </a>

@@ -7,8 +7,8 @@ const profile = {
   title: 'AI Engineer | Data Engineering',
   shortTitle: 'AI & Data Engineer',
   heroDescription:
-    'Building production AI systems, scalable data pipelines, and cloud-native platforms that turn complex data into intelligent business outcomes.',
-  ctaText: 'Explore My Work',
+    'I turn complex data into AI systems that actually ship.',
+  ctaText: "Let's Connect",
   secondaryCtaText: 'Get In Touch',
 
   photo: {
@@ -102,13 +102,11 @@ const profile = {
 
   sections: {
     projects: {
-      badge: 'Portfolio',
       title: 'Featured Projects',
       subtitle:
         'Production AI systems, data pipelines, and cloud-native engineering work'
     },
     contact: {
-      badge: 'Get In Touch',
       title: "Let's Connect"
     }
   },

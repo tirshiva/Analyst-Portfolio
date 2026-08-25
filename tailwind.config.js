@@ -18,9 +18,9 @@ export default {
         // Modern masculine data analyst color palette
         supply: {
           primary: '#2563EB',
-          secondary: '#1E40AF',
-          accent: '#3B82F6',
-          highlight: '#1D4ED8',
+          secondary: '#3B82F6',
+          accent: '#60A5FA',
+          highlight: '#7C3AED',
           success: '#10B981',
           warning: '#F59E0B',
           danger: '#DC2626',
