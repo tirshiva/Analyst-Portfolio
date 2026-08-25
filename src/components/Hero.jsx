@@ -33,6 +33,27 @@ const Hero = () => {
           animate="visible"
           variants={containerVariants}
         >
+          <motion.div variants={itemVariants} className="mb-8 sm:mb-10">
+            <div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40">
+              <div
+                className="absolute -inset-2 rounded-full bg-gradient-to-br from-blue-400/40 via-indigo-400/25 to-violet-400/40 blur-xl"
+                aria-hidden="true"
+              />
+              <div className="relative h-full w-full rounded-full bg-gradient-to-br from-blue-500 via-indigo-500 to-violet-500 p-[3px] shadow-[0_18px_40px_rgba(37,99,235,0.18)]">
+                <div className="h-full w-full rounded-full bg-white p-[3px]">
+                  <img
+                    src={profile.photo.src}
+                    alt={profile.photo.alt}
+                    width={160}
+                    height={160}
+                    fetchPriority="high"
+                    className="h-full w-full rounded-full object-cover object-center"
+                  />
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
           <motion.h1
             className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight leading-tight text-slate-900"
             variants={itemVariants}
@@ -42,7 +63,7 @@ const Hero = () => {
           </motion.h1>
 
           <motion.p
-            className="text-xl sm:text-2xl font-medium text-sky-500 mb-6"
+            className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-900 tracking-tight mb-6"
             variants={itemVariants}
           >
             {profile.shortTitle}

@@ -27,7 +27,7 @@ const profile = {
 
   about: {
     summary:
-      'I design and ship end-to-end AI and data systems — from orchestrated pipelines and feature stores to model deployment and intelligent automation — with a focus on reliability, scalability, and measurable impact.',
+      'I ship AI and data systems that are reliable, scalable, and built to show results.',
     careerFocus: [
       'LLM applications & AI agent workflows',
       'ETL/ELT pipelines & data orchestration',
