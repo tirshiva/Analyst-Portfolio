@@ -9,6 +9,10 @@
   line-height: 1.6;
   font-weight: 400;
   background: #ffffff;
+  background-image:
+    linear-gradient(to right, rgba(148, 163, 184, 0.16) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.16) 1px, transparent 1px);
+  background-size: 24px 24px;
   color: #0F172A;
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
@@ -20,7 +24,11 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: #ffffff;
+  background-color: #ffffff;
+  background-image:
+    linear-gradient(to right, rgba(148, 163, 184, 0.16) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.16) 1px, transparent 1px);
+  background-size: 24px 24px;
   color: #0F172A;
   scroll-behavior: smooth;
   overflow-x: hidden;

@@ -94,7 +94,7 @@ const Navbar = () => {
         className={`fixed w-full z-[90] transition-all duration-300 border-b ${
           scrolled
             ? 'bg-white/95 backdrop-blur-md shadow-sm border-slate-100'
-            : 'bg-white border-transparent'
+            : 'bg-white/70 backdrop-blur-sm border-transparent'
         }`}
         role="navigation"
         aria-label="Main navigation"

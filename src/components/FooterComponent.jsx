@@ -21,7 +21,7 @@ const FooterComponent = () => {
   ];
 
   return (
-    <footer className="relative bg-white border-t border-slate-100 py-12 sm:py-16">
+    <footer className="relative bg-white/70 backdrop-blur-[2px] border-t border-slate-100 py-12 sm:py-16">
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10">
           <motion.div
