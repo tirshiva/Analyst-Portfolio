@@ -7,7 +7,7 @@ const CATEGORY_GRADIENTS = {
   default: 'from-blue-500 via-indigo-500 to-violet-500'
 };
 
-const ProjectThumbnail = ({ title, category, className = '' }) => {
+const ProjectThumbnail = ({ title, category, image, className = '' }) => {
   const gradient = CATEGORY_GRADIENTS[category] || CATEGORY_GRADIENTS.default;
   const initials = title
     .split(' ')
@@ -15,6 +15,20 @@ const ProjectThumbnail = ({ title, category, className = '' }) => {
     .map((w) => w[0])
     .join('')
     .toUpperCase();
+
+  if (image) {
+    return (
+      <div className={`relative overflow-hidden bg-slate-100 ${className}`}>
+        <img
+          src={image}
+          alt={`${title} project thumbnail`}
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/35 via-transparent to-transparent" />
+      </div>
+    );
+  }
 
   return (
     <div

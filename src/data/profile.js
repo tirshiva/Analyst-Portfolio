@@ -82,6 +82,41 @@ const profile = {
     languages: ['Python', 'SQL']
   },
 
+  skillLogos: {
+    rowA: [
+      'Python',
+      'AWS',
+      'Docker',
+      'FastAPI',
+      'PostgreSQL',
+      'Apache Spark',
+      'Apache Airflow',
+      'Git',
+      'Linux',
+      'Kubernetes',
+      'Terraform',
+      'GitHub Actions'
+    ],
+    rowB: [
+      'PyTorch',
+      'TensorFlow',
+      'Pandas',
+      'NumPy',
+      'scikit-learn',
+      'Jupyter',
+      'OpenAI',
+      'Flask',
+      'Redis',
+      'MongoDB',
+      'Snowflake',
+      'Streamlit',
+      'Apache Kafka',
+      'dbt',
+      'Amazon S3',
+      'Plotly'
+    ]
+  },
+
   techStack: [
     { label: 'Python' },
     { label: 'Agentic AI' },

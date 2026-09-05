@@ -30,7 +30,8 @@ const FeaturedProject = ({ project }) => {
         <ProjectThumbnail
           title={project.title}
           category={project.category}
-          className="h-56 lg:h-auto min-h-[220px]"
+          image={project.image}
+          className="h-56 lg:h-auto min-h-[240px] lg:min-h-[320px]"
         />
         <div className="p-6 sm:p-8 flex flex-col justify-center">
           {project.category && (

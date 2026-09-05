@@ -6,6 +6,7 @@ export const projects = [
       'Multi-agent LangGraph system that researches Indian location-based business questions using public APIs, maps, government catalogs, and document RAG — then returns a cited opportunity score with a critic quality loop.',
     category: 'AI / Backend Engineering',
     techStack: ['LangGraph', 'RAG', 'Multi-Agent', 'Public APIs', 'Python'],
+    image: '/projects/india-business-research.png',
     githubLink: 'https://github.com/tirshiva/business-research-assistant'
   },
   {
@@ -15,6 +16,7 @@ export const projects = [
       'Modular ATS and resume analysis service built with FastAPI, LangGraph, and pluggable LLM providers for JD analysis, RAG retrieval, gap analysis, ATS scoring, and approval-gated MCP workflows.',
     category: 'AI / Backend Engineering',
     techStack: ['FastAPI', 'LangGraph', 'pgvector', 'Ollama', 'OpenAI', 'Azure OpenAI'],
+    image: '/projects/jd-customized-resume.png',
     githubLink: 'https://github.com/tirshiva/jd-customized-resume'
   },
   {
@@ -24,6 +26,7 @@ export const projects = [
       'End-to-end ETL pipeline extracting YouTube API data into staging, transforming via dbt-style logic, and loading into core schemas — orchestrated with Apache Airflow and containerized with Docker.',
     category: 'Data Engineering',
     techStack: ['Python', 'Apache Airflow', 'Docker', 'CI/CD', 'ETL/ELT'],
+    image: '/projects/youtube-analytics-pipeline.png',
     githubLink: 'https://github.com/tirshiva/youtube-etl'
   },
   {
@@ -33,6 +36,7 @@ export const projects = [
       'Production MLOps pipeline for vehicle insurance purchase prediction — automated data processing, model training, Docker containerization, CI/CD, and cloud deployment on AWS EC2.',
     category: 'Machine Learning',
     techStack: ['AWS EC2', 'Docker', 'CI/CD', 'MLOps', 'Python'],
+    image: '/projects/insurance-purchase-prediction.png',
     githubLink: 'https://github.com/tirshiva/MLOps-Proj1'
   },
   {
@@ -42,6 +46,7 @@ export const projects = [
       'ML regression system predicting house prices from location, size, and amenities — built with Scikit-learn, hyperparameter tuning via Grid Search, and deployed via Flask for real-time inference.',
     category: 'Machine Learning',
     techStack: ['Python', 'Scikit-learn', 'Grid Search', 'Flask', 'Regression'],
+    image: '/projects/real-estate-price-predictor.png',
     githubLink: 'https://github.com/tirshiva/House-Prediction-Regression-Model',
     demoLink: 'https://house-prediction-regression-model.onrender.com/'
   },
@@ -52,6 +57,7 @@ export const projects = [
       'Predictive analytics pipeline using Random Forest with PCA-based feature selection, hyperparameter tuning, and cross-validation on telecom customer data.',
     category: 'Machine Learning',
     techStack: ['Random Forest', 'PCA', 'Feature Selection', 'Python', 'Cross-Validation'],
+    image: '/projects/customer-churn-analysis.png',
     githubLink: 'https://github.com/tirshiva/Customer-Churn-Analysis/tree/main'
   },
   {
@@ -61,6 +67,7 @@ export const projects = [
       'Production-ready RESTful API for e-commerce — product catalog, order processing, and inventory management built with FastAPI and PostgreSQL.',
     category: 'Backend Engineering',
     techStack: ['FastAPI', 'PostgreSQL', 'RESTful API', 'Python'],
+    image: '/projects/fruit-store-api.png',
     githubLink: 'https://github.com/tirshiva/fruit-store-Backend'
   }
 ];

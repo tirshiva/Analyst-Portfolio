@@ -15,7 +15,8 @@ const ProjectCard = ({ project }) => {
       <ProjectThumbnail
         title={project.title}
         category={project.category}
-        className="h-40"
+        image={project.image}
+        className="h-44 sm:h-48"
       />
 
       <div className="p-5 flex flex-col flex-grow">
